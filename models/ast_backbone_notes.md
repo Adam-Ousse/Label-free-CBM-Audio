@@ -2,8 +2,14 @@ AST backbone integration notes
 
 - file: `models/ast_backbone.py`
 - default alias: `ast_audioset` -> `MIT/ast-finetuned-audioset-10-10-0.4593`
+- esc50 alias: `ast_esc50` -> `Adam-ousse/ast-esc50-finetuned-fold1`
 - output contract: pooled embedding tensor with shape `[batch, 768]`
 - accepted input shapes: `[batch, time]` or `[batch, 1, time]`
+
+note
+
+- `ASTAudioBackbone` uses `ASTModel`, not the classifier head.
+- use `models/ast_classifier.py` for logits/accuracy evaluation with `ASTForAudioClassification`.
 
 custom model ids
 
