@@ -17,8 +17,8 @@ parser = argparse.ArgumentParser(description='Settings for creating CBM')
 parser.add_argument("--dataset", type=str, default="cifar10")
 parser.add_argument("--concept_set", type=str, default=None, 
                     help="path to concept set name")
-parser.add_argument("--backbone", type=str, default="clip_RN50", help="Which pretrained model to use as backbone")
-parser.add_argument("--clip_name", type=str, default="ViT-B/16", help="Which CLIP model to use")
+parser.add_argument("--backbone", type=str, default="clap_audio", help="Which pretrained model to use as backbone")
+parser.add_argument("--clap_model", type=str, default="laion/clap-htsat-unfused", help="Which CLAP model to use for concept scoring")
 
 parser.add_argument("--device", type=str, default="cuda", help="Which device to use")
 parser.add_argument("--batch_size", type=int, default=512, help="Batch size used when saving model/CLIP activations")
@@ -27,14 +27,17 @@ parser.add_argument("--proj_batch_size", type=int, default=50000, help="Batch si
 
 parser.add_argument("--feature_layer", type=str, default='layer4', 
                     help="Which layer to collect activations from. Should be the name of second to last layer in the model")
-parser.add_argument("--activation_dir", type=str, default='saved_activations', help="save location for backbone and CLIP activations")
+parser.add_argument("--activation_dir", type=str, default='saved_activations', help="save location for backbone and CLAP activations")
 parser.add_argument("--save_dir", type=str, default='saved_models', help="where to save trained models")
-parser.add_argument("--clip_cutoff", type=float, default=0.25, help="concepts with smaller top5 clip activation will be deleted")
+parser.add_argument("--clip_cutoff", type=float, default=0.25, help="Deprecated alias: use --concept_activation_cutoff")
+parser.add_argument("--concept_activation_cutoff", type=float, default=None, help="concepts with smaller top5 CLAP activation will be deleted")
 parser.add_argument("--proj_steps", type=int, default=1000, help="how many steps to train the projection layer for")
 parser.add_argument("--interpretability_cutoff", type=float, default=0.45, help="concepts with smaller similarity to target concept will be deleted")
 parser.add_argument("--lam", type=float, default=0.0007, help="Sparsity regularization parameter, higher->more sparse")
 parser.add_argument("--n_iters", type=int, default=1000, help="How many iterations to run the final layer solver for")
 parser.add_argument("--print", action='store_true', help="Print all concepts being deleted in this stage")
+parser.add_argument("--train_split", type=str, default=None, help="Train split for audio datasets")
+parser.add_argument("--val_split", type=str, default=None, help="Validation split for audio datasets")
 
 def train_cbm_and_save(args):
     
@@ -42,11 +45,21 @@ def train_cbm_and_save(args):
         os.mkdir(args.save_dir)
     if args.concept_set==None:
         args.concept_set = "data/concept_sets/{}_filtered.txt".format(args.dataset)
+
+    if args.concept_activation_cutoff is None:
+        args.concept_activation_cutoff = args.clip_cutoff
         
     similarity_fn = similarity.cos_similarity_cubed_single
     
-    d_train = args.dataset + "_train"
-    d_val = args.dataset + "_val"
+    if args.dataset == "audioset":
+        d_train = args.train_split or "balanced_train"
+        d_val = args.val_split or "eval"
+    elif args.dataset == "esc50":
+        d_train = args.train_split or "train"
+        d_val = args.val_split or "val"
+    else:
+        d_train = args.dataset + "_train"
+        d_val = args.dataset + "_val"
     
     #get concept set
     cls_file = data_utils.LABEL_FILES[args.dataset]
@@ -58,15 +71,37 @@ def train_cbm_and_save(args):
     
     #save activations and get save_paths
     for d_probe in [d_train, d_val]:
-        utils.save_activations(clip_name = args.clip_name, target_name = args.backbone, 
-                               target_layers = [args.feature_layer], d_probe = d_probe,
-                               concept_set = args.concept_set, batch_size = args.batch_size, 
-                               device = args.device, pool_mode = "avg", save_dir = args.activation_dir)
-        
-    target_save_name, clip_save_name, text_save_name = utils.get_save_names(args.clip_name, args.backbone, 
-                                            args.feature_layer,d_train, args.concept_set, "avg", args.activation_dir)
-    val_target_save_name, val_clip_save_name, text_save_name =  utils.get_save_names(args.clip_name, args.backbone,
-                                            args.feature_layer, d_val, args.concept_set, "avg", args.activation_dir)
+        utils.save_audio_activations(
+            clap_model_name=args.clap_model,
+            target_name=args.backbone,
+            target_layers=[args.feature_layer],
+            dataset_name=args.dataset,
+            split=d_probe,
+            concept_set=args.concept_set,
+            batch_size=args.batch_size,
+            device=args.device,
+            pool_mode="avg",
+            save_dir=args.activation_dir,
+        )
+
+    target_save_name, clap_audio_save_name, clap_text_save_name = utils.get_audio_save_names(
+        args.clap_model,
+        args.backbone,
+        args.feature_layer,
+        d_train,
+        args.concept_set,
+        "avg",
+        args.activation_dir,
+    )
+    val_target_save_name, val_clap_audio_save_name, clap_text_save_name = utils.get_audio_save_names(
+        args.clap_model,
+        args.backbone,
+        args.feature_layer,
+        d_val,
+        args.concept_set,
+        "avg",
+        args.activation_dir,
+    )
     
     #load features
     with torch.no_grad():
@@ -74,42 +109,38 @@ def train_cbm_and_save(args):
         
         val_target_features = torch.load(val_target_save_name, map_location="cpu").float()
     
-        image_features = torch.load(clip_save_name, map_location="cpu").float()
-        image_features /= torch.norm(image_features, dim=1, keepdim=True)
+        concept_matrix = utils.compute_concept_matrix_from_activations(clap_audio_save_name, clap_text_save_name)
+        val_concept_matrix = utils.compute_concept_matrix_from_activations(val_clap_audio_save_name, clap_text_save_name)
 
-        val_image_features = torch.load(val_clip_save_name, map_location="cpu").float()
-        val_image_features /= torch.norm(val_image_features, dim=1, keepdim=True)
-
-        text_features = torch.load(text_save_name, map_location="cpu").float()
-        text_features /= torch.norm(text_features, dim=1, keepdim=True)
-        
-        clip_features = image_features @ text_features.T
-        val_clip_features = val_image_features @ text_features.T
-
-        del image_features, text_features, val_image_features
+        if concept_matrix.shape[0] != target_features.shape[0]:
+            raise ValueError(
+                "Train shape mismatch: concept_matrix N={} vs target_features N={}".format(
+                    concept_matrix.shape[0], target_features.shape[0]
+                )
+            )
+        if val_concept_matrix.shape[0] != val_target_features.shape[0]:
+            raise ValueError(
+                "Val shape mismatch: concept_matrix N={} vs target_features N={}".format(
+                    val_concept_matrix.shape[0], val_target_features.shape[0]
+                )
+            )
     
     #filter concepts not activating highly
-    highest = torch.mean(torch.topk(clip_features, dim=0, k=5)[0], dim=0)
+    highest = torch.mean(torch.topk(concept_matrix, dim=0, k=5)[0], dim=0)
     
     if args.print:
         for i, concept in enumerate(concepts):
-            if highest[i]<=args.clip_cutoff:
-                print("Deleting {}, CLIP top5:{:.3f}".format(concept, highest[i]))
-    concepts = [concepts[i] for i in range(len(concepts)) if highest[i]>args.clip_cutoff]
+            if highest[i] <= args.concept_activation_cutoff:
+                print("Deleting {}, CLAP top5:{:.3f}".format(concept, highest[i]))
+    concepts = [concepts[i] for i in range(len(concepts)) if highest[i]>args.concept_activation_cutoff]
     
     #save memory by recalculating
-    del clip_features
+    del concept_matrix
     with torch.no_grad():
-        image_features = torch.load(clip_save_name, map_location="cpu").float()
-        image_features /= torch.norm(image_features, dim=1, keepdim=True)
+        concept_matrix = utils.compute_concept_matrix_from_activations(clap_audio_save_name, clap_text_save_name)
+        concept_matrix = concept_matrix[:, highest>args.concept_activation_cutoff]
 
-        text_features = torch.load(text_save_name, map_location="cpu").float()[highest>args.clip_cutoff]
-        text_features /= torch.norm(text_features, dim=1, keepdim=True)
-    
-        clip_features = image_features @ text_features.T
-        del image_features, text_features
-    
-    val_clip_features = val_clip_features[:, highest>args.clip_cutoff]
+    val_concept_matrix = val_concept_matrix[:, highest>args.concept_activation_cutoff]
     
     #learn projection layer
     proj_layer = torch.nn.Linear(in_features=target_features.shape[1], out_features=len(concepts),
@@ -125,7 +156,7 @@ def train_cbm_and_save(args):
     for i in range(args.proj_steps):
         batch = torch.LongTensor(random.sample(indices, k=proj_batch_size))
         outs = proj_layer(target_features[batch].to(args.device).detach())
-        loss = -similarity_fn(clip_features[batch].to(args.device).detach(), outs)
+        loss = -similarity_fn(concept_matrix[batch].to(args.device).detach(), outs)
         
         loss = torch.mean(loss)
         loss.backward()
@@ -133,7 +164,7 @@ def train_cbm_and_save(args):
         if i%50==0 or i==args.proj_steps-1:
             with torch.no_grad():
                 val_output = proj_layer(val_target_features.to(args.device).detach())
-                val_loss = -similarity_fn(val_clip_features.to(args.device).detach(), val_output)
+                val_loss = -similarity_fn(val_concept_matrix.to(args.device).detach(), val_output)
                 val_loss = torch.mean(val_loss)
             if i==0:
                 best_val_loss = val_loss
@@ -156,7 +187,7 @@ def train_cbm_and_save(args):
     #delete concepts that are not interpretable
     with torch.no_grad():
         outs = proj_layer(val_target_features.to(args.device).detach())
-        sim = similarity_fn(val_clip_features.to(args.device).detach(), outs)
+        sim = similarity_fn(val_concept_matrix.to(args.device).detach(), outs)
         interpretable = sim > args.interpretability_cutoff
         
     if args.print:
@@ -166,14 +197,23 @@ def train_cbm_and_save(args):
     
     concepts = [concepts[i] for i in range(len(concepts)) if interpretable[i]]
     
-    del clip_features, val_clip_features
+    del concept_matrix, val_concept_matrix
     
     W_c = proj_layer.weight[interpretable]
     proj_layer = torch.nn.Linear(in_features=target_features.shape[1], out_features=len(concepts), bias=False)
     proj_layer.load_state_dict({"weight":W_c})
     
-    train_targets = data_utils.get_targets_only(d_train)
-    val_targets = data_utils.get_targets_only(d_val)
+    if args.dataset == "audioset":
+        raise NotImplementedError(
+            "Final sparse classifier stage is currently single-label only. "
+            "AudioSet integration in this refactor covers CLAP concept scoring (Step 2) but not multi-label classifier fitting."
+        )
+    if args.dataset == "esc50":
+        train_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_train).samples]
+        val_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_val).samples]
+    else:
+        train_targets = data_utils.get_targets_only(d_train)
+        val_targets = data_utils.get_targets_only(d_val)
     
     with torch.no_grad():
         train_c = proj_layer(target_features.detach())

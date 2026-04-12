@@ -3,11 +3,134 @@ import math
 import torch
 import clip
 import data_utils
+import clap_utils
 
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 
 PM_SUFFIX = {"max":"_max", "avg":""}
+
+
+def save_backbone_audio_features(target_model, dataset, save_name, batch_size=256, device="cuda"):
+    """Save backbone audio features for a manifest-backed audio dataset."""
+    _make_save_dir(save_name)
+    if os.path.exists(save_name):
+        return
+
+    all_features = []
+    with torch.no_grad():
+        for batch in tqdm(DataLoader(dataset, batch_size, num_workers=2, pin_memory=True)):
+            audio = batch["audio"].to(device)
+            features = target_model(audio)
+            if features.dim() > 2:
+                features = torch.flatten(features, start_dim=1)
+            all_features.append(features.detach().cpu())
+
+    torch.save(torch.cat(all_features, dim=0), save_name)
+    del all_features
+    torch.cuda.empty_cache()
+
+
+def save_clap_audio_features(clap_bundle, dataset, save_name, batch_size=128):
+    """Save CLAP audio embeddings for each sample in a dataset."""
+    _make_save_dir(save_name)
+    if os.path.exists(save_name):
+        return
+
+    all_embeddings = []
+    with torch.no_grad():
+        for batch in tqdm(DataLoader(dataset, batch_size, num_workers=2, pin_memory=True)):
+            embs = clap_utils.encode_audio(
+                audio_or_paths=batch["audio"],
+                sample_rates=batch["sr"].tolist(),
+                clap_bundle=clap_bundle,
+                batch_size=batch_size,
+                normalize=True,
+            )
+            all_embeddings.append(embs)
+
+    torch.save(torch.cat(all_embeddings, dim=0), save_name)
+    del all_embeddings
+    torch.cuda.empty_cache()
+
+
+def save_clap_text_features(clap_bundle, concepts, save_name, batch_size=128):
+    """Save CLAP text embeddings for concept strings."""
+    _make_save_dir(save_name)
+    if os.path.exists(save_name):
+        return
+    embs = clap_utils.encode_text(concepts=concepts, clap_bundle=clap_bundle, batch_size=batch_size, normalize=True)
+    torch.save(embs, save_name)
+    del embs
+    torch.cuda.empty_cache()
+
+
+def get_audio_save_names(clap_model_name, target_name, target_layer, split, concept_set, pool_mode, save_dir):
+    clap_tag = clap_model_name.replace("/", "_")
+    concept_set_name = (concept_set.split("/")[-1]).split(".")[0]
+    target_save_name = "{}/{}_backbone_{}_{}{}.pt".format(
+        save_dir,
+        split,
+        target_name.replace("/", "_"),
+        target_layer,
+        PM_SUFFIX[pool_mode],
+    )
+    clap_audio_save_name = "{}/{}_clap_audio_{}.pt".format(save_dir, split, clap_tag)
+    clap_text_save_name = "{}/{}_clap_text_{}.pt".format(save_dir, concept_set_name, clap_tag)
+    return target_save_name, clap_audio_save_name, clap_text_save_name
+
+
+def save_audio_activations(clap_model_name, target_name, target_layers, dataset_name, split,
+                           concept_set, batch_size, device, pool_mode, save_dir):
+    """Save backbone audio features and CLAP audio/text embeddings for a split."""
+    target_save_name, clap_audio_save_name, clap_text_save_name = get_audio_save_names(
+        clap_model_name,
+        target_name,
+        target_layers[0],
+        split,
+        concept_set,
+        pool_mode,
+        save_dir,
+    )
+    save_names = {
+        "backbone": target_save_name,
+        "clap_audio": clap_audio_save_name,
+        "clap_text": clap_text_save_name,
+    }
+    if _all_saved(save_names):
+        return
+
+    clap_bundle = clap_utils.load_clap_model(model_name=clap_model_name, device=device)
+    audio_dataset = data_utils.get_audio_dataset(dataset_name=dataset_name, split=split)
+
+    with open(concept_set, "r", encoding="utf-8") as f:
+        concepts = [line.strip() for line in f.readlines() if line.strip()]
+
+    save_clap_text_features(clap_bundle, concepts, clap_text_save_name, batch_size=batch_size)
+    save_clap_audio_features(clap_bundle, audio_dataset, clap_audio_save_name, batch_size=batch_size)
+
+    if target_name == "clap_audio":
+        # Keep backbone/concept targets logically separate while allowing a CLAP-only fallback.
+        if not os.path.exists(target_save_name):
+            torch.save(torch.load(clap_audio_save_name, map_location="cpu"), target_save_name)
+    else:
+        target_model, _ = data_utils.get_target_model(target_name, device)
+        save_backbone_audio_features(target_model, audio_dataset, target_save_name, batch_size=batch_size, device=device)
+
+
+def compute_concept_matrix_from_activations(clap_audio_save_name, clap_text_save_name):
+    clap_audio_embs = torch.load(clap_audio_save_name, map_location="cpu").float()
+    clap_text_embs = torch.load(clap_text_save_name, map_location="cpu").float()
+    concept_matrix = clap_utils.compute_audio_text_similarity(clap_audio_embs, clap_text_embs, normalize=True)
+    if concept_matrix.dim() != 2:
+        raise ValueError("Expected concept matrix to be 2D, got {}".format(tuple(concept_matrix.shape)))
+    if concept_matrix.shape[0] != clap_audio_embs.shape[0] or concept_matrix.shape[1] != clap_text_embs.shape[0]:
+        raise ValueError(
+            "Concept matrix shape mismatch: P={}, audio_embs={}, text_embs={}".format(
+                tuple(concept_matrix.shape), tuple(clap_audio_embs.shape), tuple(clap_text_embs.shape)
+            )
+        )
+    return concept_matrix
 
 def save_target_activations(target_model, dataset, save_name, target_layers = ["layer4"], batch_size = 1000,
                             device = "cuda", pool_mode='avg'):

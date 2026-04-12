@@ -6,6 +6,8 @@ This fork is currently focused on one concrete milestone:
 
 This is a data-layer milestone. The full LF-CBM audio training adaptation is intentionally **not** implemented yet.
 
+Current multimodal concept scoring now uses **CLAP audio-text embeddings** (replacing CLIP image-text scoring in the active path).
+
 ## What is implemented now
 
 - Reproducible ESC-50 preparation script
@@ -29,6 +31,7 @@ This is a data-layer milestone. The full LF-CBM audio training adaptation is int
 
 - `data/prepare_esc50.py`: parse official ESC-50 metadata and build manifests/mappings
 - `data/prepare_audioset.py`: parse AudioSet CSV metadata and build manifests/mappings
+- `clap_utils.py`: CLAP loading + batched audio/text encoding + similarity helper
 - `data/esc50/`: ESC-50 mappings + manifests output directory
 - `data/audioset/`: AudioSet mappings + manifests output directory
 - `data/esc50_classes.txt`: ESC-50 class names
