@@ -1,78 +1,183 @@
-# Label-free Concept Bottleneck Models
+# Label-free-CBM-Audio (Milestone 1)
 
-This is the official repository for our paper [Label-Free Concept Bottleneck Models](https://openreview.net/forum?id=FlCg47MNvBA) published at ICLR 2023. LF-CBM is a new framework to transform any neural networks into an interpretable Concept Bottleneck Model (CBM) without the need for labeled concept data.
+This fork is currently focused on one concrete milestone:
 
-**Update 6/5/2023**: We have conducted a crowdsourced user study to measure the interpretability of our method, results are available in Appendix B of [our arxiv paper](https://arxiv.org/abs/2304.06129).
+**Set up ESC-50 and AudioSet so a teammate can immediately start training an audio backbone.**
 
-<img src=data/LF-CBM_overview.jpg alt="Overview" width=655 height=400>
+This is a data-layer milestone. The full LF-CBM audio training adaptation is intentionally **not** implemented yet.
 
-## Setup
+## What is implemented now
 
-1. Install Python (3.9) and PyTorch (1.13).
-2. Install dependencies by running `pip install -r requirements.txt`
-3. Download pretrained models by running  `bash download_models.sh` (they will be unpacked to `saved_models`)
-4. Download and process CUB dataset by running `bash download_cub.sh` 
-5. Download ResNet18(Places365) backbone by running `bash download_rn18_places.sh`
+- Reproducible ESC-50 preparation script
+- Reproducible AudioSet preparation script
+- JSONL manifest generation
+- Label mapping files for both datasets
+- Unified PyTorch audio manifest dataset/dataloader API in `data_utils.py`
+- Multi-label support for AudioSet targets
+- Sanity-check script for one-batch loading
+- Archive area for original image-paper reproduction assets
 
-We do not provide download instructions for ImageNet data, to evaluate using your own copy of ImageNet you must set the correct path in `DATASET_ROOTS["imagenet_train"]` and `DATASET_ROOTS["imagenet_val"]` variables in `data_utils.py`.
+## What is intentionally not implemented yet
 
-## Running the models
+- Concept filtering / concept set generation for audio
+- CLIP-to-audio encoder replacement (e.g., CLAP)
+- CBM training adaptation for audio
+- Sparse classifier/audio-method redesign
+- Explanation plotting updates for audio models
 
-### 1. Creating Concept Sets (Optional):
-A. Create initial concept set using GPT-3 - `GPT_initial_concepts.ipynb`, do this for all 3 prompt types (can be skipped if using the concept sets we have provided). NOTE: This step costs money and you will have to provide your own `openai.api_key`.
+## Repository layout for this milestone
 
-B. Process and filter the conceptset by running `GPT_conceptset_processor.ipynb` (Alternatively get ConceptNet concepts by running ConceptNet_conceptset.ipynb)
+- `data/prepare_esc50.py`: parse official ESC-50 metadata and build manifests/mappings
+- `data/prepare_audioset.py`: parse AudioSet CSV metadata and build manifests/mappings
+- `data/esc50/`: ESC-50 mappings + manifests output directory
+- `data/audioset/`: AudioSet mappings + manifests output directory
+- `data/esc50_classes.txt`: ESC-50 class names
+- `data/audioset_classes.txt`: generated from AudioSet class labels CSV
+- `data_utils.py`: unified dataset + dataloader entry point for audio datasets
+- `check_audio_dataloader.py`: quick operational sanity check
+- `archive/original_paper/`: archived image-paper-specific artifacts
 
-### 2. Train LF-CBM
+## Install
 
-Train a concept bottleneck model on CIFAR10 by running:
+Use Python 3.9+.
 
-`python train_cbm.py --concept_set data/concept_sets/cifar10_filtered.txt`
-
-
-### 3. Evaluate trained models
-
-Evaluate the trained models by running `evaluate_cbm.ipynb`. This measures model accuracy, creates barplots explaining individual decisions and prints final layer weights which are the basis for creating weight visualizations.
-
-Additional evaluations and reproductions of our model editing experiments are available in the notebooks of `experiments` directory.
-
-## Results
-
-High Accuracy:
-
-|                   |         |          | Dataset |           |          |
-|-------------------|---------|----------|---------|-----------|----------|
-| Model             | CIFAR10 | CIFAR100 | CUB200  | Places365 | ImageNet |
-| Standard          | 88.80%  | 70.10%   | 76.70%  | 48.56%    | 76.13%   |
-| Standard (sparse) | 82.96%  | 58.34%   | **75.96%**  | 38.46%    | **74.35%**   |
-| Label-free CBM    | **86.37%** | **65.27%**   | 74.59%  | **43.71%**   | 71.98%   |
-
-For commands to train Label-free CBM and Standard (sparse) models on all 5 datasets, see `training_commands.txt`.
-
-Explainable Decsisions:
-
-![](data/lf_cbm_ind_decision.png)
-
-## Sources
-
-CUB dataset: https://www.vision.caltech.edu/datasets/cub_200_2011/
-
-Sparse final layer training: https://github.com/MadryLab/glm_saga
-
-Explanation bar plots adapted from: https://github.com/slundberg/shap
-
-CLIP: https://github.com/openai/CLIP
-
-## Cite this work
-T. Oikarinen, S. Das, L. Nguyen and T.-W. Weng, [*Label-free Concept Bottleneck Models*](https://openreview.net/pdf?id=FlCg47MNvBA), ICLR 2023.
-
+```bash
+pip install -r requirements.txt
 ```
-@inproceedings{oikarinenlabel,
-  title={Label-free Concept Bottleneck Models},
-  author={Oikarinen, Tuomas and Das, Subhro and Nguyen, Lam M and Weng, Tsui-Wei},
-  booktitle={International Conference on Learning Representations},
-  year={2023}
+
+## ESC-50 setup
+
+1. Download ESC-50 from the official source and extract it.
+2. Ensure it has this structure:
+
+```text
+/path/to/ESC-50-master/
+  meta/esc50.csv
+  audio/*.wav
+```
+
+3. Generate manifests/mappings:
+
+```bash
+python data/prepare_esc50.py \
+  --esc50_root /path/to/ESC-50-master \
+  --out_root data/esc50 \
+  --repo_root .
+```
+
+### ESC-50 split convention
+
+- Official folds are preserved (`fold` field in each sample)
+- Per-test-fold manifests are generated:
+  - `fold{1..5}_train.jsonl`
+  - `fold{1..5}_val.jsonl`
+  - `fold{1..5}_test.jsonl`
+- Default top-level manifests are also generated:
+  - `train.jsonl`, `val.jsonl`, `test.jsonl`
+- Default behavior uses `default_test_fold=1` and `val_fold=(test_fold+1) mod 5`
+
+## AudioSet setup
+
+1. Download AudioSet metadata CSVs:
+- `class_labels_indices.csv`
+- `balanced_train_segments.csv`
+- `eval_segments.csv`
+
+2. Prepare local clips (for example as WAV files) under one root directory.
+
+3. Generate manifests/mappings:
+
+```bash
+python data/prepare_audioset.py \
+  --class_labels_csv /path/to/class_labels_indices.csv \
+  --balanced_csv /path/to/balanced_train_segments.csv \
+  --eval_csv /path/to/eval_segments.csv \
+  --clips_root /path/to/local/audioset/clips \
+  --out_root data/audioset \
+  --repo_root .
+```
+
+### AudioSet missing-clip behavior
+
+- Missing local clips are skipped by default (counts reported in `data/audioset/summary.json`)
+- To fail hard on missing clips, add `--fail_on_missing`
+
+## Manifest schema
+
+### ESC-50 sample
+
+```json
+{
+  "id": "5-12345-A-10",
+  "audio_path": "data/esc50/audio/5-12345-A-10.wav",
+  "label": "dog",
+  "label_idx": 16,
+  "fold": 1,
+  "sample_rate": 44100,
+  "duration": 5.0,
+  "dataset": "esc50"
 }
 ```
 
+### AudioSet sample
 
+```json
+{
+  "id": "YOUTUBEID_30_40",
+  "youtube_id": "YOUTUBEID",
+  "start_sec": 30.0,
+  "end_sec": 40.0,
+  "audio_path": "data/audioset/clips/YOUTUBEID_30_40.wav",
+  "labels_mid": ["/m/068hy", "/m/07q6cd_"],
+  "label_idx": [23, 119],
+  "sample_rate": 16000,
+  "duration": 10.0,
+  "dataset": "audioset"
+}
+```
+
+## Unified data API (`data_utils.py`)
+
+- `get_dataset_classes(dataset_name)`
+- `get_audio_manifest_path(dataset_name, split)`
+- `get_audio_dataset(dataset_name, split, ...)`
+- `get_audio_dataloader(dataset_name, split, ...)`
+- `get_audio_label_mappings(dataset_name)`
+
+Returned sample dictionary format:
+
+```python
+{
+    "id": str,
+    "audio": Tensor,
+    "sr": int,
+    "target": Tensor | int,
+    "path": str,
+    "dataset": str
+}
+```
+
+Defaults:
+- mono waveform
+- sample rate: 16000
+- ESC-50 clip duration: 5.0s (pad/truncate)
+- AudioSet clip duration: 10.0s (pad/truncate)
+
+## Sanity check
+
+After generating manifests, run:
+
+```bash
+python check_audio_dataloader.py
+```
+
+This script:
+- loads ESC-50 and AudioSet datasets
+- prints dataset sizes and class counts
+- loads one batch from each and prints tensor shapes
+- fails loudly if manifests or paths are invalid
+
+## Notes for teammates
+
+This repository is now prepared for **audio backbone training data plumbing**.
+Method-level LF-CBM audio adaptation should build on top of these manifests and dataloaders in a later milestone.
