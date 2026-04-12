@@ -9,7 +9,10 @@ from torchvision import datasets, transforms, models
 from torch.utils.data import Dataset, DataLoader
 import torch.nn.functional as F
 
-import clip
+try:
+    import clip
+except ModuleNotFoundError:
+    clip = None
 from pytorchcv.model_provider import get_model as ptcv_get_model
 from models.ast_backbone import build_ast_backbone
 

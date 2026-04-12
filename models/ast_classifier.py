@@ -1,49 +1,33 @@
 import numpy as np
 import torch
 
-from transformers import ASTModel, AutoFeatureExtractor
+from transformers import ASTForAudioClassification, AutoFeatureExtractor
+
+from models.ast_backbone import _resolve_model_id
 
 
-AST_MODEL_ALIASES = {
-    "ast_audioset": "MIT/ast-finetuned-audioset-10-10-0.4593",
-    "ast_mit_audioset": "MIT/ast-finetuned-audioset-10-10-0.4593",
-    "ast_esc50": "Adam-ousse/ast-esc50-finetuned-fold1",
-}
-
-
-def _resolve_model_id(target_name):
-    if target_name in AST_MODEL_ALIASES:
-        return AST_MODEL_ALIASES[target_name]
-
-    # custom hf id support: ast_hf__org__repo -> org/repo
-    if target_name.startswith("ast_hf__"):
-        return target_name[len("ast_hf__"):].replace("__", "/")
-
-    # pass-through for direct hf ids or local checkpoint dirs
-    return target_name
-
-
-class ASTAudioBackbone(torch.nn.Module):
+class ASTAudioClassifier(torch.nn.Module):
     def __init__(self, model_id, device):
         super().__init__()
         self.model_id = model_id
         self.device = device
         self.feature_extractor = AutoFeatureExtractor.from_pretrained(model_id)
-        self.model = ASTModel.from_pretrained(model_id).to(device)
+        self.model = ASTForAudioClassification.from_pretrained(model_id).to(device)
         self.model.eval()
-        self.hidden_size = int(self.model.config.hidden_size)
+        self.num_labels = int(self.model.config.num_labels)
+        self.label2id = dict(getattr(self.model.config, "label2id", {}) or {})
+        self.id2label = dict(getattr(self.model.config, "id2label", {}) or {})
         self.default_sample_rate = int(getattr(self.feature_extractor, "sampling_rate", 16000))
         self.expects_sample_rates = True
 
     def _to_waveform_list(self, audio_batch):
-        # expected inputs: [B, T] or [B, 1, T]
         if isinstance(audio_batch, torch.Tensor):
             if audio_batch.dim() == 1:
                 audio_batch = audio_batch.unsqueeze(0)
             elif audio_batch.dim() == 3 and audio_batch.shape[1] == 1:
                 audio_batch = audio_batch.squeeze(1)
             elif audio_batch.dim() != 2:
-                raise ValueError("AST backbone expects audio with shape [B, T] or [B, 1, T]")
+                raise ValueError("AST classifier expects audio with shape [B, T] or [B, 1, T]")
 
             audio_batch = audio_batch.detach().cpu().float()
             return [audio_batch[i].numpy() for i in range(audio_batch.shape[0])]
@@ -55,7 +39,7 @@ class ASTAudioBackbone(torch.nn.Module):
                 if wav.dim() == 2:
                     wav = wav.mean(dim=0)
                 elif wav.dim() != 1:
-                    raise ValueError("AST backbone expects each sample with shape [T] or [C, T]")
+                    raise ValueError("AST classifier expects each sample with shape [T] or [C, T]")
                 waveforms.append(wav.numpy())
             else:
                 waveforms.append(np.asarray(wav, dtype=np.float32))
@@ -83,22 +67,15 @@ class ASTAudioBackbone(torch.nn.Module):
             return_tensors="pt",
             padding=True,
         )
-        input_values = inputs["input_values"].to(self.device)
+        inputs = {k: v.to(self.device) for k, v in inputs.items()}
 
-        outputs = self.model(input_values=input_values)
+        outputs = self.model(**inputs)
+        return outputs.logits.float()
 
-        # pooled AST embedding shape: [B, hidden_size]
-        if outputs.pooler_output is not None:
-            features = outputs.pooler_output
-        else:
-            features = outputs.last_hidden_state[:, 0, :]
-
-        return features.float()
-
-    def encode_audio(self, audio_batch, sample_rates=None):
+    def predict_logits(self, audio_batch, sample_rates=None):
         return self.forward(audio_batch, sample_rates=sample_rates)
 
 
-def build_ast_backbone(target_name, device):
+def build_ast_classifier(target_name, device):
     model_id = _resolve_model_id(target_name)
-    return ASTAudioBackbone(model_id=model_id, device=device)
+    return ASTAudioClassifier(model_id=model_id, device=device)
