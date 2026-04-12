@@ -3,17 +3,21 @@ import json
 import torch
 import data_utils
 
+
+def _build_backbone(model, backbone_name):
+    if backbone_name.startswith("ast_"):
+        return model
+    if "clip" in backbone_name:
+        return model
+    if "cub" in backbone_name:
+        return lambda x: model.features(x)
+    return torch.nn.Sequential(*list(model.children())[:-1])
+
 class CBM_model(torch.nn.Module):
     def __init__(self, backbone_name, W_c, W_g, b_g, proj_mean, proj_std, device="cuda"):
         super().__init__()
         model, _ = data_utils.get_target_model(backbone_name, device)
-        #remove final fully connected layer
-        if "clip" in backbone_name:
-            self.backbone = model
-        elif "cub" in backbone_name:
-            self.backbone = lambda x: model.features(x)
-        else:
-            self.backbone = torch.nn.Sequential(*list(model.children())[:-1])
+        self.backbone = _build_backbone(model, backbone_name)
             
         self.proj_layer = torch.nn.Linear(in_features=W_c.shape[1], out_features=W_c.shape[0], bias=False).to(device)
         self.proj_layer.load_state_dict({"weight":W_c})
@@ -37,13 +41,7 @@ class standard_model(torch.nn.Module):
     def __init__(self, backbone_name, W_g, b_g, proj_mean, proj_std, device="cuda"):
         super().__init__()
         model, _ = data_utils.get_target_model(backbone_name, device)
-        #remove final fully connected layer
-        if "clip" in backbone_name:
-            self.backbone = model
-        elif "cub" in backbone_name:
-            self.backbone = lambda x: model.features(x)
-        else:
-            self.backbone = torch.nn.Sequential(*list(model.children())[:-1])
+        self.backbone = _build_backbone(model, backbone_name)
             
         self.proj_mean = proj_mean
         self.proj_std = proj_std

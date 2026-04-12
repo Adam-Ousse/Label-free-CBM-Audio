@@ -61,13 +61,11 @@ def train_cbm_and_save(args):
         d_train = args.dataset + "_train"
         d_val = args.dataset + "_val"
     
-    #get concept set
-    cls_file = data_utils.LABEL_FILES[args.dataset]
-    with open(cls_file, "r") as f:
-        classes = f.read().split("\n")
+    # classes: supports both vision and audio datasets
+    classes = data_utils.get_dataset_classes(args.dataset)
     
-    with open(args.concept_set) as f:
-        concepts = f.read().split("\n")
+    with open(args.concept_set, "r", encoding="utf-8") as f:
+        concepts = [line.strip() for line in f.readlines() if line.strip()]
     
     #save activations and get save_paths
     for d_probe in [d_train, d_val]:

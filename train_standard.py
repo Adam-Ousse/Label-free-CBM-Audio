@@ -44,6 +44,8 @@ def train_and_save(args):
                                                        args.activation_dir)
     #save activations and get save_paths
     if args.backbone.startswith("clip_"):
+        if clip is None:
+            raise ModuleNotFoundError("CLIP dependencies are missing. Install requirements.txt to use clip_* backbones.")
         model, _ = clip.load(args.backbone[5:], device=args.device)
         utils.save_clip_image_features(model, data_t, target_save_name, args.batch_size, args.device)
         utils.save_clip_image_features(model, val_data_t, val_target_save_name, args.batch_size, args.device)
