@@ -11,6 +11,7 @@ import torch.nn.functional as F
 
 import clip
 from pytorchcv.model_provider import get_model as ptcv_get_model
+from models.ast_backbone import build_ast_backbone
 
 DATASET_ROOTS = {
     "imagenet_train": "YOUR_PATH/CLS-LOC/train/",
@@ -326,8 +327,13 @@ def get_targets_only(dataset_name):
     return pil_data.targets
 
 def get_target_model(target_name, device):
+    if target_name.startswith("ast_"):
+        target_model = build_ast_backbone(target_name=target_name, device=device)
+        preprocess = None
     
-    if target_name.startswith("clip_"):
+    elif target_name.startswith("clip_"):
+        if clip is None:
+            raise ModuleNotFoundError("CLIP dependencies are missing. Install requirements.txt to use clip_* backbones.")
         target_name = target_name[5:]
         model, preprocess = clip.load(target_name, device=device)
         target_model = lambda x: model.encode_image(x).float()

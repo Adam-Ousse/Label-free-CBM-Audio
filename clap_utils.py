@@ -12,6 +12,24 @@ DEFAULT_CLAP_MODEL = "laion/clap-htsat-unfused"
 DEFAULT_CLAP_SAMPLE_RATE = 48000
 
 
+def _extract_embedding_tensor(model_output, preferred_keys):
+    if isinstance(model_output, torch.Tensor):
+        return model_output
+
+    for key in preferred_keys:
+        if hasattr(model_output, key):
+            value = getattr(model_output, key)
+            if isinstance(value, torch.Tensor):
+                return value
+
+    if isinstance(model_output, (tuple, list)) and len(model_output) > 0:
+        first = model_output[0]
+        if isinstance(first, torch.Tensor):
+            return first
+
+    raise TypeError("Could not extract embedding tensor from CLAP model output")
+
+
 def load_clap_model(model_name: str = DEFAULT_CLAP_MODEL, device: str = "cuda"):
     """Load CLAP model and processor on a target device."""
     processor = AutoProcessor.from_pretrained(model_name)
@@ -103,9 +121,13 @@ def encode_audio(
     with torch.no_grad():
         for i in range(math.ceil(len(waveforms) / batch_size)):
             curr = waveforms[i * batch_size : (i + 1) * batch_size]
-            inputs = processor(audios=curr, sampling_rate=target_sample_rate, return_tensors="pt", padding=True)
+            try:
+                inputs = processor(audio=curr, sampling_rate=target_sample_rate, return_tensors="pt", padding=True)
+            except (TypeError, ValueError):
+                inputs = processor(audios=curr, sampling_rate=target_sample_rate, return_tensors="pt", padding=True)
             inputs = {k: v.to(device) for k, v in inputs.items()}
-            emb = model.get_audio_features(**inputs)
+            emb_out = model.get_audio_features(**inputs)
+            emb = _extract_embedding_tensor(emb_out, preferred_keys=["audio_embeds", "pooler_output"])
             audio_embeddings.append(emb.detach().cpu())
 
     audio_embeddings = torch.cat(audio_embeddings, dim=0)
@@ -134,7 +156,8 @@ def encode_text(
             curr = list(concepts[i * batch_size : (i + 1) * batch_size])
             inputs = processor(text=curr, return_tensors="pt", padding=True, truncation=True)
             inputs = {k: v.to(device) for k, v in inputs.items()}
-            emb = model.get_text_features(**inputs)
+            emb_out = model.get_text_features(**inputs)
+            emb = _extract_embedding_tensor(emb_out, preferred_keys=["text_embeds", "pooler_output"])
             text_embeddings.append(emb.detach().cpu())
 
     text_embeddings = torch.cat(text_embeddings, dim=0)

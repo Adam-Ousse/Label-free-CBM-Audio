@@ -21,7 +21,10 @@ def save_backbone_audio_features(target_model, dataset, save_name, batch_size=25
     with torch.no_grad():
         for batch in tqdm(DataLoader(dataset, batch_size, num_workers=2, pin_memory=True)):
             audio = batch["audio"].to(device)
-            features = target_model(audio)
+            if hasattr(target_model, "expects_sample_rates") and target_model.expects_sample_rates:
+                features = target_model(audio, sample_rates=batch["sr"])
+            else:
+                features = target_model(audio)
             if features.dim() > 2:
                 features = torch.flatten(features, start_dim=1)
             all_features.append(features.detach().cpu())
