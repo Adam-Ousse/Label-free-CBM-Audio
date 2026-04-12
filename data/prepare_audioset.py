@@ -20,6 +20,8 @@ import wave
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence
 
+from download_utils import audioset_clip_stem
+
 
 def _write_json(path: Path, payload: Dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -39,15 +41,6 @@ def _as_repo_relative(path: Path, repo_root: Path) -> str:
         return path.resolve().relative_to(repo_root.resolve()).as_posix()
     except ValueError:
         return path.resolve().as_posix()
-
-
-def _safe_clip_id(youtube_id: str, start_sec: float, end_sec: float) -> str:
-    def _fmt(value: float) -> str:
-        if abs(value - int(value)) < 1e-9:
-            return str(int(value))
-        return str(value).replace(".", "p")
-
-    return f"{youtube_id}_{_fmt(start_sec)}_{_fmt(end_sec)}"
 
 
 def _read_wav_info(audio_path: Path) -> tuple[int, float]:
@@ -166,7 +159,7 @@ def _build_manifest_rows(
             stats["missing_labels"] += 1
             continue
 
-        clip_id = _safe_clip_id(youtube_id, start_sec, end_sec)
+        clip_id = audioset_clip_stem(youtube_id, start_sec, end_sec)
         local_clip = _find_local_clip(clips_root, clip_id, youtube_id, extensions)
 
         if local_clip is None:

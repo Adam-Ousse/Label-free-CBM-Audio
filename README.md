@@ -45,9 +45,41 @@ Use Python 3.9+.
 pip install -r requirements.txt
 ```
 
+For the download stage, install these system tools as well:
+
+- `yt-dlp` for AudioSet reconstruction
+- `ffmpeg` for segment extraction and WAV conversion
+
+On Ubuntu/Debian, a typical setup is:
+
+```bash
+sudo apt install ffmpeg yt-dlp
+```
+
+## Download and prepare
+
+The pipeline is intentionally split into three stages:
+
+1. download or validate raw audio files
+2. prepare manifests and label mappings
+3. run the dataloader sanity check
+
+The prep scripts do **not** fetch data from the internet themselves.
+
 ## ESC-50 setup
 
-1. Download ESC-50 from the official source and extract it.
+1. Download ESC-50 with the helper script or validate a manually downloaded archive.
+
+```bash
+python data/download_esc50.py --output_dir data/esc50/raw
+```
+
+If you already downloaded the archive yourself, you can validate it instead:
+
+```bash
+python data/download_esc50.py --output_dir /path/to/esc50_tree --validate_only
+```
+
 2. Ensure it has this structure:
 
 ```text
@@ -83,9 +115,20 @@ python data/prepare_esc50.py \
 - `balanced_train_segments.csv`
 - `eval_segments.csv`
 
-2. Prepare local clips (for example as WAV files) under one root directory.
+2. Reconstruct local clips from the CSVs using the downloader.
 
-3. Generate manifests/mappings:
+```bash
+python data/download_audioset.py \
+  --csv data/audioset/csv/balanced_train_segments.csv \
+  --output_dir data/audioset/clips \
+  --jobs 4
+```
+
+You can run the same script on `eval_segments.csv` to reconstruct the eval split.
+
+3. Point the prepare script at the reconstructed clips directory.
+
+4. Generate manifests/mappings:
 
 ```bash
 python data/prepare_audioset.py \
@@ -101,6 +144,20 @@ python data/prepare_audioset.py \
 
 - Missing local clips are skipped by default (counts reported in `data/audioset/summary.json`)
 - To fail hard on missing clips, add `--fail_on_missing`
+
+### Download caveats
+
+- AudioSet download is best-effort because some YouTube videos are deleted or unavailable.
+- Missing clips are logged and skipped rather than crashing the entire run unless `--fail_fast` is used.
+- The downloader depends on external `yt-dlp` and `ffmpeg` binaries.
+
+## Downloaded audio validation
+
+If you want a quick smoke test of a downloaded clip directory, run:
+
+```bash
+python data/check_downloaded_audio.py --audio_dir data/audioset/clips
+```
 
 ## Manifest schema
 
