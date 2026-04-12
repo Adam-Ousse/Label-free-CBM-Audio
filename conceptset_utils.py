@@ -4,7 +4,7 @@ import numpy as np
 import torch
 import math
 from tqdm import tqdm
-import clip
+import clap_utils
 from sentence_transformers import SentenceTransformer    
     
 def get_init_conceptnet(classes, limit=200, relations=["HasA", "IsA", "PartOf", "HasProperty", "MadeOf", "AtLocation"]):
@@ -75,7 +75,7 @@ def filter_too_similar_to_cls(concepts, classes, sim_cutoff, device="cuda", prin
     class_features_m = mpnet_model.encode(classes)
     concept_features_m = mpnet_model.encode(concepts)
     dot_prods_m = class_features_m @ concept_features_m.T
-    dot_prods_c = _clip_dot_prods(classes, concepts)
+    dot_prods_c = _clap_text_dot_prods(classes, concepts, device=device)
     #weighted since mpnet has highger variance
     dot_prods = (dot_prods_m + 3*dot_prods_c)/4
     
@@ -103,7 +103,7 @@ def filter_too_similar(concepts, sim_cutoff, device="cuda", print_prob=0):
     concept_features = mpnet_model.encode(concepts)
         
     dot_prods_m = concept_features @ concept_features.T
-    dot_prods_c = _clip_dot_prods(concepts, concepts)
+    dot_prods_c = _clap_text_dot_prods(concepts, concepts, device=device)
     
     dot_prods = (dot_prods_m + 3*dot_prods_c)/4
     
@@ -131,26 +131,11 @@ def filter_too_similar(concepts, sim_cutoff, device="cuda", print_prob=0):
     return concepts
 
 
-def _clip_dot_prods(list1, list2, device="cuda", clip_name="ViT-B/16", batch_size=500):
-    "Returns: numpy array with dot products"
-    clip_model, _ = clip.load(clip_name, device=device)
-    text1 = clip.tokenize(list1).to(device)
-    text2 = clip.tokenize(list2).to(device)
-    
-    features1 = []
-    with torch.no_grad():
-        for i in range(math.ceil(len(text1)/batch_size)):
-            features1.append(clip_model.encode_text(text1[batch_size*i:batch_size*(i+1)]))
-        features1 = torch.cat(features1, dim=0)
-        features1 /= features1.norm(dim=1, keepdim=True)
-
-    features2 = []
-    with torch.no_grad():
-        for i in range(math.ceil(len(text2)/batch_size)):
-            features2.append(clip_model.encode_text(text2[batch_size*i:batch_size*(i+1)]))
-        features2 = torch.cat(features2, dim=0)
-        features2 /= features2.norm(dim=1, keepdim=True)
-        
+def _clap_text_dot_prods(list1, list2, device="cuda", clap_model="laion/clap-htsat-unfused", batch_size=256):
+    "Returns: numpy array with CLAP text-space dot products"
+    clap_bundle = clap_utils.load_clap_model(model_name=clap_model, device=device)
+    features1 = clap_utils.encode_text(list1, clap_bundle=clap_bundle, batch_size=batch_size, normalize=True)
+    features2 = clap_utils.encode_text(list2, clap_bundle=clap_bundle, batch_size=batch_size, normalize=True)
     dot_prods = features1 @ features2.T
     return dot_prods.cpu().numpy()
 
@@ -163,7 +148,7 @@ def most_similar_concepts(word, concepts, device="cuda"):
     concept_features = mpnet_model.encode(concepts)
         
     dot_prods_m = word_features @ concept_features.T
-    dot_prods_c = _clip_dot_prods([word], concepts, device)
+    dot_prods_c = _clap_text_dot_prods([word], concepts, device=device)
     
     dot_prods = (dot_prods_m + 3*dot_prods_c)/4
     min_distance, indices = torch.topk(torch.FloatTensor(dot_prods[0]), k=5)
