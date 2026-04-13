@@ -27,7 +27,9 @@ LABEL_FILES = {"places365":"archive/original_paper/data/categories_places365_cle
                "imagenet":"archive/original_paper/data/imagenet_classes.txt",
                "cifar10":"archive/original_paper/data/cifar10_classes.txt",
                "cifar100":"archive/original_paper/data/cifar100_classes.txt",
-               "cub":"archive/original_paper/data/cub_classes.txt"}
+               "cub":"archive/original_paper/data/cub_classes.txt",
+               "esc50":"data/esc50_classes.txt",
+               "audioset":"data/audioset_classes.txt"}
 
 AUDIO_DEFAULTS = {
     "esc50": {

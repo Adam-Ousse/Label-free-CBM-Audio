@@ -1,9 +1,13 @@
 import os
 import math
 import torch
-import clip
 import data_utils
 import clap_utils
+
+try:
+    import clip
+except ModuleNotFoundError:
+    clip = None
 
 from tqdm import tqdm
 from torch.utils.data import DataLoader
@@ -16,6 +20,11 @@ def save_backbone_audio_features(target_model, dataset, save_name, batch_size=25
     _make_save_dir(save_name)
     if os.path.exists(save_name):
         return
+
+    # feature extractor is frozen for CBM training
+    target_model.eval()
+    for param in target_model.parameters():
+        param.requires_grad = False
 
     all_features = []
     with torch.no_grad():
@@ -204,6 +213,10 @@ def save_clip_text_features(model, text, save_name, batch_size=1000):
 
 def save_activations(clip_name, target_name, target_layers, d_probe, 
                      concept_set, batch_size, device, pool_mode, save_dir):
+    if clip is None:
+        raise ModuleNotFoundError(
+            "CLIP dependencies are missing (e.g., ftfy). Install requirements to use save_activations for vision backbones."
+        )
     
     
     target_save_name, clip_save_name, text_save_name = get_save_names(clip_name, target_name, 

@@ -7,6 +7,7 @@ import similarity
 import argparse
 import datetime
 import json
+import torch.nn.functional as F
 
 from glm_saga.elasticnet import IndexedTensorDataset, glm_saga
 from torch.utils.data import DataLoader, TensorDataset
@@ -38,6 +39,8 @@ parser.add_argument("--n_iters", type=int, default=1000, help="How many iteratio
 parser.add_argument("--print", action='store_true', help="Print all concepts being deleted in this stage")
 parser.add_argument("--train_split", type=str, default=None, help="Train split for audio datasets")
 parser.add_argument("--val_split", type=str, default=None, help="Validation split for audio datasets")
+parser.add_argument("--test_split", type=str, default=None, help="Optional test split for post-training evaluation")
+parser.add_argument("--enforce_esc50_fold1_protocol", action='store_true', help="Use fold1_test/fold1_val/fold1_train protocol for ESC-50")
 
 def train_cbm_and_save(args):
     
@@ -54,12 +57,31 @@ def train_cbm_and_save(args):
     if args.dataset == "audioset":
         d_train = args.train_split or "balanced_train"
         d_val = args.val_split or "eval"
+        d_test = args.test_split
     elif args.dataset == "esc50":
-        d_train = args.train_split or "train"
-        d_val = args.val_split or "val"
+        if args.enforce_esc50_fold1_protocol:
+            fixed_train = "fold1_train"
+            fixed_val = "fold1_val"
+            fixed_test = "fold1_test"
+            if args.train_split is not None and args.train_split != fixed_train:
+                raise ValueError("ESC-50 fold protocol requires train_split='{}'".format(fixed_train))
+            if args.val_split is not None and args.val_split != fixed_val:
+                raise ValueError("ESC-50 fold protocol requires val_split='{}'".format(fixed_val))
+            if args.test_split is not None and args.test_split != fixed_test:
+                raise ValueError("ESC-50 fold protocol requires test_split='{}'".format(fixed_test))
+            d_train = fixed_train
+            d_val = fixed_val
+            d_test = fixed_test
+        else:
+            d_train = args.train_split or "train"
+            d_val = args.val_split or "val"
+            d_test = args.test_split
     else:
         d_train = args.dataset + "_train"
         d_val = args.dataset + "_val"
+        d_test = args.test_split
+
+    print("Using splits -> train: {}, val: {}, test: {}".format(d_train, d_val, d_test))
     
     # classes: supports both vision and audio datasets
     classes = data_utils.get_dataset_classes(args.dataset)
@@ -68,7 +90,11 @@ def train_cbm_and_save(args):
         concepts = [line.strip() for line in f.readlines() if line.strip()]
     
     #save activations and get save_paths
-    for d_probe in [d_train, d_val]:
+    d_probes = [d_train, d_val]
+    if d_test is not None:
+        d_probes.append(d_test)
+
+    for d_probe in d_probes:
         utils.save_audio_activations(
             clap_model_name=args.clap_model,
             target_name=args.backbone,
@@ -100,15 +126,29 @@ def train_cbm_and_save(args):
         "avg",
         args.activation_dir,
     )
+    if d_test is not None:
+        test_target_save_name, test_clap_audio_save_name, clap_text_save_name = utils.get_audio_save_names(
+            args.clap_model,
+            args.backbone,
+            args.feature_layer,
+            d_test,
+            args.concept_set,
+            "avg",
+            args.activation_dir,
+        )
     
     #load features
     with torch.no_grad():
         target_features = torch.load(target_save_name, map_location="cpu").float()
         
         val_target_features = torch.load(val_target_save_name, map_location="cpu").float()
+        if d_test is not None:
+            test_target_features = torch.load(test_target_save_name, map_location="cpu").float()
     
         concept_matrix = utils.compute_concept_matrix_from_activations(clap_audio_save_name, clap_text_save_name)
         val_concept_matrix = utils.compute_concept_matrix_from_activations(val_clap_audio_save_name, clap_text_save_name)
+        if d_test is not None:
+            test_concept_matrix = utils.compute_concept_matrix_from_activations(test_clap_audio_save_name, clap_text_save_name)
 
         if concept_matrix.shape[0] != target_features.shape[0]:
             raise ValueError(
@@ -122,6 +162,12 @@ def train_cbm_and_save(args):
                     val_concept_matrix.shape[0], val_target_features.shape[0]
                 )
             )
+        if d_test is not None and test_concept_matrix.shape[0] != test_target_features.shape[0]:
+            raise ValueError(
+                "Test shape mismatch: concept_matrix N={} vs target_features N={}".format(
+                    test_concept_matrix.shape[0], test_target_features.shape[0]
+                )
+            )
     
     #filter concepts not activating highly
     highest = torch.mean(torch.topk(concept_matrix, dim=0, k=5)[0], dim=0)
@@ -131,6 +177,8 @@ def train_cbm_and_save(args):
             if highest[i] <= args.concept_activation_cutoff:
                 print("Deleting {}, CLAP top5:{:.3f}".format(concept, highest[i]))
     concepts = [concepts[i] for i in range(len(concepts)) if highest[i]>args.concept_activation_cutoff]
+    if len(concepts) == 0:
+        raise ValueError("No concepts survived concept activation cutoff: {}".format(args.concept_activation_cutoff))
     
     #save memory by recalculating
     del concept_matrix
@@ -139,6 +187,8 @@ def train_cbm_and_save(args):
         concept_matrix = concept_matrix[:, highest>args.concept_activation_cutoff]
 
     val_concept_matrix = val_concept_matrix[:, highest>args.concept_activation_cutoff]
+    if d_test is not None:
+        test_concept_matrix = test_concept_matrix[:, highest>args.concept_activation_cutoff]
     
     #learn projection layer
     proj_layer = torch.nn.Linear(in_features=target_features.shape[1], out_features=len(concepts),
@@ -194,6 +244,8 @@ def train_cbm_and_save(args):
                 print("Deleting {}, Iterpretability:{:.3f}".format(concept, sim[i]))
     
     concepts = [concepts[i] for i in range(len(concepts)) if interpretable[i]]
+    if len(concepts) == 0:
+        raise ValueError("No concepts survived interpretability cutoff: {}".format(args.interpretability_cutoff))
     
     del concept_matrix, val_concept_matrix
     
@@ -209,9 +261,20 @@ def train_cbm_and_save(args):
     if args.dataset == "esc50":
         train_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_train).samples]
         val_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_val).samples]
+        test_targets = None
+        if d_test is not None:
+            test_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_test).samples]
     else:
         train_targets = data_utils.get_targets_only(d_train)
         val_targets = data_utils.get_targets_only(d_val)
+        test_targets = data_utils.get_targets_only(d_test) if d_test is not None else None
+
+    if len(train_targets) != target_features.shape[0]:
+        raise ValueError("Train targets/features mismatch: {} vs {}".format(len(train_targets), target_features.shape[0]))
+    if len(val_targets) != val_target_features.shape[0]:
+        raise ValueError("Val targets/features mismatch: {} vs {}".format(len(val_targets), val_target_features.shape[0]))
+    if d_test is not None and len(test_targets) != test_target_features.shape[0]:
+        raise ValueError("Test targets/features mismatch: {} vs {}".format(len(test_targets), test_target_features.shape[0]))
     
     with torch.no_grad():
         train_c = proj_layer(target_features.detach())
@@ -219,6 +282,7 @@ def train_cbm_and_save(args):
         
         train_mean = torch.mean(train_c, dim=0, keepdim=True)
         train_std = torch.std(train_c, dim=0, keepdim=True)
+        train_std = torch.clamp(train_std, min=1e-6)
         
         train_c -= train_mean
         train_c /= train_std
@@ -232,6 +296,12 @@ def train_cbm_and_save(args):
         val_y = torch.LongTensor(val_targets)
 
         val_ds = TensorDataset(val_c,val_y)
+
+        if d_test is not None:
+            test_c = proj_layer(test_target_features.detach())
+            test_c -= train_mean
+            test_c /= train_std
+            test_y = torch.LongTensor(test_targets)
 
 
     indexed_train_loader = DataLoader(indexed_train_ds, batch_size=args.saga_batch_size, shuffle=True)
@@ -253,6 +323,15 @@ def train_cbm_and_save(args):
                       val_loader=val_loader, do_zero=False, metadata=metadata, n_ex=len(target_features), n_classes = len(classes))
     W_g = output_proj['path'][0]['weight']
     b_g = output_proj['path'][0]['bias']
+
+    test_metrics = None
+    if d_test is not None:
+        with torch.no_grad():
+            logits_test = F.linear(test_c.to(W_g.device), W_g, b_g).cpu()
+            test_loss = F.cross_entropy(logits_test, test_y).item()
+            test_acc = (torch.argmax(logits_test, dim=1) == test_y).float().mean().item()
+            test_metrics = {"loss": test_loss, "accuracy": test_acc}
+        print("Held-out test -> loss: {:.4f}, acc: {:.4f}".format(test_metrics["loss"], test_metrics["accuracy"]))
     
     save_name = "{}/{}_cbm_{}".format(args.save_dir, args.dataset, datetime.datetime.now().strftime("%Y_%m_%d_%H_%M"))
     os.mkdir(save_name)
@@ -275,9 +354,12 @@ def train_cbm_and_save(args):
         for key in ('lam', 'lr', 'alpha', 'time'):
             out_dict[key] = float(output_proj['path'][0][key])
         out_dict['metrics'] = output_proj['path'][0]['metrics']
+        out_dict['splits'] = {"train": d_train, "val": d_val, "test": d_test}
         nnz = (W_g.abs() > 1e-5).sum().item()
         total = W_g.numel()
         out_dict['sparsity'] = {"Non-zero weights":nnz, "Total weights":total, "Percentage non-zero":nnz/total}
+        if test_metrics is not None:
+            out_dict['test_metrics'] = test_metrics
         json.dump(out_dict, f, indent=2)
     
 if __name__=='__main__':

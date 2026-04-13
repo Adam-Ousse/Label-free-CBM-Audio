@@ -1,35 +1,27 @@
-import requests
 import random
 import numpy as np
 import torch
-import math
-from tqdm import tqdm
+
 import clap_utils
-from sentence_transformers import SentenceTransformer    
-    
-def get_init_conceptnet(classes, limit=200, relations=["HasA", "IsA", "PartOf", "HasProperty", "MadeOf", "AtLocation"]):
-    concepts = set()
+from sentence_transformers import SentenceTransformer
 
-    for cls in tqdm(classes):
-        words = cls.replace(',', '').split(' ')
-        for word in words:
-            obj = requests.get('http://api.conceptnet.io/c/en/{}?limit={}'.format(word, limit)).json()
-            obj.keys()
-            for dicti in obj['edges']:
-                rel = dicti['rel']['label']
-                try:
-                    if dicti['start']['language'] != 'en' or dicti['end']['language'] != 'en':
-                        continue
-                except(KeyError):
-                    continue
 
-                if rel in relations:
-                    if rel in ["IsA"]: 
-                        concepts.add(dicti['end']['label'])
-                    else:
-                        concepts.add(dicti['start']['label'])
-                        concepts.add(dicti['end']['label'])
-    return concepts
+_MPNET_MODEL = None
+_CLAP_BUNDLES = {}
+
+
+def _get_mpnet_model():
+    global _MPNET_MODEL
+    if _MPNET_MODEL is None:
+        _MPNET_MODEL = SentenceTransformer("all-mpnet-base-v2")
+    return _MPNET_MODEL
+
+
+def _get_clap_bundle(clap_model, device):
+    key = (clap_model, device)
+    if key not in _CLAP_BUNDLES:
+        _CLAP_BUNDLES[key] = clap_utils.load_clap_model(model_name=clap_model, device=device)
+    return _CLAP_BUNDLES[key]
 
 
 def remove_too_long(concepts, max_len, print_prob=0):
@@ -71,7 +63,7 @@ def filter_too_similar_to_cls(concepts, classes, sim_cutoff, device="cuda", prin
             pass
     print(len(concepts))
         
-    mpnet_model = SentenceTransformer('all-mpnet-base-v2')
+    mpnet_model = _get_mpnet_model()
     class_features_m = mpnet_model.encode(classes)
     concept_features_m = mpnet_model.encode(concepts)
     dot_prods_m = class_features_m @ concept_features_m.T
@@ -88,7 +80,6 @@ def filter_too_similar_to_cls(concepts, classes, sim_cutoff, device="cuda", prin
                     to_delete.append(j)
                     if random.random()<print_prob:
                         print("Class:{} - Concept:{}, sim:{:.3f} - Deleting {}".format(classes[i], concepts[j], dot_prods[i,j], concepts[j]))
-                        print("".format(concepts[j]))
                         
     to_delete = sorted(to_delete)[::-1]
 
@@ -99,7 +90,7 @@ def filter_too_similar_to_cls(concepts, classes, sim_cutoff, device="cuda", prin
 
 def filter_too_similar(concepts, sim_cutoff, device="cuda", print_prob=0):
     
-    mpnet_model = SentenceTransformer('all-mpnet-base-v2')
+    mpnet_model = _get_mpnet_model()
     concept_features = mpnet_model.encode(concepts)
         
     dot_prods_m = concept_features @ concept_features.T
@@ -133,7 +124,7 @@ def filter_too_similar(concepts, sim_cutoff, device="cuda", print_prob=0):
 
 def _clap_text_dot_prods(list1, list2, device="cuda", clap_model="laion/clap-htsat-unfused", batch_size=256):
     "Returns: numpy array with CLAP text-space dot products"
-    clap_bundle = clap_utils.load_clap_model(model_name=clap_model, device=device)
+    clap_bundle = _get_clap_bundle(clap_model=clap_model, device=device)
     features1 = clap_utils.encode_text(list1, clap_bundle=clap_bundle, batch_size=batch_size, normalize=True)
     features2 = clap_utils.encode_text(list2, clap_bundle=clap_bundle, batch_size=batch_size, normalize=True)
     dot_prods = features1 @ features2.T
@@ -143,7 +134,7 @@ def most_similar_concepts(word, concepts, device="cuda"):
     """
     returns most similar words to a given concepts
     """
-    mpnet_model = SentenceTransformer('all-mpnet-base-v2')
+    mpnet_model = _get_mpnet_model()
     word_features = mpnet_model.encode([word])
     concept_features = mpnet_model.encode(concepts)
         
