@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESC-50 CBM Concept Explorer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main class="container">
+    <section class="panel header-panel">
+      <h1>ESC-50 CBM Concept Explorer</h1>
+      <p>Drag and drop a sound file to inspect class prediction and top concept influences.</p>
+    </section>
+
+    <section class="panel upload-panel">
+      <div id="dropzone" class="dropzone">
+        <input id="fileInput" type="file" accept="audio/*" hidden>
+        <div class="drop-inner">
+          <p class="drop-title">Drop audio here</p>
+          <p class="drop-subtitle">or click to browse</p>
+          <p class="drop-hint">Supported: wav, mp3, flac, ogg, m4a</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label for="topK">Top concepts per side</label>
+        <input id="topK" type="number" min="3" max="20" value="10">
+        <button id="analyzeBtn" type="button" disabled>Analyze</button>
+      </div>
+
+      <div id="fileMeta" class="file-meta hidden"></div>
+      <audio id="player" class="hidden" controls></audio>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="resultPanel" class="panel result-panel hidden">
+      <div class="result-summary">
+        <div class="metric">
+          <span class="metric-label">Predicted class</span>
+          <span id="predClass" class="metric-value">-</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Confidence</span>
+          <span id="predConf" class="metric-value">-</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Model folder</span>
+          <span id="modelDir" class="metric-value small">-</span>
+        </div>
+      </div>
+
+      <div class="figure-wrap">
+        <img id="influenceFigure" alt="Concept influence chart">
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
