@@ -1,320 +1,218 @@
 #!/usr/bin/env python3
-"""Download and segment AudioSet clips locally using yt-dlp and ffmpeg.
+"""Load AudioSet directly from Hugging Face Datasets.
 
-The script reads official AudioSet CSV metadata and reconstructs local waveform clips.
-It is best-effort: unavailable YouTube videos are skipped or reported as failures.
+This replaces the old yt-dlp/ffmpeg reconstruction pipeline. Audio and labels are
+read from `agkphysics/AudioSet`, which already provides decoded waveforms.
 """
 
 from __future__ import annotations
 
 import argparse
-import csv
-import logging
-import tempfile
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass
+import json
+import os
+import warnings
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional
+from typing import Iterable
 
-from download_utils import (
-    AUDIOSET_DEFAULT_SAMPLE_RATE,
-    audioset_clip_filename,
-    audioset_clip_stem,
-    ensure_directory,
-    read_wav_info,
-    require_command,
-    run_command,
-    safe_remove,
-    validate_wav_file,
-)
+# Disable TorchCodec audio decoding (unavailable on cluster due to missing CUDA deps)
+os.environ.setdefault("HF_DATASETS_DISABLE_TORCHCODEC", "1")
 
-LOGGER = logging.getLogger("download_audioset")
-MAX_ITEMS_CAP = 2000
+from datasets import Audio, load_dataset
 
-
-@dataclass(frozen=True)
-class AudioSetRow:
-    youtube_id: str
-    start_sec: float
-    end_sec: float
-    labels_mid: List[str]
+HF_DATASET_ID = "agkphysics/AudioSet"
+SPLIT_ALIASES = {
+    "balanced_train": "train",
+    "balanced": "train",
+    "train": "train",
+    "unbalanced_train": "train",
+    "unbalanced": "train",
+    "eval": "test",
+    "validation": "test",
+    "valid": "test",
+    "test": "test",
+}
 
 
-def parse_segment_csv(csv_path: Path) -> List[AudioSetRow]:
-    if not csv_path.exists():
-        raise FileNotFoundError(f"AudioSet CSV not found: {csv_path}")
-
-    rows: List[AudioSetRow] = []
-    with csv_path.open("r", encoding="utf-8") as f:
-        reader = csv.reader(f)
-        for row in reader:
-            if not row or row[0].startswith("#"):
-                continue
-            if row[0].strip() == "YTID":
-                continue
-            if len(row) < 4:
-                continue
-            try:
-                youtube_id = row[0].strip()
-                start_sec = float(row[1].strip())
-                end_sec = float(row[2].strip())
-                labels_mid = [token.strip() for token in row[3].strip().strip('"').split(",") if token.strip()]
-            except ValueError:
-                continue
-            rows.append(AudioSetRow(youtube_id, start_sec, end_sec, labels_mid))
-    return rows
+def resolve_split(split: str) -> str:
+    return SPLIT_ALIASES.get(split.strip().lower(), split)
 
 
-def infer_split_name(csv_path: Path) -> str:
-    stem = csv_path.stem.lower()
-    if "balanced" in stem:
-        return "balanced_train"
-    if "eval" in stem:
-        return "eval"
-    return stem
+def iter_examples(ds: Iterable, max_items: int | None):
+    count = 0
+    for example in ds:
+        yield example
+        count += 1
+        if max_items is not None and count >= max_items:
+            break
 
 
-def _download_source_audio(
-    youtube_id: str,
-    temp_dir: Path,
-    yt_dlp_path: str,
-    retries: int,
-) -> Path:
-    output_template = str(temp_dir / f"{youtube_id}.%(ext)s")
-    url = f"https://www.youtube.com/watch?v={youtube_id}"
-    args = [
-        yt_dlp_path,
-        "--no-playlist",
-        "-f",
-        "bestaudio/best",
-        "--retries",
-        str(retries),
-        "--fragment-retries",
-        str(retries),
-        "-o",
-        output_template,
-        url,
-    ]
-    result = run_command(args)
-    if result.returncode != 0:
-        raise RuntimeError(result.stderr.strip() or result.stdout.strip() or "yt-dlp download failed")
-
-    candidates = list(temp_dir.glob(f"{youtube_id}.*"))
-    if not candidates:
-        raise FileNotFoundError(f"yt-dlp completed but no source file was found for {youtube_id}")
-    return candidates[0]
-
-
-def _extract_segment(
-    source_audio: Path,
-    destination: Path,
-    ffmpeg_path: str,
-    start_sec: float,
-    end_sec: float,
-    sample_rate: int,
-    audio_format: str,
-) -> None:
-    ensure_directory(destination.parent)
-    duration = max(0.0, float(end_sec) - float(start_sec))
-    if duration <= 0:
-        raise ValueError(f"Invalid segment duration for {destination.name}: {start_sec} to {end_sec}")
-
-    if audio_format != "wav":
-        raise ValueError(f"Unsupported audio_format={audio_format}. This downloader currently writes WAV clips only.")
-
-    temp_out = destination.with_suffix(".tmp.wav")
-    args = [
-        ffmpeg_path,
-        "-y",
-        "-hide_banner",
-        "-loglevel",
-        "error",
-        "-i",
-        str(source_audio),
-        "-ss",
-        str(start_sec),
-        "-t",
-        str(duration),
-        "-ac",
-        "1",
-        "-ar",
-        str(sample_rate),
-        "-vn",
-        "-c:a",
-        "pcm_s16le",
-        str(temp_out),
-    ]
-    result = run_command(args)
-    if result.returncode != 0:
-        safe_remove(temp_out)
-        raise RuntimeError(result.stderr.strip() or result.stdout.strip() or "ffmpeg extraction failed")
-
-    temp_out.replace(destination)
-
-
-def download_one(
-    row: AudioSetRow,
-    output_dir: Path,
-    yt_dlp_path: str,
-    ffmpeg_path: str,
-    audio_format: str,
-    sample_rate: int,
-    skip_existing: bool,
-    force_redownload: bool,
-    keep_temp: bool,
-    retries: int,
-) -> Dict:
-    clip_name = audioset_clip_filename(row.youtube_id, row.start_sec, row.end_sec, audio_format=audio_format)
-    final_path = output_dir / clip_name
-
-    if final_path.exists() and validate_wav_file(final_path) and not force_redownload:
-        return {"status": "skipped", "path": str(final_path), "youtube_id": row.youtube_id}
-
-    if final_path.exists() and force_redownload:
-        safe_remove(final_path)
-
-    temp_root = Path(tempfile.mkdtemp(prefix="audioset_dl_", dir=str(output_dir)))
-    try:
-        source_audio = _download_source_audio(row.youtube_id, temp_root, yt_dlp_path, retries=retries)
-        _extract_segment(
-            source_audio=source_audio,
-            destination=final_path,
-            ffmpeg_path=ffmpeg_path,
-            start_sec=row.start_sec,
-            end_sec=row.end_sec,
-            sample_rate=sample_rate,
-            audio_format=audio_format,
-        )
-        if not validate_wav_file(final_path):
-            raise RuntimeError(f"Extracted clip is not a valid WAV file: {final_path}")
-        return {"status": "downloaded", "path": str(final_path), "youtube_id": row.youtube_id}
-    finally:
-        if keep_temp:
-            LOGGER.info("Keeping temp directory: %s", temp_root)
+def sanitize_filename(value: str) -> str:
+    keep = []
+    for c in value:
+        if c.isalnum() or c in {"-", "_", "."}:
+            keep.append(c)
         else:
-            safe_remove(temp_root)
+            keep.append("_")
+    out = "".join(keep).strip("._")
+    return out or "sample"
+
+
+def write_audio_bytes(path: Path, audio_bytes: bytes) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(audio_bytes)
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Download AudioSet clips from local CSV metadata")
-    parser.add_argument("--csv", type=Path, required=True, help="AudioSet segment CSV (balanced_train or eval)")
-    parser.add_argument("--output_dir", type=Path, required=True, help="Directory to store reconstructed clips")
-    parser.add_argument("--audio_format", type=str, default="wav", help="Output audio format (wav only supported)")
-    parser.add_argument("--jobs", type=int, default=4, help="Number of parallel download workers")
+    parser = argparse.ArgumentParser(description="Inspect/cache AudioSet from Hugging Face datasets")
+    parser.add_argument("--split", type=str, default="balanced", help="Split: balanced, unbalanced, eval, or train")
+    parser.add_argument("--streaming", action="store_true", help="Enable Hugging Face streaming mode")
     parser.add_argument(
-        "--max_items",
-        type=int,
-        default=MAX_ITEMS_CAP,
-        help="Limit how many rows to process (hard-capped at 2000)",
+        "--decode_audio",
+        action="store_true",
+        help="Decode waveform arrays from the audio column (requires TorchCodec runtime dependencies)",
     )
-    parser.add_argument("--skip_existing", action="store_true", help="Skip clips that already exist and validate")
-    parser.add_argument("--force_redownload", action="store_true", help="Overwrite existing clips")
-    parser.add_argument("--fail_fast", action="store_true", help="Stop immediately on the first failure")
-    parser.add_argument("--keep_temp", action="store_true", help="Keep intermediate temp download files")
-    parser.add_argument("--yt_dlp_path", type=str, default="yt-dlp", help="yt-dlp executable path")
-    parser.add_argument("--ffmpeg_path", type=str, default="ffmpeg", help="ffmpeg executable path")
-    parser.add_argument("--sample_rate", type=int, default=AUDIOSET_DEFAULT_SAMPLE_RATE, help="Output sample rate")
-    parser.add_argument("--retries", type=int, default=3, help="Retries for yt-dlp downloads")
-    parser.add_argument("--log_level", type=str, default="INFO", help="Logging level")
+    parser.add_argument("--cache_dir", type=Path, default=None, help="Optional Hugging Face cache directory")
+    parser.add_argument("--max_items", type=int, default=64, help="How many samples to inspect")
+    parser.add_argument(
+        "--export_dir",
+        type=Path,
+        default=None,
+        help="Optional directory to save inspected examples as WAV files",
+    )
+    parser.add_argument(
+        "--export_limit",
+        type=int,
+        default=None,
+        help="Maximum number of WAV files to export (defaults to max_items)",
+    )
+    parser.add_argument("--overwrite", action="store_true", help="Overwrite WAV files if they already exist")
+    parser.add_argument(
+        "--summary_out",
+        type=Path,
+        default=Path("data/audioset/summary_hf.json"),
+        help="Where to write a small JSON summary",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    logging.basicConfig(level=getattr(logging, args.log_level.upper(), logging.INFO), format="%(levelname)s: %(message)s")
+    split = resolve_split(args.split)
+    export_requested = args.export_dir is not None
+    should_decode = bool(args.decode_audio)
+    export_limit = args.max_items if args.export_limit is None else max(0, args.export_limit)
 
-    yt_dlp_path = require_command(args.yt_dlp_path, "yt-dlp")
-    ffmpeg_path = require_command(args.ffmpeg_path, "ffmpeg")
+    ds = load_dataset(
+        HF_DATASET_ID,
+        split=split,
+        streaming=args.streaming,
+        cache_dir=str(args.cache_dir) if args.cache_dir is not None else None,
+    )
 
-    rows = parse_segment_csv(args.csv)
-    requested_max_items = args.max_items if args.max_items is not None else MAX_ITEMS_CAP
-    if requested_max_items > MAX_ITEMS_CAP:
-        LOGGER.warning(
-            "Requested --max_items=%s exceeds hard cap; using %s",
-            requested_max_items,
-            MAX_ITEMS_CAP,
-        )
-    effective_max_items = min(requested_max_items, MAX_ITEMS_CAP)
-    rows = rows[:effective_max_items]
+    # Keep decoding disabled by default to avoid TorchCodec runtime failures on systems
+    # without matching FFmpeg/CUDA shared libraries.
+    if not should_decode:
+        ds = ds.cast_column("audio", Audio(decode=False))
 
-    split_name = infer_split_name(args.csv)
-    ensure_directory(args.output_dir)
+    inspected = 0
+    sample_rates = {}
+    min_len = None
+    max_len = None
+    first_ids = []
+    decoded_audio = bool(should_decode)
+    exported = 0
+    skipped_export_no_audio = 0
+    exported_extensions = {}
 
-    LOGGER.info("Processing %s rows from %s", len(rows), split_name)
-    LOGGER.info("Output directory: %s", args.output_dir)
+    if export_requested:
+        args.export_dir.mkdir(parents=True, exist_ok=True)
 
-    counts = {"downloaded": 0, "skipped": 0, "failed": 0}
-    failures: List[str] = []
+    try:
+        for item in iter_examples(ds, args.max_items):
+            audio = item.get("audio", {})
+            arr = audio.get("array", []) if isinstance(audio, dict) else []
+            sr = int(audio.get("sampling_rate", 0)) if isinstance(audio, dict) else 0
 
-    if args.jobs <= 1:
-        iterator = enumerate(rows, start=1)
-        for index, row in iterator:
-            try:
-                result = download_one(
-                    row=row,
-                    output_dir=args.output_dir,
-                    yt_dlp_path=yt_dlp_path,
-                    ffmpeg_path=ffmpeg_path,
-                    audio_format=args.audio_format,
-                    sample_rate=args.sample_rate,
-                    skip_existing=args.skip_existing,
-                    force_redownload=args.force_redownload,
-                    keep_temp=args.keep_temp,
-                    retries=args.retries,
-                )
-                counts[result["status"]] += 1
-                LOGGER.info("[%s/%s] %s %s", index, len(rows), result["status"], result["path"])
-            except Exception as exc:
-                counts["failed"] += 1
-                message = f"{row.youtube_id} {row.start_sec}-{row.end_sec}: {exc}"
-                failures.append(message)
-                LOGGER.warning(message)
-                if args.fail_fast:
-                    raise
-    else:
-        with ThreadPoolExecutor(max_workers=args.jobs) as executor:
-            futures = {
-                executor.submit(
-                    download_one,
-                    row,
-                    args.output_dir,
-                    yt_dlp_path,
-                    ffmpeg_path,
-                    args.audio_format,
-                    args.sample_rate,
-                    args.skip_existing,
-                    args.force_redownload,
-                    args.keep_temp,
-                    args.retries,
-                ): row
-                for row in rows
-            }
-            for future in as_completed(futures):
-                row = futures[future]
-                try:
-                    result = future.result()
-                    counts[result["status"]] += 1
-                    LOGGER.info("%s %s", result["status"], result["path"])
-                except Exception as exc:
-                    counts["failed"] += 1
-                    message = f"{row.youtube_id} {row.start_sec}-{row.end_sec}: {exc}"
-                    failures.append(message)
-                    LOGGER.warning(message)
-                    if args.fail_fast:
-                        for pending in futures:
-                            pending.cancel()
-                        raise
+            # If decode fails unexpectedly or was disabled, keep summary generation working.
+            if isinstance(audio, dict) and "array" not in audio:
+                decoded_audio = False
 
-    print("AudioSet download summary")
-    print(f"  split: {split_name}")
-    print(f"  processed: {len(rows)}")
-    print(f"  downloaded: {counts['downloaded']}")
-    print(f"  skipped_existing: {counts['skipped']}")
-    print(f"  failures: {counts['failed']}")
-    if failures:
-        print("  sample failures:")
-        for failure in failures[:10]:
-            print(f"    - {failure}")
+            inspected += 1
+            sample_rates[str(sr)] = sample_rates.get(str(sr), 0) + 1
+
+            n = len(arr) if hasattr(arr, "__len__") else 0
+            min_len = n if min_len is None else min(min_len, n)
+            max_len = n if max_len is None else max(max_len, n)
+
+            if len(first_ids) < 10:
+                first_ids.append(str(item.get("video_id", f"idx_{inspected - 1}")))
+
+            if export_requested and exported < export_limit:
+                audio_bytes = audio.get("bytes") if isinstance(audio, dict) else None
+                source_path = str(audio.get("path", "")) if isinstance(audio, dict) else ""
+                suffix = Path(source_path).suffix or ".flac"
+
+                if not audio_bytes:
+                    skipped_export_no_audio += 1
+                else:
+                    video_id = str(item.get("video_id", f"idx_{inspected - 1}"))
+                    stem = f"{inspected - 1:06d}_{sanitize_filename(video_id)}"
+                    out_path = args.export_dir / f"{stem}{suffix}"
+                    if out_path.exists() and not args.overwrite:
+                        continue
+                    write_audio_bytes(out_path, audio_bytes)
+                    exported += 1
+                    exported_extensions[suffix] = exported_extensions.get(suffix, 0) + 1
+    finally:
+        # Suppress known HF streaming cleanup warnings when closing the dataset.
+        # Export is already complete and saved to disk; this is cosmetic cleanup noise.
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", message=".*Bad file descriptor.*")
+
+        payload = {
+            "dataset": HF_DATASET_ID,
+            "split": split,
+            "streaming": bool(args.streaming),
+            "decode_audio": bool(args.decode_audio),
+            "effective_decode_audio": bool(should_decode),
+            "decoded_audio_observed": decoded_audio,
+            "inspected_examples": inspected,
+            "sample_rates": sample_rates,
+            "min_num_samples": min_len,
+            "max_num_samples": max_len,
+            "example_video_ids": first_ids,
+            "schema": {
+                "audio": {"array": "waveform", "sampling_rate": "int"},
+                "labels": "list[int]",
+                "human_labels": "list[str]",
+                "video_id": "str",
+            },
+            "export": {
+                "requested": export_requested,
+                "dir": str(args.export_dir) if args.export_dir is not None else None,
+                "export_limit": export_limit if export_requested else None,
+                "exported_audio_files": exported,
+                "skipped_missing_audio": skipped_export_no_audio,
+                "exported_extensions": exported_extensions,
+                "overwrite": bool(args.overwrite),
+            },
+        }
+
+        args.summary_out.parent.mkdir(parents=True, exist_ok=True)
+        with args.summary_out.open("w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2)
+
+        print("AudioSet Hugging Face summary")
+        print(f"  dataset: {HF_DATASET_ID}")
+        print(f"  split: {split}")
+        print(f"  streaming: {args.streaming}")
+        print(f"  inspected_examples: {inspected}")
+        print(f"  sample_rates: {sample_rates}")
+        if export_requested:
+            print(f"  export_dir: {args.export_dir}")
+            print(f"  exported_audio_files: {exported}")
+            print(f"  skipped_missing_audio: {skipped_export_no_audio}")
+        print(f"  wrote_summary: {args.summary_out}")
 
 
 if __name__ == "__main__":

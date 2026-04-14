@@ -93,7 +93,8 @@ def get_audio_save_names(clap_model_name, target_name, target_layer, split, conc
 
 
 def save_audio_activations(clap_model_name, target_name, target_layers, dataset_name, split,
-                           concept_set, batch_size, device, pool_mode, save_dir):
+                           concept_set, batch_size, device, pool_mode, save_dir,
+                           hf_streaming=False, hf_cache_dir=None, max_items=None):
     """Save backbone audio features and CLAP audio/text embeddings for a split."""
     target_save_name, clap_audio_save_name, clap_text_save_name = get_audio_save_names(
         clap_model_name,
@@ -113,7 +114,13 @@ def save_audio_activations(clap_model_name, target_name, target_layers, dataset_
         return
 
     clap_bundle = clap_utils.load_clap_model(model_name=clap_model_name, device=device)
-    audio_dataset = data_utils.get_audio_dataset(dataset_name=dataset_name, split=split)
+    audio_dataset = data_utils.get_audio_dataset(
+        dataset_name=dataset_name,
+        split=split,
+        hf_streaming=hf_streaming if dataset_name == "audioset" else False,
+        hf_cache_dir=hf_cache_dir,
+        max_items=max_items,
+    )
 
     with open(concept_set, "r", encoding="utf-8") as f:
         concepts = [line.strip() for line in f.readlines() if line.strip()]

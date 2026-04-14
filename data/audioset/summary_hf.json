@@ -1,0 +1,44 @@
+{
+  "dataset": "agkphysics/AudioSet",
+  "split": "train",
+  "streaming": true,
+  "decode_audio": false,
+  "effective_decode_audio": false,
+  "decoded_audio_observed": false,
+  "inspected_examples": 100,
+  "sample_rates": {
+    "0": 100
+  },
+  "min_num_samples": 0,
+  "max_num_samples": 0,
+  "example_video_ids": [
+    "--PJHxphWEs",
+    "--aE2O5G5WE",
+    "--cB2ZVjpnA",
+    "--aaILOrkII",
+    "-0DLPzsiXXE",
+    "--ekDLDTUXA",
+    "-0DdlOuIFUI",
+    "-0SdAVK79lg",
+    "-1LrH01Ei1w",
+    "-0O3e95y4gE"
+  ],
+  "schema": {
+    "audio": {
+      "array": "waveform",
+      "sampling_rate": "int"
+    },
+    "labels": "list[int]",
+    "human_labels": "list[str]",
+    "video_id": "str"
+  },
+  "export": {
+    "requested": true,
+    "dir": "data/audioset/clips",
+    "export_limit": 100,
+    "exported_audio_files": 0,
+    "skipped_missing_audio": 0,
+    "exported_extensions": {},
+    "overwrite": false
+  }
+}

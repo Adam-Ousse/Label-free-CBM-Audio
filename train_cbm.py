@@ -41,6 +41,9 @@ parser.add_argument("--train_split", type=str, default=None, help="Train split f
 parser.add_argument("--val_split", type=str, default=None, help="Validation split for audio datasets")
 parser.add_argument("--test_split", type=str, default=None, help="Optional test split for post-training evaluation")
 parser.add_argument("--enforce_esc50_fold1_protocol", action='store_true', help="Use fold1_test/fold1_val/fold1_train protocol for ESC-50")
+parser.add_argument("--audioset_streaming", action='store_true', help="Use Hugging Face streaming for AudioSet")
+parser.add_argument("--audioset_cache_dir", type=str, default=None, help="Optional Hugging Face cache directory")
+parser.add_argument("--audioset_max_items", type=int, default=None, help="Optional cap on loaded AudioSet samples")
 
 def train_cbm_and_save(args):
     
@@ -55,7 +58,7 @@ def train_cbm_and_save(args):
     similarity_fn = similarity.cos_similarity_cubed_single
     
     if args.dataset == "audioset":
-        d_train = args.train_split or "balanced_train"
+        d_train = args.train_split or "balanced"
         d_val = args.val_split or "eval"
         d_test = args.test_split
     elif args.dataset == "esc50":
@@ -106,6 +109,9 @@ def train_cbm_and_save(args):
             device=args.device,
             pool_mode="avg",
             save_dir=args.activation_dir,
+            hf_streaming=args.audioset_streaming,
+            hf_cache_dir=args.audioset_cache_dir,
+            max_items=args.audioset_max_items,
         )
 
     target_save_name, clap_audio_save_name, clap_text_save_name = utils.get_audio_save_names(

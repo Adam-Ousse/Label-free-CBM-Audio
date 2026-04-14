@@ -11,8 +11,8 @@ Current multimodal concept scoring now uses **CLAP audio-text embeddings** (repl
 ## What is implemented now
 
 - Reproducible ESC-50 preparation script
-- Reproducible AudioSet preparation script
-- JSONL manifest generation
+- Hugging Face AudioSet loading via `datasets.load_dataset`
+- JSONL manifest generation for ESC-50
 - Label mapping files for both datasets
 - Unified PyTorch audio manifest dataset/dataloader API in `data_utils.py`
 - Multi-label support for AudioSet targets
@@ -30,10 +30,10 @@ Current multimodal concept scoring now uses **CLAP audio-text embeddings** (repl
 ## Repository layout for this milestone
 
 - `data/prepare_esc50.py`: parse official ESC-50 metadata and build manifests/mappings
-- `data/prepare_audioset.py`: parse AudioSet CSV metadata and build manifests/mappings
+- `data/download_audioset.py`: inspect/cache Hugging Face AudioSet split metadata
 - `clap_utils.py`: CLAP loading + batched audio/text encoding + similarity helper
 - `data/esc50/`: ESC-50 mappings + manifests output directory
-- `data/audioset/`: AudioSet mappings + manifests output directory
+- `data/audioset/`: AudioSet mappings + summary output directory
 - `data/esc50_classes.txt`: ESC-50 class names
 - `data/audioset_classes.txt`: generated from AudioSet class labels CSV
 - `data_utils.py`: unified dataset + dataloader entry point for audio datasets
@@ -48,26 +48,14 @@ Use Python 3.9+.
 pip install -r requirements.txt
 ```
 
-For the download stage, install these system tools as well:
-
-- `yt-dlp` for AudioSet reconstruction
-- `ffmpeg` for segment extraction and WAV conversion
-
-On Ubuntu/Debian, a typical setup is:
-
-```bash
-sudo apt install ffmpeg yt-dlp
-```
+AudioSet now uses Hugging Face Datasets directly (no yt-dlp/ffmpeg dependency for AudioSet ingestion).
 
 ## Download and prepare
 
-The pipeline is intentionally split into three stages:
+The pipeline is intentionally split into two stages:
 
-1. download or validate raw audio files
-2. prepare manifests and label mappings
-3. run the dataloader sanity check
-
-The prep scripts do **not** fetch data from the internet themselves.
+1. prepare or validate ESC-50 local manifests
+2. run the dataloader sanity check (ESC-50 + Hugging Face AudioSet)
 
 ## ESC-50 setup
 
@@ -111,48 +99,30 @@ python data/prepare_esc50.py \
   - `train.jsonl`, `val.jsonl`, `test.jsonl`
 - Default behavior uses `default_test_fold=1` and `val_fold=(test_fold+1) mod 5`
 
-## AudioSet setup
+## AudioSet setup (Hugging Face)
 
-1. Download AudioSet metadata CSVs:
-- `class_labels_indices.csv`
-- `balanced_train_segments.csv`
-- `eval_segments.csv`
+AudioSet is now loaded directly from:
 
-2. Reconstruct local clips from the CSVs using the downloader.
+- `agkphysics/AudioSet`
 
-```bash
-python data/download_audioset.py \
-  --csv data/audioset/csv/balanced_train_segments.csv \
-  --output_dir data/audioset/clips \
-  --jobs 4
-```
+Supported split names in this repo are:
 
-You can run the same script on `eval_segments.csv` to reconstruct the eval split.
+- `balanced` (or alias `balanced_train`)
+- `unbalanced`
+- `eval`
+- `train` (forwarded to the HF dataset split as-is)
 
-3. Point the prepare script at the reconstructed clips directory.
-
-4. Generate manifests/mappings:
+Optional inspection/caching helper:
 
 ```bash
-python data/prepare_audioset.py \
-  --class_labels_csv /path/to/class_labels_indices.csv \
-  --balanced_csv /path/to/balanced_train_segments.csv \
-  --eval_csv /path/to/eval_segments.csv \
-  --clips_root /path/to/local/audioset/clips \
-  --out_root data/audioset \
-  --repo_root .
+python data/download_audioset.py --split balanced --max_items 64
 ```
 
-### AudioSet missing-clip behavior
+Streaming mode for very large splits:
 
-- Missing local clips are skipped by default (counts reported in `data/audioset/summary.json`)
-- To fail hard on missing clips, add `--fail_on_missing`
-
-### Download caveats
-
-- AudioSet download is best-effort because some YouTube videos are deleted or unavailable.
-- Missing clips are logged and skipped rather than crashing the entire run unless `--fail_fast` is used.
-- The downloader depends on external `yt-dlp` and `ffmpeg` binaries.
+```bash
+python data/download_audioset.py --split unbalanced --streaming --max_items 128
+```
 
 ## Downloaded audio validation
 
@@ -179,27 +149,20 @@ python data/check_downloaded_audio.py --audio_dir data/audioset/clips
 }
 ```
 
-### AudioSet sample
+### AudioSet sample (from Hugging Face)
 
 ```json
 {
-  "id": "YOUTUBEID_30_40",
-  "youtube_id": "YOUTUBEID",
-  "start_sec": 30.0,
-  "end_sec": 40.0,
-  "audio_path": "data/audioset/clips/YOUTUBEID_30_40.wav",
-  "labels_mid": ["/m/068hy", "/m/07q6cd_"],
-  "label_idx": [23, 119],
-  "sample_rate": 16000,
-  "duration": 10.0,
-  "dataset": "audioset"
+  "audio": {"array": "waveform", "sampling_rate": 48000},
+  "labels": [23, 119],
+  "human_labels": ["Dog", "Bark"],
+  "video_id": "YOUTUBEID"
 }
 ```
 
 ## Unified data API (`data_utils.py`)
 
 - `get_dataset_classes(dataset_name)`
-- `get_audio_manifest_path(dataset_name, split)`
 - `get_audio_dataset(dataset_name, split, ...)`
 - `get_audio_dataloader(dataset_name, split, ...)`
 - `get_audio_label_mappings(dataset_name)`
@@ -221,21 +184,21 @@ Defaults:
 - mono waveform
 - sample rate: 16000
 - ESC-50 clip duration: 5.0s (pad/truncate)
-- AudioSet clip duration: 10.0s (pad/truncate)
+- AudioSet clip duration: 10.0s (pad/truncate, loaded from HF audio arrays)
 
 ## Sanity check
 
-After generating manifests, run:
+After generating ESC-50 manifests, run:
 
 ```bash
-python check_audio_dataloader.py
+python check_audio_dataloader.py --audioset_split balanced
 ```
 
 This script:
 - loads ESC-50 and AudioSet datasets
 - prints dataset sizes and class counts
 - loads one batch from each and prints tensor shapes
-- fails loudly if manifests or paths are invalid
+- fails loudly if ESC-50 manifests are invalid or HF AudioSet cannot be loaded
 
 ## Notes for teammates
 

@@ -19,3 +19,5 @@ data/audioset/clips/
 data/audioset/clips_*/
 data/audioset/manifests/
 data/audioset/summary.json
+.bashrc
+
