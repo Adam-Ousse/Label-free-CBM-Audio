@@ -1,13 +1,24 @@
 import os
+
+# Disable TorchCodec audio decoding (unavailable on cluster due to missing CUDA deps)
+os.environ.setdefault("HF_DATASETS_DISABLE_TORCHCODEC", "1")
+
 import json
+import itertools
 import wave
 from pathlib import Path
 
 import numpy as np
 import torch
 from torchvision import datasets, transforms, models
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset, DataLoader, IterableDataset, get_worker_info
 import torch.nn.functional as F
+
+try:
+    from datasets import Audio, load_dataset
+except ModuleNotFoundError:
+    Audio = None
+    load_dataset = None
 
 try:
     import clip
@@ -40,7 +51,8 @@ AUDIO_DEFAULTS = {
     "audioset": {
         "sample_rate": 16000,
         "duration_sec": 10.0,
-        "manifests_dir": "data/audioset/manifests",
+        "hf_dataset": "agkphysics/AudioSet",
+        "hf_default_split": "balanced",
     },
 }
 
@@ -184,6 +196,217 @@ class AudioManifestDataset(Dataset):
         }
 
 
+def _ensure_hf_datasets_available():
+    if load_dataset is None:
+        raise ModuleNotFoundError(
+            "Hugging Face datasets is required for AudioSet loading. "
+            "Install it with: pip install datasets"
+        )
+
+
+def _resolve_hf_audioset_split(split):
+    aliases = {
+        "balanced_train": "train",
+        "balanced": "train",
+        "train": "train",
+        "unbalanced_train": "train",
+        "unbalanced": "train",
+        "eval": "test",
+        "validation": "test",
+        "valid": "test",
+        "test": "test",
+    }
+    key = str(split).strip().lower()
+    return aliases.get(key, split)
+
+
+def _prepare_hf_audio(example_audio, sample_rate, mono, duration_sec):
+    if not isinstance(example_audio, dict):
+        raise ValueError("AudioSet HF sample has invalid 'audio' field")
+
+    # When decode is disabled, HF returns metadata (path/bytes) without waveform array.
+    # Provide a deterministic silent clip so dataloaders and shape checks still work.
+    if "array" not in example_audio or "sampling_rate" not in example_audio:
+        sr = int(sample_rate) if sample_rate is not None else 16000
+        target_len = int(round(float(sr) * float(duration_sec))) if duration_sec is not None else sr
+        target_len = max(target_len, 1)
+        return torch.zeros(1, target_len, dtype=torch.float32), sr
+
+    audio_np = np.asarray(example_audio["array"], dtype=np.float32)
+    sr = int(example_audio["sampling_rate"])
+
+    if audio_np.ndim == 1:
+        audio_t = torch.from_numpy(np.ascontiguousarray(audio_np)).float().unsqueeze(0)
+    elif audio_np.ndim == 2:
+        # HF audio arrays are usually (time, channels).
+        if audio_np.shape[0] < audio_np.shape[1]:
+            audio_np = audio_np.T
+        if mono:
+            audio_t = torch.from_numpy(np.ascontiguousarray(audio_np.mean(axis=0))).float().unsqueeze(0)
+        else:
+            audio_t = torch.from_numpy(np.ascontiguousarray(audio_np)).float()
+    else:
+        raise ValueError("Unsupported HF audio array shape: {}".format(tuple(audio_np.shape)))
+
+    if sample_rate is not None and sr != sample_rate:
+        new_len = int(round(audio_t.shape[-1] * float(sample_rate) / float(sr)))
+        if new_len <= 0:
+            raise ValueError("Invalid resampled length for HF audio sample")
+        audio_t = F.interpolate(audio_t.unsqueeze(0), size=new_len, mode="linear", align_corners=False).squeeze(0)
+        sr = int(sample_rate)
+
+    audio_t = _pad_or_truncate(audio_t, sr, duration_sec)
+    audio_t = torch.clamp(audio_t, min=-1.0, max=1.0)
+    return audio_t, sr
+
+
+def _labels_to_multihot(labels, num_classes, mid_to_idx=None):
+    target = torch.zeros(num_classes, dtype=torch.float32)
+    for label in labels or []:
+        if isinstance(label, str):
+            if mid_to_idx is not None and label in mid_to_idx:
+                idx = int(mid_to_idx[label])
+            else:
+                try:
+                    idx = int(label)
+                except ValueError:
+                    continue
+        else:
+            idx = int(label)
+        if 0 <= idx < num_classes:
+            target[idx] = 1.0
+    return target
+
+
+class HuggingFaceAudioSetDataset(Dataset):
+    """Map-style AudioSet dataset backed directly by Hugging Face Datasets."""
+
+    def __init__(
+        self,
+        split,
+        sample_rate=16000,
+        mono=True,
+        duration_sec=None,
+        cache_dir=None,
+        max_items=None,
+        decode_audio=False,
+    ):
+        _ensure_hf_datasets_available()
+        self.dataset_name = "audioset"
+        self.sample_rate = sample_rate
+        self.mono = mono
+        self.duration_sec = duration_sec
+        self.split = _resolve_hf_audioset_split(split)
+        self.cache_dir = cache_dir
+        self.decode_audio = bool(decode_audio)
+
+        self.ds = load_dataset(
+            AUDIO_DEFAULTS["audioset"]["hf_dataset"],
+            split=self.split,
+            cache_dir=self.cache_dir,
+        )
+        if not self.decode_audio and Audio is not None:
+            self.ds = self.ds.cast_column("audio", Audio(decode=False))
+        if max_items is not None:
+            cap = min(int(max_items), len(self.ds))
+            self.ds = self.ds.select(range(cap))
+
+        self.num_classes = len(get_dataset_classes("audioset"))
+        mid_to_idx_path = AUDIO_MAPPING_FILES["audioset"]["mid_to_idx"]
+        self.mid_to_idx = _load_json(mid_to_idx_path) if os.path.exists(mid_to_idx_path) else None
+
+    def __len__(self):
+        return len(self.ds)
+
+    def __getitem__(self, index):
+        sample = self.ds[index]
+        audio, sr = _prepare_hf_audio(sample.get("audio"), self.sample_rate, self.mono, self.duration_sec)
+        labels = sample.get("labels", [])
+        target = _labels_to_multihot(labels, self.num_classes, mid_to_idx=self.mid_to_idx)
+        video_id = str(sample.get("video_id", ""))
+        sample_id = video_id if video_id else str(index)
+
+        return {
+            "id": sample_id,
+            "audio": audio,
+            "sr": int(sr),
+            "target": target,
+            "path": "hf://{}/{}/{}".format(AUDIO_DEFAULTS["audioset"]["hf_dataset"], self.split, sample_id),
+            "dataset": "audioset",
+            "video_id": video_id,
+            "human_labels": sample.get("human_labels", []),
+        }
+
+
+class HuggingFaceAudioSetIterableDataset(IterableDataset):
+    """Streaming AudioSet dataset for large-scale training with low local storage."""
+
+    def __init__(
+        self,
+        split,
+        sample_rate=16000,
+        mono=True,
+        duration_sec=None,
+        cache_dir=None,
+        max_items=None,
+        decode_audio=False,
+    ):
+        _ensure_hf_datasets_available()
+        self.dataset_name = "audioset"
+        self.sample_rate = sample_rate
+        self.mono = mono
+        self.duration_sec = duration_sec
+        self.split = _resolve_hf_audioset_split(split)
+        self.cache_dir = cache_dir
+        self.max_items = int(max_items) if max_items is not None else None
+        self.decode_audio = bool(decode_audio)
+        self.num_classes = len(get_dataset_classes("audioset"))
+        mid_to_idx_path = AUDIO_MAPPING_FILES["audioset"]["mid_to_idx"]
+        self.mid_to_idx = _load_json(mid_to_idx_path) if os.path.exists(mid_to_idx_path) else None
+        self.ds = load_dataset(
+            AUDIO_DEFAULTS["audioset"]["hf_dataset"],
+            split=self.split,
+            cache_dir=self.cache_dir,
+            streaming=True,
+        )
+        if not self.decode_audio and Audio is not None:
+            self.ds = self.ds.cast_column("audio", Audio(decode=False))
+
+    def __iter__(self):
+        worker_info = get_worker_info()
+        source = iter(self.ds)
+
+        if worker_info is not None:
+            source = itertools.islice(source, worker_info.id, None, worker_info.num_workers)
+
+        yielded = 0
+        for sample in source:
+            if self.max_items is not None and yielded >= self.max_items:
+                break
+            audio, sr = _prepare_hf_audio(sample.get("audio"), self.sample_rate, self.mono, self.duration_sec)
+            labels = sample.get("labels", [])
+            target = _labels_to_multihot(labels, self.num_classes, mid_to_idx=self.mid_to_idx)
+            video_id = str(sample.get("video_id", ""))
+            sample_id = video_id if video_id else str(yielded)
+
+            yielded += 1
+            yield {
+                "id": sample_id,
+                "audio": audio,
+                "sr": int(sr),
+                "target": target,
+                "path": "hf://{}/{}/{}".format(AUDIO_DEFAULTS["audioset"]["hf_dataset"], self.split, sample_id),
+                "dataset": "audioset",
+                "video_id": video_id,
+                "human_labels": sample.get("human_labels", []),
+            }
+
+    def __len__(self):
+        if self.max_items is None:
+            raise TypeError("Streaming AudioSet length is undefined without max_items")
+        return self.max_items
+
+
 def collate_audio_batch(batch):
     audios = torch.stack([item["audio"] for item in batch], dim=0)
     if isinstance(batch[0]["target"], int):
@@ -219,6 +442,11 @@ def get_dataset_classes(dataset_name):
 def get_audio_manifest_path(dataset_name, split):
     if dataset_name not in AUDIO_DEFAULTS:
         raise ValueError("Unknown audio dataset: {}".format(dataset_name))
+    if dataset_name == "audioset":
+        raise ValueError(
+            "AudioSet no longer uses local manifests. Use get_audio_dataset('audioset', split=...) "
+            "to load from Hugging Face datasets directly."
+        )
     manifest_dir = AUDIO_DEFAULTS[dataset_name]["manifests_dir"]
     manifest_path = os.path.join(manifest_dir, "{}.jsonl".format(split))
     if not os.path.exists(manifest_path):
@@ -228,17 +456,39 @@ def get_audio_manifest_path(dataset_name, split):
     return manifest_path
 
 
-def get_audio_dataset(dataset_name, split, manifest_path=None, sample_rate=None, mono=True, duration_sec=None):
+def get_audio_dataset(dataset_name, split, manifest_path=None, sample_rate=None, mono=True, duration_sec=None,
+                      hf_streaming=False, hf_cache_dir=None, max_items=None, hf_decode_audio=True):
     if dataset_name not in AUDIO_DEFAULTS:
         raise ValueError("Unknown audio dataset: {}".format(dataset_name))
-
-    if manifest_path is None:
-        manifest_path = get_audio_manifest_path(dataset_name, split)
 
     if sample_rate is None:
         sample_rate = AUDIO_DEFAULTS[dataset_name]["sample_rate"]
     if duration_sec is None:
         duration_sec = AUDIO_DEFAULTS[dataset_name]["duration_sec"]
+
+    if dataset_name == "audioset":
+        if hf_streaming:
+            return HuggingFaceAudioSetIterableDataset(
+                split=split,
+                sample_rate=sample_rate,
+                mono=mono,
+                duration_sec=duration_sec,
+                cache_dir=hf_cache_dir,
+                max_items=max_items,
+                decode_audio=hf_decode_audio,
+            )
+        return HuggingFaceAudioSetDataset(
+            split=split,
+            sample_rate=sample_rate,
+            mono=mono,
+            duration_sec=duration_sec,
+            cache_dir=hf_cache_dir,
+            max_items=max_items,
+            decode_audio=hf_decode_audio,
+        )
+
+    if manifest_path is None:
+        manifest_path = get_audio_manifest_path(dataset_name, split)
 
     return AudioManifestDataset(
         dataset_name=dataset_name,
@@ -250,7 +500,8 @@ def get_audio_dataset(dataset_name, split, manifest_path=None, sample_rate=None,
 
 
 def get_audio_dataloader(dataset_name, split, batch_size=8, shuffle=False, num_workers=0,
-                         manifest_path=None, sample_rate=None, mono=True, duration_sec=None):
+                         manifest_path=None, sample_rate=None, mono=True, duration_sec=None,
+                         hf_streaming=False, hf_cache_dir=None, max_items=None, hf_decode_audio=True):
     dataset = get_audio_dataset(
         dataset_name=dataset_name,
         split=split,
@@ -258,7 +509,13 @@ def get_audio_dataloader(dataset_name, split, batch_size=8, shuffle=False, num_w
         sample_rate=sample_rate,
         mono=mono,
         duration_sec=duration_sec,
+        hf_streaming=hf_streaming,
+        hf_cache_dir=hf_cache_dir,
+        max_items=max_items,
+        hf_decode_audio=hf_decode_audio,
     )
+    if isinstance(dataset, IterableDataset) and shuffle:
+        raise ValueError("shuffle=True is not supported for streaming AudioSet iterable datasets")
     return DataLoader(
         dataset,
         batch_size=batch_size,
