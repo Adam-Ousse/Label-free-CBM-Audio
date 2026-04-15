@@ -31,13 +31,15 @@ Current multimodal concept scoring now uses **CLAP audio-text embeddings** (repl
 
 - `data/prepare_esc50.py`: parse official ESC-50 metadata and build manifests/mappings
 - `data/download_audioset.py`: inspect/cache Hugging Face AudioSet split metadata
-- `clap_utils.py`: CLAP loading + batched audio/text encoding + similarity helper
+- `clap/`: CLAP package (core loading + batched audio/text encoding + similarity helper)
+- `clap_utils.py`: compatibility shim that re-exports from `clap/`
 - `data/esc50/`: ESC-50 mappings + manifests output directory
 - `data/audioset/`: AudioSet mappings + summary output directory
 - `data/esc50_classes.txt`: ESC-50 class names
 - `data/audioset_classes.txt`: generated from AudioSet class labels CSV
 - `data_utils.py`: unified dataset + dataloader entry point for audio datasets
 - `check_audio_dataloader.py`: quick operational sanity check
+- `archive_legacy/`: legacy vision runtime code moved out of active audio path
 - `archive/original_paper/`: archived image-paper-specific artifacts
 
 ## Install

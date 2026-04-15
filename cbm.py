@@ -7,11 +7,9 @@ import data_utils
 def _build_backbone(model, backbone_name):
     if backbone_name.startswith("ast_"):
         return model
-    if "clip" in backbone_name:
-        return model
-    if "cub" in backbone_name:
-        return lambda x: model.features(x)
-    return torch.nn.Sequential(*list(model.children())[:-1])
+    raise ValueError(
+        "Unsupported backbone '{}' for audio-only runtime.".format(backbone_name)
+    )
 
 class CBM_model(torch.nn.Module):
     def __init__(self, backbone_name, W_c, W_g, b_g, proj_mean, proj_std, device="cuda"):

@@ -2,7 +2,7 @@ import random
 import numpy as np
 import torch
 
-import clap_utils
+from clap import core as clap_utils
 from sentence_transformers import SentenceTransformer
 
 
