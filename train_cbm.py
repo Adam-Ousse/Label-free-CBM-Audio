@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, TensorDataset
 parser = argparse.ArgumentParser(description='Settings for creating CBM')
 
 
-parser.add_argument("--dataset", type=str, default="cifar10")
+parser.add_argument("--dataset", type=str, default="esc50")
 parser.add_argument("--concept_set", type=str, default=None, 
                     help="path to concept set name")
 parser.add_argument("--backbone", type=str, default="clap_audio", help="Which pretrained model to use as backbone")
@@ -80,13 +80,11 @@ def train_cbm_and_save(args):
             d_val = args.val_split or "val"
             d_test = args.test_split
     else:
-        d_train = args.dataset + "_train"
-        d_val = args.dataset + "_val"
-        d_test = args.test_split
+        raise ValueError("Unsupported dataset '{}' for audio-only runtime. Use esc50 or audioset.".format(args.dataset))
 
     print("Using splits -> train: {}, val: {}, test: {}".format(d_train, d_val, d_test))
     
-    # classes: supports both vision and audio datasets
+    # classes for audio datasets
     classes = data_utils.get_dataset_classes(args.dataset)
     
     with open(args.concept_set, "r", encoding="utf-8") as f:
@@ -96,6 +94,10 @@ def train_cbm_and_save(args):
     d_probes = [d_train, d_val]
     if d_test is not None:
         d_probes.append(d_test)
+
+    hf_streaming = bool(getattr(args, "audioset_streaming", False))
+    hf_cache_dir = getattr(args, "audioset_cache_dir", None)
+    hf_max_items = getattr(args, "audioset_max_items", None)
 
     for d_probe in d_probes:
         utils.save_audio_activations(
@@ -109,9 +111,9 @@ def train_cbm_and_save(args):
             device=args.device,
             pool_mode="avg",
             save_dir=args.activation_dir,
-            hf_streaming=args.audioset_streaming,
-            hf_cache_dir=args.audioset_cache_dir,
-            max_items=args.audioset_max_items,
+            hf_streaming=hf_streaming,
+            hf_cache_dir=hf_cache_dir,
+            max_items=hf_max_items,
         )
 
     target_save_name, clap_audio_save_name, clap_text_save_name = utils.get_audio_save_names(
@@ -270,10 +272,6 @@ def train_cbm_and_save(args):
         test_targets = None
         if d_test is not None:
             test_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_test).samples]
-    else:
-        train_targets = data_utils.get_targets_only(d_train)
-        val_targets = data_utils.get_targets_only(d_val)
-        test_targets = data_utils.get_targets_only(d_test) if d_test is not None else None
 
     if len(train_targets) != target_features.shape[0]:
         raise ValueError("Train targets/features mismatch: {} vs {}".format(len(train_targets), target_features.shape[0]))

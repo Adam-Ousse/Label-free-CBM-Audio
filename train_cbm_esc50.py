@@ -102,6 +102,9 @@ def main():
         val_split=args.val_split,
         test_split=args.test_split,
         enforce_esc50_fold1_protocol=(not args.allow_custom_splits),
+        audioset_streaming=False,
+        audioset_cache_dir=None,
+        audioset_max_items=None,
     )
 
     train_cbm.train_cbm_and_save(cbm_args)

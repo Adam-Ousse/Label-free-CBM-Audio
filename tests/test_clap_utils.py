@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-import clap_utils
+from clap import core as clap_utils
 
 
 @pytest.fixture(scope="module")
