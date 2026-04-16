@@ -3,17 +3,26 @@ import numpy as np
 import torch
 
 from clap import core as clap_utils
-from sentence_transformers import SentenceTransformer
 
 
 _MPNET_MODEL = None
 _CLAP_BUNDLES = {}
 
-
+_USE_MPNET = False
 def _get_mpnet_model():
     global _MPNET_MODEL
     if _MPNET_MODEL is None:
-        _MPNET_MODEL = SentenceTransformer("all-mpnet-base-v2")
+        try:
+            from sentence_transformers import SentenceTransformer
+
+            _MPNET_MODEL = SentenceTransformer("all-mpnet-base-v2")
+        except Exception as exc:
+            _MPNET_MODEL = False
+            print(
+                "warning: sentence-transformers unavailable, falling back to CLAP-only text similarity: {}".format(
+                    exc
+                )
+            )
     return _MPNET_MODEL
 
 
@@ -22,6 +31,21 @@ def _get_clap_bundle(clap_model, device):
     if key not in _CLAP_BUNDLES:
         _CLAP_BUNDLES[key] = clap_utils.load_clap_model(model_name=clap_model, device=device)
     return _CLAP_BUNDLES[key]
+
+
+def _hybrid_text_dot_prods(list1, list2, device="cuda"):
+    dot_prods_c = _clap_text_dot_prods(list1, list2, device=device)
+    if not _USE_MPNET:
+        return dot_prods_c
+    mpnet_model = _get_mpnet_model()
+    if mpnet_model is False:
+        return dot_prods_c
+
+    features1 = mpnet_model.encode(list1)
+    features2 = mpnet_model.encode(list2)
+    dot_prods_m = features1 @ features2.T
+    # weighted since mpnet has higher variance
+    return (dot_prods_m + 3 * dot_prods_c) / 4
 
 
 def remove_too_long(concepts, max_len, print_prob=0):
@@ -63,13 +87,7 @@ def filter_too_similar_to_cls(concepts, classes, sim_cutoff, device="cuda", prin
             pass
     print(len(concepts))
         
-    mpnet_model = _get_mpnet_model()
-    class_features_m = mpnet_model.encode(classes)
-    concept_features_m = mpnet_model.encode(concepts)
-    dot_prods_m = class_features_m @ concept_features_m.T
-    dot_prods_c = _clap_text_dot_prods(classes, concepts, device=device)
-    #weighted since mpnet has highger variance
-    dot_prods = (dot_prods_m + 3*dot_prods_c)/4
+    dot_prods = _hybrid_text_dot_prods(classes, concepts, device=device)
     
     to_delete = []
     for i in range(len(classes)):
@@ -89,14 +107,7 @@ def filter_too_similar_to_cls(concepts, classes, sim_cutoff, device="cuda", prin
     return concepts
 
 def filter_too_similar(concepts, sim_cutoff, device="cuda", print_prob=0):
-    
-    mpnet_model = _get_mpnet_model()
-    concept_features = mpnet_model.encode(concepts)
-        
-    dot_prods_m = concept_features @ concept_features.T
-    dot_prods_c = _clap_text_dot_prods(concepts, concepts, device=device)
-    
-    dot_prods = (dot_prods_m + 3*dot_prods_c)/4
+    dot_prods = _hybrid_text_dot_prods(concepts, concepts, device=device)
     
     to_delete = []
     for i in range(len(concepts)):
@@ -134,13 +145,6 @@ def most_similar_concepts(word, concepts, device="cuda"):
     """
     returns most similar words to a given concepts
     """
-    mpnet_model = _get_mpnet_model()
-    word_features = mpnet_model.encode([word])
-    concept_features = mpnet_model.encode(concepts)
-        
-    dot_prods_m = word_features @ concept_features.T
-    dot_prods_c = _clap_text_dot_prods([word], concepts, device=device)
-    
-    dot_prods = (dot_prods_m + 3*dot_prods_c)/4
+    dot_prods = _hybrid_text_dot_prods([word], concepts, device=device)
     min_distance, indices = torch.topk(torch.FloatTensor(dot_prods[0]), k=5)
     return [(concepts[indices[i]], min_distance[i]) for i in range(len(min_distance))]
