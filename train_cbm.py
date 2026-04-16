@@ -144,6 +144,34 @@ def train_cbm_and_save(args):
             "avg",
             args.activation_dir,
         )
+
+    if os.path.exists(clap_text_save_name):
+        cached_text_embs = torch.load(clap_text_save_name, map_location="cpu")
+        cached_concept_count = int(cached_text_embs.shape[0])
+        if cached_concept_count != len(concepts):
+            print(
+                "Detected stale CLAP text cache (cached={}, expected={}). Rebuilding text embeddings.".format(
+                    cached_concept_count,
+                    len(concepts),
+                )
+            )
+            os.remove(clap_text_save_name)
+            for d_probe in d_probes:
+                utils.save_audio_activations(
+                    clap_model_name=args.clap_model,
+                    target_name=args.backbone,
+                    target_layers=[args.feature_layer],
+                    dataset_name=args.dataset,
+                    split=d_probe,
+                    concept_set=args.concept_set,
+                    batch_size=args.batch_size,
+                    device=args.device,
+                    pool_mode="avg",
+                    save_dir=args.activation_dir,
+                    hf_streaming=hf_streaming,
+                    hf_cache_dir=hf_cache_dir,
+                    max_items=hf_max_items,
+                )
     
     #load features
     with torch.no_grad():
@@ -157,6 +185,14 @@ def train_cbm_and_save(args):
         val_concept_matrix = utils.compute_concept_matrix_from_activations(val_clap_audio_save_name, clap_text_save_name)
         if d_test is not None:
             test_concept_matrix = utils.compute_concept_matrix_from_activations(test_clap_audio_save_name, clap_text_save_name)
+
+        if concept_matrix.shape[1] != len(concepts):
+            raise ValueError(
+                "Concept count mismatch: concept_set has {} concepts but CLAP concept matrix has {} columns. "
+                "Clear stale activation cache in '{}' and rerun.".format(
+                    len(concepts), concept_matrix.shape[1], args.activation_dir
+                )
+            )
 
         if concept_matrix.shape[0] != target_features.shape[0]:
             raise ValueError(
@@ -193,6 +229,13 @@ def train_cbm_and_save(args):
     with torch.no_grad():
         concept_matrix = utils.compute_concept_matrix_from_activations(clap_audio_save_name, clap_text_save_name)
         concept_matrix = concept_matrix[:, highest>args.concept_activation_cutoff]
+
+        if concept_matrix.shape[1] != len(concepts):
+            raise ValueError(
+                "Post-filter mismatch: filtered concept list has {} entries but concept matrix has {} columns.".format(
+                    len(concepts), concept_matrix.shape[1]
+                )
+            )
 
     val_concept_matrix = val_concept_matrix[:, highest>args.concept_activation_cutoff]
     if d_test is not None:

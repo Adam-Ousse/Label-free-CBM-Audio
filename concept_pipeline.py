@@ -52,11 +52,27 @@ def generate_and_save_prompt_concepts(
 
 
 def merge_prompt_dicts(prompt_dicts):
-    concepts = set()
+    concepts = []
     for prompt_dict in prompt_dicts:
         for values in prompt_dict.values():
-            concepts.update(set(values))
+            concepts.extend(values)
+    concepts = dedupe_case_insensitive(concepts)
     return concepts
+
+
+def dedupe_case_insensitive(concepts):
+    deduped = []
+    seen = set()
+    for concept in concepts:
+        clean = str(concept).strip()
+        if len(clean) == 0:
+            continue
+        key = clean.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(clean)
+    return deduped
 
 
 def filter_concepts(concepts, classes, max_len, class_sim_cutoff, other_sim_cutoff, device="cuda", print_prob=0):
@@ -93,6 +109,7 @@ def process_prompt_jsons(
         device=device,
         print_prob=print_prob,
     )
+    concepts = dedupe_case_insensitive(concepts)
 
     save_concept_text(save_path, concepts)
     return concepts

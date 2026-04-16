@@ -1,1005 +1,800 @@
-Adult comforting speech
-Aerodynamic whooshing
-Air rushing burst
-Ambient room noise
-Ascending pitch leaps
-Audible breath pause
-Background chatter
-Breathy post-expiration
-Burning material sound
-Ceramic bowl resonance
-Clear tonal melody
-Combustion sound
-Crib rattling
-Crisp buzzing
-Croaking calls
-Deep cawing tone
-Deep trilling
-Descending water gurgle
-Diaphragm friction hisses
-Distant household noise
-Distant thunder rumble
-Distant traffic
-Distinct mechanical clicks
-Distinct trilling
-Distinctive flaps squeak
-Distinctive on/off click
-Dripping residual drops
-Dry rattling texture
-Environmental thermal sound
-Exhale airflow hiss
-Exhaling air rushes
-Flapping wing rustle
-Fluffy scratching
-Footsteps on floor
-Furniture creak
-Gasping breaths
-Gear-shifting clunks
+Car door closing
+Distant cracking
+Door opening sounds
+Furniture creaking
+Furniture rattling
+Gusting howl
 HVAC hum
-Harsh croaking call
-Heavy stomping thuds
-High-frequency impact tones
-High-frequency jet roar
-High-pitched chirping
-High-pitched hinge click
-High-pitched squeals
-High-pitched staccato bursts
-High-pitched trilling
-High-pitched wailing
-High-pitched whine modulation
-Idling vibration buzz
-Interlocking stridulation
-Intermittent bag alerts
-Intermittent loud bangs
-Intermittent pause gaps
-Intermittent whimpering
-Irregular rhythmic phrasing
-Loud crackling strikes
-Loud crowing
-Low frequency airflow
-Low frequency growl
-Low snorting grunts
-Low-frequency engine hum
-Low-frequency rumbling
-Low-pitched rotor whine
-Mechanical gear clatter
-Mechanical valve slams
-Mechanical whirring
-Metallic rattle trill
-Morning crescendo
-Muffled bubbling
-Nasal honking
-Nasal resonance shifts
-Paroxysmal gasping
-Purring vibrations
-Pyroacoustic emission
-Quick meowing
-Rapid air rush intake
-Rapid blade chopping
-Rapid brush agitation
-Rapid clicking
-Rapid consonant clicks
-Rapid key strikes
-Rapid note sequences
-Rapid staccato clicks
-Rapid valve hiss
-Repetitive rhythmic patterns
-Revving pitch modulation
-Rhythmic chirping
-Rhythmic inhalation exhalation
-Rhythmic inhalation-exhalation
-Rhythmic sobbing
-Rhythmic squealing trills
-Rhythmic suction intake
-Rolling tonal decay
-Rotating latch grind
+Heat-induced vibration
+High trilling
+Light purring
+Natural element sound
+Object dropping
+Platform announcement
+Platform footsteps
+Rapid purring
+Rapid rain
+Rhythmic percussive sound
+Rolling thunder
+Rolling wheel rumble
 Sharp hissing
-Sharp metal scrape
-Sharp squealing
-Short trill bursts
-Shushing noises
-Soft diaphragmatic rustle
-Soft lullaby singing
-Staccato percussive bursts
-Staccato vowel bursts
-Strained breathing
-Strident honking
-Sudden crescendo
-Sudden explosive onset
-Sudden release thud
-Suppressed inhalation
-Sustained mechanical rattle
-Tank refill gurgling
-Tank refill rattle
-Thermal acoustic event
-Uniform rhythmic spacing
-Water torrential flow
-Wet rooting noises
-abrupt build-up pressure
-abrupt glottal closure
-abrupt loud blast
-abrupt silence gap
-abrupt tone onset
+Soft meowing
+Station platform chatter
+Sudden gusts
+Swirling leaves
+Train horn blast
+Whistling through cracks
+Whooshing rustle
+Wind gusts
+Wind whistling
+abrupt cutoff
+abrupt onset
 acoustic event
-acoustic seascape
-acoustic signal
-adult voice cooing
-aerial vehicle sound
-aerodynamic hum
-aerodynamic sound
-aerodynamic whoosh
-agricultural soundscape
-air conditioner buzz
-air horn blast
-alternating pitch pattern
-alternating step patterns
-ambient chatter
-ambient fireplace sound
-ambient forest noise
+acoustic instrument
+acute howling
+aerodynamic noise
+agricultural audio
+agricultural livestock sound
+aircraft noise
+airport crowd chatter
+aluminum crinkle
+aluminum scrape
 ambient room noise
-ambient room tone
-ambient soundscape
-ambulance lights whir
+ambient wind
 amphibian vocalization
-animal call
+animal biological sound
+animal communication
 animal sound
 animal vocalization
-anuran sound
 applause
-appliance hum
-appliance sound
-aquatic sound
-aquatic splash accompaniment
-arthropod sound
+arthropod communication
 artificial acoustic event
+artificial alarm
 artificial alarm sound
 artificial ambient sound
-artificial explosive sound
-artificial generated sound
+artificial applause
+artificial auditory signal
+artificial noise generator
+artificial noise source
 artificial object sound
+artificial percussive sound
+artificial pyrotechnic sound
 artificial sound
-artificial soundscape
+artificial sound source
+ascending frequency sweeps
+ascending pitch glide
+ascending warbles
 atmospheric acoustic event
-atmospheric noise
+atmospheric movement
 atmospheric sound
-audible symptom
-auditory alert
+audience laughter
+auditory consumption event
+auditory emergency signal
 auditory event
-auditory signal
-auditory warning sound
+avian biological sound
 avian call
 avian sound
 avian vocalization
-aviation sound
-baby crying softly
-background ambience
+aviation audio
 background music
-background noise
-bag rustle
 barn door creak
-bathroom fan hum
-bathroom tiles
-bedsheet rustle friction
-bell sound
-biological intake sound
-biological movement sound
-bird call
-bird flock flutter
-bird song
+barnyard ambient noise
+bathroom echo
+bathroom tile echo
+bed creaking
+bedsheet rustle
+biological exhalation
+biological respiration
 bird sound
-bird vocalization
-bleating from nearby sheep
-boat engine hum
-bodily function sound
-body percussion
-breath intake
-brief decay envelope
-brief decay tails
-brief high-frequency burst
-brief high-frequency click
-brief high-pitch decay
-brief high-pitched tone
-brief hollow resonance
-brief silence onset
-brittle fracture sound
-building alarm
-building echoes
-building sway
-building vibration
-cabin announcements
-calf bleating
-camera shutter
+bleating sheep
+bottle cap opening
+bottle cap popping
+bottle cap rattle
+bottle opening
+breathy onset
+breathy release
+brief burst
+brief decay
+brief explosive burst
+brief high pitch
+brief inhalation puff
+brief inhale
+brittle fracture
+building vibrations
+buzzing drones
+buzzing wings
+cabin air hum
 camera shutter clicks
-canine vocalization
-car engine idling
-car headlights
-car passing by
-carpet suction noise
-chair creak
+cardboard box rustle
+carpet rustling
+celebratory auditory event
+celebratory event sound
+ceramic friction
+ceramic slam
+chair creaking
 chair movement
-chair scrape
 chair scraping
-chair scraping floor
-chair squeak
+chest resonance
+chest rumble
 chicken clucking
-church organ
-clinking glassware
 clock ticking
-clock ticking sound
 clothes tumbling
-clothing rustle
-coarse friction noise
-coarse wood-grain friction
-combustion sound
-community sound
-contact sound
-container access sound
-container rim contact
-container sloshing
-continuous ambient sound
-continuous cutting sound
-continuous foaming
-continuous mechanical noise
-continuous noise
-continuous pattering
-continuous stream sound
-continuous tonal sound
-continuous water drops
-continuous water sound
-continuous wave sound
-continuous weather sound
-controlled acoustic event
-countertop clatter
-coupling clunks
-crackling wood
-crashing wave impact
-crashing waves
-creaking chair
-creaking porch swing
-crisp transient onset
+combustion engine sound
+computer fan hum
+computer hardware noise
+computer-generated sound
+container clinking
+container filling
+container manipulation
+container scraping
+continuous fluid noise
+continuous liquid sound
+continuous ringing
+continuous stream
+continuous whistling
+crackling dry twigs
+crackling pops
+crackling wood embers
+creaking chair legs
+creaking metal
+crinkling foil
 crowd cheering
-crowd footsteps
 crowd murmurs
-crowd shouting
-crowing neighbors
-crowing sound
-cultural auditory signal
-cup rim contact clink
-cutting tool sound
-deep diesel rumble
-delicate paw pads
-descending frequency sweep
-descending pitch slides
-descending tone sweep
-digital beeping
-digital chime
-digital device sound
-digital interface sound
-directional Doppler shift
-directional airflow rush
-directional approach cues
-directional sawing motion
-discrete falling intervals
-discrete percussive sound
-distant airport traffic
-distant alarm siren
-distant barking
-distant bird call
+crowing
+crowing chorus
+crowing roosters
+cultural sound
+curtain rustling
+cutting vibration
+daily routine sound
+dawn timing
+deep fundamental
+deep gurgling
+deep oinking
+deep resonant
+deep sighing
+deep tolling
+dental hygiene sound
+digital hum
+directional focus
+directional pulse
+directional swoosh
 distant bleating
 distant boat engines
-distant chatter
-distant crowd cheering
-distant crowd murmur
-distant fan hum
-distant farm machinery
-distant human speech
-distant laughter
+distant crowd cheers
+distant hissing
+distant jet ski noise
+distant office chatter
 distant owl hoot
-distant phone ring
-distant seagull cry
-distant sheepdog bark
-distant thunder rumble
-distant tractor
-distant traffic noise
-distant train whistle
-distant wind
-distinct carrier tones
-distinct double-clack
-distinct impact thud
-distinct impact tone
-distinct impact transient
-distinct key isolation
-distinct resonant ring
-distinct tactile click
-distinct vocal trills
-distress vocalization
-domestic ambient sound
+distant roar
+distant screeching
+distant ship horns
+distant sweeping
+distant water flow
+distress cry
+distress signal
+distressed cooing
+distressed whimpering
+domestic activity sound
 domestic animal sound
 domestic appliance sound
-domestic environment sound
-domestic hearth sound
-domestic livestock sound
+domestic bird sound
+domestic cleaning device sound
+domestic interior sound
+domestic machine operation
 domestic machine sound
-domestic noise
-domestic routine sound
-domestic sound
-door closing
-door creaking
-dry acoustic texture
-dry hollow resonance
-dry rattling texture
-dry wood friction
-dry wood scraping
-dry wood snapping
-electric appliance sound
+domestic pet sound
+domestic utility sound
+door closing sounds
+door opening/closing
+drain pump
+draining rush
+dripping cascade
+dripping water
+drum spinning noise
+dry hacking
+dry leaf crunch
+dry scraping
+dry texture
+early morning birds
+electric motor hum
+electric motor noise
 electric motor sound
 electric toothbrush motor
 electrical hum
-electromechanical click
+electronic device operation
+electronic device sound
 electronic interface sound
-electronic siren sound
-electronic sound
-ember clinking
-emember hissing
-emergency vehicle sound
+embers popping
 emergency vehicle tires
-emotional expression sound
 engine drone
-engine idle
 engine idling hum
 engine revving
-engine roar
-engine roar surge
-engine vibration
-engine-driven sound
-engineered sound
-environmental acoustic event
-environmental ambience
-environmental sound
+engine rumble
+engine startup roar
+engineered sound source
+environmental soundscape
+erratic clicking
 everyday ambient sound
-exhaust pipe hissing
-exhaust popping
-explosive crack booms
-explosive crack report
+explosive boom
+explosive crack
 explosive sound
 fabric rustle
 fabric rustling
-faint car passing
-faint city traffic
-faint rustling flight
-falling frequency sweep
-fan hum
+fading decay
 farm animal sound
-farm machinery
-farmer footsteps
-farmer's voice commands
-farmyard sound
-farmyard soundscape
-faucet drip
+farm animal vocalization
+farmyard ambience
+faucet dripping
+feeding sounds
 feline vocalization
-flapping fabric
-flock movement rustling
-floor creak
-floor friction
-floor tiles echo
-floor vibrations
-floorboard creaking
-flowing stream
-flowing water
-fluctuating crack intensity
-fluid acoustic event
+flock murmuring
+floor scraping
+floor surface friction
 fluid consumption sound
-fluid droplet sound
 fluid dynamics sound
-fluid flow sound
-fluid impact
-fluid motion sound
-fluid surface ripple
-fluttering flutters
-foamy splash bursts
-foil lid crinkle
-foil tearing
-footstep movement
-footsteps on pavement
-fragmented impact sequence
-frequency-modulated trills
-friction-based sound
-furniture creaking
-furniture rattling
-furniture scraping
+fluid impact noise
+fluid motion audio
+fluid motion noise
+fluid movement audio
+fluid pouring
+flushing tank mechanics
+fluttering tones
+foamy splashing
+four-legged creature sound
+friction and vibration
+friction scraping sound
+frictional grinding
+frog croaking
+furniture movement
 furniture scratching
-gear shift clunk
-gentle breeze swaying
-gentle hoof shuffling
-gentle wind rustle
+furniture vibration
+gate area chatter
+gentle wind
 glass clinking
-glass setting down
-glass shattering
-glassware rattle
-grass crunching
-gravel crunching
-gravity-driven fluid sound
-ground impact thud
-guttural croaking calls
-handle rattle clatter
+grass cutting rustle
+grass rustling
+ground vibration
+gusty blowing
+guttural croak
+guttural gurgling
+harmonic chime
 harmonic overtones
-harmonic ringing decay
-harmonic tone doubling
-health-related sound
-heavy blade thrumming
-heavy foot stomps
-heavy footfalls
-heavy ground scratching
-heavy metal screeching
-heavy panting
-heavy rain falling
+harsh cawing
+heavy machinery sound
+heavy rain impact
+heavy rumbling
+heavy snorting
+heavy stepping
 heavy thudding
-high trilling chirps
-high-frequency harmonic decay
-high-frequency ping
-high-frequency scraping
-high-frequency splashing
-high-pitched chimes
-high-pitched chirping
-high-pitched friction
-high-pitched friction squeal
-high-pitched impact sound
-high-pitched mechanical whine
-high-pitched motor sound
-high-pitched pattering
-high-pitched piercing tone
-high-pitched plastic snaps
-high-pitched sawing sound
-high-pitched spinning whine
-high-pitched squeaks
-high-pitched squeal
-high-pitched staccato
+heavy thuds
+heavy wing flapping
+high buzzing
+high chirping
+high compression
+high pitch
+high pitch snap
+high pitched wailing
+high revving
+high whining
+high-frequency friction noise
+high-frequency impact
+high-pitch motor noise
+high-pitched brush noise
+high-pitched chirps
+high-pitched cutting noise
+high-pitched hiss
+high-pitched screech
+high-pitched tonal
+high-pitched trilling
 high-pitched whine
-high-pitched whirring
-high-pitched whistling
-high-pitched whistling shrieks
-high-speed rotor roar
-hoarse oinking calls
+hissing embers
+hollow decay
+hollow echoes
+hollow impact
 hollow resonance
-hollow resonant ring
-hollow splash echoes
-hollow thumping
-hollow timber groan
-hollow wave roar
-hoof steps on dirt
-hooves on dry ground
-house creaking noises
-house settling
-household device sound
-household liquid sound
-household object sound
-howling across ridges
-human activity sound
+hollow resonances
+hollow thud
+home environment sound
+hoofsteps on ground
+household activity sound
+household ambient sound
+household appliance noise
+household appliance sound
+household pet sound
+household sound
+human action sound
 human biological sound
+human bodily function
 human conversation
-human cry
-human hand percussion
-human interaction sound
-human laughter
+human gesture sound
+human health indicator sound
+human infrastructure sound
 human locomotion sound
+human mechanical interaction
+human oral sound
 human percussive sound
-human shouting
+human physiological sound
+human respiratory sound
+human scream
+human shouts
 human sound
-human speech chatter
-human vocalization
-human voice speaking
-human-made acoustic event
-human-made percussive sound
-human-made resonance
-human-made sound
-hydrodynamic sound
-hydrological sound
+human speech
+human-made alert sound
+human-made ambient sound
+human-made auditory signal
+human-made engine sound
+human-made interface sound
+human-made mechanical sound
+human-made noise
+human-made sonic event
+human-operated machinery
+hydro-acoustic phenomenon
+hydroacoustic event
 ice clinking
-ice clinking sound
-immediate silence gap
-indoor ambience
-indoor ambient sound
-indoor fixture sound
-industrial noise
-industrial sound
+ice melting
 infant vocalization
-ingestive sound
-insect chirping
-insect stridulation
+inhalation sounds
+insect buzzing
+insect sound
 insect vocalization
-insects buzzing
-intense weather sound
-intermittent coupling clunks
-intermittent drop impact
-intermittent droplet impact
-intermittent grunting
-intermittent heavy claps
-intermittent jaw thuds
+insects chirping
+interior object interaction
+intermittent bag emptying
+intermittent beeping
+intermittent calling
+intermittent chirping
+intermittent chugging
+intermittent claps
+intermittent cracking
+intermittent crashing
+intermittent creaking
+intermittent pinging
 intermittent pulsing
-intermittent rhythmic patter
-intermittent scraping
-intermittent single drops
-intermittent sipping pauses
-intermittent slurping bursts
-intermittent sticking drag
-intermittent throat rumbles
-intermittent tooth catch snaps
-intermittent tooth chattering
-intermittent tooth clicks
-intermittent transient sound
-intermittent whirring
+intermittent rhythm
+intermittent screaming
+intermittent slurping
+intermittent squeak
+intermittent swallowing
+intermittent verbal commands
+intermittent warbling
+internal body noise
 internal body sound
-internal sound
-involuntary biological sound
+involuntary bodily function
 involuntary bodily sound
 involuntary body sound
-involuntary sound
-involuntary vocalization
-irregular choking
-irregular popping bursts
-irregular power pulsing
-irregular power-tool chopping
-irregular shuffling
-irregular splashing
-irregular timber cracking
-isolated splash sounds
-keyboard clacking
+involuntary reflex sound
+irregular bleating
+irregular bursting
+irregular crunching
+irregular intervals
+irregular pauses
+jet engine roar
 keyboard tapping
 keyboard typing
-kitchen cabinet slam
-kitchen chatter
-landing gear clatter
-landing gear scrape
-leash clinking
-leash jingle
-leaves crunching
-lid spring release
-life sound
-light rain patter
+kitchen appliance hum
+labored wheezing
+landing thud
+leaf movement
+leash jingling
+leash rustling
+lid closing
+lid release hiss
+light dripping
+light tapping
 lightning crack
-liquid flow in cup
-liquid flow initiation
-liquid flow sound
-liquid impact sound
-liquid pouring
-liquid stream flow
+liquid impact
+liquid motion sound
+liquid overflow
+liquid splash
+liquid suction
+livestock audio
+livestock bleating
+livestock noise
 livestock sound
-locomotion sound
-long sustained wail
-loud artificial sound
-loud crowing
-low bleating calls
-low cooing purr
-low cowbell ringing
-low ember crackle
-low frequency growling
+livestock vocalization
+long vocalization
+loud ambient soundscape
+loud honk
+loud ratcheting click
+loud transient noise
+low amplitude
+low bleating
+low creaking
+low friction squeal
 low growling
-low grunting rumbles
-low guttural crowing
-low hum
+low grunting
 low mooing
-low rumbling breath
-low rumbling moo
-low-frequency atmospheric roar
-low-frequency mooing
-low-frequency roar
+low-frequency ambient sound
 low-frequency rumble
-low-frequency sloshing
-low-frequency sound
-low-frequency surge
-luggage wheels clatter
-machine operation sound
 mammal sound
 mammal vocalization
-mammalian sound
-man-made acoustic event
-man-made artifact sound
-man-made event sound
-man-made signal sound
-man-made sound
+man-made auditory event
+man-made industrial sound
 manual cutting sound
-manual sound
+manual labor sound
+manual rhythmic sound
 manual tool sound
-manufactured noise
-marine hydroacoustic event
-material fracture sound
-material resonance sound
-mechanical appliance sound
-mechanical buzzing
+marine ambient sound
+marine surface sound
+mechanical agitation noise
 mechanical chugging
-mechanical clicking
-mechanical clunking impacts
-mechanical cutting sound
-mechanical flush sound
+mechanical cutting noise
+mechanical flush
+mechanical friction
 mechanical friction sound
+mechanical grinding
+mechanical hum
+mechanical impact
 mechanical impact sound
+mechanical interaction
+mechanical interaction sound
 mechanical noise
+mechanical noise emission
 mechanical opening sound
 mechanical operation sound
-mechanical resonance
-mechanical rumbling
-mechanical sound
-mechanical tool sound
-mechanical transport sound
-mechanical turbulence sound
+mechanical pulsing
+mechanical scraping sound
+mechanical siren
+mechanical slam
+mechanical snap
+mechanical sound source
+mechanical thuds
+mechanical vibration sound
 mechanical warning sound
-mechanical whine texture
+mechanical whine
+medical symptom sound
 melodic warbling
-metal bucket clinking
-metal cage clink
-metal clanking
-metal clinking sound
-metal feeder clatter
-metal gate clank
+metal feeding trough clatter
 metal gate creaking
-metal lid scraping
-metal scraping
-metallic clang strikes
-metallic decay tails
-metallic gear grinding
-metallic resonance
-metallic trilling sounds
-meteorological sound
-mirror splash
-mixed voiced-unvoiced sounds
-modulated amplitude pulse
-monitor fan hum
-monotonous call
-morning coffee cup
-motor hum modulation
+metal handle click
+metal object sound
+metal percussion
+metal rim clatter
+metallic clang
+metallic decay
+metallic grinding
+metallic percussion
+metallic ping
+metallic ring
+metallic ringing decay
+metallic trill
+meteorological audio source
+meteorological soundscape
 motor humming
-motorized sound
+motor roar
+motorized equipment sound
 mouse clicking
-mouse movement
-nasal friction noise
-nasal snort bursts
-natural acoustic event
+mouse swiping
+muffled dragging
+nasal release
+nasal squealing
+nasal whining
 natural ambient sound
+natural atmospheric sound
 natural water sound
-nature sound
-nearby human speech
-nearby traffic
-night insects
+night ambience
 night insects chirping
-nocturnal sound
-noise
-non-aerated liquid sound
-non-biological sound
-occasional laughter
-office background hum
-office hum
-open window creak
+nocturnal buzzing
+nocturnal soundscape
+non-verbal communication
+object impact
+ocean surface sound
+office ambient sound
+office chair squeak
 operator breathing
-oral fluid interaction sound
-oral hygiene sound
-oral intake sound
-organic matter burning sound
-organic sound
-overhead line hum
+organ music
+organ pipe tones
+organic biological event
+organic life sound
+organic sound source
+oscillating chirp
+outdoor environmental sound
+overhead bin clatter
+overhead bin closing
+overlapping chorus
+owl hoot
 paper rustling
-paper shuffling
-pecking on ground
+party ambience
 pedestrian footsteps
-pen door creak
-percussion sound
-periodic blade thumping
-periodic breath intake
-periodic gasping
-periodic mechanical sound
-periodic repetition
-periodic sawing motion
-periodic sharp clicks
-periodic sound
-periodic tolling
-periodic tonal wail
-periodic water sloshing
-person breathing
-pet sound
-phone ringing
-physiological sound
-piercing electronic beep
-pig grunting
-plastic wrapper rustle
-platform announcements
-platform footsteps
-plumbing sound
+pen movement
+periodic clicking
+periodic exhale
+periodic fluid motion
+periodic interval
+periodic motor thumping
+periodic pauses
+periodic receding
+periodic sawing
+periodic wailing
+pet movement
+physiological sound source
+piercing squeal
+plastic container clatter
 police radio chatter
-porcine vocalization
-positive affect sound
+popping bursts
 poultry vocalization
-power line hum
 power tool sound
-powered cleaning tool sound
-precipitation sound
-pulsed vocal bursts
-pyrotechnic sound
+prolonged wail
+puddle splashing
+pulsed trilling
+pulsing beep
 quadruped vocalization
-quiet road hum
-quiet room ambience
-rail transport sound
-rain pattering
-rapid air release burst
-rapid amplitude modulation
-rapid clicking
-rapid decay tail
-rapid dual-hand rhythm
-rapid frequency sweep
-rapid friction bursts
-rapid hissing
-rapid inhalation puff
+quick meowing
+quiet breathing
+quiet footsteps
+radio static
+railway soundscape
+rapid barking
+rapid bursts
+rapid buzzing
+rapid chirping
+rapid crackling
+rapid decay
+rapid expulsion
+rapid flapping
+rapid flow
+rapid gurgle
 rapid key strikes
-rapid panting cycles
-rapid pulsing beep
-rapid repetition rates
-rapid scrubbing noise
-rapid sequential blasts
-rapid sequential detonations
-rapid shattering burst
-rapid succession bursts
-rapid tongue clicking
-rapid wood tearing
-raspy cawing notes
-receding water rush
-refrigerator hum
-regular rhythmic spacing
-repeating mechanical tick
-repetitive baaing
-repetitive impact sound
-repetitive mechanical clicks
-repetitive phrasing
-repetitive rhythmic staccato
-repetitive sound
-repetitive temporal spacing
-repetitive ticking pulse
-resonant bass
-resonant bell tolling
-resonant low strikes
-resonant throat tones
-respiratory expulsion sound
+rapid rattling
+rapid scratching
+rapid shattering
+rapid staccato
+rapid staccato bursts
+rapid succession
+rapid trilling
+rapid turbulence
+raspy croak
+regular interval
+religious sound
+repetitive clicking
+repetitive clucking
+repetitive keystrokes
+repetitive scrubbing
+repetitive ticking
+resonant ringing
+resonant tolling
+respiratory noise
 respiratory sound
-revving pitch sweep
-rhythmic barking
-rhythmic barking sequences
-rhythmic belching
-rhythmic breathing sound
+rhythmic ambient sound
+rhythmic auditory event
+rhythmic beep sound
 rhythmic buzzing
-rhythmic chest heaves
-rhythmic chirping pulses
+rhythmic chirping
+rhythmic clicking
 rhythmic clucking
-rhythmic container filling
+rhythmic cooing
 rhythmic crashing
-rhythmic croaking calls
+rhythmic croaking
+rhythmic dripping
 rhythmic drumming
-rhythmic drumming pulses
-rhythmic engine pulsation
-rhythmic gong strike
-rhythmic gong striking
-rhythmic heel strikes
-rhythmic idling
-rhythmic jaw clacking
-rhythmic liquid intake
-rhythmic percussive sound
-rhythmic periodicity
-rhythmic propeller thrum
-rhythmic purring
-rhythmic repetition
-rhythmic rotor chopping
+rhythmic exhaling
+rhythmic honking
+rhythmic inhaling
+rhythmic intervals
+rhythmic pairing
+rhythmic panting
+rhythmic percussive noise
+rhythmic rooting
+rhythmic rotor thumping
+rhythmic sawing
 rhythmic scraping
+rhythmic scratching
+rhythmic scrubbing
+rhythmic slapping
+rhythmic slurping
+rhythmic snapping
+rhythmic snoring
 rhythmic snorting
-rhythmic snorting bursts
-rhythmic sound
-rhythmic suction pulses
-rhythmic suction swallows
+rhythmic sobbing
+rhythmic splashing
+rhythmic stridulation
+rhythmic suction
+rhythmic swilling
 rhythmic thumping
-rhythmic wheel clacking
-rhythmic wheel clatter
-rising frequency chirp
-rising frequency sweep
+rhythmic wailing
+rhythmic whirring
+rhythmic wood grain friction
+rising and falling pitch
+rising chime
+rising inflection
 rising pitch
-rising pitch contours
-rising rocket whooshes
-rising whistling tones
-road surface noise
+rising pitch sweep
+rising rumble
+rising tone
+road surface friction
 road surface rumble
-roaring flames
-rocket launch thud
-rocking chair creak
-rolling low-frequency bass
-rolling thunder cracks
-rolling wheels on floor
-roof dripping
-roof shuddering
+rocky shore impacts
+rolling rumble
+rolling suitcase wheels
+rolling surf
+roof creaking
 room ambience
+room echo
 room reverb
-room tone
 rooster crowing
-rotary-wing aircraft sound
+rotary-wing aircraft noise
 rotor blade whine
-rotor blade whoosh
-routine activity sound
-ruminant sound
-ruminant vocalization
-running water
-running water faucet
+rotor downwash
+rotorcraft noise
+ruminant bleat
+ruminant call
+runway surface rumble
+rushing water
+rustling clothing
 rustling leaves
-sawdust rustle
-sawdust rustling
+sand crunching
+sawdust falling
 sawdust settling
-scratching pecking
-seagull calls
-seashell scraping sand
-seatbelt chime
-self-care sound
-sharp electronic beep
+sawing back and forth
+seagull cries
+seasonal crescendo
+self-care ambient sound
+severe weather sound
+shallow gasping
+shallow stream noise
+sharp blast
+sharp cawing
+sharp click
+sharp consonant stops
+sharp crack
+sharp crowing
+sharp cutoff
+sharp expiratory burst
 sharp high-pitched crack
-sharp high-pitched yelps
-sharp impact clicks
-sharp impact thud
-sharp inhalation release
-sharp mechanical chime
-sharp mechanical click
-sharp mechanical snap
-sharp metal scrape
-sharp nasal release
-sharp percussive click
-sharp percussive sound
-sharp percussive strike
+sharp hiss
+sharp impacts
+sharp metallic scrape
+sharp pecking
 sharp percussive thud
-sharp rising pitch
-sharp splinter cracking
-sharp squealing trills
+sharp release click
+sharp slap
+sharp splashes
+sharp squawking
+sharp squealing
 sharp staccato burst
-sharp transient clicks
-sharp wing flap
-sharp yelping
+sharp thud
+sharp transient
+sharp transient noise
+sharp whining
+shattering fragments
 shattering sound
-shearing tool clatter
-sheep vocalization
-shepherd footsteps
-short decay duration
-short decay tail
-short duration decay
-short duration impulse
-short staccato bursts
-short-duration noise
-shushing breath
-silence between strikes
+sheet shifting
+short chirps
+short clicking
+short duration
+short duration noise
+short impulse
+single impact
 sink faucet
-sink splashing
-sizzling fat
-sleep-related sound
-slow breath pauses
-slow rhythmic intervals
-slow rotational friction
-slow rotational grind
-slurping suction noise
+sizzling hisses
+sleep-related audio
+slow drain
+slow fading
+slow friction
+slow rhythmic ringing
+slow sliding grind
 small creature sound
-social sound
-soft beak tapping
-soft fabric rustling
-soft footsteps
-soft humming
-soft keyboard clack
-soft meowing
-soft rustling wool
-soft surface tapping
-soft wing flapping
-species-specific intervals
-species-specific trills
-staccato caw sequences
-staccato chirps
-staccato click sequences
-staccato vocal bursts
+small scale water sound
+social interaction noise
+soft chewing
+soft cooing
+soft mewing
+soft purring
+soft rooting
+soft rustling
+splashing liquid
+spring tension snap
+squeaky slapping
+staccato burst
+staccato rhythm
+staccato trilling
+stage applause
 station announcements
-station platform chatter
-steady drone hum
-steady oscillating tone
-stereotyped pulse patterns
-stone floor footsteps
+steady idling
+steady pattering
+steady rainfall
+steady rushing
+steady whirring
+stealthy stalking
 stone footsteps
-storm sound
+stone steps clacking
+storm audio event
+storm drain gurgling
 straw rustling
-straw slurping
-straw slurping noise
-street pavement splash
+straw sucking noise
+street ambience
+street traffic
+structural acoustic event
+structural contact noise
+structural failure
+structural failure audio
 structural knock
-structural noise
-structural resonance sound
-structural stress sound
-sudden breathy onset
-sudden broadband burst
-sudden combustion pops
-sudden decay envelope
-sudden explosive burst
+suction hissing
+sudden baying
+sudden beep
+sudden bleat
+sudden clanking
+sudden click
+sudden engine start
 sudden explosive release
-sudden latch click
-sudden mechanical clunk
-sudden metallic thuds
-sudden noise
-sudden silence onset
-sudden spin-up whine
-sudden wing snap
-sustained ringing
-swallowing gulp
-swallowing throat sounds
-swishing dry leaves
-synthetic sound
-technological sound
-temporal sound
-terrestrial animal sound
-terrestrial contact sound
-thermal noise
-throat vibrating growl
-throaty braying sounds
+sudden expulsion
+sudden hiss
+sudden inhalation
+sudden lid pop
+sudden loud crash
+sudden onset
+sudden revving
+sudden screaming
+sudden screeching
+sudden silence
+sudden thuds
+surface interaction sound
+surface splash
+sustained typing
+swaying branches
+swirling turbulence
+synthetic mechanical sound
+synthetic tone
+table surface contact
+takeoff roar
+tank refill
 ticking mechanism
-tire friction noise
-tire hum
+timekeeping device sound
+tire friction sound
 tire on pavement
-tire road friction
+tire road contact
 tissue crinkle
-toilet tank fill
-tool clatter
-toothpaste squeeze
+toilet seat movement
+tonal auditory event
+tool clinking noise
+tooth-brushing friction
+toothed scraping
+toothpaste squeezing
 track rumble
-track rumbling
-transient acoustic event
-transient decay envelope
-transient impact thuds
-transient sound
+transportation machinery sound
+transportation noise
 transportation sound
-tray table clatter
-tray table clink
-tree branch creak
-trill-like notes
+transportation vehicle sound
 trilling notes
-turbulent air rush
-turbulent air whooshing
-twisting friction squeak
-umbrella tapping
-urban street noise
-vacuum cleaner humming
-variable surface friction
-vehicle sound
+twisting creak
+user input feedback
+vacuum suction
+vehicle acoustic signal
+vehicle auditory signal
+vehicle exhaust puff
+vehicle interior hum
+vehicle propulsion sound
 vehicular sound
-vibrating motor hum
-vibrating structure sound
-viscous splash
-vocal sound
-warning signal
-water discharge sound
-water flow sound
+vessel clink
+water impact sound
+water interaction noise
 water splashing
-water surface sound
-weather soundscape
-wet ceramic scraping
-wet plastic scraping
-wet slurping noises
-wet tongue licks
-whistling squeaks
+weather phenomenon sound
+wet belching
+wet crunching
+wet exhaling
+wet expulsion
+wet impact
+wet rattle
+wet splash
+wet splashing
+wet surface drip
 whistling through gaps
-white noise machine
+whooshing rush
+wild animal sound
+wildlife audio
 wildlife sound
 wind blowing
-wind blowing through grass
-wind gusts
+wind chimes
 wind howling
-wind howling through trees
-wind noise
-wind outside
-wind rustling
-wind rustling kelp
-wind turbulence
-wind-driven gusts
-wind-driven rain
-window creak
-wood chips scattering
-wood cutting
-wood grain resonance
-wood impact sound
-wood mechanical sound
-wood sawing
-wood splintering
-woodworking sound
-wool rustling friction
-workbench creak
-workshop ambience
+wind rushing past
+wind rustling grass
+wood burning
+wood cutting sound
+wood debris clatter
+wood friction
+wood splintering cracks
+wood vibration
+wooden impact sound
+woodworking noise
