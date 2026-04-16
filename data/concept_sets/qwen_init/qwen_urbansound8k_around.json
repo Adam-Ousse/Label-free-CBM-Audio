@@ -1,0 +1,107 @@
+{
+    "air_conditioner": [
+        "compressor cycling",
+        "distant traffic",
+        "distant traffic noise",
+        "fan blades whirring",
+        "human conversation",
+        "humming fan motor",
+        "refrigerator compressor",
+        "room chatter",
+        "room hum",
+        "vent air flow"
+    ],
+    "car_horn": [
+        "Distant traffic noise",
+        "Engine idling sound",
+        "Pedestrian footsteps",
+        "Siren wail",
+        "Tire road friction",
+        "distant traffic noise",
+        "emergency siren",
+        "engine idling",
+        "human speech",
+        "tire road friction"
+    ],
+    "children_playing": [
+        "adult supervision voices",
+        "laughter and giggles",
+        "laughter bursts",
+        "playground equipment clanks",
+        "playground equipment squeaks",
+        "running footsteps",
+        "shouting or yelling",
+        "toy clattering",
+        "toy rattling"
+    ],
+    "dog_bark": [
+        "distant traffic",
+        "door closing",
+        "footsteps on pavement",
+        "human speech",
+        "leash rustling"
+    ],
+    "drilling": [
+        "construction chatter",
+        "dust settling",
+        "electric motor hum",
+        "hammer strikes",
+        "hammering impacts",
+        "metal grinding",
+        "metal scraping",
+        "operator breathing",
+        "structural vibration",
+        "tool startup whine"
+    ],
+    "engine_idling": [
+        "ambient wind",
+        "ambient wind sound",
+        "bird chirping",
+        "distant traffic noise",
+        "faint human speech",
+        "human conversation",
+        "nearby footsteps",
+        "tire road friction"
+    ],
+    "gun_shot": [
+        "crowd murmurs",
+        "debris crashing",
+        "distant sirens",
+        "glass shattering",
+        "human screams",
+        "vehicle horns",
+        "wind blowing",
+        "wind howling"
+    ],
+    "jackhammer": [
+        "construction site chatter",
+        "construction worker voices",
+        "distant traffic rumble",
+        "heavy machinery idling",
+        "heavy vehicle movement",
+        "metal clanging echoes",
+        "metal hammering on concrete",
+        "power generator hum",
+        "tool casing impacts"
+    ],
+    "siren": [
+        "building glass rattle",
+        "crowd murmuring",
+        "crowd shouting",
+        "distant traffic noise",
+        "emergency vehicle chatter",
+        "emergency vehicle tires",
+        "police radio chatter",
+        "street ambience",
+        "wailing tone"
+    ],
+    "street_music": [
+        "bicycle wheel noise",
+        "city ambient hum",
+        "distant traffic noise",
+        "human conversation",
+        "pedestrian footsteps",
+        "urban crowd chatter",
+        "urban wind rustle"
+    ]
+}

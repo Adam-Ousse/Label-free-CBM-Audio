@@ -20,21 +20,65 @@ os.environ.setdefault("HF_DATASETS_DISABLE_TORCHCODEC", "1")
 from datasets import Audio, load_dataset
 
 HF_DATASET_ID = "agkphysics/AudioSet"
-SPLIT_ALIASES = {
-    "balanced_train": "train",
-    "balanced": "train",
-    "train": "train",
-    "unbalanced_train": "train",
-    "unbalanced": "train",
-    "eval": "test",
-    "validation": "test",
-    "valid": "test",
-    "test": "test",
+SUBSET_SPLITS = {
+    "balanced": {"train", "test"},
+    "unbalanced": {"train", "test"},
+    "full": {"bal_train", "unbal_train", "eval"},
 }
 
+DATA_GLOB_BY_SUBSET_SPLIT = {
+    ("balanced", "train"): "data/bal_train/*.parquet",
+    ("balanced", "test"): "data/eval/*.parquet",
+    ("unbalanced", "train"): "data/unbal_train/*.parquet",
+    ("unbalanced", "test"): "data/eval/*.parquet",
+    ("full", "bal_train"): "data/bal_train/*.parquet",
+    ("full", "unbal_train"): "data/unbal_train/*.parquet",
+    ("full", "eval"): "data/eval/*.parquet",
+}
 
-def resolve_split(split: str) -> str:
-    return SPLIT_ALIASES.get(split.strip().lower(), split)
+TRAIN_LIKE_SPLITS = {"train", "bal_train", "unbal_train"}
+
+
+def resolve_subset_split(split: str, subset: str | None = None) -> tuple[str, str]:
+    split_key = split.strip().lower()
+    subset_key = subset.strip().lower() if subset is not None else None
+
+    if subset_key is None and ":" in split_key:
+        subset_key, split_key = split_key.split(":", 1)
+
+    if subset_key is None:
+        legacy = {
+            "balanced": ("balanced", "train"),
+            "balanced_train": ("balanced", "train"),
+            "unbalanced": ("unbalanced", "train"),
+            "unbalanced_train": ("unbalanced", "train"),
+            "eval": ("full", "eval"),
+            "validation": ("full", "eval"),
+            "valid": ("full", "eval"),
+            "bal_train": ("full", "bal_train"),
+            "unbal_train": ("full", "unbal_train"),
+            "train": ("balanced", "train"),
+            "test": ("balanced", "test"),
+        }
+        if split_key in legacy:
+            return legacy[split_key]
+        subset_key = "balanced"
+
+    if subset_key not in SUBSET_SPLITS:
+        raise ValueError("Unknown subset '{}'. Use balanced, unbalanced, or full".format(subset_key))
+
+    if subset_key in {"balanced", "unbalanced"} and split_key in {"eval", "validation", "valid"}:
+        split_key = "test"
+    elif subset_key == "full" and split_key in {"test", "validation", "valid"}:
+        split_key = "eval"
+
+    if split_key not in SUBSET_SPLITS[subset_key]:
+        valid = ", ".join(sorted(SUBSET_SPLITS[subset_key]))
+        raise ValueError(
+            "Invalid split '{}' for subset '{}'. Valid splits: {}".format(split_key, subset_key, valid)
+        )
+
+    return subset_key, split_key
 
 
 def iter_examples(ds: Iterable, max_items: int | None):
@@ -62,9 +106,22 @@ def write_audio_bytes(path: Path, audio_bytes: bytes) -> None:
     path.write_bytes(audio_bytes)
 
 
+def resolve_data_glob(subset: str, split: str) -> str:
+    key = (subset, split)
+    if key not in DATA_GLOB_BY_SUBSET_SPLIT:
+        raise ValueError("No parquet mapping for subset/split: {}/{}".format(subset, split))
+    return DATA_GLOB_BY_SUBSET_SPLIT[key]
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Inspect/cache AudioSet from Hugging Face datasets")
-    parser.add_argument("--split", type=str, default="balanced", help="Split: balanced, unbalanced, eval, or train")
+    parser.add_argument("--subset", type=str, default=None, help="Subset: balanced, unbalanced, or full")
+    parser.add_argument(
+        "--split",
+        type=str,
+        default="eval",
+        help="Split inside subset. Examples: balanced/test, unbalanced/test, full/eval",
+    )
     parser.add_argument("--streaming", action="store_true", help="Enable Hugging Face streaming mode")
     parser.add_argument(
         "--decode_audio",
@@ -87,6 +144,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--overwrite", action="store_true", help="Overwrite WAV files if they already exist")
     parser.add_argument(
+        "--allow_train_splits",
+        action="store_true",
+        help="Allow train-like splits (train, bal_train, unbal_train). Default blocks them to save disk.",
+    )
+    parser.add_argument(
         "--summary_out",
         type=Path,
         default=Path("data/audioset/summary_hf.json"),
@@ -97,14 +159,24 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    split = resolve_split(args.split)
+    subset, split = resolve_subset_split(args.split, subset=args.subset)
+    if split in TRAIN_LIKE_SPLITS and not args.allow_train_splits:
+        raise ValueError(
+            "Blocked split '{}'. This command is configured for eval/test only to save space. "
+            "Use --allow_train_splits to override.".format(split)
+        )
+
+    data_glob = resolve_data_glob(subset, split)
+    data_files = {"requested": "hf://datasets/{}/{}".format(HF_DATASET_ID, data_glob)}
+
     export_requested = args.export_dir is not None
     should_decode = bool(args.decode_audio)
     export_limit = args.max_items if args.export_limit is None else max(0, args.export_limit)
 
     ds = load_dataset(
-        HF_DATASET_ID,
-        split=split,
+        "parquet",
+        data_files=data_files,
+        split="requested",
         streaming=args.streaming,
         cache_dir=str(args.cache_dir) if args.cache_dir is not None else None,
     )
@@ -171,7 +243,9 @@ def main() -> None:
 
         payload = {
             "dataset": HF_DATASET_ID,
+            "subset": subset,
             "split": split,
+            "data_glob": data_glob,
             "streaming": bool(args.streaming),
             "decode_audio": bool(args.decode_audio),
             "effective_decode_audio": bool(should_decode),
@@ -204,7 +278,9 @@ def main() -> None:
 
         print("AudioSet Hugging Face summary")
         print(f"  dataset: {HF_DATASET_ID}")
+        print(f"  subset: {subset}")
         print(f"  split: {split}")
+        print(f"  data_glob: {data_glob}")
         print(f"  streaming: {args.streaming}")
         print(f"  inspected_examples: {inspected}")
         print(f"  sample_rates: {sample_rates}")

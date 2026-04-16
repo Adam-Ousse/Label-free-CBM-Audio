@@ -27,16 +27,28 @@ AUDIO_DEFAULTS = {
         "duration_sec": 5.0,
         "manifests_dir": "data/esc50/manifests",
     },
+    "urbansound8k": {
+        "sample_rate": 16000,
+        "duration_sec": 4.0,
+        "manifests_dir": "data/urbansound8k/manifests",
+    },
     "audioset": {
         "sample_rate": 16000,
         "duration_sec": 10.0,
         "hf_dataset": "agkphysics/AudioSet",
-        "hf_default_split": "balanced",
+        "hf_default_split": "eval",
     },
+}
+
+AUDIOSET_HF_SPLITS = {
+    "balanced": {"train", "test"},
+    "unbalanced": {"train", "test"},
+    "full": {"bal_train", "unbal_train", "eval"},
 }
 
 AUDIO_CLASS_FILES = {
     "esc50": "data/esc50_classes.txt",
+    "urbansound8k": "data/urbansound8k_classes.txt",
     "audioset": "data/audioset_classes.txt",
 }
 
@@ -44,6 +56,10 @@ AUDIO_MAPPING_FILES = {
     "esc50": {
         "label_to_idx": "data/esc50/label_to_idx.json",
         "idx_to_label": "data/esc50/idx_to_label.json",
+    },
+    "urbansound8k": {
+        "label_to_idx": "data/urbansound8k/label_to_idx.json",
+        "idx_to_label": "data/urbansound8k/idx_to_label.json",
     },
     "audioset": {
         "mid_to_idx": "data/audioset/mid_to_idx.json",
@@ -59,31 +75,59 @@ def _load_json(path):
 
 
 def _load_wav_audio(audio_path, target_sample_rate=16000, mono=True):
-    with wave.open(str(audio_path), "rb") as wav_file:
-        sample_rate = wav_file.getframerate()
-        n_channels = wav_file.getnchannels()
-        sample_width = wav_file.getsampwidth()
-        n_frames = wav_file.getnframes()
-        raw = wav_file.readframes(n_frames)
+    try:
+        with wave.open(str(audio_path), "rb") as wav_file:
+            sample_rate = wav_file.getframerate()
+            n_channels = wav_file.getnchannels()
+            sample_width = wav_file.getsampwidth()
+            n_frames = wav_file.getnframes()
+            raw = wav_file.readframes(n_frames)
 
-    if sample_width == 1:
-        audio = np.frombuffer(raw, dtype=np.uint8).astype(np.float32)
-        audio = (audio - 128.0) / 128.0
-    elif sample_width == 2:
-        audio = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
-    elif sample_width == 4:
-        audio = np.frombuffer(raw, dtype=np.int32).astype(np.float32) / 2147483648.0
-    else:
-        raise ValueError("Unsupported WAV sample width for {}: {}".format(audio_path, sample_width))
-
-    if n_channels > 1:
-        audio = audio.reshape(-1, n_channels)
-        if mono:
-            audio = np.mean(audio, axis=1)
+        if sample_width == 1:
+            audio = np.frombuffer(raw, dtype=np.uint8).astype(np.float32)
+            audio = (audio - 128.0) / 128.0
+        elif sample_width == 2:
+            audio = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
+        elif sample_width == 4:
+            audio = np.frombuffer(raw, dtype=np.int32).astype(np.float32) / 2147483648.0
         else:
-            audio = audio.T
+            raise ValueError("Unsupported WAV sample width for {}: {}".format(audio_path, sample_width))
 
-    if n_channels == 1 or mono:
+        if n_channels > 1:
+            audio = audio.reshape(-1, n_channels)
+            if mono:
+                audio = np.mean(audio, axis=1)
+            else:
+                audio = audio.T
+    except Exception:
+        # fallback for non-pcm wav encodings not handled by stdlib wave
+        try:
+            import soundfile as sf
+
+            audio_np, sample_rate = sf.read(str(audio_path), always_2d=False)
+            audio = np.asarray(audio_np, dtype=np.float32)
+        except Exception:
+            from scipy.io import wavfile
+
+            sample_rate, audio_np = wavfile.read(str(audio_path))
+            if np.issubdtype(audio_np.dtype, np.integer):
+                info = np.iinfo(audio_np.dtype)
+                denom = float(max(abs(int(info.min)), int(info.max)))
+                audio = audio_np.astype(np.float32) / denom
+            elif np.issubdtype(audio_np.dtype, np.floating):
+                audio = audio_np.astype(np.float32)
+            else:
+                raise ValueError("Unsupported WAV dtype for {}: {}".format(audio_path, audio_np.dtype))
+
+        if audio.ndim == 2:
+            if mono:
+                audio = np.mean(audio, axis=1)
+            else:
+                audio = audio.T
+        elif audio.ndim != 1:
+            raise ValueError("Unsupported WAV shape for {}: {}".format(audio_path, audio.shape))
+
+    if audio.ndim == 1:
         audio_t = torch.from_numpy(np.ascontiguousarray(audio)).float().unsqueeze(0)
     else:
         audio_t = torch.from_numpy(np.ascontiguousarray(audio)).float()
@@ -183,20 +227,70 @@ def _ensure_hf_datasets_available():
         )
 
 
-def _resolve_hf_audioset_split(split):
-    aliases = {
-        "balanced_train": "train",
-        "balanced": "train",
-        "train": "train",
-        "unbalanced_train": "train",
-        "unbalanced": "train",
-        "eval": "test",
-        "validation": "test",
-        "valid": "test",
-        "test": "test",
+def resolve_hf_audioset_subset_split(split, subset=None):
+    split_key = str(split).strip().lower() if split is not None else ""
+    subset_key = str(subset).strip().lower() if subset is not None else None
+
+    if subset_key is None:
+        if ":" in split_key:
+            subset_key, split_key = split_key.split(":", 1)
+        elif "/" in split_key:
+            subset_key, split_key = split_key.split("/", 1)
+
+    # legacy shortcuts keep old commands working
+    if subset_key is None:
+        legacy = {
+            "balanced": ("balanced", "train"),
+            "balanced_train": ("balanced", "train"),
+            "unbalanced": ("unbalanced", "train"),
+            "unbalanced_train": ("unbalanced", "train"),
+            "eval": ("full", "eval"),
+            "validation": ("full", "eval"),
+            "valid": ("full", "eval"),
+            "bal_train": ("full", "bal_train"),
+            "unbal_train": ("full", "unbal_train"),
+        }
+        if split_key in legacy:
+            return legacy[split_key]
+        if split_key == "train":
+            return "balanced", "train"
+        if split_key == "test":
+            return "balanced", "test"
+
+    if subset_key is None:
+        subset_key = "balanced"
+
+    if subset_key not in AUDIOSET_HF_SPLITS:
+        raise ValueError(
+            "Unknown AudioSet subset '{}'. Use one of: balanced, unbalanced, full".format(subset_key)
+        )
+
+    split_aliases = {
+        "validation": "eval" if subset_key == "full" else "test",
+        "valid": "eval" if subset_key == "full" else "test",
     }
-    key = str(split).strip().lower()
-    return aliases.get(key, split)
+    if subset_key == "full" and split_key == "test":
+        split_key = "eval"
+    elif subset_key in {"balanced", "unbalanced"} and split_key == "eval":
+        split_key = "test"
+
+    split_key = split_aliases.get(split_key, split_key)
+
+    if split_key == "":
+        split_key = "eval" if subset_key == "full" else "test"
+
+    if split_key not in AUDIOSET_HF_SPLITS[subset_key]:
+        valid = ", ".join(sorted(AUDIOSET_HF_SPLITS[subset_key]))
+        raise ValueError(
+            "Invalid AudioSet split '{}' for subset '{}'. Valid splits: {}".format(split_key, subset_key, valid)
+        )
+
+    return subset_key, split_key
+
+
+def get_hf_audioset_cache_key(split, subset=None):
+    resolved_subset, resolved_split = resolve_hf_audioset_subset_split(split, subset=subset)
+    return "{}__{}".format(resolved_subset, resolved_split)
 
 
 def _prepare_hf_audio(example_audio, sample_rate, mono, duration_sec):
@@ -263,6 +357,7 @@ class HuggingFaceAudioSetDataset(Dataset):
     def __init__(
         self,
         split,
+        subset=None,
         sample_rate=16000,
         mono=True,
         duration_sec=None,
@@ -275,12 +370,13 @@ class HuggingFaceAudioSetDataset(Dataset):
         self.sample_rate = sample_rate
         self.mono = mono
         self.duration_sec = duration_sec
-        self.split = _resolve_hf_audioset_split(split)
+        self.subset, self.split = resolve_hf_audioset_subset_split(split, subset=subset)
         self.cache_dir = cache_dir
         self.decode_audio = bool(decode_audio)
 
         self.ds = load_dataset(
             AUDIO_DEFAULTS["audioset"]["hf_dataset"],
+            self.subset,
             split=self.split,
             cache_dir=self.cache_dir,
         )
@@ -310,7 +406,9 @@ class HuggingFaceAudioSetDataset(Dataset):
             "audio": audio,
             "sr": int(sr),
             "target": target,
-            "path": "hf://{}/{}/{}".format(AUDIO_DEFAULTS["audioset"]["hf_dataset"], self.split, sample_id),
+            "path": "hf://{}/{}/{}/{}".format(
+                AUDIO_DEFAULTS["audioset"]["hf_dataset"], self.subset, self.split, sample_id
+            ),
             "dataset": "audioset",
             "video_id": video_id,
             "human_labels": sample.get("human_labels", []),
@@ -323,6 +421,7 @@ class HuggingFaceAudioSetIterableDataset(IterableDataset):
     def __init__(
         self,
         split,
+        subset=None,
         sample_rate=16000,
         mono=True,
         duration_sec=None,
@@ -335,7 +434,7 @@ class HuggingFaceAudioSetIterableDataset(IterableDataset):
         self.sample_rate = sample_rate
         self.mono = mono
         self.duration_sec = duration_sec
-        self.split = _resolve_hf_audioset_split(split)
+        self.subset, self.split = resolve_hf_audioset_subset_split(split, subset=subset)
         self.cache_dir = cache_dir
         self.max_items = int(max_items) if max_items is not None else None
         self.decode_audio = bool(decode_audio)
@@ -344,6 +443,7 @@ class HuggingFaceAudioSetIterableDataset(IterableDataset):
         self.mid_to_idx = _load_json(mid_to_idx_path) if os.path.exists(mid_to_idx_path) else None
         self.ds = load_dataset(
             AUDIO_DEFAULTS["audioset"]["hf_dataset"],
+            self.subset,
             split=self.split,
             cache_dir=self.cache_dir,
             streaming=True,
@@ -374,7 +474,9 @@ class HuggingFaceAudioSetIterableDataset(IterableDataset):
                 "audio": audio,
                 "sr": int(sr),
                 "target": target,
-                "path": "hf://{}/{}/{}".format(AUDIO_DEFAULTS["audioset"]["hf_dataset"], self.split, sample_id),
+                "path": "hf://{}/{}/{}/{}".format(
+                    AUDIO_DEFAULTS["audioset"]["hf_dataset"], self.subset, self.split, sample_id
+                ),
                 "dataset": "audioset",
                 "video_id": video_id,
                 "human_labels": sample.get("human_labels", []),
@@ -432,7 +534,7 @@ def get_audio_manifest_path(dataset_name, split):
 
 
 def get_audio_dataset(dataset_name, split, manifest_path=None, sample_rate=None, mono=True, duration_sec=None,
-                      hf_streaming=False, hf_cache_dir=None, max_items=None, hf_decode_audio=True):
+                      hf_streaming=False, hf_cache_dir=None, max_items=None, hf_decode_audio=True, hf_subset=None):
     if dataset_name not in AUDIO_DEFAULTS:
         raise ValueError("Unknown audio dataset: {}".format(dataset_name))
 
@@ -445,6 +547,7 @@ def get_audio_dataset(dataset_name, split, manifest_path=None, sample_rate=None,
         if hf_streaming:
             return HuggingFaceAudioSetIterableDataset(
                 split=split,
+                subset=hf_subset,
                 sample_rate=sample_rate,
                 mono=mono,
                 duration_sec=duration_sec,
@@ -454,6 +557,7 @@ def get_audio_dataset(dataset_name, split, manifest_path=None, sample_rate=None,
             )
         return HuggingFaceAudioSetDataset(
             split=split,
+            subset=hf_subset,
             sample_rate=sample_rate,
             mono=mono,
             duration_sec=duration_sec,
@@ -476,7 +580,8 @@ def get_audio_dataset(dataset_name, split, manifest_path=None, sample_rate=None,
 
 def get_audio_dataloader(dataset_name, split, batch_size=8, shuffle=False, num_workers=0,
                          manifest_path=None, sample_rate=None, mono=True, duration_sec=None,
-                         hf_streaming=False, hf_cache_dir=None, max_items=None, hf_decode_audio=True):
+                         hf_streaming=False, hf_cache_dir=None, max_items=None, hf_decode_audio=True,
+                         hf_subset=None):
     dataset = get_audio_dataset(
         dataset_name=dataset_name,
         split=split,
@@ -488,6 +593,7 @@ def get_audio_dataloader(dataset_name, split, batch_size=8, shuffle=False, num_w
         hf_cache_dir=hf_cache_dir,
         max_items=max_items,
         hf_decode_audio=hf_decode_audio,
+        hf_subset=hf_subset,
     )
     if isinstance(dataset, IterableDataset) and shuffle:
         raise ValueError("shuffle=True is not supported for streaming AudioSet iterable datasets")
@@ -516,7 +622,7 @@ def get_target_model(target_name, device):
         preprocess = None
     else:
         raise ValueError(
-            "Unsupported backbone '{}' for audio-only runtime. Use an AST backbone (e.g. ast_esc50, ast_audioset, ast_hf__org__model).".format(
+            "Unsupported backbone '{}' for audio-only runtime. Use an AST backbone (e.g. ast_esc50, ast_audioset, ast_hf__org__model, ast_local__path).".format(
                 target_name
             )
         )

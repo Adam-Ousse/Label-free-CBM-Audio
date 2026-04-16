@@ -1,0 +1,117 @@
+{
+    "air_conditioner": [
+        "continuous hum",
+        "faint rattling",
+        "intermittent clicking",
+        "intermittent cycling",
+        "low frequency drone",
+        "low-frequency drone",
+        "mechanical whirring",
+        "rising pitch",
+        "steady hum",
+        "subtle cycling"
+    ],
+    "car_horn": [
+        "Long blast",
+        "Muffled honk",
+        "Pulsing beep",
+        "Sharp honk",
+        "Siren wail",
+        "high-pitched chirp",
+        "intermittent beeping",
+        "rapid repetition",
+        "sharp blast",
+        "sustained tone"
+    ],
+    "children_playing": [
+        "Colliding toy clatters",
+        "Grouped shouting",
+        "High-pitched giggling",
+        "Rapid footsteps",
+        "Sudden shrieking",
+        "group shouting",
+        "high-pitched laughter",
+        "irregular running",
+        "rhythmic clapping",
+        "toy crashing"
+    ],
+    "dog_bark": [
+        "Aggressive snarling",
+        "Distant howling",
+        "Low growling",
+        "Rapid barking",
+        "Sharp yelping",
+        "high whining",
+        "low growling",
+        "rapid barking",
+        "rhythmic barking",
+        "sharp yelping"
+    ],
+    "drilling": [
+        "directional rumble",
+        "high-pitched whine",
+        "intermittent bursts",
+        "intermittent hammering",
+        "mechanical grinding",
+        "metallic grinding",
+        "rhythmic chipping",
+        "rhythmic impact",
+        "steady buzzing"
+    ],
+    "engine_idling": [
+        "constant drone",
+        "constant pitch",
+        "low frequency hum",
+        "low rumble",
+        "mechanical growl",
+        "mechanical hum",
+        "rhythmic vibration",
+        "steady drone",
+        "steady rumble"
+    ],
+    "gun_shot": [
+        "distant boom",
+        "distant echo",
+        "explosive boom",
+        "high pitch click",
+        "high pitch ring",
+        "loud report",
+        "rapid decay",
+        "sharp crack",
+        "sudden silence"
+    ],
+    "jackhammer": [
+        "deep thumping",
+        "heavy impact",
+        "intermittent silence",
+        "low rumble",
+        "mechanical resonance",
+        "metallic clanging",
+        "rapid succession",
+        "rhythmic pounding",
+        "sharp impact"
+    ],
+    "siren": [
+        "Falling pitch",
+        "High frequency",
+        "Rapid pulsing",
+        "Rising pitch",
+        "Wailing tone",
+        "high-pitched wail",
+        "intermittent beeping",
+        "mechanical sweeping",
+        "piercing tone",
+        "rising and falling pitch"
+    ],
+    "street_music": [
+        "amplified brass",
+        "brass blasts",
+        "crowd applause",
+        "melodic singing",
+        "percussive tapping",
+        "plucked strings",
+        "rhythmic drumming",
+        "rhythmic strumming",
+        "vocal harmonies"
+    ]
+}

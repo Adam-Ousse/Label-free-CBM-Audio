@@ -86,15 +86,22 @@ def get_audio_save_names(clap_model_name, target_name, target_layer, split, conc
     return target_save_name, clap_audio_save_name, clap_text_save_name
 
 
+def get_audio_split_cache_key(dataset_name, split, hf_subset=None):
+    if dataset_name == "audioset":
+        return data_utils.get_hf_audioset_cache_key(split=split, subset=hf_subset)
+    return split
+
+
 def save_audio_activations(clap_model_name, target_name, target_layers, dataset_name, split,
                            concept_set, batch_size, device, pool_mode, save_dir,
-                           hf_streaming=False, hf_cache_dir=None, max_items=None):
+                           hf_streaming=False, hf_cache_dir=None, max_items=None, hf_subset=None):
     """Save backbone audio features and CLAP audio/text embeddings for a split."""
+    split_cache_key = get_audio_split_cache_key(dataset_name, split, hf_subset=hf_subset)
     target_save_name, clap_audio_save_name, clap_text_save_name = get_audio_save_names(
         clap_model_name,
         target_name,
         target_layers[0],
-        split,
+        split_cache_key,
         concept_set,
         pool_mode,
         save_dir,
@@ -114,6 +121,7 @@ def save_audio_activations(clap_model_name, target_name, target_layers, dataset_
         hf_streaming=hf_streaming if dataset_name == "audioset" else False,
         hf_cache_dir=hf_cache_dir,
         max_items=max_items,
+        hf_subset=hf_subset,
     )
 
     with open(concept_set, "r", encoding="utf-8") as f:

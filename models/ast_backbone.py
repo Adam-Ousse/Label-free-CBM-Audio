@@ -8,12 +8,17 @@ AST_MODEL_ALIASES = {
     "ast_audioset": "MIT/ast-finetuned-audioset-10-10-0.4593",
     "ast_mit_audioset": "MIT/ast-finetuned-audioset-10-10-0.4593",
     "ast_esc50": "Adam-ousse/ast-esc50-finetuned-fold1",
+    "ast_urbansound8k": "Adam-ousse/ast-urbansound8k-finetuned-fold10",
 }
 
 
 def _resolve_model_id(target_name):
     if target_name in AST_MODEL_ALIASES:
         return AST_MODEL_ALIASES[target_name]
+
+    # local checkpoint support: ast_local__saved_models__foo -> saved_models/foo
+    if target_name.startswith("ast_local__"):
+        return target_name[len("ast_local__"):].replace("__", "/")
 
     # custom hf id support: ast_hf__org__repo -> org/repo
     if target_name.startswith("ast_hf__"):

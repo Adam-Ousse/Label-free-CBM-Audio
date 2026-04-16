@@ -44,6 +44,56 @@ parser.add_argument("--enforce_esc50_fold1_protocol", action='store_true', help=
 parser.add_argument("--audioset_streaming", action='store_true', help="Use Hugging Face streaming for AudioSet")
 parser.add_argument("--audioset_cache_dir", type=str, default=None, help="Optional Hugging Face cache directory")
 parser.add_argument("--audioset_max_items", type=int, default=None, help="Optional cap on loaded AudioSet samples")
+parser.add_argument("--audioset_subset", type=str, default=None, help="Default AudioSet subset (balanced, unbalanced, full)")
+parser.add_argument("--audioset_train_subset", type=str, default=None, help="AudioSet subset for train split")
+parser.add_argument("--audioset_val_subset", type=str, default=None, help="AudioSet subset for val split")
+parser.add_argument("--audioset_test_subset", type=str, default=None, help="AudioSet subset for test split")
+
+
+def _labels_to_multihot_tensor(labels, num_classes):
+    target = torch.zeros(num_classes, dtype=torch.float32)
+    for label in labels or []:
+        try:
+            idx = int(label)
+        except (TypeError, ValueError):
+            continue
+        if 0 <= idx < num_classes:
+            target[idx] = 1.0
+    return target
+
+
+def _compute_multilabel_metrics(logits, targets, threshold=0.5):
+    metrics = {}
+
+    probs = torch.sigmoid(logits).detach().cpu().numpy()
+    y_true = targets.detach().cpu().numpy()
+    y_pred = (probs >= float(threshold)).astype("int32")
+
+    try:
+        from sklearn.metrics import average_precision_score, f1_score, roc_auc_score
+    except Exception:
+        metrics["warning"] = "scikit-learn unavailable; only loss was computed"
+        return metrics
+
+    try:
+        metrics["mAP_macro"] = float(average_precision_score(y_true, probs, average="macro"))
+    except ValueError:
+        metrics["mAP_macro"] = None
+
+    try:
+        metrics["auc_roc_macro"] = float(roc_auc_score(y_true, probs, average="macro"))
+    except ValueError:
+        metrics["auc_roc_macro"] = None
+
+    try:
+        metrics["f1_micro"] = float(f1_score(y_true, y_pred, average="micro", zero_division=0))
+        metrics["f1_macro"] = float(f1_score(y_true, y_pred, average="macro", zero_division=0))
+    except ValueError:
+        metrics["f1_micro"] = None
+        metrics["f1_macro"] = None
+
+    metrics["threshold"] = float(threshold)
+    return metrics
 
 def train_cbm_and_save(args):
     
@@ -58,11 +108,23 @@ def train_cbm_and_save(args):
     similarity_fn = similarity.cos_similarity_cubed_single
     
     if args.dataset == "audioset":
-        d_train = args.train_split or "balanced"
+        d_train = args.train_split or "train"
         d_val = args.val_split or "eval"
         d_test = args.test_split
-    elif args.dataset == "esc50":
-        if args.enforce_esc50_fold1_protocol:
+
+        hf_subset_default = getattr(args, "audioset_subset", None)
+        hf_train_subset = getattr(args, "audioset_train_subset", None) or hf_subset_default
+        hf_val_subset = getattr(args, "audioset_val_subset", None) or hf_subset_default
+        hf_test_subset = getattr(args, "audioset_test_subset", None) or hf_subset_default
+
+        audio_probe_specs = [
+            ("train", d_train, hf_train_subset),
+            ("val", d_val, hf_val_subset),
+        ]
+        if d_test is not None:
+            audio_probe_specs.append(("test", d_test, hf_test_subset))
+    elif args.dataset in {"esc50", "urbansound8k"}:
+        if args.dataset == "esc50" and args.enforce_esc50_fold1_protocol:
             fixed_train = "fold1_train"
             fixed_val = "fold1_val"
             fixed_test = "fold1_test"
@@ -76,11 +138,26 @@ def train_cbm_and_save(args):
             d_val = fixed_val
             d_test = fixed_test
         else:
-            d_train = args.train_split or "train"
-            d_val = args.val_split or "val"
-            d_test = args.test_split
+            if args.dataset == "urbansound8k":
+                d_train = args.train_split or "fold10_train"
+                d_val = args.val_split or "fold10_val"
+                d_test = args.test_split or "fold10_test"
+            else:
+                d_train = args.train_split or "train"
+                d_val = args.val_split or "val"
+                d_test = args.test_split
+        audio_probe_specs = [
+            ("train", d_train, None),
+            ("val", d_val, None),
+        ]
+        if d_test is not None:
+            audio_probe_specs.append(("test", d_test, None))
     else:
-        raise ValueError("Unsupported dataset '{}' for audio-only runtime. Use esc50 or audioset.".format(args.dataset))
+        raise ValueError(
+            "Unsupported dataset '{}' for audio-only runtime. Use esc50, urbansound8k, or audioset.".format(
+                args.dataset
+            )
+        )
 
     print("Using splits -> train: {}, val: {}, test: {}".format(d_train, d_val, d_test))
     
@@ -91,15 +168,11 @@ def train_cbm_and_save(args):
         concepts = [line.strip() for line in f.readlines() if line.strip()]
     
     #save activations and get save_paths
-    d_probes = [d_train, d_val]
-    if d_test is not None:
-        d_probes.append(d_test)
-
     hf_streaming = bool(getattr(args, "audioset_streaming", False))
     hf_cache_dir = getattr(args, "audioset_cache_dir", None)
     hf_max_items = getattr(args, "audioset_max_items", None)
 
-    for d_probe in d_probes:
+    for _, d_probe, d_probe_subset in audio_probe_specs:
         utils.save_audio_activations(
             clap_model_name=args.clap_model,
             target_name=args.backbone,
@@ -114,13 +187,20 @@ def train_cbm_and_save(args):
             hf_streaming=hf_streaming,
             hf_cache_dir=hf_cache_dir,
             max_items=hf_max_items,
+            hf_subset=d_probe_subset,
         )
+
+    train_cache_key = utils.get_audio_split_cache_key(args.dataset, d_train, hf_subset=audio_probe_specs[0][2])
+    val_cache_key = utils.get_audio_split_cache_key(args.dataset, d_val, hf_subset=audio_probe_specs[1][2])
+    test_cache_key = None
+    if d_test is not None:
+        test_cache_key = utils.get_audio_split_cache_key(args.dataset, d_test, hf_subset=audio_probe_specs[2][2])
 
     target_save_name, clap_audio_save_name, clap_text_save_name = utils.get_audio_save_names(
         args.clap_model,
         args.backbone,
         args.feature_layer,
-        d_train,
+        train_cache_key,
         args.concept_set,
         "avg",
         args.activation_dir,
@@ -129,7 +209,7 @@ def train_cbm_and_save(args):
         args.clap_model,
         args.backbone,
         args.feature_layer,
-        d_val,
+        val_cache_key,
         args.concept_set,
         "avg",
         args.activation_dir,
@@ -139,7 +219,7 @@ def train_cbm_and_save(args):
             args.clap_model,
             args.backbone,
             args.feature_layer,
-            d_test,
+            test_cache_key,
             args.concept_set,
             "avg",
             args.activation_dir,
@@ -156,7 +236,7 @@ def train_cbm_and_save(args):
                 )
             )
             os.remove(clap_text_save_name)
-            for d_probe in d_probes:
+            for _, d_probe, d_probe_subset in audio_probe_specs:
                 utils.save_audio_activations(
                     clap_model_name=args.clap_model,
                     target_name=args.backbone,
@@ -171,6 +251,7 @@ def train_cbm_and_save(args):
                     hf_streaming=hf_streaming,
                     hf_cache_dir=hf_cache_dir,
                     max_items=hf_max_items,
+                    hf_subset=d_probe_subset,
                 )
     
     #load features
@@ -304,81 +385,230 @@ def train_cbm_and_save(args):
     proj_layer = torch.nn.Linear(in_features=target_features.shape[1], out_features=len(concepts), bias=False)
     proj_layer.load_state_dict({"weight":W_c})
     
+    output_proj = None
+    test_metrics = None
+
     if args.dataset == "audioset":
-        raise NotImplementedError(
-            "Final sparse classifier stage is currently single-label only. "
-            "AudioSet integration in this refactor covers CLAP concept scoring (Step 2) but not multi-label classifier fitting."
-        )
-    if args.dataset == "esc50":
+        if hf_streaming:
+            raise ValueError(
+                "AudioSet final multi-label stage requires non-streaming mode. "
+                "Run without --audioset_streaming for classifier fitting."
+            )
+
+        def _collect_targets(split_name, subset_name, expected_rows):
+            ds = data_utils.get_audio_dataset(
+                dataset_name=args.dataset,
+                split=split_name,
+                hf_streaming=False,
+                hf_cache_dir=hf_cache_dir,
+                max_items=hf_max_items,
+                hf_subset=subset_name,
+            )
+
+            targets = []
+            if hasattr(ds, "ds"):
+                for row in ds.ds:
+                    targets.append(_labels_to_multihot_tensor(row.get("labels", []), len(classes)))
+                    if len(targets) >= expected_rows:
+                        break
+            else:
+                for sample in ds:
+                    target = sample["target"]
+                    if not isinstance(target, torch.Tensor):
+                        target = torch.as_tensor(target)
+                    targets.append(target.float().cpu())
+                    if len(targets) >= expected_rows:
+                        break
+
+            if len(targets) != expected_rows:
+                raise ValueError(
+                    "{} targets/features mismatch: {} vs {}".format(
+                        split_name, len(targets), expected_rows
+                    )
+                )
+            return torch.stack(targets, dim=0)
+
+        train_targets = _collect_targets(d_train, hf_train_subset, target_features.shape[0])
+        val_targets = _collect_targets(d_val, hf_val_subset, val_target_features.shape[0])
+        test_targets = None
+        if d_test is not None:
+            test_targets = _collect_targets(d_test, hf_test_subset, test_target_features.shape[0])
+
+        with torch.no_grad():
+            train_c = proj_layer(target_features.detach())
+            val_c = proj_layer(val_target_features.detach())
+
+            train_mean = torch.mean(train_c, dim=0, keepdim=True)
+            train_std = torch.std(train_c, dim=0, keepdim=True)
+            train_std = torch.clamp(train_std, min=1e-6)
+
+            train_c = (train_c - train_mean) / train_std
+            val_c = (val_c - train_mean) / train_std
+
+            train_y = train_targets.float()
+            val_y = val_targets.float()
+
+            test_c = None
+            test_y = None
+            if d_test is not None:
+                test_c = proj_layer(test_target_features.detach())
+                test_c = (test_c - train_mean) / train_std
+                test_y = test_targets.float()
+
+        train_ds = TensorDataset(train_c, train_y)
+        train_loader = DataLoader(train_ds, batch_size=args.saga_batch_size, shuffle=True)
+
+        linear = torch.nn.Linear(train_c.shape[1], len(classes)).to(args.device)
+        linear.weight.data.zero_()
+        linear.bias.data.zero_()
+
+        criterion = torch.nn.BCEWithLogitsLoss()
+        optimizer = torch.optim.AdamW(linear.parameters(), lr=1e-3)
+
+        best_val_loss = float("inf")
+        best_step = 0
+        best_state = {
+            "weight": linear.weight.detach().clone(),
+            "bias": linear.bias.detach().clone(),
+        }
+        train_iterator = iter(train_loader)
+
+        for step in range(args.n_iters):
+            try:
+                x_batch, y_batch = next(train_iterator)
+            except StopIteration:
+                train_iterator = iter(train_loader)
+                x_batch, y_batch = next(train_iterator)
+
+            x_batch = x_batch.to(args.device)
+            y_batch = y_batch.to(args.device)
+
+            optimizer.zero_grad()
+            logits = linear(x_batch)
+            bce_loss = criterion(logits, y_batch)
+            reg_loss = args.lam * torch.mean(torch.abs(linear.weight))
+            loss = bce_loss + reg_loss
+            loss.backward()
+            optimizer.step()
+
+            if step % 50 == 0 or step == args.n_iters - 1:
+                with torch.no_grad():
+                    val_logits = linear(val_c.to(args.device))
+                    val_loss = criterion(val_logits, val_y.to(args.device)) + args.lam * torch.mean(torch.abs(linear.weight))
+
+                print(
+                    "Step:{}, Train BCE:{:.4f}, Val BCE:{:.4f}".format(
+                        step,
+                        float(bce_loss.detach().cpu()),
+                        float(val_loss.detach().cpu()),
+                    )
+                )
+
+                if float(val_loss.detach().cpu()) < best_val_loss:
+                    best_val_loss = float(val_loss.detach().cpu())
+                    best_step = step
+                    best_state = {
+                        "weight": linear.weight.detach().clone(),
+                        "bias": linear.bias.detach().clone(),
+                    }
+                elif step - best_step >= 400:
+                    break
+
+        linear.load_state_dict(best_state)
+        W_g = linear.weight.detach().cpu()
+        b_g = linear.bias.detach().cpu()
+        output_proj = {
+            "mode": "bce_multilabel",
+            "best_step": int(best_step),
+            "best_val_bce": float(best_val_loss),
+            "lam": float(args.lam),
+        }
+
+        if d_test is not None:
+            with torch.no_grad():
+                logits_test = linear(test_c.to(args.device)).cpu()
+                test_loss = criterion(logits_test, test_y).item()
+                test_metrics = {"loss": test_loss}
+                test_metrics.update(_compute_multilabel_metrics(logits_test, test_y, threshold=0.5))
+
+            printable = ["loss: {:.4f}".format(test_metrics["loss"])]
+            if test_metrics.get("mAP_macro") is not None:
+                printable.append("mAP: {:.4f}".format(test_metrics["mAP_macro"]))
+            if test_metrics.get("auc_roc_macro") is not None:
+                printable.append("auc: {:.4f}".format(test_metrics["auc_roc_macro"]))
+            if test_metrics.get("f1_micro") is not None:
+                printable.append("f1_micro: {:.4f}".format(test_metrics["f1_micro"]))
+            if test_metrics.get("f1_macro") is not None:
+                printable.append("f1_macro: {:.4f}".format(test_metrics["f1_macro"]))
+            print("Held-out test -> {}".format(", ".join(printable)))
+
+    elif args.dataset in {"esc50", "urbansound8k"}:
         train_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_train).samples]
         val_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_val).samples]
         test_targets = None
         if d_test is not None:
             test_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_test).samples]
 
-    if len(train_targets) != target_features.shape[0]:
-        raise ValueError("Train targets/features mismatch: {} vs {}".format(len(train_targets), target_features.shape[0]))
-    if len(val_targets) != val_target_features.shape[0]:
-        raise ValueError("Val targets/features mismatch: {} vs {}".format(len(val_targets), val_target_features.shape[0]))
-    if d_test is not None and len(test_targets) != test_target_features.shape[0]:
-        raise ValueError("Test targets/features mismatch: {} vs {}".format(len(test_targets), test_target_features.shape[0]))
-    
-    with torch.no_grad():
-        train_c = proj_layer(target_features.detach())
-        val_c = proj_layer(val_target_features.detach())
-        
-        train_mean = torch.mean(train_c, dim=0, keepdim=True)
-        train_std = torch.std(train_c, dim=0, keepdim=True)
-        train_std = torch.clamp(train_std, min=1e-6)
-        
-        train_c -= train_mean
-        train_c /= train_std
-        
-        train_y = torch.LongTensor(train_targets)
-        indexed_train_ds = IndexedTensorDataset(train_c, train_y)
+        if len(train_targets) != target_features.shape[0]:
+            raise ValueError("Train targets/features mismatch: {} vs {}".format(len(train_targets), target_features.shape[0]))
+        if len(val_targets) != val_target_features.shape[0]:
+            raise ValueError("Val targets/features mismatch: {} vs {}".format(len(val_targets), val_target_features.shape[0]))
+        if d_test is not None and len(test_targets) != test_target_features.shape[0]:
+            raise ValueError("Test targets/features mismatch: {} vs {}".format(len(test_targets), test_target_features.shape[0]))
 
-        val_c -= train_mean
-        val_c /= train_std
-        
-        val_y = torch.LongTensor(val_targets)
+        with torch.no_grad():
+            train_c = proj_layer(target_features.detach())
+            val_c = proj_layer(val_target_features.detach())
 
-        val_ds = TensorDataset(val_c,val_y)
+            train_mean = torch.mean(train_c, dim=0, keepdim=True)
+            train_std = torch.std(train_c, dim=0, keepdim=True)
+            train_std = torch.clamp(train_std, min=1e-6)
+
+            train_c -= train_mean
+            train_c /= train_std
+
+            train_y = torch.LongTensor(train_targets)
+            indexed_train_ds = IndexedTensorDataset(train_c, train_y)
+
+            val_c -= train_mean
+            val_c /= train_std
+
+            val_y = torch.LongTensor(val_targets)
+            val_ds = TensorDataset(val_c, val_y)
+
+            if d_test is not None:
+                test_c = proj_layer(test_target_features.detach())
+                test_c -= train_mean
+                test_c /= train_std
+                test_y = torch.LongTensor(test_targets)
+
+        indexed_train_loader = DataLoader(indexed_train_ds, batch_size=args.saga_batch_size, shuffle=True)
+        val_loader = DataLoader(val_ds, batch_size=args.saga_batch_size, shuffle=False)
+
+        # Make linear model and zero initialize
+        linear = torch.nn.Linear(train_c.shape[1],len(classes)).to(args.device)
+        linear.weight.data.zero_()
+        linear.bias.data.zero_()
+
+        STEP_SIZE = 0.1
+        ALPHA = 0.99
+        metadata = {}
+        metadata['max_reg'] = {}
+        metadata['max_reg']['nongrouped'] = args.lam
+
+        # Solve the GLM path
+        output_proj = glm_saga(linear, indexed_train_loader, STEP_SIZE, args.n_iters, ALPHA, epsilon=1, k=1,
+                          val_loader=val_loader, do_zero=False, metadata=metadata, n_ex=len(target_features), n_classes = len(classes))
+        W_g = output_proj['path'][0]['weight']
+        b_g = output_proj['path'][0]['bias']
 
         if d_test is not None:
-            test_c = proj_layer(test_target_features.detach())
-            test_c -= train_mean
-            test_c /= train_std
-            test_y = torch.LongTensor(test_targets)
-
-
-    indexed_train_loader = DataLoader(indexed_train_ds, batch_size=args.saga_batch_size, shuffle=True)
-    val_loader = DataLoader(val_ds, batch_size=args.saga_batch_size, shuffle=False)
-
-    # Make linear model and zero initialize
-    linear = torch.nn.Linear(train_c.shape[1],len(classes)).to(args.device)
-    linear.weight.data.zero_()
-    linear.bias.data.zero_()
-    
-    STEP_SIZE = 0.1
-    ALPHA = 0.99
-    metadata = {}
-    metadata['max_reg'] = {}
-    metadata['max_reg']['nongrouped'] = args.lam
-
-    # Solve the GLM path
-    output_proj = glm_saga(linear, indexed_train_loader, STEP_SIZE, args.n_iters, ALPHA, epsilon=1, k=1,
-                      val_loader=val_loader, do_zero=False, metadata=metadata, n_ex=len(target_features), n_classes = len(classes))
-    W_g = output_proj['path'][0]['weight']
-    b_g = output_proj['path'][0]['bias']
-
-    test_metrics = None
-    if d_test is not None:
-        with torch.no_grad():
-            logits_test = F.linear(test_c.to(W_g.device), W_g, b_g).cpu()
-            test_loss = F.cross_entropy(logits_test, test_y).item()
-            test_acc = (torch.argmax(logits_test, dim=1) == test_y).float().mean().item()
-            test_metrics = {"loss": test_loss, "accuracy": test_acc}
-        print("Held-out test -> loss: {:.4f}, acc: {:.4f}".format(test_metrics["loss"], test_metrics["accuracy"]))
+            with torch.no_grad():
+                logits_test = F.linear(test_c.to(W_g.device), W_g, b_g).cpu()
+                test_loss = F.cross_entropy(logits_test, test_y).item()
+                test_acc = (torch.argmax(logits_test, dim=1) == test_y).float().mean().item()
+                test_metrics = {"loss": test_loss, "accuracy": test_acc}
+            print("Held-out test -> loss: {:.4f}, acc: {:.4f}".format(test_metrics["loss"], test_metrics["accuracy"]))
     
     save_name = "{}/{}_cbm_{}".format(args.save_dir, args.dataset, datetime.datetime.now().strftime("%Y_%m_%d_%H_%M"))
     os.mkdir(save_name)
@@ -398,10 +628,19 @@ def train_cbm_and_save(args):
     
     with open(os.path.join(save_name, "metrics.txt"), 'w') as f:
         out_dict = {}
-        for key in ('lam', 'lr', 'alpha', 'time'):
-            out_dict[key] = float(output_proj['path'][0][key])
-        out_dict['metrics'] = output_proj['path'][0]['metrics']
+        if args.dataset in {"esc50", "urbansound8k"}:
+            for key in ('lam', 'lr', 'alpha', 'time'):
+                out_dict[key] = float(output_proj['path'][0][key])
+            out_dict['metrics'] = output_proj['path'][0]['metrics']
+        else:
+            out_dict['training'] = output_proj
         out_dict['splits'] = {"train": d_train, "val": d_val, "test": d_test}
+        if args.dataset == "audioset":
+            out_dict['subsets'] = {
+                "train": hf_train_subset,
+                "val": hf_val_subset,
+                "test": hf_test_subset,
+            }
         nnz = (W_g.abs() > 1e-5).sum().item()
         total = W_g.numel()
         out_dict['sparsity'] = {"Non-zero weights":nnz, "Total weights":total, "Percentage non-zero":nnz/total}
