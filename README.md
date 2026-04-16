@@ -1,175 +1,160 @@
-# Label-free-CBM-Audio (Milestone 1)
+# Label-free-CBM-Audio
 
-This fork is currently focused on one concrete milestone:
+Audio LF-CBM codebase with dataset preparation utilities, AST fine-tuning scripts, and CBM training entrypoints.
 
-**Set up ESC-50 and AudioSet so a teammate can immediately start training an audio backbone.**
+Current datasets wired in the active path:
 
-This is a data-layer milestone. The full LF-CBM audio training adaptation is intentionally **not** implemented yet.
+- ESC-50
+- UrbanSound8K
+- AudioSet (Hugging Face)
 
-Current multimodal concept scoring now uses **CLAP audio-text embeddings** (replacing CLIP image-text scoring in the active path).
+## Quick start (UrbanSound8K end-to-end)
 
-## What is implemented now
+Run from repo root.
 
-- Reproducible ESC-50 preparation script
-- Hugging Face AudioSet loading via `datasets.load_dataset`
-- JSONL manifest generation for ESC-50
-- Label mapping files for both datasets
-- Unified PyTorch audio manifest dataset/dataloader API in `data_utils.py`
-- Multi-label support for AudioSet targets
-- Sanity-check script for one-batch loading
-- Archive area for original image-paper reproduction assets
-
-## What is intentionally not implemented yet
-
-- Concept filtering / concept set generation for audio
-- CLIP-to-audio encoder replacement (e.g., CLAP)
-- CBM training adaptation for audio
-- Sparse classifier/audio-method redesign
-- Explanation plotting updates for audio models
-
-## Repository layout for this milestone
-
-- `data/prepare_esc50.py`: parse official ESC-50 metadata and build manifests/mappings
-- `data/download_audioset.py`: inspect/cache Hugging Face AudioSet split metadata
-- `clap/`: CLAP package (core loading + batched audio/text encoding + similarity helper)
-- `clap_utils.py`: compatibility shim that re-exports from `clap/`
-- `data/esc50/`: ESC-50 mappings + manifests output directory
-- `data/audioset/`: AudioSet mappings + summary output directory
-- `data/esc50_classes.txt`: ESC-50 class names
-- `data/audioset_classes.txt`: generated from AudioSet class labels CSV
-- `data_utils.py`: unified dataset + dataloader entry point for audio datasets
-- `check_audio_dataloader.py`: quick operational sanity check
-- `archive_legacy/`: legacy vision runtime code moved out of active audio path
-- `archive/original_paper/`: archived image-paper-specific artifacts
-
-## Install
-
-Use Python 3.9+.
+1) create or activate environment
 
 ```bash
+python -m venv ../dl_env
+source ../dl_env/bin/activate
 pip install -r requirements.txt
 ```
 
-AudioSet now uses Hugging Face Datasets directly (no yt-dlp/ffmpeg dependency for AudioSet ingestion).
-
-## Download and prepare
-
-The pipeline is intentionally split into two stages:
-
-1. prepare or validate ESC-50 local manifests
-2. run the dataloader sanity check (ESC-50 + Hugging Face AudioSet)
-
-## ESC-50 setup
-
-1. Download ESC-50 with the helper script or validate a manually downloaded archive.
+2) download or validate UrbanSound8K
 
 ```bash
-python data/download_esc50.py --output_dir data/esc50/raw
+python data/download_urbansound8k.py --output_dir data/urbansound8k/raw
 ```
 
-If you already downloaded the archive yourself, you can validate it instead:
+If already downloaded:
 
 ```bash
-python data/download_esc50.py --output_dir /path/to/esc50_tree --validate_only
+python data/download_urbansound8k.py --output_dir data/urbansound8k/raw --validate_only
 ```
 
-2. Ensure it has this structure:
-
-```text
-/path/to/ESC-50-master/
-  meta/esc50.csv
-  audio/*.wav
-```
-
-3. Generate manifests/mappings:
+3) build manifests and label mappings
 
 ```bash
-python data/prepare_esc50.py \
-  --esc50_root /path/to/ESC-50-master \
-  --out_root data/esc50 \
+python data/prepare_urbansound8k.py \
+  --urbansound8k_root data/urbansound8k/raw \
+  --out_root data/urbansound8k \
   --repo_root .
 ```
 
-### ESC-50 split convention
+4) train AST backbone on UrbanSound8K (fixed folds)
 
-- Official folds are preserved (`fold` field in each sample)
-- Per-test-fold manifests are generated:
-  - `fold{1..5}_train.jsonl`
-  - `fold{1..5}_val.jsonl`
-  - `fold{1..5}_test.jsonl`
-- Default top-level manifests are also generated:
-  - `train.jsonl`, `val.jsonl`, `test.jsonl`
-- Default behavior uses `default_test_fold=1` and `val_fold=(test_fold+1) mod 5`
+```bash
+python train_urbansound8k_ast.py \
+  --base_model_id MIT/ast-finetuned-audioset-10-10-0.4593 \
+  --epochs 30 \
+  --batch_size 32 \
+  --device cuda
+```
 
-## AudioSet setup (Hugging Face)
+5) evaluate trained AST checkpoint
 
-AudioSet is now loaded directly from:
+```bash
+python evaluate_urbansound8k_ast.py \
+  --model_id saved_models/ast_urbansound8k/fold10/best_model \
+  --split fold10_test
+```
 
-- `agkphysics/AudioSet`
+6) train CBM on UrbanSound8K
 
-Supported split names in this repo are:
+```bash
+python train_cbm_urbansound8k_ast.py --device cuda
+```
 
-- `balanced` (or alias `balanced_train`)
-- `unbalanced`
-- `eval`
-- `train` (forwarded to the HF dataset split as-is)
+## Dataset details
 
-Optional inspection/caching helper:
+### UrbanSound8K
+
+Source:
+
+- https://www.kaggle.com/datasets/chrisfilo/urbansound8k
+
+Supported extracted layouts (both are accepted):
+
+- nested layout:
+
+```text
+UrbanSound8K/
+  metadata/UrbanSound8K.csv
+  audio/fold1..fold10/*.wav
+```
+
+- kaggle flat layout:
+
+```text
+raw/
+  UrbanSound8K.csv
+  fold1..fold10/*.wav
+```
+
+Fold protocol used by UrbanSound8K scripts in this repo:
+
+- train: folds 1-8 -> `fold10_train.jsonl`
+- val: fold 9 -> `fold10_val.jsonl`
+- test: fold 10 -> `fold10_test.jsonl`
+
+Generated artifacts:
+
+- `data/urbansound8k/manifests/all.jsonl`
+- `data/urbansound8k/manifests/fold10_train.jsonl`
+- `data/urbansound8k/manifests/fold10_val.jsonl`
+- `data/urbansound8k/manifests/fold10_test.jsonl`
+- `data/urbansound8k/manifests/train.jsonl`
+- `data/urbansound8k/manifests/val.jsonl`
+- `data/urbansound8k/manifests/test.jsonl`
+- `data/urbansound8k/label_to_idx.json`
+- `data/urbansound8k/idx_to_label.json`
+- `data/urbansound8k_classes.txt`
+
+Notes:
+
+- urban WAV files may include ADPCM / WAVE_FORMAT_EXTENSIBLE.
+- repo loading and metadata readers now use fallback decoding (`wave` -> `soundfile` -> `scipy`) to handle these files.
+
+### ESC-50
+
+Prepare ESC-50:
+
+```bash
+python data/download_esc50.py --output_dir data/esc50/raw
+python data/prepare_esc50.py --esc50_root /path/to/ESC-50-master --out_root data/esc50 --repo_root .
+```
+
+### AudioSet (Hugging Face)
+
+Optional metadata/cache helper:
 
 ```bash
 python data/download_audioset.py --split balanced --max_items 64
 ```
 
-Streaming mode for very large splits:
+Streaming example:
 
 ```bash
 python data/download_audioset.py --split unbalanced --streaming --max_items 128
 ```
 
-## Downloaded audio validation
+## Training entrypoints
 
-If you want a quick smoke test of a downloaded clip directory, run:
+- `train_urbansound8k_ast.py`: fine-tune AST on UrbanSound8K (fixed fold protocol)
+- `evaluate_urbansound8k_ast.py`: evaluate AST classifier checkpoint
+- `train_cbm_urbansound8k_ast.py`: run CBM training with UrbanSound8K manifests
+- `train_cbm_esc50.py`: run CBM training with ESC-50
 
-```bash
-python data/check_downloaded_audio.py --audio_dir data/audioset/clips
-```
+## Unified audio API
 
-## Manifest schema
-
-### ESC-50 sample
-
-```json
-{
-  "id": "5-12345-A-10",
-  "audio_path": "data/esc50/audio/5-12345-A-10.wav",
-  "label": "dog",
-  "label_idx": 16,
-  "fold": 1,
-  "sample_rate": 44100,
-  "duration": 5.0,
-  "dataset": "esc50"
-}
-```
-
-### AudioSet sample (from Hugging Face)
-
-```json
-{
-  "audio": {"array": "waveform", "sampling_rate": 48000},
-  "labels": [23, 119],
-  "human_labels": ["Dog", "Bark"],
-  "video_id": "YOUTUBEID"
-}
-```
-
-## Unified data API (`data_utils.py`)
+Core API lives in `data_utils.py`:
 
 - `get_dataset_classes(dataset_name)`
 - `get_audio_dataset(dataset_name, split, ...)`
 - `get_audio_dataloader(dataset_name, split, ...)`
 - `get_audio_label_mappings(dataset_name)`
 
-Returned sample dictionary format:
+Returned sample format:
 
 ```python
 {
@@ -182,27 +167,14 @@ Returned sample dictionary format:
 }
 ```
 
-Defaults:
-- mono waveform
-- sample rate: 16000
-- ESC-50 clip duration: 5.0s (pad/truncate)
-- AudioSet clip duration: 10.0s (pad/truncate, loaded from HF audio arrays)
+## Troubleshooting
 
-## Sanity check
-
-After generating ESC-50 manifests, run:
+- UrbanSound8K download fails with 401/403:
+  - configure Kaggle credentials (`~/.kaggle/kaggle.json` or `KAGGLE_USERNAME` + `KAGGLE_KEY`)
+- UrbanSound8K extraction validates but training fails on audio decode:
+  - ensure dependencies are up to date: `pip install -r requirements.txt`
+- Quick check that manifests load:
 
 ```bash
 python check_audio_dataloader.py --audioset_split balanced
 ```
-
-This script:
-- loads ESC-50 and AudioSet datasets
-- prints dataset sizes and class counts
-- loads one batch from each and prints tensor shapes
-- fails loudly if ESC-50 manifests are invalid or HF AudioSet cannot be loaded
-
-## Notes for teammates
-
-This repository is now prepared for **audio backbone training data plumbing**.
-Method-level LF-CBM audio adaptation should build on top of these manifests and dataloaders in a later milestone.

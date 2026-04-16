@@ -21,3 +21,6 @@ data/audioset/manifests/
 data/audioset/summary.json
 .bashrc
 
+data/urbansound8k/raw
+data/urbansound8k/manifests
+data/urbansound8k/summary.json

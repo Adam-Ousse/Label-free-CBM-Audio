@@ -1,0 +1,111 @@
+{
+    "air_conditioner": [
+        "artificial ambient sound",
+        "continuous low-frequency hum",
+        "electrical device operation",
+        "electrical motor hum",
+        "household appliance noise",
+        "indoor environmental sound",
+        "mechanical appliance sound",
+        "mechanical device sound"
+    ],
+    "car_horn": [
+        "artificial signal",
+        "artificial sound event",
+        "human-made acoustic signal",
+        "human-made alert",
+        "mechanical noise",
+        "mechanical sound source",
+        "traffic noise component",
+        "transportation sound",
+        "vehicle auditory signal",
+        "vehicular audio"
+    ],
+    "children_playing": [
+        "anthropogenic ambient noise",
+        "child vocalization and movement",
+        "domestic environment noise",
+        "domestic play environment",
+        "human activity sound",
+        "organic mechanical sound",
+        "recreational activity sound",
+        "social interaction noise",
+        "social interaction sound"
+    ],
+    "dog_bark": [
+        "animal vocalization",
+        "biological acoustic event",
+        "biological sound source",
+        "domestic animal sound",
+        "mammal sound",
+        "short-duration sound event",
+        "terrestrial sound source"
+    ],
+    "drilling": [
+        "construction equipment sound",
+        "construction tool sound",
+        "high-frequency impact sound",
+        "high-frequency mechanical vibration",
+        "industrial machinery sound",
+        "mechanical cutting noise",
+        "mechanical operation sound",
+        "power tool operation",
+        "powered device sound"
+    ],
+    "engine_idling": [
+        "artificial ambient sound",
+        "combustion engine noise",
+        "combustion engine sound",
+        "industrial machinery sound",
+        "mechanical hum",
+        "mechanical noise",
+        "rhythmic mechanical hum",
+        "stationary engine sound",
+        "vehicle sound"
+    ],
+    "gun_shot": [
+        "artificial loud noise",
+        "explosive sound",
+        "firearm discharge",
+        "human-made auditory event",
+        "human-made loud event",
+        "loud percussive impact",
+        "mechanical explosion",
+        "mechanical impact sound",
+        "weapon noise"
+    ],
+    "jackhammer": [
+        "construction equipment sound",
+        "construction noise",
+        "heavy equipment audio",
+        "heavy machinery sound",
+        "human-made environmental sound",
+        "industrial sound source",
+        "mechanical impact noise",
+        "mechanical impact sound",
+        "power tool sound",
+        "urban soundscape"
+    ],
+    "siren": [
+        "artificial alert signal",
+        "artificial auditory warning",
+        "auditory warning device",
+        "emergency vehicle sound",
+        "human-made auditory signal",
+        "man-made emergency noise",
+        "mechanical alert signal",
+        "mechanical warning sound",
+        "synthetic siren sound"
+    ],
+    "street_music": [
+        "acoustic entertainment",
+        "acoustic event",
+        "human-generated sound",
+        "human-made music",
+        "live performance",
+        "live performance audio",
+        "public gathering sound",
+        "public space audio",
+        "urban soundscape"
+    ]
+}
