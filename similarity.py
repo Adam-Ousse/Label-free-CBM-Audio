@@ -22,6 +22,22 @@ def cos_similarity_cubed_single(clip_feats, target_feats):
     similarities = torch.sum(target_feats*clip_feats, dim=0)
     return similarities
 
+
+def cos_similarity_single(clip_feats, target_feats):
+    """
+    Mean-center each vector, then compute cosine similarity column-wise.
+    """
+
+    clip_feats = clip_feats.float()
+    clip_feats = clip_feats - torch.mean(clip_feats, dim=0, keepdim=True)
+    target_feats = target_feats - torch.mean(target_feats, dim=0, keepdim=True)
+
+    clip_feats = clip_feats / torch.norm(clip_feats, p=2, dim=0, keepdim=True)
+    target_feats = target_feats / torch.norm(target_feats, p=2, dim=0, keepdim=True)
+
+    similarities = torch.sum(target_feats * clip_feats, dim=0)
+    return similarities
+
 def cos_similarity_cubed(clip_feats, target_feats, device='cuda', batch_size=10000, min_norm=1e-3):
     """
     Substract mean from each vector, then raises to third power and compares cos similarity
