@@ -8,6 +8,7 @@ data/imagenet_val
 data/ImageNet_val
 data/places365.zip
 saved_models/
+results/
 
 # Local audio dataset artifacts (do not commit)
 data/esc50/raw/

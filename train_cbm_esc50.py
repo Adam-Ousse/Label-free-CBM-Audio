@@ -45,9 +45,16 @@ def parse_args():
     parser.add_argument("--concept_activation_cutoff", type=float, default=None)
     parser.add_argument("--proj_steps", type=int, default=1000)
     parser.add_argument("--interpretability_cutoff", type=float, default=0.45)
+    parser.add_argument("--projection_threshold", type=float, default=None)
     parser.add_argument("--lam", type=float, default=0.0007)
+    parser.add_argument("--elastic_alpha", type=float, default=0.99)
     parser.add_argument("--n_iters", type=int, default=1000)
     parser.add_argument("--print", action="store_true")
+    parser.add_argument("--similarity_objective", type=str, default="cosine_cubed", choices=["cosine", "cosine_cubed"])
+    parser.add_argument("--prompt_template", type=str, default=None)
+    parser.add_argument("--max_concepts", type=int, default=None)
+    parser.add_argument("--results_dir", type=str, default=None)
+    parser.add_argument("--run_name", type=str, default=None)
 
     parser.add_argument("--train_split", type=str, default="fold1_train")
     parser.add_argument("--val_split", type=str, default="fold1_val")
@@ -93,11 +100,18 @@ def main():
         save_dir=args.save_dir,
         clip_cutoff=args.clip_cutoff,
         concept_activation_cutoff=args.concept_activation_cutoff,
+        projection_threshold=args.projection_threshold,
         proj_steps=args.proj_steps,
         interpretability_cutoff=args.interpretability_cutoff,
         lam=args.lam,
+        elastic_alpha=args.elastic_alpha,
         n_iters=args.n_iters,
         print=args.print,
+        similarity_objective=args.similarity_objective,
+        prompt_template=args.prompt_template,
+        max_concepts=args.max_concepts,
+        results_dir=args.results_dir,
+        run_name=args.run_name,
         train_split=args.train_split,
         val_split=args.val_split,
         test_split=args.test_split,
