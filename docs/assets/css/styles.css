@@ -43,6 +43,48 @@ body {
   color: var(--muted);
 }
 
+.context-line {
+  margin-top: 8px;
+  font-size: 0.92rem;
+}
+
+.context-line a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.context-line a:hover {
+  text-decoration: underline;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.results-table th:first-child,
+.results-table td:first-child {
+  text-align: left;
+}
+
+.results-table thead th {
+  background: #f0f5fb;
+}
+
 .class-grid {
   margin-top: 10px;
   display: grid;
@@ -101,6 +143,23 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.controls-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.controls-row select {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 8px;
+  background: #fff;
+  color: var(--text);
 }
 
 .example-card {
@@ -185,6 +244,14 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.concept-label.pos {
+  color: #8f3024;
+}
+
+.concept-label.neg {
+  color: #205d99;
 }
 
 .concept-bar {

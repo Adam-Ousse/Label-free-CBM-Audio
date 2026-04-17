@@ -3,6 +3,7 @@ const classStatusEl = document.getElementById("classStatus");
 const examplesPanelEl = document.getElementById("examplesPanel");
 const examplesTitleEl = document.getElementById("examplesTitle");
 const examplesGridEl = document.getElementById("examplesGrid");
+const conceptFilterEl = document.getElementById("conceptFilter");
 
 let showcaseData = null;
 let selectedClassLabel = null;
@@ -25,12 +26,43 @@ function formatLabel(label) {
   return label.replace(/_/g, " ");
 }
 
+function normalizeConcept(item) {
+  const rawConcept = String(item.concept || "concept");
+  const isNegative = rawConcept.startsWith("NOT ");
+  const concept = isNegative ? rawConcept.slice(4) : rawConcept;
+  return {
+    concept,
+    score: Number(item.score) || 0,
+    isNegative,
+  };
+}
+
+function getConceptFilterMode() {
+  return conceptFilterEl ? conceptFilterEl.value : "all";
+}
+
 function renderConceptBars(topConcepts) {
   if (!Array.isArray(topConcepts) || topConcepts.length === 0) {
     return `<p class="error-msg">No concept contributions available for this sample.</p>`;
   }
 
-  const maxAbs = Math.max(...topConcepts.map((x) => Math.abs(Number(x.score) || 0)), 1e-6);
+  const concepts = topConcepts.map(normalizeConcept);
+  const filterMode = getConceptFilterMode();
+  const visibleConcepts = concepts.filter((item) => {
+    if (filterMode === "positive") {
+      return !item.isNegative;
+    }
+    if (filterMode === "negative") {
+      return item.isNegative;
+    }
+    return true;
+  });
+
+  if (visibleConcepts.length === 0) {
+    return `<p class="error-msg">No concepts match this filter for the current sample.</p>`;
+  }
+
+  const maxAbs = Math.max(...visibleConcepts.map((x) => Math.abs(x.score)), 1e-6);
 
   return `
     <div class="concept-plot">
@@ -38,19 +70,19 @@ function renderConceptBars(topConcepts) {
         <span class="legend-item"><span class="legend-swatch pos"></span> Positive</span>
         <span class="legend-item"><span class="legend-swatch neg"></span> Negative</span>
       </div>
-      ${topConcepts
+      ${visibleConcepts
         .map((item) => {
-          const score = Number(item.score) || 0;
+          const score = item.score;
           const concept = escapeHtml(item.concept || "concept");
           const pct = Math.min(100, (Math.abs(score) / maxAbs) * 100);
-          const cls = score >= 0 ? "pos" : "neg";
+          const cls = item.isNegative ? "neg" : "pos";
           return `
             <div class="concept-row">
-              <div class="concept-label" title="${concept}">${concept}</div>
+              <div class="concept-label ${cls}" title="${concept}">${concept}</div>
               <div class="concept-bar ${cls}">
                 <div class="concept-fill" style="width: ${pct.toFixed(2)}%;"></div>
               </div>
-              <div class="concept-score ${cls}">${score >= 0 ? "+" : ""}${score.toFixed(3)}</div>
+              <div class="concept-score ${cls}">${Math.abs(score).toFixed(3)}</div>
             </div>
           `;
         })
@@ -149,6 +181,15 @@ function initializeShowcase(data) {
       firstButton.classList.add("active");
     }
     renderExamples(first);
+  }
+
+  if (conceptFilterEl) {
+    conceptFilterEl.addEventListener("change", () => {
+      const current = (showcaseData.classes || []).find((c) => c.label === selectedClassLabel);
+      if (current) {
+        renderExamples(current);
+      }
+    });
   }
 }
 
