@@ -11,7 +11,58 @@
     <header class="hero panel">
       <h1>ESC-50 Audio Showcase</h1>
       <p>Choose a class and listen to 2 curated examples with top concept contribution bars for each prediction.</p>
+      <p class="context-line">
+        Project for Multimodal Explainable AI (XAI):
+        <a href="https://www.master-mva.com/cours/multimodal-explainable-ai-xai/" target="_blank" rel="noopener noreferrer">
+          course page
+        </a>
+      </p>
+      <p class="context-line"><strong>Team:</strong> Adam GASSEM, Amine MAAZIZI</p>
     </header>
+
+    <section class="panel">
+      <h2>Main Results (AST vs CBM)</h2>
+      <div class="table-wrap">
+        <table class="results-table" aria-label="Main model results">
+          <thead>
+            <tr>
+              <th>Dataset</th>
+              <th>AST Acc. (%)</th>
+              <th>AST Loss</th>
+              <th>CBM Acc. (%)</th>
+              <th>CBM Loss</th>
+              <th>Delta Acc. (pts)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ESC-50</td>
+              <td>93.50</td>
+              <td>0.2708</td>
+              <td>94.00</td>
+              <td>0.2819</td>
+              <td>+0.50</td>
+            </tr>
+            <tr>
+              <td>UrbanSound8K</td>
+              <td>89.01</td>
+              <td>0.5032</td>
+              <td>87.57</td>
+              <td>0.3806</td>
+              <td>-1.43</td>
+            </tr>
+            <tr>
+              <td>CREMA-D</td>
+              <td>70.05</td>
+              <td>1.7674</td>
+              <td>67.36</td>
+              <td>0.9616</td>
+              <td>-2.69</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <section class="panel">
       <h2>Choose Class</h2>
@@ -21,6 +72,14 @@
 
     <section id="examplesPanel" class="panel hidden">
       <h2 id="examplesTitle">Examples</h2>
+      <div class="controls-row">
+        <label for="conceptFilter">Concepts:</label>
+        <select id="conceptFilter">
+          <option value="all">All</option>
+          <option value="positive">Positive only</option>
+          <option value="negative">Negative only</option>
+        </select>
+      </div>
       <div id="examplesGrid" class="examples-grid"></div>
     </section>
   </main>
