@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESC-50 Showcase</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero panel">
+      <h1>ESC-50 Audio Showcase</h1>
+      <p>Choose a class and listen to 2 curated examples with top concept contribution bars for each prediction.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Choose Class</h2>
+      <div id="classGrid" class="class-grid" aria-label="ESC-50 classes"></div>
+      <div id="classStatus" class="status"></div>
+    </section>
+
+    <section id="examplesPanel" class="panel hidden">
+      <h2 id="examplesTitle">Examples</h2>
+      <div id="examplesGrid" class="examples-grid"></div>
+    </section>
+  </main>
+
+  <script src="assets/data/esc50_showcase.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
