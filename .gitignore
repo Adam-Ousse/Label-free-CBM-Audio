@@ -25,3 +25,7 @@ data/audioset/summary.json
 data/urbansound8k/raw
 data/urbansound8k/manifests
 data/urbansound8k/summary.json
+
+data/cremad/raw
+data/cremad/manifests
+data/cremad/summary.json

@@ -1,0 +1,66 @@
+{
+    "anger": [
+        "harsh hissing",
+        "raised pitch",
+        "raised volume",
+        "rapid staccato",
+        "sharp shouting",
+        "sharp yelling",
+        "sudden outburst",
+        "tense gritting",
+        "tense growling"
+    ],
+    "disgust": [
+        "gagging cough",
+        "gurgling retch",
+        "gurgling vomit",
+        "liquid squelch",
+        "ropy slurping",
+        "slimy sliding",
+        "spitting sound",
+        "wet belching",
+        "wet choking",
+        "wet squelching"
+    ],
+    "fear": [
+        "abrupt silence",
+        "erratic volume",
+        "frantic breathing",
+        "harsh hissing",
+        "high pitch",
+        "high pitch squeal",
+        "rapid trembling",
+        "rapid tremolo",
+        "sharp hissing",
+        "sudden silence"
+    ],
+    "happy": [
+        "bright chirping",
+        "high pitch laughter",
+        "joyful squealing",
+        "light clapping",
+        "melodic humming",
+        "playful squealing",
+        "rapid giggling",
+        "rapid laughter"
+    ],
+    "neutral": [
+        "continuous hum",
+        "distant traffic",
+        "faint white noise",
+        "low engine drone",
+        "quiet background",
+        "soft rustling",
+        "steady airflow",
+        "steady background"
+    ],
+    "sad": [
+        "breathy tone",
+        "low pitch",
+        "low register",
+        "minor key",
+        "muted dynamics",
+        "slow tempo",
+        "soft dynamics"
+    ]
+}

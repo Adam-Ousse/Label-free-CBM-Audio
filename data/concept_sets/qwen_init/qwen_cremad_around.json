@@ -1,0 +1,64 @@
+{
+    "anger": [
+        "aggressive footsteps",
+        "breaking objects",
+        "clenched fist impact",
+        "door slamming",
+        "glass breaking",
+        "heavy breathing",
+        "raised voice shouting",
+        "slamming doors",
+        "tense breathing"
+    ],
+    "disgust": [
+        "dry heaving noises",
+        "floorboard creak",
+        "gagging efforts",
+        "retching sounds",
+        "stomach churning",
+        "stomach growl",
+        "trash bag crinkle",
+        "vomit expulsion",
+        "water dripping",
+        "wet clothing rustle"
+    ],
+    "fear": [
+        "footsteps retreating",
+        "heavy breathing",
+        "rapid heartbeat",
+        "sharp intake of breath",
+        "sudden footsteps",
+        "sudden silence",
+        "tense silence",
+        "whispered warning"
+    ],
+    "happy": [
+        "bright chatter",
+        "bright outdoor ambience",
+        "cheering crowd",
+        "clapping hands",
+        "human laughter",
+        "upbeat music"
+    ],
+    "neutral": [
+        "HVAC airflow",
+        "ambient room tone",
+        "distant traffic",
+        "human breathing",
+        "human conversation",
+        "occasional door creak",
+        "office equipment hum",
+        "soft fan hum"
+    ],
+    "sad": [
+        "crying or sobbing",
+        "distant rain sounds",
+        "distant thunder",
+        "empty room reverb",
+        "heavy breathing",
+        "human sighing",
+        "rain on window",
+        "silence in room",
+        "slow piano melody"
+    ]
+}
