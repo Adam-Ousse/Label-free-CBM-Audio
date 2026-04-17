@@ -1,0 +1,123 @@
+HVAC airflow
+abrupt silence
+affective audio
+affective auditory signal
+affective sound
+aversive vocalization
+baseline auditory signal
+biohazard signal
+biological alarm
+biological rejection noise
+biological stress response
+bodily repulsion audio
+breaking objects
+breathy tone
+bright chatter
+bright chirping
+cheering crowd
+clapping hands
+clenched fist impact
+continuous hum
+crying or sobbing
+distant rain sounds
+distant thunder
+distress signal
+distress vocalization
+door slamming
+dry heaving noises
+emotional vocalization
+empty room reverb
+erratic volume
+expressive vocalization
+faint white noise
+floorboard creak
+footsteps retreating
+gagging cough
+gagging efforts
+glass breaking
+gurgling retch
+gurgling vomit
+harsh hissing
+heavy breathing
+high pitch
+high pitch laughter
+high pitch squeal
+human affect expression
+human affective sound
+human affective vocalization
+human emotional expression
+human laughter
+human reaction sound
+human sighing
+human vocalization
+instinctive avoidance sound
+internal mood indicator
+internal state expression
+light clapping
+liquid squelch
+low engine drone
+low pitch
+low register
+melodic humming
+minor key
+muted dynamics
+negative emotional sound
+neutral acoustic signature
+neutral human sound
+neutral tone
+non-emotive vocalization
+occasional door creak
+office equipment hum
+playful squealing
+positive emotional expression
+psychological sound
+psychological sound source
+psychological state indicator
+quiet background
+rain on window
+raised pitch
+raised voice shouting
+raised volume
+rapid giggling
+rapid heartbeat
+rapid laughter
+rapid staccato
+rapid trembling
+rapid tremolo
+repulsive auditory stimulus
+retching sounds
+ropy slurping
+sensory aversion signal
+sharp hissing
+sharp intake of breath
+sharp yelling
+slamming doors
+slimy sliding
+slow piano melody
+slow tempo
+social interaction sound
+soft dynamics
+soft rustling
+spitting sound
+standard communication tone
+steady airflow
+stomach churning
+subjective auditory experience
+subjective auditory signal
+sudden footsteps
+sudden outburst
+tense gritting
+tense growling
+trash bag crinkle
+uncolored sound
+unmarked phonetic output
+upbeat music
+visceral reaction sound
+vocal affect signal
+vomit expulsion
+water dripping
+wet belching
+wet choking
+wet clothing rustle
+wet squelching
+whispered warning

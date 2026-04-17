@@ -123,7 +123,7 @@ def train_cbm_and_save(args):
         ]
         if d_test is not None:
             audio_probe_specs.append(("test", d_test, hf_test_subset))
-    elif args.dataset in {"esc50", "urbansound8k"}:
+    elif args.dataset in {"esc50", "urbansound8k", "cremad"}:
         if args.dataset == "esc50" and args.enforce_esc50_fold1_protocol:
             fixed_train = "fold1_train"
             fixed_val = "fold1_val"
@@ -142,6 +142,10 @@ def train_cbm_and_save(args):
                 d_train = args.train_split or "fold10_train"
                 d_val = args.val_split or "fold10_val"
                 d_test = args.test_split or "fold10_test"
+            elif args.dataset == "cremad":
+                d_train = args.train_split or "train"
+                d_val = args.val_split or "val"
+                d_test = args.test_split or "test"
             else:
                 d_train = args.train_split or "train"
                 d_val = args.val_split or "val"
@@ -154,7 +158,7 @@ def train_cbm_and_save(args):
             audio_probe_specs.append(("test", d_test, None))
     else:
         raise ValueError(
-            "Unsupported dataset '{}' for audio-only runtime. Use esc50, urbansound8k, or audioset.".format(
+            "Unsupported dataset '{}' for audio-only runtime. Use esc50, urbansound8k, cremad, or audioset.".format(
                 args.dataset
             )
         )
@@ -542,7 +546,7 @@ def train_cbm_and_save(args):
                 printable.append("f1_macro: {:.4f}".format(test_metrics["f1_macro"]))
             print("Held-out test -> {}".format(", ".join(printable)))
 
-    elif args.dataset in {"esc50", "urbansound8k"}:
+    elif args.dataset in {"esc50", "urbansound8k", "cremad"}:
         train_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_train).samples]
         val_targets = [sample["label_idx"] for sample in data_utils.get_audio_dataset(args.dataset, d_val).samples]
         test_targets = None
@@ -628,7 +632,7 @@ def train_cbm_and_save(args):
     
     with open(os.path.join(save_name, "metrics.txt"), 'w') as f:
         out_dict = {}
-        if args.dataset in {"esc50", "urbansound8k"}:
+        if args.dataset in {"esc50", "urbansound8k", "cremad"}:
             for key in ('lam', 'lr', 'alpha', 'time'):
                 out_dict[key] = float(output_proj['path'][0][key])
             out_dict['metrics'] = output_proj['path'][0]['metrics']

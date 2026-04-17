@@ -1,0 +1,69 @@
+{
+    "anger": [
+        "biological stress response",
+        "emotional vocalization",
+        "human affective sound",
+        "human emotional expression",
+        "internal state expression",
+        "interpersonal communication sound",
+        "psychological sound source",
+        "psychological sound state",
+        "subjective auditory signal",
+        "vocal affect signal"
+    ],
+    "disgust": [
+        "aversive vocalization",
+        "biohazard signal",
+        "biological rejection noise",
+        "bodily repulsion audio",
+        "instinctive avoidance sound",
+        "negative emotional sound",
+        "repulsive auditory stimulus",
+        "sensory aversion signal",
+        "unpleasant sonic event",
+        "visceral reaction sound"
+    ],
+    "fear": [
+        "affective auditory signal",
+        "biological alarm",
+        "distress signal",
+        "distress vocalization",
+        "emotional response sound",
+        "emotional vocalization",
+        "human reaction sound",
+        "human vocalization",
+        "physiological sound",
+        "psychological sound"
+    ],
+    "happy": [
+        "affective sound",
+        "human affective vocalization",
+        "human vocalization",
+        "joyful auditory signal",
+        "positive emotional expression",
+        "psychological state indicator",
+        "social interaction cue",
+        "social interaction sound"
+    ],
+    "neutral": [
+        "baseline auditory signal",
+        "neutral acoustic signature",
+        "neutral human sound",
+        "neutral tone",
+        "non-emotive vocalization",
+        "standard communication tone",
+        "uncolored sound",
+        "unmarked phonetic output"
+    ],
+    "sad": [
+        "affective audio",
+        "emotional vocalization",
+        "expressive vocalization",
+        "human affect expression",
+        "human affective sound",
+        "internal mood indicator",
+        "psychological sound source",
+        "psychological sound state",
+        "subjective auditory experience"
+    ]
+}

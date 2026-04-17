@@ -32,6 +32,11 @@ AUDIO_DEFAULTS = {
         "duration_sec": 4.0,
         "manifests_dir": "data/urbansound8k/manifests",
     },
+    "cremad": {
+        "sample_rate": 16000,
+        "duration_sec": 4.0,
+        "manifests_dir": "data/cremad/manifests",
+    },
     "audioset": {
         "sample_rate": 16000,
         "duration_sec": 10.0,
@@ -49,6 +54,7 @@ AUDIOSET_HF_SPLITS = {
 AUDIO_CLASS_FILES = {
     "esc50": "data/esc50_classes.txt",
     "urbansound8k": "data/urbansound8k_classes.txt",
+    "cremad": "data/cremad_classes.txt",
     "audioset": "data/audioset_classes.txt",
 }
 
@@ -60,6 +66,10 @@ AUDIO_MAPPING_FILES = {
     "urbansound8k": {
         "label_to_idx": "data/urbansound8k/label_to_idx.json",
         "idx_to_label": "data/urbansound8k/idx_to_label.json",
+    },
+    "cremad": {
+        "label_to_idx": "data/cremad/label_to_idx.json",
+        "idx_to_label": "data/cremad/idx_to_label.json",
     },
     "audioset": {
         "mid_to_idx": "data/audioset/mid_to_idx.json",
