@@ -17,9 +17,9 @@
 This repository adapts Label-Free Concept Bottleneck Models (LF-CBMs) to audio classification. A fine-tuned Audio Spectrogram Transformer (AST) supplies audio features, CLAP grounds textual concepts in audio, and a sparse linear classifier maps concept activations to predictions. The result retains competitive classification performance while exposing audible, editable reasons for each decision.
 
 <p align="center">
-  <img src="data/LF-CBM_overview.jpg" width="880" alt="Overview of the label-free concept bottleneck model pipeline">
+  <img src="architecture_overview.png" width="880" alt="Overview of the label-free concept bottleneck model pipeline">
 </p>
-<p align="center"><em>Label-free concept bottleneck construction: backbone features are projected into an interpretable concept space before sparse classification.</em></p>
+<p align="center"><em>Audio LF-CBM architecture: DeepSeek proposes LF, broad, and contrastive candidates; CLAP and the audio data filter and ground them before sparse classification.</em></p>
 
 ## What this project adds
 
@@ -40,9 +40,12 @@ The LLM only proposes candidates. The existing LF-CBM filters, CLAP grounding on
 The [GitHub Pages explorer](https://adam-ousse.github.io/Label-free-CBM-Audio/) uses the ESC-50 **LF + broad** model. It contains correct and incorrect held-out examples, audio playback, top-five concept interventions, and segmented temporal explanations. Everything runs locally in the browser; no inference server is required.
 
 <p align="center">
-  <img src="data/lf_cbm_ind_decision.png" width="860" alt="Concept-level explanation for an individual LF-CBM prediction">
+  <a href="docs/assets/audio/1-51805-G-33.wav"><strong>▶ Listen to ESC-50 clip 1-51805-G-33</strong></a>
 </p>
-<p align="center"><em>A prediction is decomposed into sparse concept contributions, making the final decision inspectable and correctable.</em></p>
+<p align="center">
+  <img src="docs/assets/images/esc50_prediction_example.png" width="860" alt="Correct ESC-50 LF plus broad prediction and its top five concept contributions">
+</p>
+<p align="center"><em>The LF + broad CBM correctly predicts “door wood creaks” with 99.75% confidence; the bars show its five largest concept contributions.</em></p>
 
 ## Main results
 
@@ -209,6 +212,7 @@ Results are saved under `results/audio_concept_ablation/segmented/`.
 ```bash
 python -m scripts.visualization.build_esc50_showcase_assets \
   --samples-per-class 2 --max-concepts 5
+python -m scripts.visualization.build_readme_prediction_figure
 python -m http.server 8000
 ```
 
