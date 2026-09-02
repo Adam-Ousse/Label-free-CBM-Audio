@@ -1,73 +1,99 @@
-# Label-Free Concept Bottleneck Models for Audio
+<h1 align="center">Label-Free Concept Bottleneck Models for Audio</h1>
 
-This repository adapts Label-Free Concept Bottleneck Models (LF-CBMs) to audio
-classification. Fine-tuned Audio Spectrogram Transformer (AST) features are
-projected onto CLAP-grounded textual concepts and classified by a sparse linear
-head. The project includes:
+<p align="center">
+  <a href="https://adam-ousse.github.io/Label-free-CBM-Audio/"><strong>Interactive demo</strong></a>
+  ·
+  <a href="https://openreview.net/forum?id=92E7slVpxY&noteId=92E7slVpxY"><strong>OpenReview</strong></a>
+  ·
+  <a href="notebooks/DeepSeek_audio_concept_generation.ipynb"><strong>Generation notebook</strong></a>
+</p>
 
-- DeepSeek generation of vanilla LF, broad perceptual, and group-wise contrastive concepts;
-- matched CBM source ablations on ESC-50, UrbanSound8K, and CREMA-D;
-- global and overlapping 1-second segmented inference;
-- a static GitHub Pages explorer with exact top-five concept interventions;
-- checksummed external checkpoint packaging and verification.
+<p align="center">
+  Adam Gassem · Amine Maazizi
+</p>
 
-The project was developed by [Adam Gassem and Amine Maazizi](AUTHORS.md) for the
-MVA Multimodal Explainable AI course.
+## Abstract
 
-## Results
+This repository adapts Label-Free Concept Bottleneck Models (LF-CBMs) to audio classification. A fine-tuned Audio Spectrogram Transformer (AST) supplies audio features, CLAP grounds textual concepts in audio, and a sparse linear classifier maps concept activations to predictions. The result retains competitive classification performance while exposing audible, editable reasons for each decision.
 
-All numbers use one fixed held-out split and seed. Accuracy, macro-F1, and sparse
-head zeros are percentages. CREMA-D uses the latest speech-targeted concept
-protocol; the other two datasets use the shared audio vocabulary.
+<p align="center">
+  <img src="data/LF-CBM_overview.jpg" width="880" alt="Overview of the label-free concept bottleneck model pipeline">
+</p>
+<p align="center"><em>Label-free concept bottleneck construction: backbone features are projected into an interpretable concept space before sparse classification.</em></p>
 
-| Dataset | Model | Accuracy | Macro-F1 | Sparsity |
-| --- | --- | ---: | ---: | ---: |
-| ESC-50 | Fine-tuned AST | 93.50 | 93.28 | — |
-| ESC-50 | LF + broad | 93.50 | 93.39 | 92.58 |
-| UrbanSound8K | Fine-tuned AST | 89.01 | 90.03 | — |
-| UrbanSound8K | LF + broad | 89.84 | 90.94 | 86.04 |
-| CREMA-D | Fine-tuned AST | 70.05 | 52.76 | — |
-| CREMA-D | Targeted full union | 70.25 | 51.58 | 92.79 |
+## What this project adds
 
-## Repository layout
+The initial audio concept vocabulary is the union
 
-| Path | Purpose |
-| --- | --- |
-| `data/` | Dataset download/preparation code and versioned concept sets |
-| `models/` | AST adapters used by training and inference |
-| `scripts/concepts/` | Concept generation and candidate-set preparation |
-| `scripts/training/` | AST and CBM training and source ablations |
-| `scripts/evaluation/` | Baseline, CBM, and segmented evaluation |
-| `scripts/visualization/` | Plot and static-site asset generation |
-| `scripts/data/` | Dataset inspection utilities |
-| `scripts/release/` | Artifact bundle creation and verification |
-| `experiments/` | Focused hyperparameter and filtering studies |
-| `notebooks/` | Reproducible concept-generation walkthrough |
-| `docs/` | Backend-free GitHub Pages explorer |
-| `release/google_drive_bundle/` | Generated external artifact folder (ignored by Git) |
+<p align="center"><strong>C<sub>0</sub> = C<sub>LF</sub> ∪ C<sub>broad</sub> ∪ C<sub>contrastive</sub>.</strong></p>
 
-Reusable library modules remain at the repository root. Runnable workflows are grouped
-under `scripts/` and invoked with `python -m`; focused research sweeps remain in
-`experiments/`.
+- **LF concepts** adapt the original class-conditioned LF-CBM prompts to audible characteristics, acoustic components, and broader sound categories.
+- **Broad concepts** provide a dataset-independent perceptual vocabulary: pitch, spectral balance, tonality, timbre, texture, rhythm, attack/decay, reverberation, spatial impression, and production mechanism.
+- **Contrastive concepts** describe general acoustic dimensions that distinguish LLM-discovered groups of confusable classes.
+- **Temporal explanations** run the model over overlapping 1-second windows, exposing when each concept supports the prediction.
+- **Concept interventions** let a user change the top-five concept signals and immediately inspect the exact last-layer counterfactual.
 
-## Installation
+The LLM only proposes candidates. The existing LF-CBM filters, CLAP grounding on the training audio, concept bottleneck learning, and projectability filtering determine which concepts remain usable.
 
-Python 3.10 or newer and a CUDA-capable PyTorch installation are recommended.
+## Interactive demo
+
+The [GitHub Pages explorer](https://adam-ousse.github.io/Label-free-CBM-Audio/) uses the ESC-50 **LF + broad** model. It contains correct and incorrect held-out examples, audio playback, top-five concept interventions, and segmented temporal explanations. Everything runs locally in the browser; no inference server is required.
+
+<p align="center">
+  <img src="data/lf_cbm_ind_decision.png" width="860" alt="Concept-level explanation for an individual LF-CBM prediction">
+</p>
+<p align="center"><em>A prediction is decomposed into sparse concept contributions, making the final decision inspectable and correctable.</em></p>
+
+## Main results
+
+Accuracy, macro-F1, and sparse-head zeros are percentages. All values use a fixed held-out split and seed. CREMA-D reports the latest speech-targeted concept protocol; ESC-50 and UrbanSound8K use the shared audio vocabulary.
+
+| Dataset | Test protocol | Model | Accuracy | Macro-F1 | Sparsity |
+| --- | --- | --- | ---: | ---: | ---: |
+| ESC-50 | fold 1 | Fine-tuned AST | 93.50 | 93.28 | — |
+| ESC-50 | fold 1 | LF + broad CBM | **93.50** | **93.39** | 92.58 |
+| UrbanSound8K | fold 10 | Fine-tuned AST | 89.01 | 90.03 | — |
+| UrbanSound8K | fold 10 | LF + broad CBM | **89.84** | **90.94** | 86.04 |
+| CREMA-D | fixed test split | Fine-tuned AST | 70.05 | **52.76** | — |
+| CREMA-D | fixed test split | Targeted full CBM | **70.25** | 51.58 | 92.79 |
+
+The complete source ablation trains `lf`, `lf_broad`, `lf_contrastive`, and `full` with matched filtering and optimization settings. Its reports include accuracy, macro-F1, retained concepts, and sparse-head statistics.
+
+## Temporal explanations
+
+Segmented inference uses a 1.0-second window, 0.5-second hop, and mean/max/log-mean-exp pooling. CBM pooling operates on standardized temporal concepts before the sparse classifier; AST pooling operates on per-segment logits.
+
+<p align="center">
+  <img src="docs/assets/images/esc50_lf_broad_temporal.png" width="900" alt="Temporal LF plus broad concept explanation for an ESC-50 prediction">
+</p>
+<p align="center"><em>Example LF + broad explanation: concept contributions vary across overlapping audio windows while retaining a global class decision.</em></p>
+
+## Reproduce the experiments
+
+Run every command from the repository root. Python 3.10 or newer and a CUDA-capable PyTorch installation are recommended.
+
+### 1. Install
 
 ```bash
+git clone https://github.com/Adam-Ousse/Label-free-CBM-Audio.git
+cd Label-free-CBM-Audio
 python -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Set `DEEPSEEK_API_KEY` in `.env`. `DEEPSEEK_MODEL` is optional. Do not commit
-`.env`; it is ignored. Run the project tests with `pytest`.
+Set these values in `.env` when regenerating concepts:
 
-## Data and AST checkpoints
+```dotenv
+DEEPSEEK_API_KEY=your_key
+DEEPSEEK_MODEL=deepseek-chat
+```
 
-Prepare each dataset from the repository root:
+The concept files already committed under `data/concept_sets/` can be used without a DeepSeek key.
+
+### 2. Prepare the datasets
 
 ```bash
 python data/download_esc50.py --output_dir data/esc50/raw
@@ -87,91 +113,98 @@ python data/prepare_cremad.py \
   --val_fraction 0.1 --split_seed 42
 ```
 
-The reported AST baselines are downloaded automatically from Hugging Face:
+The reported fine-tuned AST checkpoints are downloaded automatically from Hugging Face:
 
 - `Adam-ousse/ast-esc50-finetuned-fold1`
 - `Adam-ousse/ast-urbansound8k-finetuned-fold10`
 - `Adam-ousse/ast-cremad-finetuned`
 
-Dataset audio, manifests containing local paths, model caches, activations, and
-experiment outputs are excluded from Git.
+### 3. Generate and filter ESC-50/UrbanSound8K concepts
 
-## Concept generation
-
-The default CLI preserves the original LF-only behavior. Explicit modes produce
-separate source files and provenance metadata:
+To regenerate all three candidate sources with DeepSeek:
 
 ```bash
-python -m scripts.concepts.generate_deepseek_concept_sets --dataset esc50 --mode all --stage generate
-python -m scripts.concepts.generate_deepseek_concept_sets --dataset urbansound8k --mode all --stage generate
 python -m scripts.concepts.generate_deepseek_concept_sets \
-  --datasets esc50 urbansound8k --mode all --stage process --device cuda
+  --datasets esc50 urbansound8k \
+  --mode all --stage generate
+
+python -m scripts.concepts.generate_deepseek_concept_sets \
+  --datasets esc50 urbansound8k \
+  --mode all --stage process --device cuda
 ```
 
-Outputs are written under `data/concept_sets/<dataset>/`. The broad vocabulary
-is generated once and reused. See
-[`notebooks/DeepSeek_audio_concept_generation.ipynb`](notebooks/DeepSeek_audio_concept_generation.ipynb)
-for an interactive walkthrough.
+Build the four matched ablation inputs. This step can also be run directly with the checked-in source concepts:
 
-The latest CREMA-D protocol is isolated so it cannot overwrite the original ablation:
+```bash
+python -m scripts.concepts.prepare_cbm_ablation_concepts \
+  --datasets esc50 urbansound8k --device cuda
+```
+
+The backward-compatible command `python generate_deepseek_concept_sets.py ...` remains available. The notebook [`DeepSeek_audio_concept_generation.ipynb`](notebooks/DeepSeek_audio_concept_generation.ipynb) walks through the generation stages interactively.
+
+### 4. Evaluate AST baselines
+
+```bash
+python -m scripts.evaluation.evaluate_ast_baselines \
+  --datasets esc50 urbansound8k cremad --device cuda
+```
+
+Outputs are written to `results/audio_concept_ablation/baselines/`.
+
+### 5. Train the environmental-audio CBM ablations
+
+```bash
+python -m scripts.training.run_audio_concept_ablation \
+  --datasets esc50 urbansound8k \
+  --variants lf lf_broad lf_contrastive full \
+  --device cuda
+```
+
+The reported defaults are seed 42, 1,000 projection steps, cosine-cubed similarity, activation cutoff 0.25, projectability cutoff 0.45, 1,000 SAGA iterations, `lambda=0.0007`, and elastic-net mixing 0.99. Cached AST and CLAP activations are reused between variants.
+
+### 6. Reproduce the targeted CREMA-D result
+
+The CREMA-D rerun is isolated from the original concepts and results so it cannot overwrite them.
 
 ```bash
 python -m scripts.concepts.generate_cremad_targeted_concepts \
-  --output-root results/cremad_targeted_rerun_20260828/generation
+  --output-root results/cremad_targeted_rerun_20260828/generation \
+  --device cuda
+
+python -m scripts.training.run_cremad_targeted_rerun \
+  --experiment-root results/cremad_targeted_rerun_20260828 \
+  --device cuda
+
 python -m scripts.training.run_cremad_targeted_source_ablation \
-  --experiment-root results/cremad_targeted_rerun_20260828 --device cuda
+  --experiment-root results/cremad_targeted_rerun_20260828 \
+  --interpretability-cutoff 0.40 --lam 0.0015 \
+  --device cuda
 ```
 
-## Training and evaluation
+The first training command selects hyperparameters using validation macro-F1 with the test split hidden. The source ablation then freezes the selected projectability cutoff and sparse-head regularization across LF, LF+broad, LF+contrastive, and full variants.
 
-Train the shared source ablation:
+### 7. Run segmented inference
 
-```bash
-python -m scripts.evaluation.evaluate_ast_baselines --datasets esc50 urbansound8k cremad --device cuda
-python -m scripts.training.run_audio_concept_ablation \
-  --datasets esc50 urbansound8k \
-  --variants lf lf_broad lf_contrastive full --device cuda
-```
-
-The reported hyperparameters are the script defaults for ESC-50/UrbanSound8K:
-seed 42, 1,000 projection steps, cosine-cubed similarity, activation cutoff
-0.25, projection cutoff 0.45, 1,000 SAGA iterations, `lambda=0.0007`, and
-elastic-net mixing 0.99. CREMA-D uses cutoff 0.40 and `lambda=0.0015`, selected
-on validation once and frozen across the four targeted variants.
-
-After restoring the external bundle, evaluate every canonical AST/CBM with the
-same 1-second window and 0.5-second hop:
-
-```bash
-python -m scripts.evaluation.run_segmented_audio_ablation \
-  --datasets esc50 urbansound8k cremad \
-  --artifact-bundle release/google_drive_bundle --device cuda
-```
-
-## External Google Drive bundle
-
-Canonical CBM weights are intentionally kept outside Git. Build the folder to
-upload from existing results:
+Package the 12 canonical checkpoints and verify their checksums:
 
 ```bash
 python -m scripts.release.build_google_drive_bundle
-```
-
-This creates `release/google_drive_bundle/` containing 12 canonical checkpoints,
-the exact concept inputs and provenance, compact metrics, and `manifest.json`
-with SHA-256 checksums. Cached AST/CLAP activations, raw data, tuning trials, and
-superseded CREMA-D runs are excluded. Verify a local or downloaded copy with:
-
-```bash
 python -m scripts.release.build_google_drive_bundle \
   --output release/google_drive_bundle --verify-only
 ```
 
-## Interactive GitHub Pages site
+Then evaluate every AST and CBM with the same temporal protocol:
 
-The static explorer in `docs/` uses the ESC-50 LF+broad model. It supports audio
-playback, correct/error filtering, exact top-five concept-signal intervention,
-and temporal concept plots.
+```bash
+python -m scripts.evaluation.run_segmented_audio_ablation \
+  --datasets esc50 urbansound8k cremad \
+  --artifact-bundle release/google_drive_bundle \
+  --window-sec 1.0 --hop-sec 0.5 --device cuda
+```
+
+Results are saved under `results/audio_concept_ablation/segmented/`.
+
+### 8. Rebuild the interactive site
 
 ```bash
 python -m scripts.visualization.build_esc50_showcase_assets \
@@ -179,12 +212,52 @@ python -m scripts.visualization.build_esc50_showcase_assets \
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/docs/`. See [`docs/README.md`](docs/README.md)
-for implementation details and GitHub Pages publishing instructions.
+Open `http://localhost:8000/docs/`. Publishing instructions are in [`docs/README.md`](docs/README.md).
 
-## Citation
+## Output map
 
-This repository builds on the original LF-CBM work:
+| Output | Contents |
+| --- | --- |
+| `data/concept_sets/<dataset>/` | LF, broad, contrastive, union, provenance, and ablation concept files |
+| `results/audio_concept_ablation/baselines/` | Fine-tuned AST metrics |
+| `results/audio_concept_ablation/cbm/` | Environmental-audio CBM checkpoints and source-ablation reports |
+| `results/cremad_targeted_rerun_20260828/` | Targeted CREMA-D generation, tuning, checkpoints, and metrics |
+| `results/audio_concept_ablation/segmented/` | Segment caches, pooled metrics, predictions, and temporal concepts |
+| `release/google_drive_bundle/` | Checksummed canonical checkpoint bundle; intentionally ignored by Git |
+
+Dataset audio, local manifests, model caches, activations, and experiment outputs are excluded from Git.
+
+## Repository structure
+
+| Path | Purpose |
+| --- | --- |
+| `data/` | Dataset preparation and versioned concept sets |
+| `models/` | AST backbone and classifier adapters |
+| `scripts/concepts/` | DeepSeek generation and candidate-set preparation |
+| `scripts/training/` | AST/CBM training and source ablations |
+| `scripts/evaluation/` | Baseline, CBM, and segmented evaluation |
+| `scripts/visualization/` | Plot and static-site asset generation |
+| `scripts/release/` | Artifact packaging and checksum verification |
+| `experiments/` | Hyperparameter and filtering studies |
+| `notebooks/` | Reproducible generation and evaluation notebooks |
+| `docs/` | Static GitHub Pages explorer |
+
+## Citation and links
+
+- [Project page and interactive demo](https://adam-ousse.github.io/Label-free-CBM-Audio/)
+- [Paper on OpenReview](https://openreview.net/forum?id=92E7slVpxY&noteId=92E7slVpxY)
+- [Original LF-CBM paper](https://arxiv.org/abs/2304.06129)
+
+```bibtex
+@misc{gassem_audio_lf_cbm,
+  title={Label-Free Concept Bottleneck Models for Audio},
+  author={Adam Gassem and Amine Maazizi},
+  howpublished={OpenReview},
+  url={https://openreview.net/forum?id=92E7slVpxY}
+}
+```
+
+This work builds on:
 
 ```bibtex
 @misc{oikarinen2023labelfreeconceptbottleneckmodels,
