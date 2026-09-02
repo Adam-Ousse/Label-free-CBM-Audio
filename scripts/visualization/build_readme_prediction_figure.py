@@ -17,7 +17,7 @@ DEFAULT_OUTPUT = ROOT / "docs/assets/images/esc50_prediction_example.png"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--sample-id", default="1-51805-G-33")
+    parser.add_argument("--sample-id", default="1-24524-A-19")
     parser.add_argument("--data", type=Path, default=DEFAULT_DATA)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--dpi", type=int, default=220)

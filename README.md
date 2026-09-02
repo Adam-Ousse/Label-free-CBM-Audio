@@ -40,12 +40,12 @@ The LLM only proposes candidates. The existing LF-CBM filters, CLAP grounding on
 The [GitHub Pages explorer](https://adam-ousse.github.io/Label-free-CBM-Audio/) uses the ESC-50 **LF + broad** model. It contains correct and incorrect held-out examples, audio playback, top-five concept interventions, and segmented temporal explanations. Everything runs locally in the browser; no inference server is required.
 
 <p align="center">
-  <a href="docs/assets/audio/1-51805-G-33.wav"><strong>▶ Listen to ESC-50 clip 1-51805-G-33</strong></a>
+  <a href="https://adam-ousse.github.io/Label-free-CBM-Audio/assets/audio/1-24524-A-19.wav"><strong>▶ Listen to 5-second ESC-50 audio clip</strong></a>
 </p>
 <p align="center">
-  <img src="docs/assets/images/esc50_prediction_example.png" width="860" alt="Correct ESC-50 LF plus broad prediction and its top five concept contributions">
+  <img src="docs/assets/images/esc50_prediction_example.png" width="860" alt="Correct thunderstorm prediction and its top five non-leaking acoustic concept contributions">
 </p>
-<p align="center"><em>The LF + broad CBM correctly predicts “door wood creaks” with 99.75% confidence; the bars show its five largest concept contributions.</em></p>
+<p align="center"><em>The LF + broad CBM correctly predicts “thunderstorm” with 98.93% confidence from general acoustic evidence rather than concepts containing the class name.</em></p>
 
 ## Main results
 
