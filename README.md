@@ -1,4 +1,4 @@
-<h1 align="center">Label-Free Concept Bottleneck Models for Audio</h1>
+<h1 align="center">α-CBM: Label-Free Concept Bottleneck Models for Audio</h1>
 
 <p align="center">
   <a href="https://adam-ousse.github.io/Label-free-CBM-Audio/"><strong>Interactive demo</strong></a>
@@ -9,17 +9,17 @@
 </p>
 
 <p align="center">
-  Adam Gassem · Amine Maazizi
+  <a href="https://openreview.net/profile?id=~Amine_Maazizi1"><em>Amine Maazizi</em></a> · <a href="https://openreview.net/profile?id=~Adam_Gassem1"><em>Adam Gassem</em></a>
 </p>
 
 ## Abstract
 
-This repository adapts Label-Free Concept Bottleneck Models (LF-CBMs) to audio classification. A fine-tuned Audio Spectrogram Transformer (AST) supplies audio features, CLAP grounds textual concepts in audio, and a sparse linear classifier maps concept activations to predictions. The result retains competitive classification performance while exposing audible, editable reasons for each decision.
+<strong>α-CBM</strong> adapts Label-Free Concept Bottleneck Models (LF-CBMs) to audio classification. A fine-tuned Audio Spectrogram Transformer (AST) supplies audio features, CLAP grounds textual concepts in audio, and a sparse linear classifier maps concept activations to predictions. The result retains competitive classification performance while exposing audible, editable reasons for each decision.
 
 <p align="center">
   <img src="architecture_overview.png" width="880" alt="Overview of the label-free concept bottleneck model pipeline">
 </p>
-<p align="center"><em>Audio LF-CBM architecture: DeepSeek proposes LF, broad, and contrastive candidates; CLAP and the audio data filter and ground them before sparse classification.</em></p>
+<p align="center"><em>Audio α-CBM architecture: DeepSeek proposes LF, broad, and contrastive candidates; CLAP and the audio data filter and ground them before sparse classification.</em></p>
 
 ## What this project adds
 
@@ -40,7 +40,7 @@ The LLM only proposes candidates. The existing LF-CBM filters, CLAP grounding on
 The [GitHub Pages explorer](https://adam-ousse.github.io/Label-free-CBM-Audio/) uses the ESC-50 **LF + broad** model. It contains correct and incorrect held-out examples, audio playback, top-five concept interventions, and segmented temporal explanations. Everything runs locally in the browser; no inference server is required.
 
 <p align="center">
-  <a href="https://adam-ousse.github.io/Label-free-CBM-Audio/assets/audio/1-24524-A-19.wav"><strong>▶ Listen to 5-second ESC-50 audio clip</strong></a>
+  <a href="https://adam-ousse.github.io/Label-free-CBM-Audio/assets/audio/1-24524-A-19.wav"><strong>Listen to the 5-second ESC-50 audio clip</strong></a>
 </p>
 <p align="center">
   <img src="docs/assets/images/esc50_prediction_example.png" width="860" alt="Correct thunderstorm prediction and its top five non-leaking acoustic concept contributions">
@@ -253,9 +253,9 @@ Dataset audio, local manifests, model caches, activations, and experiment output
 - [Original LF-CBM paper](https://arxiv.org/abs/2304.06129)
 
 ```bibtex
-@misc{gassem_audio_lf_cbm,
-  title={Label-Free Concept Bottleneck Models for Audio},
-  author={Adam Gassem and Amine Maazizi},
+@misc{maazizi_alpha_cbm,
+  title={{$\alpha$-CBM}: Label-Free Concept Bottleneck Models for Audio},
+  author={Maazizi, Amine and Gassem, Adam},
   howpublished={OpenReview},
   url={https://openreview.net/forum?id=92E7slVpxY}
 }
