@@ -1,0 +1,325 @@
+{
+  "dog": [
+    "barking",
+    "whining",
+    "panting"
+  ],
+  "rooster": [
+    "crow call",
+    "wing flap",
+    "beak peck",
+    "poultry vocalization",
+    "dawn chorus"
+  ],
+  "pig": [
+    "oinking",
+    "snorting",
+    "squealing",
+    "grunting"
+  ],
+  "cow": [
+    "mooing",
+    "bovine vocalization",
+    "low-pitched bellow"
+  ],
+  "frog": [
+    "croaking",
+    "wet guttural pulses",
+    "low-pitched throaty trills",
+    "low-pitched repetitive calls"
+  ],
+  "cat": [
+    "meowing",
+    "purring",
+    "hissing"
+  ],
+  "hen": [
+    "clucking",
+    "cackling",
+    "chicken vocalizations",
+    "pecking"
+  ],
+  "insects": [
+    "buzzing wings",
+    "chirping",
+    "crawling",
+    "rustling"
+  ],
+  "sheep": [
+    "bleating",
+    "flock vocalizations",
+    "high-pitched cries",
+    "high-pitched calls"
+  ],
+  "crow": [
+    "hoarse cawing",
+    "repetitive calls",
+    "distant caws",
+    "repetitive croaks",
+    "piercing calls"
+  ],
+  "rain": [
+    "pattering droplets",
+    "steady drizzle",
+    "heavy downpour",
+    "pattering drops"
+  ],
+  "sea_waves": [
+    "rhythmic splashing",
+    "low-frequency rumble",
+    "foamy hiss"
+  ],
+  "crackling_fire": [
+    "crackling",
+    "fire",
+    "burning"
+  ],
+  "crickets": [
+    "chirping",
+    "high-pitched trills",
+    "nighttime insect chorus"
+  ],
+  "chirping_birds": [
+    "high-pitched trills",
+    "rapid chirps",
+    "melodic whistles",
+    "high-pitched chirps",
+    "rapid trills",
+    "melodic bird calls"
+  ],
+  "water_drops": [
+    "dripping",
+    "splash",
+    "patter"
+  ],
+  "wind": [
+    "howling gusts",
+    "rustling leaves",
+    "whistling drafts",
+    "whistling through gaps"
+  ],
+  "pouring_water": [
+    "liquid splashing",
+    "stream flow",
+    "bubbling",
+    "gurgling flow",
+    "filling container"
+  ],
+  "toilet_flush": [
+    "water splash",
+    "hissing air",
+    "mechanical valve",
+    "high-pressure hiss",
+    "mechanical whir"
+  ],
+  "thunderstorm": [
+    "rumbling",
+    "rain patter",
+    "wind howl",
+    "heavy rain",
+    "wind gusts"
+  ],
+  "crying_baby": [
+    "high-pitched wail",
+    "rhythmic sobbing",
+    "soft whimper"
+  ],
+  "sneezing": [
+    "nasal burst",
+    "sharp exhalation",
+    "muffled pop",
+    "sharp nasal burst",
+    "short exhale",
+    "high-pitched wheeze"
+  ],
+  "clapping": [
+    "rhythmic hand strikes",
+    "sharp percussive bursts",
+    "rapid skin impacts",
+    "rapid palm impacts"
+  ],
+  "breathing": [
+    "inhale exhale",
+    "soft airflow",
+    "slow respiration",
+    "inhale-exhale cycle",
+    "rhythmic respiration"
+  ],
+  "coughing": [
+    "dry throaty bursts",
+    "harsh expiratory spasms",
+    "intermittent vocal jolts",
+    "repetitive expulsions",
+    "harsh vocal spasms"
+  ],
+  "footsteps": [
+    "rhythmic tapping",
+    "soft thuds",
+    "scuffling",
+    "shuffling noise",
+    "hard impacts"
+  ],
+  "laughing": [
+    "giggling",
+    "chuckling",
+    "cackling"
+  ],
+  "brushing_teeth": [
+    "bristle friction",
+    "water splashing",
+    "mouth gurgling",
+    "wet bristle friction",
+    "running water",
+    "mouth gurgle"
+  ],
+  "snoring": [
+    "rhythmic breathing",
+    "low-frequency rumble",
+    "nasal vibration",
+    "low-frequency rumbling"
+  ],
+  "drinking_sipping": [
+    "liquid pouring",
+    "gulping",
+    "cup clink",
+    "liquid pour",
+    "gulp swallow"
+  ],
+  "door_wood_knock": [
+    "sharp impacts",
+    "resonant wood",
+    "reverberant knocks",
+    "sharp impact",
+    "resonant knock",
+    "hollow thud"
+  ],
+  "mouse_click": [
+    "short click",
+    "sharp tap",
+    "mechanical snap",
+    "light thud",
+    "rapid tick"
+  ],
+  "keyboard_typing": [
+    "clicking keys",
+    "mechanical clatter",
+    "rapid taps",
+    "mechanical clicks",
+    "rhythmic tapping",
+    "key press thuds"
+  ],
+  "door_wood_creaks": [
+    "hinge friction",
+    "wooden groan",
+    "slow creak",
+    "slow squeak"
+  ],
+  "can_opening": [
+    "metallic click",
+    "hissing release",
+    "lid pop",
+    "sharp pop"
+  ],
+  "washing_machine": [
+    "mechanical hum",
+    "water swishing",
+    "motor vibration",
+    "water splashing",
+    "motor whirring"
+  ],
+  "vacuum_cleaner": [
+    "motor hum",
+    "suction noise",
+    "rattling vibration"
+  ],
+  "clock_alarm": [
+    "beeping",
+    "ringing",
+    "ticking"
+  ],
+  "clock_tick": [
+    "rhythmic ticking",
+    "mechanical click",
+    "repetitive beat",
+    "metallic ticking",
+    "rhythmic clicking",
+    "mechanical pulse"
+  ],
+  "glass_breaking": [
+    "sharp impact",
+    "tinkling shards",
+    "shattering resonance",
+    "fragile tinkling",
+    "shattering burst"
+  ],
+  "helicopter": [
+    "rotor whir",
+    "engine drone",
+    "blade whoosh",
+    "blade slap"
+  ],
+  "chainsaw": [
+    "mechanical buzzing",
+    "high-pitched whine",
+    "repetitive grating",
+    "sputtering engine"
+  ],
+  "siren": [
+    "rising pitch",
+    "repeated wail",
+    "pulsating tone",
+    "wailing tone",
+    "two-tone oscillation",
+    "high-pitched alarm"
+  ],
+  "car_horn": [
+    "loud honking",
+    "sharp beeping",
+    "repeated blasts",
+    "honking",
+    "short beeps",
+    "loud blare"
+  ],
+  "engine": [
+    "mechanical hum",
+    "rumbling idle",
+    "high-pitched whine",
+    "idling rumble",
+    "mechanical clatter"
+  ],
+  "train": [
+    "horn honk",
+    "engine rev",
+    "brake squeal",
+    "rail squeal",
+    "engine rumble"
+  ],
+  "church_bells": [
+    "ringing",
+    "metallic clang",
+    "reverberant tones",
+    "metallic clangs"
+  ],
+  "airplane": [
+    "engine hum",
+    "propeller whir",
+    "takeoff roar",
+    "engine roar",
+    "propeller whine",
+    "takeoff rumble"
+  ],
+  "fireworks": [
+    "sharp bangs",
+    "hissing crackles",
+    "distant booms",
+    "sharp crackling bursts",
+    "high-pitched whistles",
+    "low-frequency booms"
+  ],
+  "hand_saw": [
+    "sawing wood",
+    "metallic rasp",
+    "repetitive cutting",
+    "metallic rasping"
+  ]
+}

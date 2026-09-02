@@ -1,0 +1,168 @@
+low pitch
+high pitch
+continuous tone
+pulsing rhythm
+broadband noise
+narrowband tone
+fast amplitude modulation
+slow attack
+rapid amplitude modulation
+short duration calls
+nasal timbre
+high harmonic density
+abrupt onset
+slow decay
+broadband spectrum
+narrowband spectrum
+rapid repetition
+slow repetition
+clear tonal quality
+noisy texture
+harsh timbre
+smooth timbre
+low-pitched croaks
+high-pitched chirps
+buzzing tones
+rapid trills
+sharp clicks
+continuous drone
+irregular bursts
+high-pitched chirping
+pulsing amplitude modulation
+broadband spectral energy
+irregular temporal pattern
+sharp transient attacks
+continuous tonal drone
+rapid frequency sweeps
+sparse rhythmic bursts
+high fundamental frequency
+short attack time
+periodic vocalization
+low-frequency rumble
+low fundamental frequency
+continuous tonal sound
+irregular amplitude modulation
+rapid frequency modulation
+broadband noise bursts
+sharp attack onset
+slow decay envelope
+rhythmic repetition
+continuous murmur
+sharp attack
+sharp transients
+smooth texture
+sharp crackling transients
+sustained hissing noise
+irregular popping rhythm
+broadband spectral content
+rapid amplitude fluctuations
+high-frequency sizzle
+random impulse bursts
+irregular popping
+continuous hiss
+sharp transient bursts
+low rumble
+rapid crackle
+sustained roar
+random timing
+continuous broadband hiss
+irregular amplitude surges
+sustained tone
+random crackling bursts
+gradual onset
+steady-state texture
+sparse transient pops
+irregular low-frequency rumbles
+sustained tonal drone
+impulsive crackling bursts
+slow amplitude swells
+high-frequency whistling
+rhythmic periodic pulses
+sharp transient onset
+continuous broadband noise
+intermittent bursts
+high-frequency hiss
+rhythmic pulsation
+liquid splashing sounds
+mechanical whirring
+short discrete impacts
+rhythmic repetitive pattern
+irregular burst pattern
+mechanical hum
+short discrete pulses
+periodic rhythm
+short bursts
+long steady tone
+high frequency
+irregular timing
+soft volume
+sharp onset
+short decay
+high-frequency energy
+impulsive transient
+dry timbre
+irregular spacing
+high frequency content
+short duration
+irregular pulse
+low spectral centroid
+high-frequency noise
+liquid resonance
+continuous broadband
+smooth decay
+wet texture
+high-frequency scraping
+intermittent liquid splashes
+periodic rhythmic strokes
+low-frequency gurgling
+resonant cavity echoes
+regular rhythm
+narrow bandwidth
+metallic timbre
+single impulse
+mechanical sound
+high frequency click
+irregular rhythm
+short attack
+low amplitude
+dry texture
+rapid decay
+resonant ringing
+percussive impact
+sustained friction
+sharp metallic ring
+sustained motor hum
+rhythmic scraping
+intermittent high-pitched whine
+slow periodic pulses
+abrupt percussive onset
+irregular friction texture
+metallic ringing
+continuous motor hum
+repetitive scraping
+sharp percussive clicks
+sustained buzzing
+irregular rhythmic pattern
+low-pitched rumble
+rhythmic blade slap
+metallic whine
+smooth gliding tone
+intermittent sputtering
+deep throbbing pulse
+high-pitched turbine whistle
+pulsating hum
+smooth glide
+mechanical clatter
+repeated pulses
+slow amplitude modulation
+continuous pitch glide
+rhythmic pulsing
+broadband noise burst
+long sustained tone
+regular pulsing
+bright spectrum
+long decay
+steady rhythm
+regular pulse
+single strike
+resonant body

@@ -1,0 +1,52 @@
+bright timbre
+brighter timbre
+clipped cadence
+clipped spitting
+erratic rhythm
+even rhythm
+fast clipped syllables
+fast clipped words
+fast speech
+fast speech rate
+fast tempo
+faster speech rate
+flat intonation
+flat melody
+flat pitch contour
+flat tone
+guttural quality
+guttural retch
+harsh vocal tension
+harsh voice
+high intensity
+high pitch
+higher pitch
+increased intensity
+long pauses
+loud intensity
+low growling tone
+low pitch
+low pitch variability
+minimal pauses
+moderate loudness
+monotone pitch
+nasal snarl
+nasal sneer
+raised pitch
+rapid breathing
+rapid speech
+relaxed articulation
+relaxed voice
+rising pitch
+rough voice
+sharp articulation
+sharp bursts
+sharp pitch
+slow speech
+slow tempo
+soft volume
+steady pitch
+steady speech rate
+tense articulation
+trembling voice
+varied pitch

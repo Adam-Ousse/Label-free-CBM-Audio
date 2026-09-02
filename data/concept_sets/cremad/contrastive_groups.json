@@ -1,0 +1,17 @@
+{
+  "dataset": "cremad",
+  "groups": [
+    [
+      "anger",
+      "disgust"
+    ],
+    [
+      "fear",
+      "sad"
+    ],
+    [
+      "happy",
+      "neutral"
+    ]
+  ]
+}

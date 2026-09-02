@@ -1,0 +1,39 @@
+{
+  "anger": [
+    "harsh vocal tension",
+    "fast clipped syllables",
+    "low pitch growl",
+    "harsh loud voice",
+    "fast clipped words",
+    "low growling tone"
+  ],
+  "disgust": [
+    "guttural retch",
+    "nasal snarl",
+    "clipped cadence",
+    "nasal sneer",
+    "clipped spitting"
+  ],
+  "fear": [
+    "trembling voice",
+    "rapid breathing",
+    "sharp pitch",
+    "high pitch"
+  ],
+  "happy": [
+    "bright timbre",
+    "rising pitch",
+    "fast tempo"
+  ],
+  "neutral": [
+    "steady pitch",
+    "flat intonation",
+    "even rhythm",
+    "flat tone"
+  ],
+  "sad": [
+    "slow tempo",
+    "low pitch",
+    "soft volume"
+  ]
+}

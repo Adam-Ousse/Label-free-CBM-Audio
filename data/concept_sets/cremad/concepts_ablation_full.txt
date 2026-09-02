@@ -1,0 +1,162 @@
+abrupt onset
+accelerating
+aperiodic
+atonal
+brassy
+bright
+bright spectral tilt
+bright timbre
+brighter timbre
+broadband
+buzzy
+clear
+clear harmonic structure
+clipped cadence
+clipped spitting
+close
+cold
+continuous
+crescendo
+dark
+dark timbre
+decaying
+decelerating
+decrescendo
+dense
+discontinuous
+distant
+dry
+dull
+dull timbre
+echoing
+erratic rhythm
+even rhythm
+falling pitch
+fast amplitude modulation
+fast attack
+fast clipped syllables
+fast clipped words
+fast speech
+fast speech rate
+fast tempo
+faster speech rate
+flat intonation
+flat melody
+flat pitch contour
+flat tone
+fluttering
+glassy
+gritty
+guttural quality
+guttural retch
+harmonic
+harsh timbre
+harsh vocal tension
+harsh voice
+high harmonic density
+high intensity
+high pitch
+high spectral centroid
+high-frequency dominant
+high-pitched
+higher pitch
+hollow
+impulsive
+increased intensity
+inharmonic
+intimate
+irregular rhythm
+legato
+long decay
+long pauses
+loud
+loud energy
+loud intensity
+low energy
+low growling tone
+low pitch
+low pitch variability
+low-frequency dominant
+low-pitched
+metallic
+mid-frequency dominant
+mid-pitched
+minimal pauses
+moderate loudness
+monotone pitch
+muffled
+narrow bandwidth
+narrow pitch range
+narrowband
+nasal snarl
+nasal sneer
+noisy
+noisy texture
+percussive
+periodic
+piercing
+pitch instability
+pulsating
+pure tone
+quiet
+raised pitch
+rapid
+rapid breathing
+rapid speech
+reedy
+regular rhythm
+regular rhythmic pulse
+relaxed articulation
+relaxed voice
+repetitive
+reverberant
+rhythmic
+rich harmonics
+rising pitch
+rough
+rough voice
+sandy
+sharp
+sharp articulation
+sharp bursts
+sharp pitch
+short attack time
+short duration
+silky
+slow
+slow attack
+slow speech
+slow tempo
+smooth
+soft
+soft attack
+soft dynamics
+soft volume
+soft-edged
+spacious
+sparse
+sparse harmonics
+sparse texture
+staccato
+steady pitch
+steady pulse
+steady speech rate
+string-like
+strong amplitude modulation
+sustained
+sustained energy
+swelling
+tense articulation
+thick
+thin
+tonal
+trembling
+trembling voice
+varied pitch
+velvety
+vibrato
+vocal-like
+warm
+wide pitch range
+wide vibrato rate
+wooden

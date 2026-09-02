@@ -46,8 +46,9 @@ def generate_and_save_prompt_concepts(
     temperature=0.7,
     top_p=0.9,
 ):
-    raise RuntimeError(
-        "generation was simplified: use LocalQwenGenerator directly in GPT_initial_concepts.ipynb to prompt, loop, and save"
+    raise NotImplementedError(
+        "Use generate_deepseek_concept_sets.py for resumable concept generation; "
+        "the historical notebook implementation is under notebooks/legacy/."
     )
 
 

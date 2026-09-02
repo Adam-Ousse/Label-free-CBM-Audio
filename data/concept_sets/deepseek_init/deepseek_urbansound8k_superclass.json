@@ -1,0 +1,66 @@
+{
+  "air_conditioner": [
+    "humming",
+    "mechanical drone",
+    "steady buzz"
+  ],
+  "car_horn": [
+    "sharp honk",
+    "repeated beeps",
+    "metallic blare",
+    "short burst"
+  ],
+  "children_playing": [
+    "playground chatter",
+    "high-pitched laughter",
+    "running footsteps",
+    "high-pitched vocalizations",
+    "playful squeals"
+  ],
+  "dog_bark": [
+    "high-pitched yelp",
+    "rhythmic barking",
+    "low growl",
+    "high-pitched yapping",
+    "sharp bark bursts"
+  ],
+  "drilling": [
+    "impact noise",
+    "mechanical whir",
+    "high-frequency screech",
+    "repetitive hammering"
+  ],
+  "engine_idling": [
+    "low-frequency rumble",
+    "rhythmic vibration",
+    "mechanical hum",
+    "rhythmic hum",
+    "mechanical vibration"
+  ],
+  "gun_shot": [
+    "sharp impulse",
+    "reverberant tail",
+    "high-intensity burst",
+    "sharp crack",
+    "reverberant echo",
+    "metallic ring"
+  ],
+  "jackhammer": [
+    "impact noise",
+    "mechanical vibration",
+    "percussive burst",
+    "pneumatic bursts",
+    "metallic ringing"
+  ],
+  "siren": [
+    "wailing tone",
+    "rising pitch",
+    "repeated blasts"
+  ],
+  "street_music": [
+    "melodic tones",
+    "rhythmic beats",
+    "ambient noise",
+    "ambient chatter"
+  ]
+}

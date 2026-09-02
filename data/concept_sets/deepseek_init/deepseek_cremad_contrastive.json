@@ -1,0 +1,62 @@
+{
+  "dataset": "cremad",
+  "groups": {
+    "anger|disgust": {
+      "classes": [
+        "anger",
+        "disgust"
+      ],
+      "concepts": [
+        "low pitch",
+        "harsh timbre",
+        "fast attack",
+        "irregular rhythm",
+        "high spectral centroid",
+        "loud energy",
+        "short duration",
+        "strong amplitude modulation",
+        "loud intensity",
+        "abrupt onset",
+        "noisy texture"
+      ]
+    },
+    "fear|sad": {
+      "classes": [
+        "fear",
+        "sad"
+      ],
+      "concepts": [
+        "low pitch",
+        "slow tempo",
+        "soft dynamics",
+        "narrow bandwidth",
+        "dull timbre",
+        "slow attack",
+        "long decay",
+        "sparse texture",
+        "soft attack",
+        "regular rhythm",
+        "dark timbre",
+        "low energy"
+      ]
+    },
+    "happy|neutral": {
+      "classes": [
+        "happy",
+        "neutral"
+      ],
+      "concepts": [
+        "rising pitch contour",
+        "bright spectral tilt",
+        "fast amplitude modulation",
+        "short attack time",
+        "high harmonic density",
+        "regular rhythmic pulse",
+        "wide vibrato rate",
+        "sustained energy",
+        "high spectral centroid",
+        "clear harmonic structure"
+      ]
+    }
+  }
+}

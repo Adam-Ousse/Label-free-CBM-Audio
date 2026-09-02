@@ -1,0 +1,102 @@
+{
+  "air_conditioner": [
+    "low hum",
+    "steady drone",
+    "mechanical rumble",
+    "continuous buzz",
+    "constant whir",
+    "mechanical vibration",
+    "constant buzz",
+    "continuous rumble"
+  ],
+  "car_horn": [
+    "loud honk",
+    "repeated blasts",
+    "mid-high pitch",
+    "metallic timbre",
+    "sharp onset",
+    "repeated short bursts"
+  ],
+  "children_playing": [
+    "high-pitched voices",
+    "rapid pitch changes",
+    "playful vocalizations",
+    "light rhythmic patterns",
+    "bright timbre",
+    "high-pitched vocalizations",
+    "rapid pitch fluctuations",
+    "sporadic bursts",
+    "playful rhythmic patterns"
+  ],
+  "dog_bark": [
+    "sharp onset",
+    "mid-high pitch",
+    "repetitive bursts",
+    "resonant timbre",
+    "rapid rhythm",
+    "high pitch",
+    "harsh timbre",
+    "irregular rhythm"
+  ],
+  "drilling": [
+    "high-pitched whine",
+    "repetitive hammering",
+    "mechanical grinding",
+    "rapid pulsing",
+    "metallic clatter",
+    "repetitive percussive bursts",
+    "high-frequency whir",
+    "metallic ringing",
+    "steady rhythmic pulse",
+    "sharp impact transients"
+  ],
+  "engine_idling": [
+    "low rumble",
+    "steady hum",
+    "throbbing vibration",
+    "mechanical whir",
+    "intermittent sputter",
+    "rhythmic throb",
+    "mechanical vibration",
+    "constant drone"
+  ],
+  "gun_shot": [
+    "sharp transient",
+    "loud impulse",
+    "high peak level",
+    "brief duration",
+    "broadband burst"
+  ],
+  "jackhammer": [
+    "repetitive impacts",
+    "metallic ringing",
+    "low-frequency thud",
+    "irregular rhythm",
+    "high-intensity bursts",
+    "repetitive percussive thuds",
+    "low-frequency pounding",
+    "metallic ringing overtones",
+    "rapid hammering rhythm",
+    "sustained mechanical drone"
+  ],
+  "siren": [
+    "rising pitch glide",
+    "repeated wail pattern",
+    "high amplitude",
+    "piercing timbre",
+    "rhythmic sweep",
+    "rising pitch",
+    "repeated wail",
+    "high intensity",
+    "pulsating rhythm"
+  ],
+  "street_music": [
+    "melodic phrases",
+    "rhythmic beat",
+    "guitar strumming",
+    "vocal melody",
+    "percussive accents",
+    "melodic line",
+    "harmonic chords"
+  ]
+}

@@ -1,0 +1,506 @@
+{
+  "dog": [
+    "high-pitched bark",
+    "rapid repeated yaps",
+    "sharp onset",
+    "mid-frequency growl",
+    "panting rhythm",
+    "panting breaths"
+  ],
+  "rooster": [
+    "loud crowing",
+    "high pitch",
+    "repeated calls",
+    "sharp onset",
+    "resonant tone"
+  ],
+  "pig": [
+    "high-pitched squeal",
+    "short grunt bursts",
+    "nasal snort",
+    "rhythmic oinks",
+    "mid-frequency call",
+    "short grunts",
+    "rapid snorts",
+    "nasal oinks",
+    "rhythmic snuffling"
+  ],
+  "cow": [
+    "low pitch",
+    "slow rhythm",
+    "resonant timbre",
+    "sustained tone",
+    "soft onset",
+    "low-pitched moo",
+    "sustained vocalization",
+    "guttural onset",
+    "descending pitch contour",
+    "resonant chest tone"
+  ],
+  "frog": [
+    "croaking rhythm",
+    "low-pitched pulses",
+    "raspy texture",
+    "repeated short bursts",
+    "wet resonances",
+    "repetitive chirps",
+    "amplitude modulation"
+  ],
+  "cat": [
+    "high pitch",
+    "short meow",
+    "vocal fry",
+    "rising contour",
+    "soft onset",
+    "high-pitched meow",
+    "rapid pitch glide",
+    "short duration",
+    "nasal timbre"
+  ],
+  "hen": [
+    "clucking rhythm",
+    "low pitch",
+    "repetitive bursts",
+    "raspy timbre",
+    "moderate loudness",
+    "repeated bursts"
+  ],
+  "insects": [
+    "buzzing wings",
+    "high-pitched hum",
+    "rapid trills",
+    "metallic clicks",
+    "pulsing drone",
+    "high-pitched drone",
+    "rapid wingbeats",
+    "intermittent chirps",
+    "metallic timbre"
+  ],
+  "sheep": [
+    "high-pitched bleat",
+    "repetitive short calls",
+    "nasal timbre",
+    "wavering pitch",
+    "moderate loudness",
+    "high-pitched bleats"
+  ],
+  "crow": [
+    "harsh caw",
+    "repetitive calls",
+    "low pitch",
+    "raspy timbre",
+    "loud bursts",
+    "raspy caw",
+    "repeated calls",
+    "harsh tone",
+    "irregular rhythm"
+  ],
+  "rain": [
+    "pattering droplets",
+    "steady hiss",
+    "irregular splashes",
+    "soft rumble",
+    "rhythmic dripping",
+    "irregular rhythm",
+    "soft splashes",
+    "muffled thuds"
+  ],
+  "sea_waves": [
+    "rhythmic swash",
+    "hissing foam",
+    "low rumble",
+    "repeating surge",
+    "watery roar",
+    "rumbling low roar",
+    "hissing spray",
+    "gradual crescendo",
+    "watery turbulence"
+  ],
+  "crackling_fire": [
+    "random pops",
+    "low crackle",
+    "irregular rhythm",
+    "dry texture",
+    "soft hiss",
+    "crackling pops",
+    "high-frequency snaps",
+    "low rumble",
+    "sputtering bursts"
+  ],
+  "crickets": [
+    "high-pitched chirps",
+    "rapid trills",
+    "pulsing rhythm",
+    "thin timbre",
+    "continuous pattern",
+    "bright timbre",
+    "continuous cadence"
+  ],
+  "chirping_birds": [
+    "high-pitched trills",
+    "rapid frequency sweeps",
+    "bright tonal quality",
+    "short repeated bursts",
+    "dense twittering texture",
+    "high-pitched chirps",
+    "rapid trills",
+    "repetitive peeps",
+    "irregular rhythm"
+  ],
+  "water_drops": [
+    "rapid dripping",
+    "high pitch",
+    "irregular rhythm",
+    "sharp impacts",
+    "resonant pings",
+    "high-pitched plinks",
+    "short percussive hits"
+  ],
+  "wind": [
+    "gusty swells",
+    "whooshing bursts",
+    "high-pitched whistle",
+    "rushing noise",
+    "irregular rhythm",
+    "gusting swells",
+    "howling pitch",
+    "whooshing noise",
+    "rushing air",
+    "buffeting bursts"
+  ],
+  "pouring_water": [
+    "liquid splashing",
+    "gurgling flow",
+    "high-pitched trickle",
+    "bubbling turbulence",
+    "intermittent splatter",
+    "gurgling pitch",
+    "bubbling texture",
+    "continuous flow",
+    "rising intensity"
+  ],
+  "toilet_flush": [
+    "high-pitched hiss",
+    "water gurgle",
+    "descending pitch",
+    "brief silence",
+    "resonant splash",
+    "high hiss",
+    "water splash",
+    "rapid gurgle",
+    "short burst"
+  ],
+  "thunderstorm": [
+    "rumbling low rumble",
+    "rolling thunder peals",
+    "deep bass growl",
+    "intermittent crackling bursts",
+    "sustained low-frequency roar",
+    "low rumble",
+    "rolling boom",
+    "deep rumble",
+    "rumbling roar",
+    "distant rumble"
+  ],
+  "crying_baby": [
+    "high-pitched wail",
+    "repetitive sobbing",
+    "nasal timbre",
+    "rising pitch contour",
+    "rhythmic crying pattern",
+    "nasal cry",
+    "breathy gasps"
+  ],
+  "sneezing": [
+    "sharp onset",
+    "high pitch",
+    "short duration",
+    "explosive burst",
+    "mid-frequency noise",
+    "nasal burst",
+    "descending pitch",
+    "explosive release"
+  ],
+  "clapping": [
+    "sharp transient bursts",
+    "irregular rapid rhythm",
+    "broadband noise bursts",
+    "dry resonant slap",
+    "varying loudness accents",
+    "sharp percussive bursts",
+    "rapid irregular rhythm",
+    "high-frequency noise",
+    "short transient sounds",
+    "varying intensity"
+  ],
+  "breathing": [
+    "slow inhale",
+    "soft exhale",
+    "low airflow",
+    "steady rhythm",
+    "gentle hiss",
+    "airy noise",
+    "low volume"
+  ],
+  "coughing": [
+    "dry bursts",
+    "low pitch",
+    "irregular rhythm",
+    "abrupt onset",
+    "breathy texture",
+    "mid-pitch",
+    "short duration"
+  ],
+  "footsteps": [
+    "irregular rhythm",
+    "low thud",
+    "short bursts",
+    "dry impact",
+    "variable tempo",
+    "irregular rhythmic pattern",
+    "low-frequency thuds",
+    "short percussive bursts",
+    "varying intensity steps",
+    "dry impact texture"
+  ],
+  "laughing": [
+    "high-pitched bursts",
+    "irregular rhythm",
+    "breathy timbre",
+    "descending pitch contour",
+    "rapid amplitude modulation",
+    "descending pitch glides",
+    "repetitive staccato"
+  ],
+  "brushing_teeth": [
+    "wet bristle friction",
+    "repetitive short strokes",
+    "high-frequency swish",
+    "intermittent gurgle",
+    "rhythmic scraping",
+    "bristle friction",
+    "wet swishing",
+    "repetitive strokes",
+    "high-frequency scrape",
+    "rhythmic brushing"
+  ],
+  "snoring": [
+    "low-pitched buzzing",
+    "irregular rhythm",
+    "soft onset",
+    "continuous droning",
+    "nasal resonance",
+    "low-pitched",
+    "rhythmic",
+    "vibratory",
+    "nasal",
+    "intermittent"
+  ],
+  "drinking_sipping": [
+    "gulp rhythm",
+    "liquid splash",
+    "swallow click",
+    "short bursts",
+    "wet resonance",
+    "liquid glug",
+    "cup clink"
+  ],
+  "door_wood_knock": [
+    "sharp impact",
+    "hollow resonance",
+    "rapid repetition",
+    "wooden timbre",
+    "short decay"
+  ],
+  "mouse_click": [
+    "short click",
+    "sharp attack",
+    "high pitch",
+    "dry timbre",
+    "quick decay",
+    "sharp onset",
+    "high click",
+    "short burst",
+    "single impulse"
+  ],
+  "keyboard_typing": [
+    "rapid percussive taps",
+    "irregular rhythm",
+    "mechanical clatter",
+    "high-frequency clicks",
+    "staccato bursts",
+    "rapid clicks",
+    "percussive taps"
+  ],
+  "door_wood_creaks": [
+    "creaking pitch",
+    "irregular rhythm",
+    "wooden timbre",
+    "slow onset",
+    "friction squeak",
+    "creaking friction",
+    "slow irregular rhythm",
+    "high-pitched squeak",
+    "wooden resonance",
+    "intermittent bursts"
+  ],
+  "can_opening": [
+    "metallic click",
+    "sharp pop",
+    "hissing release",
+    "ringing resonance",
+    "brief rattle",
+    "sharp snap",
+    "hollow ring",
+    "fizzing hiss"
+  ],
+  "washing_machine": [
+    "rhythmic sloshing",
+    "low hum",
+    "repetitive thumping",
+    "water swishing",
+    "mechanical whir",
+    "high-pitched hum",
+    "mechanical whirring"
+  ],
+  "vacuum_cleaner": [
+    "low hum",
+    "steady drone",
+    "motor whir",
+    "airflow noise",
+    "continuous buzz",
+    "rumbling noise"
+  ],
+  "clock_alarm": [
+    "repeated ringing",
+    "high pitch",
+    "metallic timbre",
+    "steady rhythm",
+    "loud bursts",
+    "ringing",
+    "repeated beeping"
+  ],
+  "clock_tick": [
+    "rhythmic ticking",
+    "metallic click",
+    "repeated pulses",
+    "high-frequency tap",
+    "steady tempo",
+    "high pitch",
+    "sharp attack",
+    "regular tempo",
+    "metallic timbre"
+  ],
+  "glass_breaking": [
+    "sharp crack",
+    "high-pitched tinkle",
+    "rapid succession",
+    "bright resonance",
+    "abrupt onset",
+    "sharp high-pitched tinkling",
+    "rapid irregular crackling",
+    "bright metallic resonance",
+    "short percussive bursts",
+    "sustained ringing decay"
+  ],
+  "helicopter": [
+    "rotor thump",
+    "low rumble",
+    "cyclic whoosh",
+    "metallic clatter",
+    "sustained drone",
+    "rotor whirring",
+    "rhythmic thumping",
+    "low-frequency rumble"
+  ],
+  "chainsaw": [
+    "high-pitched whine",
+    "repetitive sputtering",
+    "metallic clatter",
+    "rising engine pitch",
+    "irregular idle",
+    "metallic rattle",
+    "sputtering idle",
+    "sharp revving",
+    "grinding buzz"
+  ],
+  "siren": [
+    "rising pitch",
+    "wailing tone",
+    "repeated cycles",
+    "loud intensity",
+    "pulsating rhythm",
+    "repeated pattern",
+    "loud volume",
+    "pulsating amplitude"
+  ],
+  "car_horn": [
+    "loud honk",
+    "single blast",
+    "mid-pitch",
+    "metallic timbre",
+    "short duration",
+    "repeated blasts",
+    "mid-high pitch",
+    "sharp onset"
+  ],
+  "engine": [
+    "low rumble",
+    "rhythmic hum",
+    "mechanical whir",
+    "vibrating drone",
+    "pulsing idle",
+    "rhythmic idle",
+    "vibrating hum",
+    "throttle roar"
+  ],
+  "train": [
+    "rumbling",
+    "clacking",
+    "hissing",
+    "rhythmic",
+    "metallic clangs",
+    "rhythmic wheels",
+    "horn blasts",
+    "brake hisses",
+    "rumbling engine"
+  ],
+  "church_bells": [
+    "ringing tones",
+    "metallic strikes",
+    "slow tempo",
+    "reverberant decay",
+    "low pitch",
+    "resonant decay",
+    "rhythmic peals",
+    "high-pitched clangs"
+  ],
+  "airplane": [
+    "continuous drone",
+    "low rumble",
+    "jet whine",
+    "distant roar",
+    "engine hum",
+    "engine roar",
+    "steady hum",
+    "distant whine"
+  ],
+  "fireworks": [
+    "sharp crack",
+    "high-pitched whistle",
+    "rapid succession",
+    "low rumble",
+    "sizzling hiss",
+    "sustained hiss"
+  ],
+  "hand_saw": [
+    "metallic rasping",
+    "repetitive scraping",
+    "high-pitched whine",
+    "irregular cadence",
+    "abrasive texture",
+    "repetitive rasping",
+    "metallic scraping",
+    "abrupt stops"
+  ]
+}

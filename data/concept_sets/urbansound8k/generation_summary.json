@@ -1,0 +1,23 @@
+{
+  "dataset": "urbansound8k",
+  "mode": "all",
+  "model": "deepseek-v4-flash",
+  "temperature": 0.4,
+  "num_trials": 2,
+  "group_trials": 1,
+  "broad_trials": 1,
+  "broad_size": 80,
+  "concepts_per_group": 8,
+  "max_group_size": 5,
+  "source_counts": {
+    "lf": 159,
+    "broad": 86,
+    "contrastive": 63
+  },
+  "all_unique_concepts": 297,
+  "available_sources": [
+    "lf",
+    "broad",
+    "contrastive"
+  ]
+}

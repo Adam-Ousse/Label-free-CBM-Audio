@@ -1,0 +1,140 @@
+air compressor
+air hiss
+ambient chatter
+ambient noise
+ball bouncing
+bicycle bell
+brake squeal
+breaking glass
+brief duration
+bright timbre
+broadband burst
+car alarm
+car engine
+car horn
+constant drone
+constant whir
+continuous rumble
+debris falling
+diesel engine
+distant traffic
+door slam
+drilling noise
+engine idling
+engine rumble
+fan whir
+fan whirring
+footsteps
+footsteps on pavement
+gravel shifting
+guitar strumming
+harmonic chords
+harsh timbre
+high amplitude
+high intensity
+high peak level
+high pitch
+high-frequency screech
+high-frequency whir
+high-intensity burst
+high-intensity bursts
+high-pitched laughter
+high-pitched vocalizations
+high-pitched voices
+high-pitched whine
+high-pitched yapping
+high-pitched yelp
+horn honk
+humming
+intermittent sputter
+irregular rhythm
+jackhammer pounding
+laughter
+leash jingling
+light rhythmic patterns
+loud honk
+loud impulse
+low growl
+low hum
+low-frequency pounding
+low-frequency rumble
+low-frequency thud
+mechanical drone
+mechanical grinding
+mechanical hum
+mechanical rumble
+mechanical vibration
+mechanical whir
+melodic line
+melodic phrases
+melodic tones
+metal clanging
+metal impact
+metal striking
+metallic blare
+metallic clatter
+metallic ringing
+metallic ringing overtones
+metallic timbre
+mid-high pitch
+motor hum
+motor running
+park gate creaking
+percussive accents
+percussive burst
+piercing timbre
+playful rhythmic patterns
+playful squeals
+playful vocalizations
+pneumatic bursts
+rapid hammering rhythm
+rapid pitch changes
+rapid pitch fluctuations
+rapid pulsing
+repeated beeps
+repeated blasts
+repeated short bursts
+repeated wail
+repeated wail pattern
+repetitive bursts
+repetitive hammering
+repetitive impacts
+repetitive percussive bursts
+repetitive percussive thuds
+resonant timbre
+reverberant echo
+reverberant tail
+rhythmic barking
+rhythmic beats
+rhythmic hum
+rhythmic sweep
+rhythmic throb
+rhythmic vibration
+rising pitch
+rising pitch glide
+running footsteps
+screaming
+sharp bark bursts
+sharp crack
+sharp honk
+sharp impact transients
+sharp impulse
+sharp onset
+sharp transient
+short burst
+sporadic bursts
+steady buzz
+steady drone
+steady hum
+steady rhythmic pulse
+sustained mechanical drone
+swing creaking
+throbbing vibration
+tire squeal
+tires screeching
+vent blowing
+vocal melody
+wailing tone
+window rattle
+window rattling
+worker shouting

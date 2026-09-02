@@ -1,0 +1,269 @@
+accelerating
+air compressor
+air hiss
+ambient chatter
+ambient noise
+aperiodic
+atonal
+ball bouncing
+bicycle bell
+brake squeal
+brassy
+breaking glass
+brief duration
+bright
+bright timbre
+broadband
+broadband burst
+broadband noise
+broadband noise burst
+broadband noise floor
+broadband spectrum
+buzzy
+car alarm
+car engine
+car horn
+clear
+close
+cold
+constant amplitude
+constant drone
+constant tonal pitch
+constant whir
+continuous
+continuous drone
+continuous energy
+continuous hum
+continuous rumble
+continuous sound
+continuous tone
+crescendo
+dark
+debris falling
+decaying
+decelerating
+decrescendo
+dense
+dense texture
+diesel engine
+discontinuous
+distant
+distant traffic
+door slam
+drilling noise
+dry
+dull
+echoing
+engine idling
+engine rumble
+falling pitch
+fan whir
+fan whirring
+fluctuating intensity
+fluttering
+footsteps
+footsteps on pavement
+frequency sweep
+glassy
+gravel shifting
+gritty
+guitar strumming
+harmonic
+harmonic chords
+harsh timbre
+high amplitude
+high frequency noise
+high intensity
+high peak amplitude
+high peak level
+high pitch
+high pitched whine
+high-frequency dominant
+high-frequency screech
+high-frequency whir
+high-intensity burst
+high-intensity bursts
+high-pitched
+high-pitched laughter
+high-pitched vocalizations
+high-pitched voices
+high-pitched yapping
+high-pitched yelp
+hollow
+horn honk
+humming
+impulsive
+inharmonic
+intermittent sputter
+intermittent sputtering
+intimate
+irregular rhythm
+jackhammer pounding
+laughter
+leash jingling
+legato
+light rhythmic patterns
+long duration
+loud
+loud honk
+loud impulse
+low frequency hum
+low growl
+low pitch
+low-frequency boom
+low-frequency dominant
+low-frequency pounding
+low-frequency rumble
+low-frequency thud
+low-pitched
+mechanical clatter
+mechanical drone
+mechanical grinding
+mechanical hum
+mechanical rumble
+mechanical vibration
+mechanical whir
+melodic line
+melodic phrases
+melodic tones
+metal clanging
+metal impact
+metal striking
+metallic
+metallic blare
+metallic clatter
+metallic ringing
+metallic ringing overtones
+metallic timbre
+mid-frequency dominant
+mid-high pitch
+mid-pitched
+moderate loudness
+modulated amplitude
+motor hum
+motor running
+muffled
+narrow bandwidth
+narrow pitch range
+narrowband
+no harmonic structure
+no periodic repetition
+noisy
+park gate creaking
+percussive
+percussive accents
+percussive attack
+percussive burst
+periodic
+periodic pulsation
+piercing
+piercing timbre
+pitch instability
+playful rhythmic patterns
+playful squeals
+playful vocalizations
+pneumatic bursts
+pulsating
+pulsing amplitude
+pure tone
+quiet
+rapid
+rapid decay
+rapid hammering rhythm
+rapid modulation
+rapid pitch changes
+rapid pitch fluctuations
+rapid pulsing
+reedy
+repeated beeps
+repeated blasts
+repeated short bursts
+repeated wail
+repeated wail pattern
+repetitive
+repetitive bursts
+repetitive hammering
+repetitive impacts
+repetitive percussive bursts
+repetitive percussive thuds
+resonant body vibration
+resonant timbre
+reverberant
+reverberant echo
+reverberant tail
+rhythmic
+rhythmic barking
+rhythmic beats
+rhythmic hum
+rhythmic impacts
+rhythmic pulsation
+rhythmic sweep
+rhythmic throb
+rhythmic vibration
+rich harmonics
+rising pitch
+rising pitch glide
+rough
+running footsteps
+sandy
+screaming
+sharp
+sharp attacks
+sharp bark bursts
+sharp crack
+sharp honk
+sharp impact transients
+sharp impulse
+sharp onset
+sharp transient
+sharp transient onset
+sharp transients
+short attack
+short burst
+short decay time
+silky
+single impulse
+slow
+slow frequency modulation
+slow onset
+smooth
+smooth amplitude envelope
+smooth timbre
+soft
+soft-edged
+spacious
+sparse
+sparse harmonics
+sporadic bursts
+staccato
+steady buzz
+steady drone
+steady pitch
+steady pulse
+steady rhythmic pulse
+string-like
+sustained
+sustained mechanical drone
+swelling
+swing creaking
+thick
+thin
+throbbing vibration
+tire squeal
+tires screeching
+tonal
+trembling
+varying amplitude
+velvety
+vent blowing
+vibrato
+vocal melody
+vocal-like
+vocal-like timbre
+wailing tone
+warm
+wide pitch range
+window rattle
+window rattling
+wooden
+worker shouting

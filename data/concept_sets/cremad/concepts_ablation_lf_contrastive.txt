@@ -1,0 +1,79 @@
+abrupt onset
+bright spectral tilt
+bright timbre
+brighter timbre
+clear harmonic structure
+clipped cadence
+clipped spitting
+dark timbre
+dull timbre
+erratic rhythm
+even rhythm
+fast amplitude modulation
+fast attack
+fast clipped syllables
+fast clipped words
+fast speech
+fast speech rate
+fast tempo
+faster speech rate
+flat intonation
+flat melody
+flat pitch contour
+flat tone
+guttural quality
+guttural retch
+harsh timbre
+harsh vocal tension
+harsh voice
+high harmonic density
+high intensity
+high pitch
+high spectral centroid
+higher pitch
+increased intensity
+irregular rhythm
+long decay
+long pauses
+loud energy
+loud intensity
+low energy
+low growling tone
+low pitch
+low pitch variability
+minimal pauses
+moderate loudness
+monotone pitch
+narrow bandwidth
+nasal snarl
+nasal sneer
+noisy texture
+raised pitch
+rapid breathing
+rapid speech
+regular rhythm
+regular rhythmic pulse
+relaxed articulation
+relaxed voice
+rising pitch
+rough voice
+sharp articulation
+sharp bursts
+sharp pitch
+short attack time
+short duration
+slow attack
+slow speech
+slow tempo
+soft attack
+soft dynamics
+soft volume
+sparse texture
+steady pitch
+steady speech rate
+strong amplitude modulation
+sustained energy
+tense articulation
+trembling voice
+varied pitch
+wide vibrato rate

@@ -1,0 +1,1453 @@
+[
+  {
+    "concept": "high pitch",
+    "source": "lf",
+    "classes": [
+      "anger",
+      "fear"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "loud intensity",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "fast speech",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp articulation",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rough voice",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "harsh voice",
+    "source": "lf",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low pitch variability",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low pitch",
+    "source": "lf",
+    "classes": [
+      "disgust",
+      "sad"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "slow tempo",
+    "source": "lf",
+    "classes": [
+      "disgust",
+      "sad"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "guttural quality",
+    "source": "lf",
+    "classes": [
+      "disgust"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "flat intonation",
+    "source": "lf",
+    "classes": [
+      "disgust",
+      "neutral"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp bursts",
+    "source": "lf",
+    "classes": [
+      "disgust",
+      "fear"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "long pauses",
+    "source": "lf",
+    "classes": [
+      "disgust",
+      "sad"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid speech",
+    "source": "lf",
+    "classes": [
+      "fear"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "trembling voice",
+    "source": "lf",
+    "classes": [
+      "fear"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "erratic rhythm",
+    "source": "lf",
+    "classes": [
+      "fear"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "tense articulation",
+    "source": "lf",
+    "classes": [
+      "fear"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "higher pitch",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rising pitch contour",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "increased intensity",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "faster speech rate",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "brighter timbre",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "raised pitch",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "fast speech rate",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high intensity",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "varied pitch",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bright timbre",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "flat pitch contour",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "moderate loudness",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "steady speech rate",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "minimal pauses",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "relaxed articulation",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "steady pitch",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "even rhythm",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "relaxed voice",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "slow speech",
+    "source": "lf",
+    "classes": [
+      "sad"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "soft intensity",
+    "source": "lf",
+    "classes": [
+      "sad"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "monotone pitch",
+    "source": "lf",
+    "classes": [
+      "sad"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "flat melody",
+    "source": "lf",
+    "classes": [
+      "sad"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "harsh vocal tension",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "fast clipped syllables",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low pitch growl",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "harsh loud voice",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "fast clipped words",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low growling tone",
+    "source": "lf",
+    "classes": [
+      "anger"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "guttural retch",
+    "source": "lf",
+    "classes": [
+      "disgust"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "nasal snarl",
+    "source": "lf",
+    "classes": [
+      "disgust"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "clipped cadence",
+    "source": "lf",
+    "classes": [
+      "disgust"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "nasal sneer",
+    "source": "lf",
+    "classes": [
+      "disgust"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "clipped spitting",
+    "source": "lf",
+    "classes": [
+      "disgust"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid breathing",
+    "source": "lf",
+    "classes": [
+      "fear"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp pitch",
+    "source": "lf",
+    "classes": [
+      "fear"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rising pitch",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "fast tempo",
+    "source": "lf",
+    "classes": [
+      "happy"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "flat tone",
+    "source": "lf",
+    "classes": [
+      "neutral"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "soft volume",
+    "source": "lf",
+    "classes": [
+      "sad"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "loud",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "soft",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "quiet",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "moderate loudness",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "crescendo",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decrescendo",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "high-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "low-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "mid-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rising pitch",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "falling pitch",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "wide pitch range",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "narrow pitch range",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pitch instability",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "bright",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dark",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "muffled",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "clear",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "hollow",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "thin",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "thick",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "warm",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "cold",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "broadband",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "narrowband",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "low-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "high-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "mid-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "tonal",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "atonal",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "harmonic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "inharmonic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pure tone",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rich harmonics",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sparse harmonics",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "noisy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "buzzy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "metallic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "wooden",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "glassy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "reedy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "brassy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "string-like",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "vocal-like",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "percussive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "smooth",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rough",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "gritty",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sandy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "silky",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "velvety",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sharp",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dull",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "piercing",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "soft-edged",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "continuous",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "discontinuous",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "periodic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "aperiodic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "repetitive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rhythmic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "irregular rhythm",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "steady pulse",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "accelerating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decelerating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "impulsive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sustained",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decaying",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "swelling",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "trembling",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "vibrato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "fluttering",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pulsating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "staccato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "legato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sparse",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dense",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rapid",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "slow",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "reverberant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dry",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "echoing",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "distant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "close",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "spacious",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "intimate",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "low pitch",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust",
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ],
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "harsh timbre",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "fast attack",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular rhythm",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "high spectral centroid",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust",
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ],
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "loud energy",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "short duration",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "strong amplitude modulation",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "loud intensity",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "abrupt onset",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "noisy texture",
+    "source": "contrastive",
+    "classes": [
+      "anger",
+      "disgust"
+    ],
+    "groups": [
+      [
+        "anger",
+        "disgust"
+      ]
+    ]
+  },
+  {
+    "concept": "slow tempo",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "soft dynamics",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "narrow bandwidth",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "dull timbre",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "slow attack",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "long decay",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "sparse texture",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "soft attack",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "regular rhythm",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "dark timbre",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "low energy",
+    "source": "contrastive",
+    "classes": [
+      "fear",
+      "sad"
+    ],
+    "groups": [
+      [
+        "fear",
+        "sad"
+      ]
+    ]
+  },
+  {
+    "concept": "rising pitch contour",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "bright spectral tilt",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "fast amplitude modulation",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "short attack time",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "high harmonic density",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "regular rhythmic pulse",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "wide vibrato rate",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained energy",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  },
+  {
+    "concept": "clear harmonic structure",
+    "source": "contrastive",
+    "classes": [
+      "happy",
+      "neutral"
+    ],
+    "groups": [
+      [
+        "happy",
+        "neutral"
+      ]
+    ]
+  }
+]

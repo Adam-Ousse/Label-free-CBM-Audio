@@ -96,6 +96,11 @@ def _compute_multilabel_metrics(logits, targets, threshold=0.5):
     return metrics
 
 def train_cbm_and_save(args):
+    seed = int(getattr(args, "seed", 42))
+    random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
     
     if not os.path.exists(args.save_dir):
         os.mkdir(args.save_dir)
@@ -105,7 +110,13 @@ def train_cbm_and_save(args):
     if args.concept_activation_cutoff is None:
         args.concept_activation_cutoff = args.clip_cutoff
         
-    similarity_fn = similarity.cos_similarity_cubed_single
+    similarity_objective = getattr(args, "similarity_objective", "cosine_cubed")
+    if similarity_objective == "cosine_cubed":
+        similarity_fn = similarity.cos_similarity_cubed_single
+    elif similarity_objective == "cosine":
+        similarity_fn = similarity.cos_similarity_single
+    else:
+        raise ValueError("Unknown similarity objective: {}".format(similarity_objective))
     
     if args.dataset == "audioset":
         d_train = args.train_split or "train"
@@ -145,7 +156,10 @@ def train_cbm_and_save(args):
             elif args.dataset == "cremad":
                 d_train = args.train_split or "train"
                 d_val = args.val_split or "val"
-                d_test = args.test_split or "test"
+                # Validation-only searches may explicitly disable held-out evaluation.
+                # The default remains the historical test split.
+                d_test = (None if bool(getattr(args, "disable_test_eval", False))
+                          else (args.test_split or "test"))
             else:
                 d_train = args.train_split or "train"
                 d_val = args.val_split or "val"
@@ -595,7 +609,7 @@ def train_cbm_and_save(args):
         linear.bias.data.zero_()
 
         STEP_SIZE = 0.1
-        ALPHA = 0.99
+        ALPHA = float(getattr(args, "elastic_alpha", 0.99))
         metadata = {}
         metadata['max_reg'] = {}
         metadata['max_reg']['nongrouped'] = args.lam
@@ -610,9 +624,42 @@ def train_cbm_and_save(args):
             with torch.no_grad():
                 logits_test = F.linear(test_c.to(W_g.device), W_g, b_g).cpu()
                 test_loss = F.cross_entropy(logits_test, test_y).item()
-                test_acc = (torch.argmax(logits_test, dim=1) == test_y).float().mean().item()
+                test_predictions = torch.argmax(logits_test, dim=1)
+                test_acc = (test_predictions == test_y).float().mean().item()
                 test_metrics = {"loss": test_loss, "accuracy": test_acc}
-            print("Held-out test -> loss: {:.4f}, acc: {:.4f}".format(test_metrics["loss"], test_metrics["accuracy"]))
+            try:
+                from sklearn.metrics import balanced_accuracy_score, f1_score
+
+                test_metrics["f1_macro"] = float(
+                    f1_score(
+                        test_y.numpy(),
+                        test_predictions.numpy(),
+                        average="macro",
+                        zero_division=0,
+                    )
+                )
+                test_metrics["f1_weighted"] = float(
+                    f1_score(
+                        test_y.numpy(),
+                        test_predictions.numpy(),
+                        average="weighted",
+                        zero_division=0,
+                    )
+                )
+                test_metrics["balanced_accuracy"] = float(
+                    balanced_accuracy_score(test_y.numpy(), test_predictions.numpy())
+                )
+            except ImportError:
+                test_metrics["metrics_warning"] = "scikit-learn unavailable; F1 omitted"
+            print(
+                "Held-out test -> loss: {:.4f}, acc: {:.4f}, macro-F1: {}".format(
+                    test_metrics["loss"],
+                    test_metrics["accuracy"],
+                    "{:.4f}".format(test_metrics["f1_macro"])
+                    if "f1_macro" in test_metrics
+                    else "n/a",
+                )
+            )
     
     save_name = "{}/{}_cbm_{}".format(args.save_dir, args.dataset, datetime.datetime.now().strftime("%Y_%m_%d_%H_%M"))
     os.mkdir(save_name)
@@ -651,6 +698,8 @@ def train_cbm_and_save(args):
         if test_metrics is not None:
             out_dict['test_metrics'] = test_metrics
         json.dump(out_dict, f, indent=2)
+
+    return save_name
     
 if __name__=='__main__':
     args = parser.parse_args()

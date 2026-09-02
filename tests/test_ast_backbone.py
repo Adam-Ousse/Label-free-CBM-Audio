@@ -1,3 +1,5 @@
+import os
+
 import pytest
 import torch
 
@@ -6,7 +8,8 @@ from models import ast_backbone
 
 @pytest.fixture(scope="module")
 def real_ast_backbone():
-    # real model load from hf
+    if os.getenv("RUN_NETWORK_TESTS") != "1":
+        pytest.skip("set RUN_NETWORK_TESTS=1 to download and test the real AST model")
     return ast_backbone.build_ast_backbone("ast_audioset", "cpu")
 
 
@@ -15,6 +18,7 @@ def test_resolve_model_id_alias_and_custom():
     assert ast_backbone._resolve_model_id("ast_hf__foo__bar") == "foo/bar"
 
 
+@pytest.mark.network
 def test_ast_real_forward_output_shape(real_ast_backbone):
     audio = torch.randn(2, 1, 16000)
     out = real_ast_backbone(audio, sample_rates=torch.tensor([16000, 16000]))
@@ -24,6 +28,7 @@ def test_ast_real_forward_output_shape(real_ast_backbone):
     assert out.dtype == torch.float32
 
 
+@pytest.mark.network
 def test_ast_forward_raises_on_mixed_sample_rates(real_ast_backbone):
     audio = torch.randn(2, 16000)
 

@@ -1,0 +1,59 @@
+{
+  "anger": [
+    "high pitch",
+    "loud intensity",
+    "fast speech",
+    "sharp articulation",
+    "rough voice",
+    "harsh voice",
+    "low pitch variability"
+  ],
+  "disgust": [
+    "low pitch",
+    "slow tempo",
+    "guttural quality",
+    "flat intonation",
+    "sharp bursts",
+    "harsh voice",
+    "long pauses"
+  ],
+  "fear": [
+    "high pitch",
+    "rapid speech",
+    "trembling voice",
+    "sharp bursts",
+    "erratic rhythm",
+    "tense articulation"
+  ],
+  "happy": [
+    "higher pitch",
+    "rising pitch contour",
+    "increased intensity",
+    "faster speech rate",
+    "brighter timbre",
+    "raised pitch",
+    "fast speech rate",
+    "high intensity",
+    "varied pitch",
+    "bright timbre"
+  ],
+  "neutral": [
+    "flat pitch contour",
+    "moderate loudness",
+    "steady speech rate",
+    "minimal pauses",
+    "relaxed articulation",
+    "steady pitch",
+    "flat intonation",
+    "even rhythm",
+    "relaxed voice"
+  ],
+  "sad": [
+    "low pitch",
+    "slow speech",
+    "soft intensity",
+    "monotone pitch",
+    "long pauses",
+    "flat melody"
+  ]
+}

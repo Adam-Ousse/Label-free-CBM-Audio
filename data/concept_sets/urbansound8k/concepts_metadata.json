@@ -1,0 +1,2984 @@
+[
+  {
+    "concept": "low hum",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "steady drone",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "mechanical rumble",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "continuous buzz",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "constant whir",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "mechanical vibration",
+    "source": "lf",
+    "classes": [
+      "air_conditioner",
+      "engine_idling",
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "constant buzz",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "continuous rumble",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "loud honk",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated blasts",
+    "source": "lf",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mid-high pitch",
+    "source": "lf",
+    "classes": [
+      "car_horn",
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic timbre",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp onset",
+    "source": "lf",
+    "classes": [
+      "car_horn",
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated short bursts",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched voices",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid pitch changes",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "playful vocalizations",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "light rhythmic patterns",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bright timbre",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched vocalizations",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid pitch fluctuations",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sporadic bursts",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "playful rhythmic patterns",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive bursts",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "resonant timbre",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid rhythm",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high pitch",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "harsh timbre",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "irregular rhythm",
+    "source": "lf",
+    "classes": [
+      "dog_bark",
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched whine",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive hammering",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mechanical grinding",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid pulsing",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic clatter",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive percussive bursts",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-frequency whir",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic ringing",
+    "source": "lf",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "steady rhythmic pulse",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp impact transients",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low rumble",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "steady hum",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "throbbing vibration",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "mechanical whir",
+    "source": "lf",
+    "classes": [
+      "engine_idling",
+      "drilling"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "intermittent sputter",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic throb",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "constant drone",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp transient",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "loud impulse",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high peak level",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "brief duration",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "broadband burst",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive impacts",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low-frequency thud",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-intensity bursts",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive percussive thuds",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low-frequency pounding",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic ringing overtones",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid hammering rhythm",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sustained mechanical drone",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rising pitch glide",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated wail pattern",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high amplitude",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "piercing timbre",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic sweep",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rising pitch",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repeated wail",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high intensity",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "pulsating rhythm",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "melodic phrases",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic beat",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "guitar strumming",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "vocal melody",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "percussive accents",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "melodic line",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "harmonic chords",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "humming",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "mechanical drone",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "steady buzz",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp honk",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repeated beeps",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "metallic blare",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "short burst",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "playground chatter",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "high-pitched laughter",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "running footsteps",
+    "source": "lf",
+    "classes": [
+      "children_playing",
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "playful squeals",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched yelp",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic barking",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low growl",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched yapping",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp bark bursts",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "impact noise",
+    "source": "lf",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-frequency screech",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low-frequency rumble",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic vibration",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mechanical hum",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic hum",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp impulse",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "reverberant tail",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-intensity burst",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp crack",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "reverberant echo",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "metallic ring",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "percussive burst",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "pneumatic bursts",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "wailing tone",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "melodic tones",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic beats",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "ambient noise",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "ambient chatter",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "window rattle",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "fan whir",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant traffic",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "fan whirring",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "window rattling",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "vent blowing",
+    "source": "lf",
+    "classes": [
+      "air_conditioner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "engine idling",
+    "source": "lf",
+    "classes": [
+      "car_horn",
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "traffic noise",
+    "source": "lf",
+    "classes": [
+      "car_horn",
+      "engine_idling",
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "tires screeching",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "pedestrian chatter",
+    "source": "lf",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "tire squeal",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "ball bouncing",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "swing creaking",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "laughter",
+    "source": "lf",
+    "classes": [
+      "children_playing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "leash jingling",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "footsteps on pavement",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "children laughing",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "park gate creaking",
+    "source": "lf",
+    "classes": [
+      "dog_bark"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "metal impact",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "motor hum",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "debris fall",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "air hiss",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "metal clanking",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "motor running",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "worker shouting",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "jackhammer pounding",
+    "source": "lf",
+    "classes": [
+      "drilling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "car horn",
+    "source": "lf",
+    "classes": [
+      "engine_idling",
+      "street_music"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "footsteps",
+    "source": "lf",
+    "classes": [
+      "engine_idling",
+      "street_music"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "door slam",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "children playing",
+    "source": "lf",
+    "classes": [
+      "engine_idling"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "screaming",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "breaking glass",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "car alarm",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "police siren",
+    "source": "lf",
+    "classes": [
+      "gun_shot"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "metal striking",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "air compressor",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "diesel engine",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "gravel shifting",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "drilling noise",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "metal clanging",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "debris falling",
+    "source": "lf",
+    "classes": [
+      "jackhammer"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "car horns",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "engine rumble",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "car engine",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "horn honk",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "brake squeal",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "bicycle bell",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "people talking",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "talking voices",
+    "source": "lf",
+    "classes": [
+      "street_music"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "loud",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "soft",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "quiet",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "moderate loudness",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "crescendo",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decrescendo",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "high-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "low-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "mid-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rising pitch",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "falling pitch",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "wide pitch range",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "narrow pitch range",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pitch instability",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "bright",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dark",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "muffled",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "clear",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "hollow",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "thin",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "thick",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "warm",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "cold",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "broadband",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "narrowband",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "low-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "high-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "mid-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "tonal",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "atonal",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "harmonic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "inharmonic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pure tone",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rich harmonics",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sparse harmonics",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "noisy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "buzzy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "metallic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "wooden",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "glassy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "reedy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "brassy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "string-like",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "vocal-like",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "percussive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "smooth",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rough",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "gritty",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sandy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "silky",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "velvety",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sharp",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dull",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "piercing",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "soft-edged",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "continuous",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "discontinuous",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "periodic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "aperiodic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "repetitive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rhythmic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "irregular rhythm",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "steady pulse",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "accelerating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decelerating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "impulsive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sustained",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decaying",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "swelling",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "trembling",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "vibrato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "fluttering",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pulsating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "staccato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "legato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sparse",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dense",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rapid",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "slow",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "reverberant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dry",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "echoing",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "distant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "close",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "spacious",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "intimate",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "steady hum",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "low-frequency rumble",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous drone",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "mechanical whir",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "constant tonal pitch",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "smooth amplitude envelope",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "periodic pulsation",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband noise floor",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "low frequency hum",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "steady drone",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband noise",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling",
+      "children_playing",
+      "street_music",
+      "dog_bark",
+      "gun_shot",
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ],
+      [
+        "children_playing",
+        "street_music"
+      ],
+      [
+        "dog_bark",
+        "gun_shot"
+      ],
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic pulsation",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "mechanical clatter",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "fluctuating intensity",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "high pitched whine",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "intermittent sputtering",
+    "source": "contrastive",
+    "classes": [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    "groups": [
+      [
+        "air_conditioner",
+        "engine_idling"
+      ]
+    ]
+  },
+  {
+    "concept": "steady pitch",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "frequency sweep",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "pulsing amplitude",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous tone",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren",
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ],
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "narrow bandwidth",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "metallic timbre",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren",
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ],
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "slow onset",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid modulation",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "high pitch",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren",
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ],
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "steady tone",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "slow frequency modulation",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous sound",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "smooth timbre",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "long duration",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "constant amplitude",
+    "source": "contrastive",
+    "classes": [
+      "car_horn",
+      "siren"
+    ],
+    "groups": [
+      [
+        "car_horn",
+        "siren"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid amplitude modulation",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular rhythm",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music",
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ],
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "short attack",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "bright timbre",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "dense texture",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous energy",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp attacks",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music",
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ],
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "vocal-like timbre",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained tones",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "metallic resonance",
+    "source": "contrastive",
+    "classes": [
+      "children_playing",
+      "street_music"
+    ],
+    "groups": [
+      [
+        "children_playing",
+        "street_music"
+      ]
+    ]
+  },
+  {
+    "concept": "low pitch",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot",
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ],
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp attack",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "short duration",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "single impulse",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "no harmonic structure",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid decay",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "high amplitude",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp transient onset",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "low-frequency boom",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband noise burst",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "short decay time",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "no periodic repetition",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "high peak amplitude",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "resonant body vibration",
+    "source": "contrastive",
+    "classes": [
+      "dog_bark",
+      "gun_shot"
+    ],
+    "groups": [
+      [
+        "dog_bark",
+        "gun_shot"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic impacts",
+    "source": "contrastive",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "high frequency noise",
+    "source": "contrastive",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "modulated amplitude",
+    "source": "contrastive",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband spectrum",
+    "source": "contrastive",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "percussive attack",
+    "source": "contrastive",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous hum",
+    "source": "contrastive",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp transients",
+    "source": "contrastive",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  },
+  {
+    "concept": "varying amplitude",
+    "source": "contrastive",
+    "classes": [
+      "drilling",
+      "jackhammer"
+    ],
+    "groups": [
+      [
+        "drilling",
+        "jackhammer"
+      ]
+    ]
+  }
+]

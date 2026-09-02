@@ -1,0 +1,10919 @@
+[
+  {
+    "concept": "high-pitched bark",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid repeated yaps",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp onset",
+    "source": "lf",
+    "classes": [
+      "dog",
+      "rooster",
+      "sneezing",
+      "mouse_click",
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "mid-frequency growl",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "panting rhythm",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "panting breaths",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "loud crowing",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high pitch",
+    "source": "lf",
+    "classes": [
+      "rooster",
+      "cat",
+      "water_drops",
+      "sneezing",
+      "mouse_click",
+      "clock_alarm",
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated calls",
+    "source": "lf",
+    "classes": [
+      "rooster",
+      "crow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "resonant tone",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched squeal",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short grunt bursts",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "nasal snort",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic oinks",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "mid-frequency call",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short grunts",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid snorts",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "nasal oinks",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic snuffling",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low pitch",
+    "source": "lf",
+    "classes": [
+      "cow",
+      "hen",
+      "crow",
+      "coughing",
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "slow rhythm",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "resonant timbre",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sustained tone",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "soft onset",
+    "source": "lf",
+    "classes": [
+      "cow",
+      "cat",
+      "snoring"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low-pitched moo",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sustained vocalization",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "guttural onset",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "descending pitch contour",
+    "source": "lf",
+    "classes": [
+      "cow",
+      "laughing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "resonant chest tone",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "croaking rhythm",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low-pitched pulses",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "raspy texture",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated short bursts",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "wet resonances",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive chirps",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "amplitude modulation",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short meow",
+    "source": "lf",
+    "classes": [
+      "cat"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "vocal fry",
+    "source": "lf",
+    "classes": [
+      "cat"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rising contour",
+    "source": "lf",
+    "classes": [
+      "cat"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched meow",
+    "source": "lf",
+    "classes": [
+      "cat"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid pitch glide",
+    "source": "lf",
+    "classes": [
+      "cat"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short duration",
+    "source": "lf",
+    "classes": [
+      "cat",
+      "sneezing",
+      "coughing",
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "nasal timbre",
+    "source": "lf",
+    "classes": [
+      "cat",
+      "sheep",
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "clucking rhythm",
+    "source": "lf",
+    "classes": [
+      "hen"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive bursts",
+    "source": "lf",
+    "classes": [
+      "hen"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "raspy timbre",
+    "source": "lf",
+    "classes": [
+      "hen",
+      "crow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "moderate loudness",
+    "source": "lf",
+    "classes": [
+      "hen",
+      "sheep"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated bursts",
+    "source": "lf",
+    "classes": [
+      "hen"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "buzzing wings",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "high-pitched hum",
+    "source": "lf",
+    "classes": [
+      "insects",
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid trills",
+    "source": "lf",
+    "classes": [
+      "insects",
+      "crickets",
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "metallic clicks",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "pulsing drone",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched drone",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid wingbeats",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "intermittent chirps",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic timbre",
+    "source": "lf",
+    "classes": [
+      "insects",
+      "clock_alarm",
+      "clock_tick",
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched bleat",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive short calls",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "wavering pitch",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched bleats",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "harsh caw",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive calls",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "loud bursts",
+    "source": "lf",
+    "classes": [
+      "crow",
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "raspy caw",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "harsh tone",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "irregular rhythm",
+    "source": "lf",
+    "classes": [
+      "crow",
+      "rain",
+      "crackling_fire",
+      "chirping_birds",
+      "water_drops",
+      "wind",
+      "coughing",
+      "footsteps",
+      "laughing",
+      "snoring",
+      "keyboard_typing",
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "pattering droplets",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "steady hiss",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "irregular splashes",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "soft rumble",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic dripping",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "soft splashes",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "muffled thuds",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic swash",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "hissing foam",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low rumble",
+    "source": "lf",
+    "classes": [
+      "sea_waves",
+      "crackling_fire",
+      "thunderstorm",
+      "helicopter",
+      "engine",
+      "airplane",
+      "fireworks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeating surge",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "watery roar",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rumbling low roar",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "hissing spray",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "gradual crescendo",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "watery turbulence",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "random pops",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low crackle",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "dry texture",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "soft hiss",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "crackling pops",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-frequency snaps",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sputtering bursts",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched chirps",
+    "source": "lf",
+    "classes": [
+      "crickets",
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "pulsing rhythm",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "thin timbre",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "continuous pattern",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bright timbre",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "continuous cadence",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched trills",
+    "source": "lf",
+    "classes": [
+      "chirping_birds",
+      "crickets"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid frequency sweeps",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bright tonal quality",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short repeated bursts",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "dense twittering texture",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive peeps",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid dripping",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp impacts",
+    "source": "lf",
+    "classes": [
+      "water_drops",
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "resonant pings",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched plinks",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short percussive hits",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "gusty swells",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "whooshing bursts",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched whistle",
+    "source": "lf",
+    "classes": [
+      "wind",
+      "fireworks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rushing noise",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "gusting swells",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "howling pitch",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "whooshing noise",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rushing air",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "buffeting bursts",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "liquid splashing",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "gurgling flow",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched trickle",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bubbling turbulence",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "intermittent splatter",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "gurgling pitch",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bubbling texture",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "continuous flow",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rising intensity",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched hiss",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "water gurgle",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "descending pitch",
+    "source": "lf",
+    "classes": [
+      "toilet_flush",
+      "sneezing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "brief silence",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "resonant splash",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high hiss",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "water splash",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid gurgle",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short burst",
+    "source": "lf",
+    "classes": [
+      "toilet_flush",
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rumbling low rumble",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rolling thunder peals",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "deep bass growl",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "intermittent crackling bursts",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sustained low-frequency roar",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rolling boom",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "deep rumble",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rumbling roar",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "distant rumble",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important",
+      "around"
+    ]
+  },
+  {
+    "concept": "high-pitched wail",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive sobbing",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rising pitch contour",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic crying pattern",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "nasal cry",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "breathy gasps",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "explosive burst",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "mid-frequency noise",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "nasal burst",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "explosive release",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp transient bursts",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "irregular rapid rhythm",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "broadband noise bursts",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "dry resonant slap",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "varying loudness accents",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp percussive bursts",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid irregular rhythm",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-frequency noise",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short transient sounds",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "varying intensity",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "slow inhale",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "soft exhale",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low airflow",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "steady rhythm",
+    "source": "lf",
+    "classes": [
+      "breathing",
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "gentle hiss",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "airy noise",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low volume",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "dry bursts",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "abrupt onset",
+    "source": "lf",
+    "classes": [
+      "coughing",
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "breathy texture",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "mid-pitch",
+    "source": "lf",
+    "classes": [
+      "coughing",
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low thud",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short bursts",
+    "source": "lf",
+    "classes": [
+      "footsteps",
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "dry impact",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "variable tempo",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "irregular rhythmic pattern",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low-frequency thuds",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short percussive bursts",
+    "source": "lf",
+    "classes": [
+      "footsteps",
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "varying intensity steps",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "dry impact texture",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched bursts",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "breathy timbre",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid amplitude modulation",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "descending pitch glides",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive staccato",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "wet bristle friction",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive short strokes",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-frequency swish",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "intermittent gurgle",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic scraping",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bristle friction",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "wet swishing",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive strokes",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-frequency scrape",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic brushing",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low-pitched buzzing",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "continuous droning",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "nasal resonance",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low-pitched",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic",
+    "source": "lf",
+    "classes": [
+      "snoring",
+      "train"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "vibratory",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "nasal",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "intermittent",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "gulp rhythm",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "liquid splash",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "swallow click",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "wet resonance",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "liquid glug",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "cup clink",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp impact",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock",
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "hollow resonance",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid repetition",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "wooden timbre",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock",
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short decay",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "short click",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp attack",
+    "source": "lf",
+    "classes": [
+      "mouse_click",
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "dry timbre",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "quick decay",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high click",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "single impulse",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid percussive taps",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "mechanical clatter",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing",
+      "engine"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-frequency clicks",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "staccato bursts",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid clicks",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "percussive taps",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "creaking pitch",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "slow onset",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "friction squeak",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "creaking friction",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "slow irregular rhythm",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched squeak",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "wooden resonance",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "intermittent bursts",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic click",
+    "source": "lf",
+    "classes": [
+      "can_opening",
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp pop",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "hissing release",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "ringing resonance",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "brief rattle",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp snap",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "hollow ring",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "fizzing hiss",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic sloshing",
+    "source": "lf",
+    "classes": [
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low hum",
+    "source": "lf",
+    "classes": [
+      "washing_machine",
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive thumping",
+    "source": "lf",
+    "classes": [
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "water swishing",
+    "source": "lf",
+    "classes": [
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mechanical whir",
+    "source": "lf",
+    "classes": [
+      "washing_machine",
+      "engine",
+      "toilet_flush",
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "mechanical whirring",
+    "source": "lf",
+    "classes": [
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "steady drone",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "motor whir",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "airflow noise",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "continuous buzz",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rumbling noise",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated ringing",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "ringing",
+    "source": "lf",
+    "classes": [
+      "clock_alarm",
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repeated beeping",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic ticking",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repeated pulses",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-frequency tap",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "steady tempo",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "regular tempo",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp crack",
+    "source": "lf",
+    "classes": [
+      "glass_breaking",
+      "fireworks"
+    ],
+    "prompt_types": [
+      "important",
+      "around"
+    ]
+  },
+  {
+    "concept": "high-pitched tinkle",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid succession",
+    "source": "lf",
+    "classes": [
+      "glass_breaking",
+      "fireworks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bright resonance",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp high-pitched tinkling",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rapid irregular crackling",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "bright metallic resonance",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sustained ringing decay",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rotor thump",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "cyclic whoosh",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic clatter",
+    "source": "lf",
+    "classes": [
+      "helicopter",
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sustained drone",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rotor whirring",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic thumping",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "low-frequency rumble",
+    "source": "lf",
+    "classes": [
+      "helicopter",
+      "sea_waves",
+      "snoring"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched whine",
+    "source": "lf",
+    "classes": [
+      "chainsaw",
+      "hand_saw",
+      "engine"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive sputtering",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rising engine pitch",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "irregular idle",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic rattle",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sputtering idle",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sharp revving",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "grinding buzz",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rising pitch",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "wailing tone",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repeated cycles",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "loud intensity",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "pulsating rhythm",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated pattern",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "loud volume",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "pulsating amplitude",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "loud honk",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "single blast",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repeated blasts",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mid-high pitch",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic hum",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "vibrating drone",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "pulsing idle",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic idle",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "vibrating hum",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "throttle roar",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rumbling",
+    "source": "lf",
+    "classes": [
+      "train",
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "clacking",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "hissing",
+    "source": "lf",
+    "classes": [
+      "train",
+      "cat"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "metallic clangs",
+    "source": "lf",
+    "classes": [
+      "train",
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic wheels",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "horn blasts",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "brake hisses",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rumbling engine",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "ringing tones",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic strikes",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "slow tempo",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "reverberant decay",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "resonant decay",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "rhythmic peals",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "high-pitched clangs",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "continuous drone",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "jet whine",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "distant roar",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "engine hum",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "engine roar",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "steady hum",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "distant whine",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sizzling hiss",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "sustained hiss",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic rasping",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "important",
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive scraping",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "irregular cadence",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "abrasive texture",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "repetitive rasping",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "metallic scraping",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "abrupt stops",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "important"
+    ]
+  },
+  {
+    "concept": "barking",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "whining",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "panting",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "crow call",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "wing flap",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "beak peck",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "poultry vocalization",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "dawn chorus",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "oinking",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "snorting",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "squealing",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "grunting",
+    "source": "lf",
+    "classes": [
+      "pig"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "mooing",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "bovine vocalization",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low-pitched bellow",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "croaking",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "wet guttural pulses",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low-pitched throaty trills",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low-pitched repetitive calls",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "meowing",
+    "source": "lf",
+    "classes": [
+      "cat"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "purring",
+    "source": "lf",
+    "classes": [
+      "cat"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "clucking",
+    "source": "lf",
+    "classes": [
+      "hen"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "cackling",
+    "source": "lf",
+    "classes": [
+      "hen",
+      "laughing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "chicken vocalizations",
+    "source": "lf",
+    "classes": [
+      "hen"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "pecking",
+    "source": "lf",
+    "classes": [
+      "hen"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "chirping",
+    "source": "lf",
+    "classes": [
+      "insects",
+      "crickets"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "crawling",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rustling",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "bleating",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "flock vocalizations",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched cries",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched calls",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "hoarse cawing",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "distant caws",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive croaks",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "piercing calls",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "steady drizzle",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "heavy downpour",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "pattering drops",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic splashing",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "foamy hiss",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "crackling",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "fire",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "burning",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "nighttime insect chorus",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid chirps",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "melodic whistles",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "melodic bird calls",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "dripping",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "splash",
+    "source": "lf",
+    "classes": [
+      "water_drops",
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "patter",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "howling gusts",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rustling leaves",
+    "source": "lf",
+    "classes": [
+      "wind",
+      "insects",
+      "crow",
+      "crickets",
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "whistling drafts",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "whistling through gaps",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "stream flow",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "bubbling",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "filling container",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "hissing air",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mechanical valve",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pressure hiss",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rain patter",
+    "source": "lf",
+    "classes": [
+      "thunderstorm",
+      "water_drops"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "wind howl",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "heavy rain",
+    "source": "lf",
+    "classes": [
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "wind gusts",
+    "source": "lf",
+    "classes": [
+      "thunderstorm",
+      "crow",
+      "sea_waves",
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "rhythmic sobbing",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "soft whimper",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp exhalation",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "muffled pop",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp nasal burst",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "short exhale",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched wheeze",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic hand strikes",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid skin impacts",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid palm impacts",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "inhale exhale",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "soft airflow",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "slow respiration",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "inhale-exhale cycle",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic respiration",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "dry throaty bursts",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "harsh expiratory spasms",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "intermittent vocal jolts",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive expulsions",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "harsh vocal spasms",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic tapping",
+    "source": "lf",
+    "classes": [
+      "footsteps",
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "soft thuds",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "scuffling",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "shuffling noise",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "hard impacts",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "giggling",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "chuckling",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "water splashing",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth",
+      "washing_machine",
+      "frog",
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "mouth gurgling",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "running water",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "mouth gurgle",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic breathing",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "nasal vibration",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low-frequency rumbling",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "liquid pouring",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "gulping",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "liquid pour",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping",
+      "can_opening"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "gulp swallow",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "resonant wood",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "reverberant knocks",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "resonant knock",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "hollow thud",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp tap",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mechanical snap",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "light thud",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid tick",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "clicking keys",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rapid taps",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mechanical clicks",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "key press thuds",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "hinge friction",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "wooden groan",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "slow creak",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "slow squeak",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "lid pop",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "mechanical hum",
+    "source": "lf",
+    "classes": [
+      "washing_machine",
+      "engine"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "motor vibration",
+    "source": "lf",
+    "classes": [
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "motor whirring",
+    "source": "lf",
+    "classes": [
+      "washing_machine",
+      "vacuum_cleaner",
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "motor hum",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner",
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "suction noise",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rattling vibration",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "beeping",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "ticking",
+    "source": "lf",
+    "classes": [
+      "clock_alarm",
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "mechanical click",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive beat",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "metallic ticking",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rhythmic clicking",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mechanical pulse",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "tinkling shards",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "shattering resonance",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "fragile tinkling",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "shattering burst",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rotor whir",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "engine drone",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "blade whoosh",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "blade slap",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "mechanical buzzing",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive grating",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sputtering engine",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repeated wail",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "pulsating tone",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "two-tone oscillation",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched alarm",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "loud honking",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp beeping",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "honking",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "short beeps",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "loud blare",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "rumbling idle",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "idling rumble",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "horn honk",
+    "source": "lf",
+    "classes": [
+      "train",
+      "siren"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "engine rev",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "brake squeal",
+    "source": "lf",
+    "classes": [
+      "train",
+      "car_horn"
+    ],
+    "prompt_types": [
+      "superclass",
+      "around"
+    ]
+  },
+  {
+    "concept": "rail squeal",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "engine rumble",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "metallic clang",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "reverberant tones",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "propeller whir",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "takeoff roar",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "propeller whine",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "takeoff rumble",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp bangs",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "hissing crackles",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "distant booms",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sharp crackling bursts",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "high-pitched whistles",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "low-frequency booms",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "sawing wood",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "metallic rasp",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "repetitive cutting",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "superclass"
+    ]
+  },
+  {
+    "concept": "leash jingling",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "footsteps on grass",
+    "source": "lf",
+    "classes": [
+      "dog"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "whistling",
+    "source": "lf",
+    "classes": [
+      "dog",
+      "clapping"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "hen clucking",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "rooster crowing",
+    "source": "lf",
+    "classes": [
+      "rooster",
+      "hen"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "chicken pecking",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "barn door creaking",
+    "source": "lf",
+    "classes": [
+      "rooster",
+      "cow",
+      "hen"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "chicken clucking",
+    "source": "lf",
+    "classes": [
+      "rooster",
+      "hen"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "hay rustling",
+    "source": "lf",
+    "classes": [
+      "rooster",
+      "cow"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant crowing",
+    "source": "lf",
+    "classes": [
+      "rooster"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "cowbell clanking",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "flies buzzing",
+    "source": "lf",
+    "classes": [
+      "cow"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "insect buzzing",
+    "source": "lf",
+    "classes": [
+      "frog",
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "bird chirping",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wind rustling leaves",
+    "source": "lf",
+    "classes": [
+      "frog"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "scratching",
+    "source": "lf",
+    "classes": [
+      "cat"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "straw rustling",
+    "source": "lf",
+    "classes": [
+      "hen"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "chicks peeping",
+    "source": "lf",
+    "classes": [
+      "hen"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "bird calls",
+    "source": "lf",
+    "classes": [
+      "insects"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "hooves on ground",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "shepherd whistle",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "grass chewing",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "farmyard ambience",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "grazing",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "shepherd's whistle",
+    "source": "lf",
+    "classes": [
+      "sheep"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "flapping wings",
+    "source": "lf",
+    "classes": [
+      "crow"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant traffic",
+    "source": "lf",
+    "classes": [
+      "crow",
+      "crickets",
+      "footsteps",
+      "church_bells"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "thunder rumble",
+    "source": "lf",
+    "classes": [
+      "rain",
+      "thunderstorm"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wind gust",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "water dripping",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "umbrella rustling",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "dripping water",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "puddle splashes",
+    "source": "lf",
+    "classes": [
+      "rain"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "gulls calling",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "boat engine",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "children playing",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "seagull calls",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant boat horn",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "pebbles rolling",
+    "source": "lf",
+    "classes": [
+      "sea_waves"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wood snapping",
+    "source": "lf",
+    "classes": [
+      "crackling_fire",
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "ember pops",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "soft hissing",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "air gusts",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "ember popping",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "air hissing",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "soft thud",
+    "source": "lf",
+    "classes": [
+      "crackling_fire"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "nighttime ambiance",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "grass rustling",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "light breeze",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "nighttime ambience",
+    "source": "lf",
+    "classes": [
+      "crickets"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant water",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "water trickling",
+    "source": "lf",
+    "classes": [
+      "chirping_birds"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wind blowing",
+    "source": "lf",
+    "classes": [
+      "chirping_birds",
+      "footsteps",
+      "church_bells"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "dripping faucet",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "splashing puddle",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "running stream",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "puddle ripple",
+    "source": "lf",
+    "classes": [
+      "water_drops"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "leaves rustling",
+    "source": "lf",
+    "classes": [
+      "wind",
+      "footsteps"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "tree branches creaking",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "flag flapping",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "howling gust",
+    "source": "lf",
+    "classes": [
+      "wind"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "glass clinking",
+    "source": "lf",
+    "classes": [
+      "pouring_water",
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "faucet running",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "cup setting",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "sink faucet running",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "cup being set down",
+    "source": "lf",
+    "classes": [
+      "pouring_water"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "water running",
+    "source": "lf",
+    "classes": [
+      "toilet_flush",
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "door creaking",
+    "source": "lf",
+    "classes": [
+      "toilet_flush",
+      "crying_baby",
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "footsteps on tile",
+    "source": "lf",
+    "classes": [
+      "toilet_flush"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "sink faucet",
+    "source": "lf",
+    "classes": [
+      "toilet_flush",
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "footsteps",
+    "source": "lf",
+    "classes": [
+      "toilet_flush",
+      "clapping",
+      "door_wood_knock",
+      "church_bells"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "sobbing",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "whimpering",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "shushing",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "rocking chair creaks",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "adult shushing",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "footsteps on floor",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant siren",
+    "source": "lf",
+    "classes": [
+      "crying_baby"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "tissue rustling",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "nasal congestion",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "coughing",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "sniffling",
+    "source": "lf",
+    "classes": [
+      "sneezing",
+      "coughing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "nose sniffle",
+    "source": "lf",
+    "classes": [
+      "sneezing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "throat clearing",
+    "source": "lf",
+    "classes": [
+      "sneezing",
+      "coughing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "crowd cheering",
+    "source": "lf",
+    "classes": [
+      "clapping",
+      "fireworks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "music playing",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "people talking",
+    "source": "lf",
+    "classes": [
+      "clapping"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "applause",
+    "source": "lf",
+    "classes": [
+      "clapping",
+      "laughing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "slow exhale",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "chest rattle",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "nasal whistle",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wheeze",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "shallow gasp",
+    "source": "lf",
+    "classes": [
+      "breathing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "breathing",
+    "source": "lf",
+    "classes": [
+      "coughing",
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "speaking",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "speech",
+    "source": "lf",
+    "classes": [
+      "coughing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "chair squeaking",
+    "source": "lf",
+    "classes": [
+      "coughing",
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "gravel crunching",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant birdsong",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "bird chirps",
+    "source": "lf",
+    "classes": [
+      "footsteps"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "crowd chatter",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "clapping",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "conversation",
+    "source": "lf",
+    "classes": [
+      "laughing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "mouth rinse",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "toothbrush bristle",
+    "source": "lf",
+    "classes": [
+      "brushing_teeth"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "bed creaking",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "heavy breathing",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "turning over",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "alarm clock ringing",
+    "source": "lf",
+    "classes": [
+      "snoring"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "swallow gulp",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "ice cube rattle",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "cup set down",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "glass clink",
+    "source": "lf",
+    "classes": [
+      "drinking_sipping"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "door creak",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "muffled voices",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "key turning",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "creaking door",
+    "source": "lf",
+    "classes": [
+      "door_wood_knock"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "keyboard typing",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "computer fan hum",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "desk chair squeak",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "paper rustling",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "chair squeak",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "paper rustle",
+    "source": "lf",
+    "classes": [
+      "mouse_click"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "mouse clicking",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "phone notification",
+    "source": "lf",
+    "classes": [
+      "keyboard_typing"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "hinge squeaks",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "footsteps on wood",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "door latch clicks",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wind through crack",
+    "source": "lf",
+    "classes": [
+      "door_wood_creaks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "metallic clink",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "fizz release",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "hiss release",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "fizz bubble",
+    "source": "lf",
+    "classes": [
+      "can_opening"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "clothes thumping",
+    "source": "lf",
+    "classes": [
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "drain gurgle",
+    "source": "lf",
+    "classes": [
+      "washing_machine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "brush rolling",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "cord snapping",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "dust thumping",
+    "source": "lf",
+    "classes": [
+      "vacuum_cleaner"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "button press",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "snooze click",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "radio static",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "bedside table",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "snooze button",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "morning light",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "pillow rustle",
+    "source": "lf",
+    "classes": [
+      "clock_alarm"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "metallic chime",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wooden creak",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "soft hum",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "chime",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "spring winding",
+    "source": "lf",
+    "classes": [
+      "clock_tick"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "shattering tinkle",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "falling debris",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "startled gasp",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "shatter",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "clink",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "crunch",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "thud",
+    "source": "lf",
+    "classes": [
+      "glass_breaking"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "rotor blades whirring",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "engine sputtering",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wind gusting",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "metal clanking",
+    "source": "lf",
+    "classes": [
+      "helicopter",
+      "engine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "engine humming",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wind rushing",
+    "source": "lf",
+    "classes": [
+      "helicopter"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wood cracking",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "engine idling",
+    "source": "lf",
+    "classes": [
+      "chainsaw",
+      "car_horn",
+      "train"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "saw blade whine",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "branch snapping",
+    "source": "lf",
+    "classes": [
+      "chainsaw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "car engine",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "traffic noise",
+    "source": "lf",
+    "classes": [
+      "siren",
+      "car_horn",
+      "church_bells"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "police radio",
+    "source": "lf",
+    "classes": [
+      "siren"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "pedestrian chatter",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "engine idle",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "street ambience",
+    "source": "lf",
+    "classes": [
+      "car_horn"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "hissing steam",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "rubber squealing",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "air compressor",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "idling hum",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "metal clank",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "air hiss",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "tire squeal",
+    "source": "lf",
+    "classes": [
+      "engine"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "railroad crossing bell",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "passenger announcement",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "railroad horn",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "car horn",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "brakes squeaking",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "railway crossing bell",
+    "source": "lf",
+    "classes": [
+      "train"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "birdsong",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant thunder",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "birds chirping",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "footsteps on gravel",
+    "source": "lf",
+    "classes": [
+      "church_bells"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wind noise",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "landing gear",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "passenger chatter",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "cabin announcement",
+    "source": "lf",
+    "classes": [
+      "airplane"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "loud bang",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "sizzling crackle",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant whistle",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "loud booms",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "sizzling crackles",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "distant sirens",
+    "source": "lf",
+    "classes": [
+      "fireworks"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "saw teeth grating",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "worker grunting",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wood cutting",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "saw teeth rasping",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "wood splintering",
+    "source": "lf",
+    "classes": [
+      "hand_saw"
+    ],
+    "prompt_types": [
+      "around"
+    ]
+  },
+  {
+    "concept": "loud",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "soft",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "quiet",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "moderate loudness",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "crescendo",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decrescendo",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "high-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "low-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "mid-pitched",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rising pitch",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "falling pitch",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "wide pitch range",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "narrow pitch range",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pitch instability",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "bright",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dark",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "muffled",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "clear",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "hollow",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "thin",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "thick",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "warm",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "cold",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "broadband",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "narrowband",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "low-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "high-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "mid-frequency dominant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "tonal",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "atonal",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "harmonic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "inharmonic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pure tone",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rich harmonics",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sparse harmonics",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "noisy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "buzzy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "metallic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "wooden",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "glassy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "reedy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "brassy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "string-like",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "vocal-like",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "percussive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "smooth",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rough",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "gritty",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sandy",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "silky",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "velvety",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sharp",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dull",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "piercing",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "soft-edged",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "continuous",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "discontinuous",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "periodic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "aperiodic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "repetitive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rhythmic",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "irregular rhythm",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "steady pulse",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "accelerating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decelerating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "impulsive",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sustained",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "decaying",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "swelling",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "trembling",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "vibrato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "fluttering",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "pulsating",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "staccato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "legato",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "sparse",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dense",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "rapid",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "slow",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "reverberant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "dry",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "echoing",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "distant",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "close",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "spacious",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "intimate",
+    "source": "broad",
+    "classes": []
+  },
+  {
+    "concept": "low pitch",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds",
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops",
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ],
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ],
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "high pitch",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds",
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops",
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring",
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick",
+      "door_wood_creaks",
+      "glass_breaking",
+      "siren",
+      "car_horn",
+      "train",
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ],
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ],
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ],
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ],
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous tone",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "pulsing rhythm",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband noise",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops",
+      "crackling_fire",
+      "fireworks",
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring",
+      "clapping",
+      "footsteps",
+      "door_wood_knock",
+      "door_wood_creaks",
+      "glass_breaking",
+      "helicopter",
+      "airplane",
+      "engine",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ],
+      [
+        "crackling_fire",
+        "fireworks"
+      ],
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ],
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ],
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "narrowband tone",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops",
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ],
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "fast amplitude modulation",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "slow attack",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid amplitude modulation",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "cat",
+      "crying_baby",
+      "door_wood_creaks",
+      "glass_breaking",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "cat",
+        "crying_baby"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "short duration calls",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ]
+    ]
+  },
+  {
+    "concept": "nasal timbre",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "high harmonic density",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ]
+    ]
+  },
+  {
+    "concept": "abrupt onset",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ]
+    ]
+  },
+  {
+    "concept": "slow decay",
+    "source": "contrastive",
+    "classes": [
+      "dog",
+      "cow",
+      "sheep",
+      "pig",
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops"
+    ],
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband spectrum",
+    "source": "contrastive",
+    "classes": [
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds",
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "narrowband spectrum",
+    "source": "contrastive",
+    "classes": [
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds"
+    ],
+    "groups": [
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid repetition",
+    "source": "contrastive",
+    "classes": [
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds",
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ],
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "slow repetition",
+    "source": "contrastive",
+    "classes": [
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds"
+    ],
+    "groups": [
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ]
+    ]
+  },
+  {
+    "concept": "clear tonal quality",
+    "source": "contrastive",
+    "classes": [
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds"
+    ],
+    "groups": [
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ]
+    ]
+  },
+  {
+    "concept": "noisy texture",
+    "source": "contrastive",
+    "classes": [
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds"
+    ],
+    "groups": [
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ]
+    ]
+  },
+  {
+    "concept": "harsh timbre",
+    "source": "contrastive",
+    "classes": [
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds"
+    ],
+    "groups": [
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ]
+    ]
+  },
+  {
+    "concept": "smooth timbre",
+    "source": "contrastive",
+    "classes": [
+      "rooster",
+      "hen",
+      "crow",
+      "chirping_birds"
+    ],
+    "groups": [
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ]
+    ]
+  },
+  {
+    "concept": "low-pitched croaks",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "high-pitched chirps",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "buzzing tones",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid trills",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp clicks",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous drone",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects",
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ],
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular bursts",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "high-pitched chirping",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "pulsing amplitude modulation",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband spectral energy",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects",
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ],
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular temporal pattern",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects",
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ],
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp transient attacks",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous tonal drone",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid frequency sweeps",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "sparse rhythmic bursts",
+    "source": "contrastive",
+    "classes": [
+      "frog",
+      "crickets",
+      "insects"
+    ],
+    "groups": [
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ]
+    ]
+  },
+  {
+    "concept": "high fundamental frequency",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "short attack time",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "periodic vocalization",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "low-frequency rumble",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby",
+      "crackling_fire",
+      "fireworks",
+      "wind",
+      "thunderstorm",
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water",
+      "helicopter",
+      "airplane",
+      "engine",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ],
+      [
+        "crackling_fire",
+        "fireworks"
+      ],
+      [
+        "wind",
+        "thunderstorm"
+      ],
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ],
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "low fundamental frequency",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous tonal sound",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular amplitude modulation",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby",
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ],
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid frequency modulation",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband noise bursts",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby",
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ],
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp attack onset",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "slow decay envelope",
+    "source": "contrastive",
+    "classes": [
+      "cat",
+      "crying_baby"
+    ],
+    "groups": [
+      [
+        "cat",
+        "crying_baby"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic repetition",
+    "source": "contrastive",
+    "classes": [
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops",
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring",
+      "clapping",
+      "footsteps",
+      "door_wood_knock",
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ],
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ],
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ],
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous murmur",
+    "source": "contrastive",
+    "classes": [
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops"
+    ],
+    "groups": [
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp attack",
+    "source": "contrastive",
+    "classes": [
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops",
+      "clapping",
+      "footsteps",
+      "door_wood_knock",
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick",
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ],
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ],
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp transients",
+    "source": "contrastive",
+    "classes": [
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops"
+    ],
+    "groups": [
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ]
+    ]
+  },
+  {
+    "concept": "smooth texture",
+    "source": "contrastive",
+    "classes": [
+      "rain",
+      "sea_waves",
+      "pouring_water",
+      "water_drops"
+    ],
+    "groups": [
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp crackling transients",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained hissing noise",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular popping rhythm",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband spectral content",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid amplitude fluctuations",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "high-frequency sizzle",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "random impulse bursts",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular popping",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous hiss",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp transient bursts",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks",
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ],
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "low rumble",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid crackle",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained roar",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "random timing",
+    "source": "contrastive",
+    "classes": [
+      "crackling_fire",
+      "fireworks"
+    ],
+    "groups": [
+      [
+        "crackling_fire",
+        "fireworks"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous broadband hiss",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular amplitude surges",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained tone",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm",
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ],
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "random crackling bursts",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "gradual onset",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm",
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ],
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ]
+    ]
+  },
+  {
+    "concept": "steady-state texture",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "sparse transient pops",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular low-frequency rumbles",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained tonal drone",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "impulsive crackling bursts",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "slow amplitude swells",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "high-frequency whistling",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic periodic pulses",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp transient onset",
+    "source": "contrastive",
+    "classes": [
+      "wind",
+      "thunderstorm",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "wind",
+        "thunderstorm"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous broadband noise",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water",
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ],
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "intermittent bursts",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water",
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ],
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "high-frequency hiss",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water",
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ],
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic pulsation",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ]
+    ]
+  },
+  {
+    "concept": "liquid splashing sounds",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ]
+    ]
+  },
+  {
+    "concept": "mechanical whirring",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ]
+    ]
+  },
+  {
+    "concept": "short discrete impacts",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic repetitive pattern",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular burst pattern",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ]
+    ]
+  },
+  {
+    "concept": "mechanical hum",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ]
+    ]
+  },
+  {
+    "concept": "short discrete pulses",
+    "source": "contrastive",
+    "classes": [
+      "toilet_flush",
+      "washing_machine",
+      "pouring_water"
+    ],
+    "groups": [
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ]
+    ]
+  },
+  {
+    "concept": "periodic rhythm",
+    "source": "contrastive",
+    "classes": [
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring"
+    ],
+    "groups": [
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ]
+    ]
+  },
+  {
+    "concept": "short bursts",
+    "source": "contrastive",
+    "classes": [
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring"
+    ],
+    "groups": [
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ]
+    ]
+  },
+  {
+    "concept": "long steady tone",
+    "source": "contrastive",
+    "classes": [
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring"
+    ],
+    "groups": [
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ]
+    ]
+  },
+  {
+    "concept": "high frequency",
+    "source": "contrastive",
+    "classes": [
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring"
+    ],
+    "groups": [
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular timing",
+    "source": "contrastive",
+    "classes": [
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring"
+    ],
+    "groups": [
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ]
+    ]
+  },
+  {
+    "concept": "soft volume",
+    "source": "contrastive",
+    "classes": [
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring"
+    ],
+    "groups": [
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp onset",
+    "source": "contrastive",
+    "classes": [
+      "sneezing",
+      "coughing",
+      "breathing",
+      "snoring",
+      "brushing_teeth",
+      "drinking_sipping",
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ],
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "short decay",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ]
+    ]
+  },
+  {
+    "concept": "high-frequency energy",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ]
+    ]
+  },
+  {
+    "concept": "impulsive transient",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ]
+    ]
+  },
+  {
+    "concept": "dry timbre",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular spacing",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ]
+    ]
+  },
+  {
+    "concept": "high frequency content",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock",
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "short duration",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock",
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick",
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ],
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular pulse",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ]
+    ]
+  },
+  {
+    "concept": "low spectral centroid",
+    "source": "contrastive",
+    "classes": [
+      "clapping",
+      "footsteps",
+      "door_wood_knock"
+    ],
+    "groups": [
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ]
+    ]
+  },
+  {
+    "concept": "high-frequency noise",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "liquid resonance",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous broadband",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "smooth decay",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "wet texture",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "high-frequency scraping",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "intermittent liquid splashes",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "periodic rhythmic strokes",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "low-frequency gurgling",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "resonant cavity echoes",
+    "source": "contrastive",
+    "classes": [
+      "brushing_teeth",
+      "drinking_sipping"
+    ],
+    "groups": [
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ]
+    ]
+  },
+  {
+    "concept": "regular rhythm",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "narrow bandwidth",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "metallic timbre",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick",
+      "door_wood_creaks",
+      "glass_breaking",
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ],
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "single impulse",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "mechanical sound",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "high frequency click",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular rhythm",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick",
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "short attack",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "low amplitude",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "dry texture",
+    "source": "contrastive",
+    "classes": [
+      "mouse_click",
+      "keyboard_typing",
+      "clock_tick"
+    ],
+    "groups": [
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ]
+    ]
+  },
+  {
+    "concept": "rapid decay",
+    "source": "contrastive",
+    "classes": [
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "resonant ringing",
+    "source": "contrastive",
+    "classes": [
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "percussive impact",
+    "source": "contrastive",
+    "classes": [
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained friction",
+    "source": "contrastive",
+    "classes": [
+      "door_wood_creaks",
+      "glass_breaking"
+    ],
+    "groups": [
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp metallic ring",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained motor hum",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic scraping",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "intermittent high-pitched whine",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "slow periodic pulses",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "abrupt percussive onset",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular friction texture",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "metallic ringing",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw",
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous motor hum",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "repetitive scraping",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "sharp percussive clicks",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "sustained buzzing",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "irregular rhythmic pattern",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "low-pitched rumble",
+    "source": "contrastive",
+    "classes": [
+      "can_opening",
+      "chainsaw",
+      "hand_saw"
+    ],
+    "groups": [
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic blade slap",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "metallic whine",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "smooth gliding tone",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "intermittent sputtering",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "deep throbbing pulse",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "high-pitched turbine whistle",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "pulsating hum",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "smooth glide",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "mechanical clatter",
+    "source": "contrastive",
+    "classes": [
+      "helicopter",
+      "airplane",
+      "engine"
+    ],
+    "groups": [
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ]
+    ]
+  },
+  {
+    "concept": "repeated pulses",
+    "source": "contrastive",
+    "classes": [
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "slow amplitude modulation",
+    "source": "contrastive",
+    "classes": [
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "continuous pitch glide",
+    "source": "contrastive",
+    "classes": [
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "rhythmic pulsing",
+    "source": "contrastive",
+    "classes": [
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "broadband noise burst",
+    "source": "contrastive",
+    "classes": [
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "long sustained tone",
+    "source": "contrastive",
+    "classes": [
+      "siren",
+      "car_horn",
+      "train"
+    ],
+    "groups": [
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ]
+    ]
+  },
+  {
+    "concept": "regular pulsing",
+    "source": "contrastive",
+    "classes": [
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "bright spectrum",
+    "source": "contrastive",
+    "classes": [
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "long decay",
+    "source": "contrastive",
+    "classes": [
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "steady rhythm",
+    "source": "contrastive",
+    "classes": [
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "regular pulse",
+    "source": "contrastive",
+    "classes": [
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "single strike",
+    "source": "contrastive",
+    "classes": [
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  {
+    "concept": "resonant body",
+    "source": "contrastive",
+    "classes": [
+      "church_bells",
+      "clock_alarm"
+    ],
+    "groups": [
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "air_conditioner": [
+    "humming",
+    "window rattle",
+    "fan whir",
+    "distant traffic",
+    "fan whirring",
+    "window rattling",
+    "vent blowing"
+  ],
+  "car_horn": [
+    "engine idling",
+    "traffic noise",
+    "tires screeching",
+    "pedestrian chatter",
+    "tire squeal"
+  ],
+  "children_playing": [
+    "playground chatter",
+    "ball bouncing",
+    "swing creaking",
+    "laughter"
+  ],
+  "dog_bark": [
+    "leash jingling",
+    "footsteps on pavement",
+    "children laughing",
+    "park gate creaking"
+  ],
+  "drilling": [
+    "metal impact",
+    "motor hum",
+    "debris fall",
+    "air hiss",
+    "metal clanking",
+    "motor running",
+    "worker shouting",
+    "jackhammer pounding"
+  ],
+  "engine_idling": [
+    "car horn",
+    "footsteps",
+    "traffic noise",
+    "door slam",
+    "children playing"
+  ],
+  "gun_shot": [
+    "screaming",
+    "running footsteps",
+    "breaking glass",
+    "car alarm",
+    "police siren"
+  ],
+  "jackhammer": [
+    "metal striking",
+    "air compressor",
+    "diesel engine",
+    "gravel shifting",
+    "drilling noise",
+    "metal clanging",
+    "engine idling",
+    "debris falling"
+  ],
+  "siren": [
+    "traffic noise",
+    "car horns",
+    "engine rumble",
+    "pedestrian chatter",
+    "car engine",
+    "horn honk",
+    "brake squeal"
+  ],
+  "street_music": [
+    "car horn",
+    "footsteps",
+    "bicycle bell",
+    "people talking",
+    "talking voices"
+  ]
+}

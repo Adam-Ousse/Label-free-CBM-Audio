@@ -1,0 +1,388 @@
+{
+  "dataset": "esc50",
+  "groups": {
+    "dog|cow|sheep|pig": {
+      "classes": [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      "concepts": [
+        "low pitch",
+        "high pitch",
+        "continuous tone",
+        "pulsing rhythm",
+        "broadband noise",
+        "narrowband tone",
+        "fast amplitude modulation",
+        "slow attack",
+        "rapid amplitude modulation",
+        "short duration calls",
+        "nasal timbre",
+        "high harmonic density",
+        "abrupt onset",
+        "slow decay"
+      ]
+    },
+    "rooster|hen|crow|chirping_birds": {
+      "classes": [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ],
+      "concepts": [
+        "high pitch",
+        "low pitch",
+        "broadband spectrum",
+        "narrowband spectrum",
+        "rapid repetition",
+        "slow repetition",
+        "clear tonal quality",
+        "noisy texture",
+        "harsh timbre",
+        "smooth timbre"
+      ]
+    },
+    "frog|crickets|insects": {
+      "classes": [
+        "frog",
+        "crickets",
+        "insects"
+      ],
+      "concepts": [
+        "low-pitched croaks",
+        "high-pitched chirps",
+        "buzzing tones",
+        "pulsing rhythm",
+        "rapid trills",
+        "sharp clicks",
+        "continuous drone",
+        "irregular bursts",
+        "high-pitched chirping",
+        "pulsing amplitude modulation",
+        "broadband spectral energy",
+        "irregular temporal pattern",
+        "sharp transient attacks",
+        "continuous tonal drone",
+        "rapid frequency sweeps",
+        "sparse rhythmic bursts"
+      ]
+    },
+    "cat|crying_baby": {
+      "classes": [
+        "cat",
+        "crying_baby"
+      ],
+      "concepts": [
+        "high fundamental frequency",
+        "rapid amplitude modulation",
+        "broadband spectral energy",
+        "irregular temporal pattern",
+        "short attack time",
+        "periodic vocalization",
+        "nasal timbre",
+        "low-frequency rumble",
+        "low fundamental frequency",
+        "continuous tonal sound",
+        "irregular amplitude modulation",
+        "rapid frequency modulation",
+        "broadband noise bursts",
+        "sharp attack onset",
+        "slow decay envelope"
+      ]
+    },
+    "rain|sea_waves|pouring_water|water_drops": {
+      "classes": [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ],
+      "concepts": [
+        "high pitch",
+        "low pitch",
+        "broadband noise",
+        "narrowband tone",
+        "rhythmic repetition",
+        "continuous murmur",
+        "sharp attack",
+        "slow decay",
+        "sharp transients",
+        "smooth texture"
+      ]
+    },
+    "crackling_fire|fireworks": {
+      "classes": [
+        "crackling_fire",
+        "fireworks"
+      ],
+      "concepts": [
+        "sharp crackling transients",
+        "sustained hissing noise",
+        "irregular popping rhythm",
+        "broadband spectral content",
+        "rapid amplitude fluctuations",
+        "high-frequency sizzle",
+        "random impulse bursts",
+        "low-frequency rumble",
+        "irregular popping",
+        "continuous hiss",
+        "sharp transient bursts",
+        "low rumble",
+        "rapid crackle",
+        "sustained roar",
+        "random timing",
+        "broadband noise"
+      ]
+    },
+    "wind|thunderstorm": {
+      "classes": [
+        "wind",
+        "thunderstorm"
+      ],
+      "concepts": [
+        "continuous broadband hiss",
+        "low-frequency rumble",
+        "irregular amplitude surges",
+        "sustained tone",
+        "random crackling bursts",
+        "gradual onset",
+        "steady-state texture",
+        "sparse transient pops",
+        "irregular low-frequency rumbles",
+        "sustained tonal drone",
+        "impulsive crackling bursts",
+        "slow amplitude swells",
+        "high-frequency whistling",
+        "rhythmic periodic pulses",
+        "sharp transient onset"
+      ]
+    },
+    "toilet_flush|washing_machine|pouring_water": {
+      "classes": [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ],
+      "concepts": [
+        "continuous broadband noise",
+        "intermittent bursts",
+        "high-frequency hiss",
+        "low-frequency rumble",
+        "rhythmic pulsation",
+        "liquid splashing sounds",
+        "mechanical whirring",
+        "short discrete impacts",
+        "rhythmic repetitive pattern",
+        "irregular burst pattern",
+        "mechanical hum",
+        "short discrete pulses"
+      ]
+    },
+    "sneezing|coughing|breathing|snoring": {
+      "classes": [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ],
+      "concepts": [
+        "low pitch",
+        "broadband noise",
+        "periodic rhythm",
+        "short bursts",
+        "long steady tone",
+        "high frequency",
+        "irregular timing",
+        "soft volume",
+        "high pitch",
+        "narrowband tone",
+        "rhythmic repetition",
+        "sharp onset",
+        "gradual onset"
+      ]
+    },
+    "clapping|footsteps|door_wood_knock": {
+      "classes": [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ],
+      "concepts": [
+        "sharp attack",
+        "broadband noise",
+        "rhythmic repetition",
+        "short decay",
+        "high-frequency energy",
+        "impulsive transient",
+        "dry timbre",
+        "irregular spacing",
+        "high frequency content",
+        "short duration",
+        "irregular pulse",
+        "low spectral centroid"
+      ]
+    },
+    "brushing_teeth|drinking_sipping": {
+      "classes": [
+        "brushing_teeth",
+        "drinking_sipping"
+      ],
+      "concepts": [
+        "high-frequency noise",
+        "intermittent bursts",
+        "liquid resonance",
+        "continuous broadband",
+        "rhythmic repetition",
+        "sharp onset",
+        "smooth decay",
+        "wet texture",
+        "high-frequency scraping",
+        "intermittent liquid splashes",
+        "continuous broadband noise",
+        "periodic rhythmic strokes",
+        "sharp transient bursts",
+        "low-frequency gurgling",
+        "irregular amplitude modulation",
+        "resonant cavity echoes"
+      ]
+    },
+    "mouse_click|keyboard_typing|clock_tick": {
+      "classes": [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ],
+      "concepts": [
+        "high pitch",
+        "sharp attack",
+        "regular rhythm",
+        "short duration",
+        "narrow bandwidth",
+        "metallic timbre",
+        "single impulse",
+        "mechanical sound",
+        "high frequency click",
+        "irregular rhythm",
+        "short attack",
+        "rapid repetition",
+        "low amplitude",
+        "dry texture"
+      ]
+    },
+    "door_wood_creaks|glass_breaking": {
+      "classes": [
+        "door_wood_creaks",
+        "glass_breaking"
+      ],
+      "concepts": [
+        "high pitch",
+        "sharp attack",
+        "rapid decay",
+        "broadband spectrum",
+        "irregular rhythm",
+        "resonant ringing",
+        "percussive impact",
+        "sustained friction",
+        "sharp onset",
+        "high frequency content",
+        "broadband noise",
+        "short duration",
+        "rapid amplitude modulation",
+        "metallic timbre"
+      ]
+    },
+    "can_opening|chainsaw|hand_saw": {
+      "classes": [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ],
+      "concepts": [
+        "sharp metallic ring",
+        "sustained motor hum",
+        "rhythmic scraping",
+        "intermittent high-pitched whine",
+        "broadband noise bursts",
+        "slow periodic pulses",
+        "abrupt percussive onset",
+        "irregular friction texture",
+        "metallic ringing",
+        "continuous motor hum",
+        "repetitive scraping",
+        "sharp percussive clicks",
+        "sustained buzzing",
+        "irregular rhythmic pattern",
+        "high-frequency hiss",
+        "low-pitched rumble"
+      ]
+    },
+    "helicopter|airplane|engine": {
+      "classes": [
+        "helicopter",
+        "airplane",
+        "engine"
+      ],
+      "concepts": [
+        "low-frequency rumble",
+        "rhythmic blade slap",
+        "continuous drone",
+        "metallic whine",
+        "smooth gliding tone",
+        "intermittent sputtering",
+        "deep throbbing pulse",
+        "high-pitched turbine whistle",
+        "pulsating hum",
+        "broadband noise",
+        "smooth glide",
+        "mechanical clatter"
+      ]
+    },
+    "siren|car_horn|train": {
+      "classes": [
+        "siren",
+        "car_horn",
+        "train"
+      ],
+      "concepts": [
+        "high pitch",
+        "low pitch",
+        "continuous tone",
+        "repeated pulses",
+        "slow amplitude modulation",
+        "fast amplitude modulation",
+        "broadband noise",
+        "narrowband tone",
+        "continuous pitch glide",
+        "rhythmic pulsing",
+        "broadband noise burst",
+        "metallic ringing",
+        "low-frequency rumble",
+        "rapid amplitude modulation",
+        "long sustained tone",
+        "sharp transient onset"
+      ]
+    },
+    "church_bells|clock_alarm": {
+      "classes": [
+        "church_bells",
+        "clock_alarm"
+      ],
+      "concepts": [
+        "high pitch",
+        "metallic timbre",
+        "slow attack",
+        "sustained tone",
+        "regular pulsing",
+        "bright spectrum",
+        "long decay",
+        "steady rhythm",
+        "regular pulse",
+        "single strike",
+        "resonant body"
+      ]
+    }
+  }
+}

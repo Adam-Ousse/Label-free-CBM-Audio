@@ -1,0 +1,20 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "network: requires downloading external model weights",
+]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = [
+    "archive",
+    "data_local",
+    "release/google_drive_bundle",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.ruff.format]
+quote-style = "double"

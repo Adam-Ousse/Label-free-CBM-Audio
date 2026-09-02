@@ -1,0 +1,16 @@
+{
+  "dataset": "esc50",
+  "prompt_types": [
+    "important",
+    "superclass",
+    "around"
+  ],
+  "raw_unique_concepts": 716,
+  "filtered_concepts": 603,
+  "model": "deepseek-v4-flash",
+  "num_trials": 2,
+  "max_len": 30,
+  "class_sim_cutoff": 0.85,
+  "other_sim_cutoff": 0.9,
+  "output_path": "data/concept_sets/esc50_filtered_deepseek.txt"
+}

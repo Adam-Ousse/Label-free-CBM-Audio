@@ -1,0 +1,166 @@
+high pitch
+loud intensity
+fast speech
+sharp articulation
+rough voice
+harsh voice
+low pitch variability
+low pitch
+slow tempo
+guttural quality
+flat intonation
+sharp bursts
+long pauses
+rapid speech
+trembling voice
+erratic rhythm
+tense articulation
+higher pitch
+rising pitch contour
+increased intensity
+faster speech rate
+brighter timbre
+raised pitch
+fast speech rate
+high intensity
+varied pitch
+bright timbre
+flat pitch contour
+moderate loudness
+steady speech rate
+minimal pauses
+relaxed articulation
+steady pitch
+even rhythm
+relaxed voice
+slow speech
+soft intensity
+monotone pitch
+flat melody
+harsh vocal tension
+fast clipped syllables
+low pitch growl
+harsh loud voice
+fast clipped words
+low growling tone
+guttural retch
+nasal snarl
+clipped cadence
+nasal sneer
+clipped spitting
+rapid breathing
+sharp pitch
+rising pitch
+fast tempo
+flat tone
+soft volume
+loud
+soft
+quiet
+crescendo
+decrescendo
+high-pitched
+low-pitched
+mid-pitched
+falling pitch
+wide pitch range
+narrow pitch range
+pitch instability
+bright
+dark
+muffled
+clear
+hollow
+thin
+thick
+warm
+cold
+broadband
+narrowband
+low-frequency dominant
+high-frequency dominant
+mid-frequency dominant
+tonal
+atonal
+harmonic
+inharmonic
+pure tone
+rich harmonics
+sparse harmonics
+noisy
+buzzy
+metallic
+wooden
+glassy
+reedy
+brassy
+string-like
+vocal-like
+percussive
+smooth
+rough
+gritty
+sandy
+silky
+velvety
+sharp
+dull
+piercing
+soft-edged
+continuous
+discontinuous
+periodic
+aperiodic
+repetitive
+rhythmic
+irregular rhythm
+steady pulse
+accelerating
+decelerating
+impulsive
+sustained
+decaying
+swelling
+trembling
+vibrato
+fluttering
+pulsating
+staccato
+legato
+sparse
+dense
+rapid
+slow
+reverberant
+dry
+echoing
+distant
+close
+spacious
+intimate
+harsh timbre
+fast attack
+high spectral centroid
+loud energy
+short duration
+strong amplitude modulation
+abrupt onset
+noisy texture
+soft dynamics
+narrow bandwidth
+dull timbre
+slow attack
+long decay
+sparse texture
+soft attack
+regular rhythm
+dark timbre
+low energy
+bright spectral tilt
+fast amplitude modulation
+short attack time
+high harmonic density
+regular rhythmic pulse
+wide vibrato rate
+sustained energy
+clear harmonic structure

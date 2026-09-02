@@ -16,5 +16,7 @@ soundfile >= 0.12.1
 wandb >= 0.16.0
 jupyter
 notebook
+openai >= 1.0.0
+python-dotenv >= 1.0.0
 flask >= 3.0.0
 plotly==6.7.0

@@ -1,0 +1,384 @@
+{
+  "dog": [
+    "barking",
+    "leash jingling",
+    "footsteps on grass",
+    "whistling"
+  ],
+  "rooster": [
+    "hen clucking",
+    "rooster crowing",
+    "chicken pecking",
+    "barn door creaking",
+    "chicken clucking",
+    "hay rustling",
+    "distant crowing"
+  ],
+  "pig": [
+    "squealing",
+    "grunting",
+    "snorting",
+    "oinking"
+  ],
+  "cow": [
+    "mooing",
+    "barn door creaking",
+    "hay rustling",
+    "cowbell clanking",
+    "flies buzzing"
+  ],
+  "frog": [
+    "water splashing",
+    "insect buzzing",
+    "bird chirping",
+    "wind rustling leaves"
+  ],
+  "cat": [
+    "meowing",
+    "purring",
+    "hissing",
+    "scratching"
+  ],
+  "hen": [
+    "rooster crowing",
+    "barn door creaking",
+    "straw rustling",
+    "chicks peeping",
+    "chicken clucking"
+  ],
+  "insects": [
+    "buzzing wings",
+    "chirping",
+    "rustling leaves",
+    "bird calls"
+  ],
+  "sheep": [
+    "bleating",
+    "hooves on ground",
+    "shepherd whistle",
+    "grass chewing",
+    "farmyard ambience",
+    "grazing",
+    "shepherd's whistle"
+  ],
+  "crow": [
+    "flapping wings",
+    "rustling leaves",
+    "distant traffic",
+    "wind gusts"
+  ],
+  "rain": [
+    "thunder rumble",
+    "wind gust",
+    "water dripping",
+    "umbrella rustling",
+    "dripping water",
+    "puddle splashes"
+  ],
+  "sea_waves": [
+    "gulls calling",
+    "wind gusts",
+    "boat engine",
+    "children playing",
+    "seagull calls",
+    "distant boat horn",
+    "pebbles rolling"
+  ],
+  "crackling_fire": [
+    "wood snapping",
+    "ember pops",
+    "soft hissing",
+    "air gusts",
+    "ember popping",
+    "air hissing",
+    "soft thud"
+  ],
+  "crickets": [
+    "nighttime ambiance",
+    "grass rustling",
+    "distant traffic",
+    "light breeze",
+    "nighttime ambience",
+    "rustling leaves"
+  ],
+  "chirping_birds": [
+    "rustling leaves",
+    "distant water",
+    "wind gusts",
+    "insect buzzing",
+    "water trickling",
+    "wind blowing"
+  ],
+  "water_drops": [
+    "dripping faucet",
+    "rain patter",
+    "splashing puddle",
+    "running stream",
+    "splash",
+    "puddle ripple"
+  ],
+  "wind": [
+    "leaves rustling",
+    "tree branches creaking",
+    "flag flapping",
+    "howling gust"
+  ],
+  "pouring_water": [
+    "glass clinking",
+    "faucet running",
+    "splash",
+    "cup setting",
+    "sink faucet running",
+    "cup being set down",
+    "water splashing"
+  ],
+  "toilet_flush": [
+    "water running",
+    "door creaking",
+    "footsteps on tile",
+    "sink faucet",
+    "footsteps"
+  ],
+  "thunderstorm": [
+    "heavy rain",
+    "wind gusts",
+    "thunder rumble",
+    "distant rumble"
+  ],
+  "crying_baby": [
+    "sobbing",
+    "whimpering",
+    "shushing",
+    "rocking chair creaks",
+    "adult shushing",
+    "door creaking",
+    "footsteps on floor",
+    "distant siren"
+  ],
+  "sneezing": [
+    "tissue rustling",
+    "nasal congestion",
+    "coughing",
+    "sniffling",
+    "nose sniffle",
+    "throat clearing"
+  ],
+  "clapping": [
+    "crowd cheering",
+    "footsteps",
+    "music playing",
+    "people talking",
+    "whistling",
+    "applause"
+  ],
+  "breathing": [
+    "slow exhale",
+    "chest rattle",
+    "nasal whistle",
+    "wheeze",
+    "shallow gasp"
+  ],
+  "coughing": [
+    "breathing",
+    "throat clearing",
+    "sniffling",
+    "speaking",
+    "speech",
+    "chair squeaking"
+  ],
+  "footsteps": [
+    "leaves rustling",
+    "gravel crunching",
+    "distant birdsong",
+    "wind blowing",
+    "distant traffic",
+    "bird chirps"
+  ],
+  "laughing": [
+    "crowd chatter",
+    "clapping",
+    "conversation",
+    "applause"
+  ],
+  "brushing_teeth": [
+    "running water",
+    "mouth rinse",
+    "sink faucet",
+    "toothbrush bristle",
+    "water running"
+  ],
+  "snoring": [
+    "bed creaking",
+    "heavy breathing",
+    "turning over",
+    "alarm clock ringing"
+  ],
+  "drinking_sipping": [
+    "glass clinking",
+    "swallow gulp",
+    "ice cube rattle",
+    "cup set down",
+    "glass clink",
+    "gulp swallow"
+  ],
+  "door_wood_knock": [
+    "footsteps",
+    "door creak",
+    "muffled voices",
+    "key turning",
+    "creaking door"
+  ],
+  "mouse_click": [
+    "keyboard typing",
+    "computer fan hum",
+    "desk chair squeak",
+    "paper rustling",
+    "chair squeak",
+    "paper rustle"
+  ],
+  "keyboard_typing": [
+    "chair squeaking",
+    "mouse clicking",
+    "phone notification",
+    "door creaking",
+    "breathing"
+  ],
+  "door_wood_creaks": [
+    "hinge squeaks",
+    "footsteps on wood",
+    "door latch clicks",
+    "wind through crack"
+  ],
+  "can_opening": [
+    "metallic clink",
+    "fizz release",
+    "lid pop",
+    "liquid pour",
+    "hiss release",
+    "fizz bubble"
+  ],
+  "washing_machine": [
+    "water splashing",
+    "motor hum",
+    "clothes thumping",
+    "drain gurgle"
+  ],
+  "vacuum_cleaner": [
+    "motor whirring",
+    "brush rolling",
+    "cord snapping",
+    "dust thumping"
+  ],
+  "clock_alarm": [
+    "beeping",
+    "button press",
+    "snooze click",
+    "radio static",
+    "bedside table",
+    "snooze button",
+    "morning light",
+    "pillow rustle"
+  ],
+  "clock_tick": [
+    "mechanical whir",
+    "metallic chime",
+    "wooden creak",
+    "soft hum",
+    "ticking",
+    "chime",
+    "spring winding"
+  ],
+  "glass_breaking": [
+    "shattering tinkle",
+    "sharp crack",
+    "falling debris",
+    "startled gasp",
+    "shatter",
+    "clink",
+    "crunch",
+    "thud"
+  ],
+  "helicopter": [
+    "rotor blades whirring",
+    "engine sputtering",
+    "wind gusting",
+    "metal clanking",
+    "engine humming",
+    "wind rushing"
+  ],
+  "chainsaw": [
+    "wood cracking",
+    "engine idling",
+    "saw blade whine",
+    "branch snapping"
+  ],
+  "siren": [
+    "car engine",
+    "traffic noise",
+    "police radio",
+    "horn honk"
+  ],
+  "car_horn": [
+    "traffic noise",
+    "engine idling",
+    "pedestrian chatter",
+    "brake squeal",
+    "engine idle",
+    "street ambience"
+  ],
+  "engine": [
+    "hissing steam",
+    "metal clanking",
+    "rubber squealing",
+    "air compressor",
+    "idling hum",
+    "metal clank",
+    "air hiss",
+    "tire squeal"
+  ],
+  "train": [
+    "horn honk",
+    "railroad crossing bell",
+    "engine idling",
+    "passenger announcement",
+    "railroad horn",
+    "car horn",
+    "brakes squeaking",
+    "railway crossing bell"
+  ],
+  "church_bells": [
+    "birdsong",
+    "traffic noise",
+    "footsteps",
+    "distant thunder",
+    "birds chirping",
+    "wind blowing",
+    "footsteps on gravel",
+    "distant traffic"
+  ],
+  "airplane": [
+    "engine hum",
+    "wind noise",
+    "landing gear",
+    "passenger chatter",
+    "cabin announcement"
+  ],
+  "fireworks": [
+    "crowd cheering",
+    "loud bang",
+    "sizzling crackle",
+    "distant whistle",
+    "loud booms",
+    "sizzling crackles",
+    "distant sirens"
+  ],
+  "hand_saw": [
+    "wood snapping",
+    "saw teeth grating",
+    "motor whirring",
+    "worker grunting",
+    "wood cutting",
+    "saw teeth rasping",
+    "wood splintering"
+  ]
+}

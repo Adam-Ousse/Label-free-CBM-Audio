@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-from transformers import ASTModel, AutoFeatureExtractor
+from transformers import ASTFeatureExtractor, ASTModel
 
 
 AST_MODEL_ALIASES = {
@@ -33,7 +33,10 @@ class ASTAudioBackbone(torch.nn.Module):
         super().__init__()
         self.model_id = model_id
         self.device = device
-        self.feature_extractor = AutoFeatureExtractor.from_pretrained(model_id)
+        # Transformers 5 resolves ``AutoFeatureExtractor`` through
+        # processor_config.json, which older AST repositories do not provide.
+        # The model-specific loader correctly reads preprocessor_config.json.
+        self.feature_extractor = ASTFeatureExtractor.from_pretrained(model_id)
         self.model = ASTModel.from_pretrained(model_id).to(device)
         self.model.eval()
         self.hidden_size = int(self.model.config.hidden_size)

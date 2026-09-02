@@ -1,0 +1,25 @@
+{
+  "dataset": "urbansound8k",
+  "groups": [
+    [
+      "air_conditioner",
+      "engine_idling"
+    ],
+    [
+      "car_horn",
+      "siren"
+    ],
+    [
+      "children_playing",
+      "street_music"
+    ],
+    [
+      "dog_bark",
+      "gun_shot"
+    ],
+    [
+      "drilling",
+      "jackhammer"
+    ]
+  ]
+}

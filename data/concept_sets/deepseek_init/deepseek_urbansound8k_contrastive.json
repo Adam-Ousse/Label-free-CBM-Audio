@@ -1,0 +1,117 @@
+{
+  "dataset": "urbansound8k",
+  "groups": {
+    "air_conditioner|engine_idling": {
+      "classes": [
+        "air_conditioner",
+        "engine_idling"
+      ],
+      "concepts": [
+        "steady hum",
+        "low-frequency rumble",
+        "continuous drone",
+        "mechanical whir",
+        "constant tonal pitch",
+        "smooth amplitude envelope",
+        "periodic pulsation",
+        "broadband noise floor",
+        "low frequency hum",
+        "steady drone",
+        "broadband noise",
+        "rhythmic pulsation",
+        "mechanical clatter",
+        "fluctuating intensity",
+        "high pitched whine",
+        "intermittent sputtering"
+      ]
+    },
+    "car_horn|siren": {
+      "classes": [
+        "car_horn",
+        "siren"
+      ],
+      "concepts": [
+        "steady pitch",
+        "frequency sweep",
+        "pulsing amplitude",
+        "continuous tone",
+        "narrow bandwidth",
+        "metallic timbre",
+        "slow onset",
+        "rapid modulation",
+        "high pitch",
+        "steady tone",
+        "slow frequency modulation",
+        "continuous sound",
+        "smooth timbre",
+        "long duration",
+        "constant amplitude"
+      ]
+    },
+    "children_playing|street_music": {
+      "classes": [
+        "children_playing",
+        "street_music"
+      ],
+      "concepts": [
+        "high pitch",
+        "broadband noise",
+        "rapid amplitude modulation",
+        "irregular rhythm",
+        "short attack",
+        "bright timbre",
+        "dense texture",
+        "continuous energy",
+        "sharp attacks",
+        "vocal-like timbre",
+        "sustained tones",
+        "metallic resonance"
+      ]
+    },
+    "dog_bark|gun_shot": {
+      "classes": [
+        "dog_bark",
+        "gun_shot"
+      ],
+      "concepts": [
+        "low pitch",
+        "sharp attack",
+        "short duration",
+        "broadband noise",
+        "single impulse",
+        "no harmonic structure",
+        "rapid decay",
+        "high amplitude",
+        "sharp transient onset",
+        "low-frequency boom",
+        "broadband noise burst",
+        "short decay time",
+        "no periodic repetition",
+        "high peak amplitude",
+        "resonant body vibration"
+      ]
+    },
+    "drilling|jackhammer": {
+      "classes": [
+        "drilling",
+        "jackhammer"
+      ],
+      "concepts": [
+        "low pitch",
+        "metallic timbre",
+        "continuous tone",
+        "rhythmic impacts",
+        "sharp attacks",
+        "high frequency noise",
+        "modulated amplitude",
+        "broadband spectrum",
+        "broadband noise",
+        "percussive attack",
+        "irregular rhythm",
+        "continuous hum",
+        "sharp transients",
+        "varying amplitude"
+      ]
+    }
+  }
+}

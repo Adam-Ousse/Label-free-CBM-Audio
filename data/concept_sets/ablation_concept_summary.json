@@ -1,0 +1,123 @@
+{
+  "filtering": {
+    "max_len": 30,
+    "class_sim_cutoff": 0.85,
+    "other_sim_cutoff": 0.9
+  },
+  "datasets": {
+    "esc50": {
+      "lf": {
+        "sources": [
+          "lf"
+        ],
+        "raw_unique": 716,
+        "text_filtered": 603,
+        "path": "data/concept_sets/esc50/concepts_ablation_lf.txt"
+      },
+      "lf_broad": {
+        "sources": [
+          "lf",
+          "broad"
+        ],
+        "raw_unique": 797,
+        "text_filtered": 683,
+        "path": "data/concept_sets/esc50/concepts_ablation_lf_broad.txt"
+      },
+      "lf_contrastive": {
+        "sources": [
+          "lf",
+          "contrastive"
+        ],
+        "raw_unique": 848,
+        "text_filtered": 700,
+        "path": "data/concept_sets/esc50/concepts_ablation_lf_contrastive.txt"
+      },
+      "full": {
+        "sources": [
+          "lf",
+          "broad",
+          "contrastive"
+        ],
+        "raw_unique": 929,
+        "text_filtered": 777,
+        "path": "data/concept_sets/esc50/concepts_ablation_full.txt"
+      }
+    },
+    "urbansound8k": {
+      "lf": {
+        "sources": [
+          "lf"
+        ],
+        "raw_unique": 159,
+        "text_filtered": 140,
+        "path": "data/concept_sets/urbansound8k/concepts_ablation_lf.txt"
+      },
+      "lf_broad": {
+        "sources": [
+          "lf",
+          "broad"
+        ],
+        "raw_unique": 243,
+        "text_filtered": 224,
+        "path": "data/concept_sets/urbansound8k/concepts_ablation_lf_broad.txt"
+      },
+      "lf_contrastive": {
+        "sources": [
+          "lf",
+          "contrastive"
+        ],
+        "raw_unique": 213,
+        "text_filtered": 185,
+        "path": "data/concept_sets/urbansound8k/concepts_ablation_lf_contrastive.txt"
+      },
+      "full": {
+        "sources": [
+          "lf",
+          "broad",
+          "contrastive"
+        ],
+        "raw_unique": 297,
+        "text_filtered": 269,
+        "path": "data/concept_sets/urbansound8k/concepts_ablation_full.txt"
+      }
+    },
+    "cremad": {
+      "lf": {
+        "sources": [
+          "lf"
+        ],
+        "raw_unique": 56,
+        "text_filtered": 52,
+        "path": "data/concept_sets/cremad/concepts_ablation_lf.txt"
+      },
+      "lf_broad": {
+        "sources": [
+          "lf",
+          "broad"
+        ],
+        "raw_unique": 140,
+        "text_filtered": 136,
+        "path": "data/concept_sets/cremad/concepts_ablation_lf_broad.txt"
+      },
+      "lf_contrastive": {
+        "sources": [
+          "lf",
+          "contrastive"
+        ],
+        "raw_unique": 83,
+        "text_filtered": 79,
+        "path": "data/concept_sets/cremad/concepts_ablation_lf_contrastive.txt"
+      },
+      "full": {
+        "sources": [
+          "lf",
+          "broad",
+          "contrastive"
+        ],
+        "raw_unique": 166,
+        "text_filtered": 162,
+        "path": "data/concept_sets/cremad/concepts_ablation_full.txt"
+      }
+    }
+  }
+}
