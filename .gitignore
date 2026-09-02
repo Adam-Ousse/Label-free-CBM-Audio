@@ -1,4 +1,8 @@
 __pycache__/
+.runtime_deps/
+data_local
+.pytest_cache/
+*.py[cod]
 .ipynb_checkpoints
 saved_activations/
 data/places365
@@ -9,8 +13,19 @@ data/ImageNet_val
 data/places365.zip
 saved_models/
 results/
+release/google_drive_bundle/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+paper/main.pdf
+jdse_extended_abstract/main.pdf
+jdse_extended_abstract/llncsdoc.pdf
 
 # Local audio dataset artifacts (do not commit)
+.env
 data/esc50/raw/
 data/esc50/manifests/
 data/esc50/summary.json
