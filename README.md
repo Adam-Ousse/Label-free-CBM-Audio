@@ -5,6 +5,8 @@
   ·
   <a href="https://openreview.net/forum?id=92E7slVpxY&noteId=92E7slVpxY"><strong>OpenReview</strong></a>
   ·
+  <a href="https://drive.google.com/drive/folders/1F6TZmovyXMDkc9SJ2cfd_ue4L-d2Wx--?usp=sharing"><strong>Models and artifacts</strong></a>
+  ·
   <a href="notebooks/DeepSeek_audio_concept_generation.ipynb"><strong>Generation notebook</strong></a>
 </p>
 
@@ -188,10 +190,17 @@ The first training command selects hyperparameters using validation macro-F1 wit
 
 ### 7. Run segmented inference
 
-Package the 12 canonical checkpoints and verify their checksums:
+Download the [canonical model and artifact bundle](https://drive.google.com/drive/folders/1F6TZmovyXMDkc9SJ2cfd_ue4L-d2Wx--?usp=sharing) and place the downloaded folder at `release/google_drive_bundle/`. It contains all 12 CBM checkpoints, their exact concept inputs and provenance, and the compact evaluation reports.
+
+Alternatively, rebuild the same bundle from completed local experiments:
 
 ```bash
 python -m scripts.release.build_google_drive_bundle
+```
+
+In either case, verify all 119 files against the included SHA-256 manifest:
+
+```bash
 python -m scripts.release.build_google_drive_bundle \
   --output release/google_drive_bundle --verify-only
 ```
@@ -250,6 +259,7 @@ Dataset audio, local manifests, model caches, activations, and experiment output
 
 - [Project page and interactive demo](https://adam-ousse.github.io/Label-free-CBM-Audio/)
 - [Paper on OpenReview](https://openreview.net/forum?id=92E7slVpxY&noteId=92E7slVpxY)
+- [Canonical models and artifacts](https://drive.google.com/drive/folders/1F6TZmovyXMDkc9SJ2cfd_ue4L-d2Wx--?usp=sharing)
 - [Original LF-CBM paper](https://arxiv.org/abs/2304.06129)
 
 ```bibtex
