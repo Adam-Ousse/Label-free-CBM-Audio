@@ -1,49 +1,50 @@
-# ESC-50 Showcase (GitHub Pages)
+# Audio LF-CBM Explorer (GitHub Pages)
 
-This folder contains a static ESC-50 showcase UI.
+This folder is a fully static, backend-free demo of the **LF + broad** concept bottleneck model on the held-out ESC-50 fold-1 test split.
 
-## What it does
-- ESC-50 only
-- Class picker with emoji/icon
-- Exactly 2 examples per class
-- For each example:
-  - audio player
-  - predicted class + confidence
-  - top concept contribution bars (CBM explanation)
-  - metadata (fold, duration)
+## Interactive views
+
+- Filter curated test examples by true class and by correct/incorrect prediction.
+- Listen to each source clip and inspect the full-clip LF + broad prediction.
+- Click a displayed concept bar to set its signal from `0x` to `2x`; all 50 class logits and probabilities are recomputed in the browser from the saved final-layer effects.
+- Reset interventions independently for each example.
+- Switch to the segmented tab for the two views used by `plot_temporal_concept_explanations.py`:
+  - aggregate top-5 concept contributions through time;
+  - ranked per-window concept heatmap.
+
+The intervention holds undisplayed concepts fixed. It is an exact last-layer counterfactual for the displayed concepts, not a new AST/CBL forward pass.
 
 ## Regenerate assets
-From repository root:
+
+From the repository root, using an environment with PyTorch:
 
 ```bash
-/home/ensta/ensta-gassem/dl_env/bin/python scripts/build_esc50_showcase_assets.py --samples-per-class 2
+python scripts/build_esc50_showcase_assets.py \
+  --samples-per-class 2 \
+  --max-concepts 5
 ```
 
-If you want GPU generation through Slurm:
+By default, the builder reads:
 
-```bash
-srun --pty --time=02:00:00 --partition=ENSTA-l40s --gpus=1 --nodelist=ensta-l40s02.r2.enst.fr /home/ensta/ensta-gassem/dl_env/bin/python scripts/build_esc50_showcase_assets.py --samples-per-class 2 --max-concepts 10
-```
+- `results/audio_concept_ablation/cbm/esc50/lf_broad/run_summary.json`
+- the corresponding LF + broad checkpoint;
+- `results/audio_concept_ablation/segmented/esc50/lf_broad/test_temporal_concepts.pt`;
+- `data/esc50/manifests/fold1_test.jsonl`.
 
-This command updates:
+It selects a confident correct prediction and, when available, the most confident error for each ground-truth class. It rewrites:
+
 - `assets/audio/*.wav`
 - `assets/data/esc50_showcase.json`
 - `assets/data/esc50_showcase.js`
 
-## Local preview
-From repository root:
+The JavaScript copy allows the page to work when opened directly with `file://`; the JSON copy is the normal HTTP fallback.
+
+## Preview and publish
+
+From the repository root:
 
 ```bash
 python -m http.server 8000
 ```
 
-Open:
-- `http://localhost:8000/docs/`
-
-Direct file open also works (`file:///.../docs/index.html`) because the page uses
-`assets/data/esc50_showcase.js` as an embedded fallback when browser `fetch()` is
-blocked by CORS on `file://` origins.
-
-## GitHub Pages
-- In repository settings, set Pages source to `main` branch and `/docs` folder.
-- Site entrypoint is `docs/index.html`.
+Open `http://localhost:8000/docs/`. For GitHub Pages, select the `main` branch and `/docs` folder in the repository Pages settings. `.nojekyll` is already included.

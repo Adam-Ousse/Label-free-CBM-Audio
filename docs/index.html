@@ -3,85 +3,96 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ESC-50 Showcase</title>
+  <meta name="description" content="Interactive LF + broad audio concept bottleneck model explanations on ESC-50.">
+  <title>Audio LF-CBM Explorer</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <main class="container">
-    <header class="hero panel">
-      <h1>ESC-50 Audio Showcase</h1>
-      <p>Choose a class and listen to 2 curated examples with top concept contribution bars for each prediction.</p>
-      <p class="context-line">
-        Project for Multimodal Explainable AI (XAI):
-        <a href="https://www.master-mva.com/cours/multimodal-explainable-ai-xai/" target="_blank" rel="noopener noreferrer">
-          course page
-        </a>
+    <header class="hero">
+      <h1>Audio LF-CBM Explorer</h1>
+      <p class="subtitle">Interpretable audio classification with label-free and broad perceptual concepts</p>
+      <p class="authors">Adam GASSEM &nbsp;·&nbsp; Amine MAAZIZI</p>
+      <p class="affiliation">Multimodal Explainable AI (XAI), MVA</p>
+      <p class="summary">
+        This page presents a sparse LF + broad concept bottleneck model and an interactive
+        analysis of its predictions on the ESC-50 fold-1 test set.
       </p>
-      <p class="context-line"><strong>Team:</strong> Adam GASSEM, Amine MAAZIZI</p>
     </header>
 
-    <section class="panel">
-      <h2>Main Results (AST vs CBM)</h2>
+    <section aria-labelledby="resultsHeading">
+      <h2 id="resultsHeading">Results</h2>
+      <p class="section-copy">Global full-clip evaluation. Sparsity is the fraction of zero final-classifier weights.</p>
       <div class="table-wrap">
-        <table class="results-table" aria-label="Main model results">
+        <table class="results-table">
           <thead>
             <tr>
-              <th>Dataset</th>
-              <th>AST Acc. (%)</th>
-              <th>AST Loss</th>
-              <th>CBM Acc. (%)</th>
-              <th>CBM Loss</th>
-              <th>Delta Acc. (pts)</th>
+              <th rowspan="2">Dataset</th>
+              <th colspan="2">Fine-tuned AST</th>
+              <th colspan="4">CBM: LF + broad</th>
+            </tr>
+            <tr>
+              <th>Accuracy</th><th>Macro-F1</th>
+              <th>Accuracy</th><th>Macro-F1</th><th>Concepts</th><th>Sparsity</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>ESC-50</td>
-              <td>93.50</td>
-              <td>0.2708</td>
-              <td>94.00</td>
-              <td>0.2819</td>
-              <td>+0.50</td>
-            </tr>
-            <tr>
-              <td>UrbanSound8K</td>
-              <td>89.01</td>
-              <td>0.5032</td>
-              <td>87.57</td>
-              <td>0.3806</td>
-              <td>-1.43</td>
-            </tr>
-            <tr>
-              <td>CREMA-D</td>
-              <td>70.05</td>
-              <td>1.7674</td>
-              <td>67.36</td>
-              <td>0.9616</td>
-              <td>-2.69</td>
-            </tr>
+            <tr><td>ESC-50, fold 1</td><td>93.50%</td><td>93.28%</td><td>93.50%</td><td>93.39%</td><td>671</td><td>92.58%</td></tr>
+            <tr><td>UrbanSound8K, fold 10</td><td>89.01%</td><td>90.03%</td><td>89.84%</td><td>90.94%</td><td>212</td><td>86.04%</td></tr>
+            <tr><td>CREMA-D</td><td>70.05%</td><td>52.76%</td><td>67.76%</td><td>45.70%</td><td>42</td><td>30.16%</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section class="panel">
-      <h2>Choose Class</h2>
-      <div id="classGrid" class="class-grid" aria-label="ESC-50 classes"></div>
-      <div id="classStatus" class="status"></div>
+    <section class="explorer" aria-labelledby="explorerHeading">
+      <h2 id="explorerHeading">Interactive explanations</h2>
+      <p class="section-copy">
+        Browse correct and incorrect test predictions. The displayed values come from the trained LF + broad checkpoint.
+      </p>
+
+      <div class="tabs" role="tablist" aria-label="Explanation view">
+        <button id="interventionTab" class="tab active" type="button" role="tab" aria-selected="true" aria-controls="examplesGrid" data-view="intervention">Concept intervention</button>
+        <button id="segmentedTab" class="tab" type="button" role="tab" aria-selected="false" aria-controls="examplesGrid" data-view="segmented">Segmented explanation</button>
+      </div>
+
+      <div class="filter-bar">
+        <label for="classSelect">True class
+          <select id="classSelect"><option value="all">All classes</option></select>
+        </label>
+        <fieldset class="outcome-filter">
+          <legend>Prediction</legend>
+          <button type="button" data-outcome="all">All <span id="allCount"></span></button>
+          <button type="button" data-outcome="correct">Correct <span id="correctCount"></span></button>
+          <button type="button" class="active" data-outcome="incorrect">Incorrect <span id="incorrectCount"></span></button>
+        </fieldset>
+      </div>
+
+      <p id="viewIntro" class="view-intro"></p>
+      <div id="classStatus" class="status" role="status" aria-live="polite"></div>
+      <div id="examplesGrid" class="examples-grid"></div>
+      <nav id="pagination" class="pagination hidden" aria-label="Example pages">
+        <button id="previousPage" type="button">Previous</button>
+        <span id="pageStatus"></span>
+        <button id="nextPage" type="button">Next</button>
+      </nav>
     </section>
 
-    <section id="examplesPanel" class="panel hidden">
-      <h2 id="examplesTitle">Examples</h2>
-      <div class="controls-row">
-        <label for="conceptFilter">Concepts:</label>
-        <select id="conceptFilter">
-          <option value="all">All</option>
-          <option value="positive">Positive only</option>
-          <option value="negative">Negative only</option>
-        </select>
-      </div>
-      <div id="examplesGrid" class="examples-grid"></div>
+    <section class="method">
+      <h2>Method</h2>
+      <p>
+        DeepSeek proposes LF class concepts and a dataset-independent broad perceptual vocabulary.
+        CLAP grounding, activation filtering, and projectability filtering determine which concepts
+        are retained. The concept bottleneck is followed by a sparse linear classifier.
+      </p>
+      <p>
+        Temporal explanations use 1.0 s windows with a 0.5 s hop and follow
+        <code>plot_temporal_concept_explanations.py</code>. The LLM proposes candidates; it does not
+        decide whether a concept is present in the audio.
+      </p>
     </section>
+
+    <footer>Audio LF-CBM · ESC-50 interactive demo</footer>
   </main>
 
   <script src="assets/data/esc50_showcase.js"></script>
