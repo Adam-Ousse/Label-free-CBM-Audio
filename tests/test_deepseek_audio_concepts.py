@@ -11,7 +11,7 @@ from concept_generation_deepseek import (
     get_contrastive_prompt,
     get_grouping_prompt,
 )
-from generate_deepseek_concept_sets import parse_args, save_candidate_outputs
+from scripts.concepts.generate_deepseek_concept_sets import parse_args, save_candidate_outputs
 
 
 class FakeGenerator:

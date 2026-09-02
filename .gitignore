@@ -20,9 +20,6 @@ release/google_drive_bundle/
 *.log
 *.out
 *.synctex.gz
-paper/main.pdf
-jdse_extended_abstract/main.pdf
-jdse_extended_abstract/llncsdoc.pdf
 
 # Local audio dataset artifacts (do not commit)
 .env

@@ -19,7 +19,7 @@ The intervention holds undisplayed concepts fixed. It is an exact last-layer cou
 From the repository root, using an environment with PyTorch:
 
 ```bash
-python scripts/build_esc50_showcase_assets.py \
+python -m scripts.visualization.build_esc50_showcase_assets \
   --samples-per-class 2 \
   --max-concepts 5
 ```

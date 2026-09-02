@@ -3,8 +3,8 @@ import json
 
 import pytest
 
-import run_segmented_audio_ablation as segmented
-from scripts import build_google_drive_bundle as bundle
+from scripts.evaluation import run_segmented_audio_ablation as segmented
+from scripts.release import build_google_drive_bundle as bundle
 
 
 def test_manifest_files_records_relative_path_size_and_checksum(tmp_path):

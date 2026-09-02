@@ -9,7 +9,7 @@ head. The project includes:
 - matched CBM source ablations on ESC-50, UrbanSound8K, and CREMA-D;
 - global and overlapping 1-second segmented inference;
 - a static GitHub Pages explorer with exact top-five concept interventions;
-- paper sources and a checksummed external checkpoint bundle.
+- checksummed external checkpoint packaging and verification.
 
 The project was developed by [Adam Gassem and Amine Maazizi](AUTHORS.md) for the
 MVA Multimodal Explainable AI course.
@@ -29,26 +29,25 @@ protocol; the other two datasets use the shared audio vocabulary.
 | CREMA-D | Fine-tuned AST | 70.05 | 52.76 | — |
 | CREMA-D | Targeted full union | 70.25 | 51.58 | 92.79 |
 
-The full LF/broad/contrastive ablation, retained concept counts, segmentation
-results, and limitations are reported in [`paper/main.tex`](paper/main.tex).
-
 ## Repository layout
 
 | Path | Purpose |
 | --- | --- |
 | `data/` | Dataset download/preparation code and versioned concept sets |
 | `models/` | AST adapters used by training and inference |
-| `scripts/` | Release, CREMA-D follow-up, plotting, and website utilities |
+| `scripts/concepts/` | Concept generation and candidate-set preparation |
+| `scripts/training/` | AST and CBM training and source ablations |
+| `scripts/evaluation/` | Baseline, CBM, and segmented evaluation |
+| `scripts/visualization/` | Plot and static-site asset generation |
+| `scripts/data/` | Dataset inspection utilities |
+| `scripts/release/` | Artifact bundle creation and verification |
 | `experiments/` | Focused hyperparameter and filtering studies |
 | `notebooks/` | Reproducible concept-generation walkthrough |
 | `docs/` | Backend-free GitHub Pages explorer |
-| `paper/` | Full paper source and figures |
-| `jdse_extended_abstract/` | Three-page extended abstract source |
 | `release/google_drive_bundle/` | Generated external artifact folder (ignored by Git) |
-| `archive/` | Preserved upstream/original LF-CBM material |
 
-Root-level training and evaluation scripts remain as compatibility entry points.
-New project utilities belong in `scripts/`, and focused research sweeps belong in
+Reusable library modules remain at the repository root. Runnable workflows are grouped
+under `scripts/` and invoked with `python -m`; focused research sweeps remain in
 `experiments/`.
 
 ## Installation
@@ -103,9 +102,9 @@ The default CLI preserves the original LF-only behavior. Explicit modes produce
 separate source files and provenance metadata:
 
 ```bash
-python generate_deepseek_concept_sets.py --dataset esc50 --mode all --stage generate
-python generate_deepseek_concept_sets.py --dataset urbansound8k --mode all --stage generate
-python generate_deepseek_concept_sets.py \
+python -m scripts.concepts.generate_deepseek_concept_sets --dataset esc50 --mode all --stage generate
+python -m scripts.concepts.generate_deepseek_concept_sets --dataset urbansound8k --mode all --stage generate
+python -m scripts.concepts.generate_deepseek_concept_sets \
   --datasets esc50 urbansound8k --mode all --stage process --device cuda
 ```
 
@@ -117,9 +116,9 @@ for an interactive walkthrough.
 The latest CREMA-D protocol is isolated so it cannot overwrite the original ablation:
 
 ```bash
-python scripts/generate_cremad_targeted_concepts.py \
+python -m scripts.concepts.generate_cremad_targeted_concepts \
   --output-root results/cremad_targeted_rerun_20260828/generation
-python scripts/run_cremad_targeted_source_ablation.py \
+python -m scripts.training.run_cremad_targeted_source_ablation \
   --experiment-root results/cremad_targeted_rerun_20260828 --device cuda
 ```
 
@@ -128,13 +127,13 @@ python scripts/run_cremad_targeted_source_ablation.py \
 Train the shared source ablation:
 
 ```bash
-python evaluate_ast_baselines.py --datasets esc50 urbansound8k cremad --device cuda
-python run_audio_concept_ablation.py \
+python -m scripts.evaluation.evaluate_ast_baselines --datasets esc50 urbansound8k cremad --device cuda
+python -m scripts.training.run_audio_concept_ablation \
   --datasets esc50 urbansound8k \
   --variants lf lf_broad lf_contrastive full --device cuda
 ```
 
-The paper hyperparameters are the script defaults for ESC-50/UrbanSound8K:
+The reported hyperparameters are the script defaults for ESC-50/UrbanSound8K:
 seed 42, 1,000 projection steps, cosine-cubed similarity, activation cutoff
 0.25, projection cutoff 0.45, 1,000 SAGA iterations, `lambda=0.0007`, and
 elastic-net mixing 0.99. CREMA-D uses cutoff 0.40 and `lambda=0.0015`, selected
@@ -144,7 +143,7 @@ After restoring the external bundle, evaluate every canonical AST/CBM with the
 same 1-second window and 0.5-second hop:
 
 ```bash
-python run_segmented_audio_ablation.py \
+python -m scripts.evaluation.run_segmented_audio_ablation \
   --datasets esc50 urbansound8k cremad \
   --artifact-bundle release/google_drive_bundle --device cuda
 ```
@@ -155,7 +154,7 @@ Canonical CBM weights are intentionally kept outside Git. Build the folder to
 upload from existing results:
 
 ```bash
-python scripts/build_google_drive_bundle.py
+python -m scripts.release.build_google_drive_bundle
 ```
 
 This creates `release/google_drive_bundle/` containing 12 canonical checkpoints,
@@ -164,7 +163,7 @@ with SHA-256 checksums. Cached AST/CLAP activations, raw data, tuning trials, an
 superseded CREMA-D runs are excluded. Verify a local or downloaded copy with:
 
 ```bash
-python scripts/build_google_drive_bundle.py \
+python -m scripts.release.build_google_drive_bundle \
   --output release/google_drive_bundle --verify-only
 ```
 
@@ -175,7 +174,7 @@ playback, correct/error filtering, exact top-five concept-signal intervention,
 and temporal concept plots.
 
 ```bash
-python scripts/build_esc50_showcase_assets.py \
+python -m scripts.visualization.build_esc50_showcase_assets \
   --samples-per-class 2 --max-concepts 5
 python -m http.server 8000
 ```

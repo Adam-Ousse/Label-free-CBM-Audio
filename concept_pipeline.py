@@ -47,7 +47,7 @@ def generate_and_save_prompt_concepts(
     top_p=0.9,
 ):
     raise NotImplementedError(
-        "Use generate_deepseek_concept_sets.py for resumable concept generation; "
+        "Use python -m scripts.concepts.generate_deepseek_concept_sets for resumable concept generation; "
         "the historical notebook implementation is under notebooks/legacy/."
     )
 
