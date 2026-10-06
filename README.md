@@ -227,6 +227,19 @@ python -m http.server 8000
 
 Open `http://localhost:8000/docs/`. Publishing instructions are in [`docs/README.md`](docs/README.md).
 
+### 9. Quantitative concept-faithfulness evaluation
+
+The cached evaluator measures whether concepts with the largest positive contribution to an erroneous prediction are decision-relevant by comparing top-$k$ removals with matched random removals from the same positive-contributor pool. Replot the verified three-dataset results directly from the source table with:
+
+```bash
+python -m scripts.visualization.plot_concept_faithfulness \
+  --input results/concept_faithfulness/final/table_main.csv \
+  --output-dir results/concept_faithfulness/final \
+  --overwrite
+```
+
+This writes the local recovery and delta figures plus an optional LaTeX table under `results/concept_faithfulness/final/`; generated experiment outputs remain excluded from Git.
+
 ## Output map
 
 | Output | Contents |
