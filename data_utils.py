@@ -223,6 +223,9 @@ class AudioManifestDataset(Dataset):
             "id": sample.get("id", str(index)),
             "audio": audio,
             "sr": int(sr),
+            "duration_sec": float(
+                sample.get("duration", audio.shape[-1] / float(sr))
+            ),
             "target": target,
             "path": str(audio_path),
             "dataset": self.dataset_name,
@@ -483,6 +486,9 @@ class HuggingFaceAudioSetIterableDataset(IterableDataset):
                 "id": sample_id,
                 "audio": audio,
                 "sr": int(sr),
+                "duration_sec": float(
+                    sample.get("duration", audio.shape[-1] / float(sr))
+                ),
                 "target": target,
                 "path": "hf://{}/{}/{}/{}".format(
                     AUDIO_DEFAULTS["audioset"]["hf_dataset"], self.subset, self.split, sample_id
@@ -509,6 +515,18 @@ def collate_audio_batch(batch):
         "id": [item["id"] for item in batch],
         "audio": audios,
         "sr": torch.LongTensor([item["sr"] for item in batch]),
+        "duration_sec": torch.tensor(
+            [
+                float(
+                    item.get(
+                        "duration_sec",
+                        item["audio"].shape[-1] / float(item["sr"]),
+                    )
+                )
+                for item in batch
+            ],
+            dtype=torch.float32,
+        ),
         "target": targets,
         "path": [item["path"] for item in batch],
         "dataset": [item["dataset"] for item in batch],
