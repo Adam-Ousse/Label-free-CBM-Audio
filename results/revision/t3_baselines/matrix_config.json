@@ -1,0 +1,80 @@
+{
+  "output_root": "results/revision/t3_baselines",
+  "reference_root": "release/google_drive_bundle/checkpoints",
+  "seed": 42,
+  "random_word_seed": 2028,
+  "random_direction_seed": 2027,
+  "device": "cuda",
+  "clap_model": "laion/clap-htsat-unfused",
+  "feature_layer": "layer4",
+  "feature_batch_size": 64,
+  "projection_steps": 1000,
+  "projection_batch_size": 50000,
+  "concept_activation_cutoff": 0.25,
+  "interpretability_cutoff": 0.45,
+  "saga_batch_size": 256,
+  "saga_iters": 1000,
+  "head_saga_iters": 1000,
+  "saga_step_size": 0.1,
+  "saga_epsilon": 0.0001,
+  "saga_path_points": 25,
+  "saga_include_zero": false,
+  "saga_group": true,
+  "elastic_alpha": 0.99,
+  "clap_logistic_c_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "clap_logistic_max_iter": 1000,
+  "datasets": [
+    "esc50",
+    "urbansound8k",
+    "cremad"
+  ],
+  "methods": [
+    "clap_zero_shot",
+    "clap_linear_probe",
+    "sparse_ast_probe",
+    "cbm_no_class_lf",
+    "random_word",
+    "random_direction"
+  ],
+  "cbm_variants": [
+    {
+      "name": "broad_only_original",
+      "source_files": [
+        "data/concept_sets/{dataset}/concepts_broad.txt"
+      ],
+      "clean_filter": null,
+      "reference_variant": "lf_broad"
+    },
+    {
+      "name": "broad_only_clean",
+      "source_files": [
+        "data/concept_sets/{dataset}/concepts_broad.txt"
+      ],
+      "clean_filter": "data/concept_sets/{dataset}/clean/concepts_ablation_full.txt",
+      "reference_variant": "lf_broad"
+    },
+    {
+      "name": "broad_plus_contrastive_original",
+      "source_files": [
+        "data/concept_sets/{dataset}/concepts_broad.txt",
+        "data/concept_sets/{dataset}/concepts_contrastive.txt"
+      ],
+      "clean_filter": null,
+      "reference_variant": "full"
+    },
+    {
+      "name": "broad_plus_contrastive_clean",
+      "source_files": [
+        "data/concept_sets/{dataset}/concepts_broad.txt",
+        "data/concept_sets/{dataset}/concepts_contrastive.txt"
+      ],
+      "clean_filter": "data/concept_sets/{dataset}/clean/concepts_ablation_full.txt",
+      "reference_variant": "full"
+    }
+  ]
+}
