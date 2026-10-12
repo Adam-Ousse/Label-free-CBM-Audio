@@ -1,0 +1,595 @@
+abrasive texture
+abrupt onset
+abrupt percussive onset
+abrupt stops
+adult shushing
+air compressor
+air hiss
+airflow noise
+airy noise
+amplitude modulation
+barking
+beak peck
+bedside table
+birdsong
+blade slap
+blade whoosh
+bleating
+bovine vocalization
+brake hisses
+brake squeal
+brakes squeaking
+branch snapping
+breathy gasps
+breathy texture
+breathy timbre
+brief rattle
+brief silence
+bright metallic resonance
+bright resonance
+bright spectrum
+bright timbre
+bright tonal quality
+bristle friction
+broadband noise
+broadband noise burst
+broadband noise bursts
+broadband spectral content
+broadband spectrum
+bubbling
+bubbling texture
+bubbling turbulence
+buffeting bursts
+burning
+button press
+buzzing wings
+cabin announcement
+cackling
+chair squeaking
+chest rattle
+chicken pecking
+chicks peeping
+children playing
+chime
+clacking
+clear tonal quality
+clink
+clothes thumping
+clucking
+clucking rhythm
+computer fan hum
+continuous broadband
+continuous buzz
+continuous drone
+continuous droning
+continuous murmur
+continuous pattern
+continuous pitch glide
+continuous tonal drone
+continuous tonal sound
+continuous tone
+conversation
+cord snapping
+cowbell clanking
+crawling
+croaking
+croaking rhythm
+crowd cheering
+crunch
+cup being set down
+cup clink
+cup set down
+cup setting
+cyclic whoosh
+dawn chorus
+deep bass growl
+deep rumble
+deep throbbing pulse
+dense twittering texture
+descending pitch
+descending pitch contour
+descending pitch glides
+desk chair squeak
+distant birdsong
+distant caws
+distant whine
+drain gurgle
+dripping
+dripping faucet
+dry bursts
+dry impact
+dry impact texture
+dry resonant slap
+dry texture
+dry throaty bursts
+dry timbre
+dust thumping
+ember popping
+ember pops
+explosive burst
+explosive release
+falling debris
+farmyard ambience
+fast amplitude modulation
+faucet running
+filling container
+fizz bubble
+fizz release
+fizzing hiss
+flag flapping
+flapping wings
+flies buzzing
+flock vocalizations
+foamy hiss
+fragile tinkling
+friction squeak
+gentle hiss
+gradual crescendo
+gradual onset
+grass chewing
+grass rustling
+gravel crunching
+grazing
+grinding buzz
+grunting
+gulls calling
+gulp rhythm
+gulp swallow
+gulping
+gurgling flow
+gurgling pitch
+gusting swells
+gusty swells
+guttural onset
+hard impacts
+harsh caw
+harsh expiratory spasms
+harsh timbre
+harsh tone
+harsh vocal spasms
+hay rustling
+high frequency
+high frequency content
+high fundamental frequency
+high harmonic density
+high-frequency energy
+high-frequency noise
+high-frequency scrape
+high-frequency scraping
+high-frequency sizzle
+high-frequency snaps
+high-frequency swish
+high-frequency tap
+high-frequency whistling
+high-pitched bark
+high-pitched bleat
+high-pitched bursts
+high-pitched calls
+high-pitched clangs
+high-pitched drone
+high-pitched hum
+high-pitched meow
+high-pitched plinks
+high-pitched squeak
+high-pitched tinkle
+high-pitched trickle
+high-pitched trills
+high-pitched turbine whistle
+high-pitched wail
+high-pitched wheeze
+high-pitched whine
+high-pitched whistle
+high-pressure hiss
+hinge friction
+hinge squeaks
+hiss release
+hissing air
+hissing crackles
+hissing foam
+hissing release
+hoarse cawing
+hollow resonance
+hollow ring
+hollow thud
+honking
+hooves on ground
+howling gust
+howling gusts
+howling pitch
+ice cube rattle
+impulsive transient
+inhale exhale
+inhale-exhale cycle
+intermittent
+intermittent gurgle
+intermittent splatter
+intermittent sputtering
+intermittent vocal jolts
+irregular amplitude modulation
+irregular amplitude surges
+irregular burst pattern
+irregular bursts
+irregular cadence
+irregular friction texture
+irregular idle
+irregular popping rhythm
+irregular pulse
+irregular rapid rhythm
+irregular rhythm
+irregular rhythmic pattern
+irregular spacing
+irregular temporal pattern
+irregular timing
+jet whine
+key press thuds
+key turning
+landing gear
+leash jingling
+lid pop
+liquid glug
+liquid resonance
+liquid splash
+liquid splashing sounds
+long decay
+loud bang
+loud blare
+loud booms
+loud bursts
+loud honk
+loud volume
+low crackle
+low fundamental frequency
+low pitch
+low spectral centroid
+low thud
+low-frequency booms
+low-frequency gurgling
+low-pitched
+low-pitched bellow
+low-pitched buzzing
+low-pitched croaks
+low-pitched moo
+low-pitched pulses
+low-pitched repetitive calls
+low-pitched rumble
+low-pitched throaty trills
+mechanical buzzing
+mechanical clatter
+mechanical hum
+mechanical pulse
+mechanical snap
+mechanical sound
+mechanical valve
+mechanical whir
+mechanical whirring
+melodic whistles
+meowing
+metal clank
+metal clanking
+metallic chime
+metallic clang
+metallic clatter
+metallic clink
+metallic rasp
+metallic rasping
+metallic rattle
+metallic ringing
+metallic strikes
+metallic timbre
+metallic whine
+mid-frequency call
+mid-frequency growl
+mid-frequency noise
+mid-high pitch
+mid-pitch
+moderate loudness
+mooing
+morning light
+motor hum
+motor whir
+mouth gurgle
+mouth gurgling
+mouth rinse
+muffled pop
+muffled thuds
+music playing
+narrow bandwidth
+narrowband spectrum
+narrowband tone
+nasal
+nasal burst
+nasal congestion
+nasal oinks
+nasal resonance
+nasal snort
+nasal timbre
+nasal vibration
+nasal whistle
+nighttime ambiance
+noisy texture
+nose sniffle
+oinking
+panting rhythm
+paper rustling
+passenger announcement
+passenger chatter
+patter
+pebbles rolling
+pecking
+percussive taps
+periodic rhythmic strokes
+periodic vocalization
+phone notification
+piercing calls
+pillow rustle
+police radio
+poultry vocalization
+propeller whine
+propeller whir
+puddle ripple
+puddle splashes
+pulsating amplitude
+pulsating hum
+pulsating tone
+pulsing amplitude modulation
+pulsing drone
+pulsing idle
+pulsing rhythm
+purring
+quick decay
+rail squeal
+random impulse bursts
+random pops
+random timing
+rapid amplitude fluctuations
+rapid amplitude modulation
+rapid decay
+rapid dripping
+rapid frequency sweeps
+rapid gurgle
+rapid irregular rhythm
+rapid palm impacts
+rapid percussive taps
+rapid pitch glide
+rapid repeated yaps
+rapid repetition
+rapid skin impacts
+rapid snorts
+rapid succession
+rapid taps
+rapid trills
+rapid wingbeats
+raspy caw
+raspy texture
+raspy timbre
+rattling vibration
+regular pulse
+regular pulsing
+regular rhythm
+regular tempo
+repeated beeping
+repeated blasts
+repeated calls
+repeated cycles
+repeated pattern
+repeated pulses
+repeated ringing
+repeated short bursts
+repeated wail
+repeating surge
+repetitive beat
+repetitive bursts
+repetitive croaks
+repetitive cutting
+repetitive expulsions
+repetitive grating
+repetitive peeps
+repetitive rasping
+repetitive scraping
+repetitive short calls
+repetitive short strokes
+repetitive sobbing
+repetitive sputtering
+repetitive staccato
+repetitive strokes
+repetitive thumping
+resonant body
+resonant cavity echoes
+resonant chest tone
+resonant decay
+resonant pings
+resonant ringing
+resonant splash
+resonant timbre
+resonant tone
+reverberant decay
+reverberant tones
+rhythmic
+rhythmic blade slap
+rhythmic dripping
+rhythmic hum
+rhythmic idle
+rhythmic oinks
+rhythmic peals
+rhythmic periodic pulses
+rhythmic pulsation
+rhythmic repetitive pattern
+rhythmic respiration
+rhythmic scraping
+rhythmic sloshing
+rhythmic snuffling
+rhythmic sobbing
+rhythmic splashing
+rhythmic swash
+rhythmic thumping
+rhythmic wheels
+ringing
+ringing resonance
+ringing tones
+rising contour
+rising intensity
+rising pitch
+rolling boom
+rotor blades whirring
+rotor thump
+rotor whir
+rotor whirring
+rubber squealing
+rumbling idle
+rumbling noise
+rumbling roar
+running stream
+rushing noise
+rustling
+scratching
+scuffling
+seagull calls
+shallow gasp
+sharp bangs
+sharp beeping
+sharp crack
+sharp exhalation
+sharp high-pitched tinkling
+sharp impacts
+sharp metallic ring
+sharp nasal burst
+sharp onset
+sharp percussive bursts
+sharp pop
+sharp revving
+sharp snap
+sharp tap
+sharp transient attacks
+sharp transient bursts
+sharp transient onset
+sharp transients
+shatter
+shattering burst
+shattering resonance
+shattering tinkle
+shepherd's whistle
+short attack
+short attack time
+short beeps
+short burst
+short bursts
+short decay
+short discrete impacts
+short discrete pulses
+short duration
+short duration calls
+short exhale
+short grunt bursts
+short grunts
+short meow
+short percussive bursts
+short percussive hits
+short transient sounds
+shuffling noise
+shushing
+single blast
+single impulse
+single strike
+sink faucet
+sizzling crackles
+sizzling hiss
+slow amplitude modulation
+slow amplitude swells
+slow attack
+slow decay
+slow decay envelope
+slow inhale
+slow irregular rhythm
+slow onset
+slow periodic pulses
+slow repetition
+slow respiration
+slow squeak
+slow tempo
+smooth decay
+smooth glide
+smooth gliding tone
+smooth texture
+smooth timbre
+sniffling
+snorting
+sobbing
+soft airflow
+soft exhale
+soft hissing
+soft onset
+soft splashes
+soft thud
+soft volume
+soft whimper
+sparse rhythmic bursts
+sparse transient pops
+speaking
+speech
+splash
+splashing puddle
+sputtering bursts
+sputtering idle
+squealing
+staccato bursts
+startled gasp
+steady drone
+steady hiss
+steady rhythm
+steady tempo
+steady-state texture
+straw rustling
+street ambience
+suction noise
+sustained drone
+sustained friction
+sustained hiss
+sustained low-frequency roar
+sustained motor hum
+sustained ringing decay
+sustained roar
+sustained tone
+sustained vocalization
+takeoff rumble
+thin timbre
+throat clearing
+throttle roar
+thud
+tinkling shards
+tire squeal
+tissue rustling
+toothbrush bristle
+traffic noise
+turning over
+two-tone oscillation
+umbrella rustling
+variable tempo
+varying intensity
+varying intensity steps
+varying loudness accents
+vibrating drone
+vibratory
+vocal fry
+wailing tone
+watery roar
+watery turbulence
+wavering pitch
+wet bristle friction
+wet guttural pulses
+wet resonance
+wet resonances
+wet swishing
+wet texture
+wheeze
+whimpering
+whining
+whistling
+whistling drafts
+whistling through gaps
+whooshing bursts
+whooshing noise
+wing flap
+wooden groan
+wooden resonance
+wooden timbre
+worker grunting
