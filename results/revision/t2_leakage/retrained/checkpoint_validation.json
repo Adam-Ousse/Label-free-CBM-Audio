@@ -1,0 +1,149 @@
+{
+  "rows": [
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/esc50/lf/models/esc50_cbm_2026_10_12_16_15",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.9325,
+      "macro_f1": 0.9310487058521113,
+      "weighted_f1": 0.9310487058521113,
+      "balanced_accuracy": 0.9325,
+      "num_test_samples": 400,
+      "dataset": "esc50",
+      "variant": "lf"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/esc50/lf_broad/models/esc50_cbm_2026_10_12_16_17",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.9375,
+      "macro_f1": 0.9364158227393521,
+      "weighted_f1": 0.9364158227393521,
+      "balanced_accuracy": 0.9375,
+      "num_test_samples": 400,
+      "dataset": "esc50",
+      "variant": "lf_broad"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/esc50/lf_contrastive/models/esc50_cbm_2026_10_12_16_18",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.9375,
+      "macro_f1": 0.9355551699762227,
+      "weighted_f1": 0.9355551699762227,
+      "balanced_accuracy": 0.9375,
+      "num_test_samples": 400,
+      "dataset": "esc50",
+      "variant": "lf_contrastive"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/esc50/full/models/esc50_cbm_2026_10_12_16_19",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.9175,
+      "macro_f1": 0.9151583389091129,
+      "weighted_f1": 0.9151583389091129,
+      "balanced_accuracy": 0.9175,
+      "num_test_samples": 400,
+      "dataset": "esc50",
+      "variant": "full"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/urbansound8k/lf/models/urbansound8k_cbm_2026_10_12_16_40",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.8924731182795699,
+      "macro_f1": 0.9025188777347534,
+      "weighted_f1": 0.89171643046604,
+      "balanced_accuracy": 0.9036934144201438,
+      "num_test_samples": 837,
+      "dataset": "urbansound8k",
+      "variant": "lf"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/urbansound8k/lf_broad/models/urbansound8k_cbm_2026_10_12_16_41",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.8960573476702509,
+      "macro_f1": 0.9058493241550734,
+      "weighted_f1": 0.8957050971765915,
+      "balanced_accuracy": 0.9083347583883923,
+      "num_test_samples": 837,
+      "dataset": "urbansound8k",
+      "variant": "lf_broad"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/urbansound8k/lf_contrastive/models/urbansound8k_cbm_2026_10_12_16_42",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.8900836320191159,
+      "macro_f1": 0.9020319452185876,
+      "weighted_f1": 0.8901740018451564,
+      "balanced_accuracy": 0.901229186540885,
+      "num_test_samples": 837,
+      "dataset": "urbansound8k",
+      "variant": "lf_contrastive"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/urbansound8k/full/models/urbansound8k_cbm_2026_10_12_16_43",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.8900836320191159,
+      "macro_f1": 0.9017657092587308,
+      "weighted_f1": 0.8896278034015117,
+      "balanced_accuracy": 0.9035731798160382,
+      "num_test_samples": 837,
+      "dataset": "urbansound8k",
+      "variant": "full"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/cremad/lf/models/cremad_cbm_2026_10_12_17_39",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.6507723304231028,
+      "macro_f1": 0.400137103562446,
+      "weighted_f1": 0.6250348831408828,
+      "balanced_accuracy": 0.3938862691018968,
+      "num_test_samples": 1489,
+      "dataset": "cremad",
+      "variant": "lf"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/cremad/lf_broad/models/cremad_cbm_2026_10_12_17_40",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.6863666890530558,
+      "macro_f1": 0.47434448498868226,
+      "weighted_f1": 0.6652330272408633,
+      "balanced_accuracy": 0.4552337888586307,
+      "num_test_samples": 1489,
+      "dataset": "cremad",
+      "variant": "lf_broad"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/cremad/lf_contrastive/models/cremad_cbm_2026_10_12_17_41",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.6668905305574211,
+      "macro_f1": 0.4544578731405733,
+      "weighted_f1": 0.6497334795843495,
+      "balanced_accuracy": 0.44129589046448753,
+      "num_test_samples": 1489,
+      "dataset": "cremad",
+      "variant": "lf_contrastive"
+    },
+    {
+      "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t2_leakage/retrained/cremad/full/models/cremad_cbm_2026_10_12_17_41",
+      "required_files": true,
+      "shape_valid": true,
+      "accuracy": 0.6762928139691068,
+      "macro_f1": 0.47433661444999276,
+      "weighted_f1": 0.6591089748059362,
+      "balanced_accuracy": 0.45418815341370156,
+      "num_test_samples": 1489,
+      "dataset": "cremad",
+      "variant": "full"
+    }
+  ],
+  "pass": true
+}
