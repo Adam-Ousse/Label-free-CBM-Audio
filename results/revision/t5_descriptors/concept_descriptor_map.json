@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "selection_rule": "Hand-written before Task 5 analysis; every concept is an exact string retained by at least one trained temporal CBM model.",
+  "notes": [
+    "Expected signs are preregistered directional checks, not fitted parameters.",
+    "CREMA-D breathiness uses the available eGeMAPSv02 HNRdBACF functional.",
+    "No speech-rate mapping is included because the prepared descriptor cache has no speech-rate descriptor."
+  ],
+  "mappings": [
+    {
+      "concept": "a voice with high pitch",
+      "datasets": ["cremad"],
+      "descriptor": "f0_median_hz",
+      "expected_sign": 1,
+      "rationale": "Higher vocal pitch should correspond to higher median F0."
+    },
+    {
+      "concept": "a voice with low pitch",
+      "datasets": ["cremad"],
+      "descriptor": "f0_median_hz",
+      "expected_sign": -1,
+      "rationale": "Lower vocal pitch should correspond to lower median F0."
+    },
+    {
+      "concept": "a voice with high mean loudness",
+      "datasets": ["cremad"],
+      "descriptor": "rms_db",
+      "expected_sign": 1,
+      "rationale": "Higher loudness should correspond to higher RMS level."
+    },
+    {
+      "concept": "a voice with low loudness",
+      "datasets": ["cremad"],
+      "descriptor": "rms_db",
+      "expected_sign": -1,
+      "rationale": "Lower loudness should correspond to lower RMS level."
+    },
+    {
+      "concept": "a voice with breathy voice",
+      "datasets": ["cremad"],
+      "descriptor": "HNRdBACF_sma3nz_amean",
+      "expected_sign": -1,
+      "rationale": "Breathy phonation is expected to have lower harmonic-to-noise ratio."
+    },
+    {
+      "concept": "a voice with sharp attacks",
+      "datasets": ["cremad"],
+      "descriptor": "onset_peak",
+      "expected_sign": 1,
+      "rationale": "Sharper attacks should produce stronger onset peaks."
+    },
+    {
+      "concept": "a voice with bright timbre with high harmonic content",
+      "datasets": ["cremad"],
+      "descriptor": "harmonic_ratio",
+      "expected_sign": 1,
+      "rationale": "The selected descriptor operationalizes harmonic content, not brightness alone."
+    },
+    {
+      "concept": "high pitch",
+      "datasets": ["esc50"],
+      "descriptor": "f0_median_hz",
+      "expected_sign": 1,
+      "rationale": "Higher pitch should correspond to higher median F0 when voiced."
+    },
+    {
+      "concept": "low pitch",
+      "datasets": ["esc50"],
+      "descriptor": "f0_median_hz",
+      "expected_sign": -1,
+      "rationale": "Lower pitch should correspond to lower median F0 when voiced."
+    },
+    {
+      "concept": "broadband",
+      "datasets": ["esc50", "urbansound8k"],
+      "descriptor": "spectral_bandwidth_hz",
+      "expected_sign": 1,
+      "rationale": "Broadband content should have wider spectral bandwidth."
+    },
+    {
+      "concept": "impulsive",
+      "datasets": ["esc50"],
+      "descriptor": "onset_peak",
+      "expected_sign": 1,
+      "rationale": "Impulsive sounds should have stronger onset peaks."
+    },
+    {
+      "concept": "tonal",
+      "datasets": ["esc50", "urbansound8k"],
+      "descriptor": "harmonic_ratio",
+      "expected_sign": 1,
+      "rationale": "Tonal sounds should retain more harmonic energy."
+    },
+    {
+      "concept": "harmonic",
+      "datasets": ["esc50", "urbansound8k"],
+      "descriptor": "harmonic_ratio",
+      "expected_sign": 1,
+      "rationale": "Harmonic sounds should retain more harmonic energy."
+    },
+    {
+      "concept": "narrow bandwidth",
+      "datasets": ["esc50", "urbansound8k"],
+      "descriptor": "spectral_bandwidth_hz",
+      "expected_sign": -1,
+      "rationale": "Narrow-band content should have smaller spectral bandwidth."
+    },
+    {
+      "concept": "impulsive transient",
+      "datasets": ["esc50"],
+      "descriptor": "onset_peak",
+      "expected_sign": 1,
+      "rationale": "An impulsive transient should have a stronger onset peak."
+    },
+    {
+      "concept": "sharp attacks",
+      "datasets": ["urbansound8k"],
+      "descriptor": "onset_peak",
+      "expected_sign": 1,
+      "rationale": "Sharp attacks should produce stronger onset peaks."
+    },
+    {
+      "concept": "low pitch",
+      "datasets": ["urbansound8k"],
+      "descriptor": "f0_median_hz",
+      "expected_sign": -1,
+      "rationale": "Lower pitch should correspond to lower median F0 when voiced."
+    }
+  ]
+}
