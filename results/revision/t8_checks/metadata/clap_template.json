@@ -1,0 +1,15 @@
+{
+  "alternatives_present_but_not_resolved_as_environmental_default": [
+    "{concept}",
+    "the sound of {concept}",
+    "an audio recording of {concept}"
+  ],
+  "caveat": "experiments/prompt_template_ablation.py lists alternatives, but the core training path does not apply prompt_template; run_audio_concept_ablation.py passes None.",
+  "environmental_clap_text_template": "{concept}",
+  "evidence": [
+    "train_cbm.py:186 reads concept lines unchanged",
+    "utils.py:63-68 passes concepts unchanged to clap.encode_text",
+    "clap/core.py:141-157 sends the supplied strings to the CLAP processor"
+  ],
+  "resolved_behavior": "raw concept string; no prefix or suffix"
+}

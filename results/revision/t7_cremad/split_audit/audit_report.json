@@ -1,0 +1,34 @@
+{
+  "gender": {
+    "balance_applied": false,
+    "reason": "No actor gender/demographic metadata artifact is present beside the repository manifests or raw CSVs.",
+    "status": "UNKNOWN"
+  },
+  "job": "Task 7 CREMA-D speaker-leakage audit",
+  "outputs": [
+    "split_statistics.json",
+    "actor_assignments.json",
+    "manifests/train.jsonl",
+    "manifests/val.jsonl",
+    "manifests/test.jsonl",
+    "manifests/all.jsonl"
+  ],
+  "overlap_exists": true,
+  "proposed_split_actor_counts": {
+    "test": 13,
+    "train": 64,
+    "val": 14
+  },
+  "proposed_split_sizes": {
+    "test": 1065,
+    "train": 5229,
+    "val": 1148
+  },
+  "source": "data/cremad/manifests/{train,val,test,all}.jsonl",
+  "source_overlap_counts": {
+    "train_and_test": 91,
+    "train_and_val": 91,
+    "val_and_test": 91
+  },
+  "training_performed": false
+}

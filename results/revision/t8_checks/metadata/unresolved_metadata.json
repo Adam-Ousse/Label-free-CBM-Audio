@@ -1,0 +1,716 @@
+{
+  "artifacts": [
+    {
+      "artifact": "data/concept_sets/ablation_concept_summary.json",
+      "evidence": [
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json",
+        "data/concept_sets/ablation_concept_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "the summary does not itself repeat the generator model"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_ablation_full.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_ablation_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_ablation_lf_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_ablation_lf_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_all.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_all_filtered.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_metadata.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad_filtered_deepseek.txt",
+      "evidence": [
+        "data/concept_sets/cremad_deepseek_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad_filtered_qwen.txt",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_broad.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_cremad_contrastive.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_cremad_contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_cremad_important.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_cremad_superclass.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_around.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_contrastive.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_important.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_superclass.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_around.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_contrastive.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_important.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_superclass.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_ablation_full.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_ablation_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_ablation_lf_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_ablation_lf_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_all.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_all_filtered.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_metadata.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50_filtered_deepseek.txt",
+      "evidence": [
+        "data/concept_sets/esc50_deepseek_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50_filtered_qwen.txt",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_audioset_important.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_cremad_around.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_cremad_important.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_cremad_superclass.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_esc50_around.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_esc50_important.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_esc50_superclass.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_urbansound8k_around.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_urbansound8k_important.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_urbansound8k_superclass.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_ablation_full.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_ablation_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_ablation_lf_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_ablation_lf_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_all.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_all_filtered.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_metadata.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k_filtered_deepseek.txt",
+      "evidence": [
+        "data/concept_sets/urbansound8k_deepseek_summary.json"
+      ],
+      "model": "deepseek-v4-flash",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k_filtered_qwen.txt",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "model": "Qwen/Qwen3.5-9B",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    }
+  ]
+}

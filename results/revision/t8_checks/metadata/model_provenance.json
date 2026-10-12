@@ -1,0 +1,982 @@
+{
+  "job": "Task 8 concept metadata checks",
+  "model_provenance": [
+    {
+      "artifact": "data/concept_sets/ablation_concept_summary.json",
+      "evidence": [
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json",
+        "data/concept_sets/ablation_concept_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_CONCEPT_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "5344fdc200cf0456fe7a5493a0321707b2d9dd5add15329e99b9e86b6cf21788",
+      "unresolved_metadata": [
+        "the summary does not itself repeat the generator model"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_ablation_full.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "3e97eaaa9abe882b945dc8237e30caf138eded5f5d66c546253ab5796f601b52",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_ablation_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "558c767f3d8b2292a7ef4c4ccb086c95865d97f16e6cfaa715b3b62d90d55a06",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_ablation_lf_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "6a33d51da898081c2fd8d299853a95a4da8adad1493ad1654b9e761f72be7956",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_ablation_lf_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "3d9761865f15ebd5ee97f143b0ed22e922f06940bb136e887a998d5e55803a42",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_all.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "0715f22a8a122123c21f2dd5e65f7a48fb66827d1c5732598d895b603766c4fa",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_all_filtered.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "3e97eaaa9abe882b945dc8237e30caf138eded5f5d66c546253ab5796f601b52",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "f5cf960c101703722ecfc805813ede39033c023e8c5f0c549b2d6f710ecddc73",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "880e6030040856f065e29191a3dd4687f52f8fdb6d969503df7815ed4cb9345d",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "db24c42e621a0c2c47c12cde7f64aafb5d61c98b9aee67a62fe475ebdc6a1206",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/concepts_metadata.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "2ee5d1ebb002a66da9db08a886a317ae1d775cf019bf8afcdf7d6ebe09cd81c5",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "40c6bfd4c7dd603e83364440034bd580622dc9132520bd9960b62036ab659919",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad/generation_summary.json",
+      "evidence": [
+        "data/concept_sets/cremad/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "EXACT_MODEL_AND_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "de7d72aef7b22fbe4008d5b82dd762ae395f837a05569c55ee7c467bb2d837b1",
+      "unresolved_metadata": []
+    },
+    {
+      "artifact": "data/concept_sets/cremad_deepseek_summary.json",
+      "evidence": [
+        "data/concept_sets/cremad_deepseek_summary.json",
+        "scripts/concepts/generate_deepseek_concept_sets.py"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "EXACT_MODEL_AND_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "d71f60489bdada11c7aaef8775a718bcc33adf545f10954d1941bf97cae01200",
+      "unresolved_metadata": []
+    },
+    {
+      "artifact": "data/concept_sets/cremad_filtered_deepseek.txt",
+      "evidence": [
+        "data/concept_sets/cremad_deepseek_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_DEEPSEEK_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "558c767f3d8b2292a7ef4c4ccb086c95865d97f16e6cfaa715b3b62d90d55a06",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/cremad_filtered_qwen.txt",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "84b95c4212c1bfa13da1b219c1742f9f63665c149d46e8c35519754be5ed7d1f",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_broad.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "7ad093a2df2c9c73bf966720b436f16de9ec2dfc6d076ee432aac3e4f4eb0c3b",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_cremad_contrastive.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "f73391ebdaa37a8d60f234c1a3df071a83664d0a81b4bce33746197cc883262e",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_cremad_contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "40c6bfd4c7dd603e83364440034bd580622dc9132520bd9960b62036ab659919",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_cremad_important.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "e54eb491c5399d0bd56c759dcd518034f1906f1a2fae5a1926ac32c3b83e48a0",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_cremad_superclass.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "7c539da5526b60ff10c31788a3c86d5a9dda4e411cd6c64c10b900772dd78fcd",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_around.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "07f8ba74b54d066c699d6e3b14a15816127b62c2cfa37ff1b0ca0af07ee15656",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_contrastive.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "ce88b33f2ec387ce09d1c4e1e753347616198816653f9316f9eb6eb40abae744",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "40dc9485e1b07912a9e63d3443778d1935c582bc6f580f5ebed939d0bc790c12",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_important.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "73e6b36957aaa03f8820860d9292ef6f5390f4db1a2d2a74476519ff77b89c69",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_esc50_superclass.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "e3183e05af3e4788b40eb9ab4e044836876358d6a0e7c1b64a23b47e3972dcb9",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_around.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "2127546a9455c992129018d9ef2ad9a71bb5a1a13864f3242434301850814493",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_contrastive.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "ce996cb252e55476fed8c65e7df1f590e1cb8970baa14346d5a8a82fcc59652a",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "7af781bc100e3590a7d62f1d499c1d983c13c3f2655f4b606630661d19d4da58",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_important.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "5157de5ee638f973b4b0f476ecc052edf689fe113acbc7c4981d9a747159ddd5",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/deepseek_init/deepseek_urbansound8k_superclass.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "LINKED_TO_CURRENT_DEEPSEEK_RUN",
+      "model": "deepseek-v4-flash",
+      "sha256": "b5cba5ee6d8790466a712558db4bbfd10355b72bb9c43bc1146da0f958d19b23",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_ablation_full.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "9b03c52956a0c1cac9670206ad3329b1c973a3745018be31b8522230394ff113",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_ablation_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "bc26b02af0b965aa967c6fc48505fc520949fb00f14f5fb81309ad6bdaa56aba",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_ablation_lf_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "953f3bf044d1d56c446dcd0d87565d53e0259652c9789c8d2ba19225c695ce04",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_ablation_lf_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "103a8062444b4b045b76c303ce677102ac79b4d09f7d53235341dd89a432f4a3",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_all.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "2e0f70ab372ab407205f94f52cec6a60c7aa40d198f2f13caef0be96c3bcd7b6",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_all_filtered.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "9b03c52956a0c1cac9670206ad3329b1c973a3745018be31b8522230394ff113",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "f5cf960c101703722ecfc805813ede39033c023e8c5f0c549b2d6f710ecddc73",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "34d63b8b21f701523f5ec64fd4b4484f71b16d2c09495c50561331af4f6afc55",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "c61e32d3d2d5bfcdfa3418b5c54f0f449460db98663403e26ade34411f13464c",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/concepts_metadata.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "21ec083789746ba141336451dfa8e2125c786ceeaf05c786e1645097775cc90f",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "40dc9485e1b07912a9e63d3443778d1935c582bc6f580f5ebed939d0bc790c12",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50/generation_summary.json",
+      "evidence": [
+        "data/concept_sets/esc50/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "EXACT_MODEL_AND_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "d4c5fca5085a07c993e45eff5376bbf9a4c0ac3f8cf2239c2aae6e3adca52121",
+      "unresolved_metadata": []
+    },
+    {
+      "artifact": "data/concept_sets/esc50_deepseek_summary.json",
+      "evidence": [
+        "data/concept_sets/esc50_deepseek_summary.json",
+        "scripts/concepts/generate_deepseek_concept_sets.py"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "EXACT_MODEL_AND_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "058765bea84cdc6ef455b47b589563615507981eca5f2545758b1b1a2c4bb352",
+      "unresolved_metadata": []
+    },
+    {
+      "artifact": "data/concept_sets/esc50_filtered_deepseek.txt",
+      "evidence": [
+        "data/concept_sets/esc50_deepseek_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_DEEPSEEK_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "bc26b02af0b965aa967c6fc48505fc520949fb00f14f5fb81309ad6bdaa56aba",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/esc50_filtered_qwen.txt",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "dd0067356e3a1c15a391f3d2656afc11346f1b8a975e1006f715b4d4ae8a8fa5",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_audioset_important.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "b520188478530e1feb2e5e910c032a00911d8601783849121c2a06a73b1a2c5a",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_cremad_around.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "812abbb7595068360af9af99630d4e27e6dfe56dac7e0f8432180be6fa9def3a",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_cremad_important.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "69b3caeda245f30253616eb6d766910e10a35758eaa7d9e316cded21555b75fe",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_cremad_superclass.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "8f6d282d304a9461f56ece7d8adf8de0e6e1db220152f096bbc1127e8357431c",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_esc50_around.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "9db4a178d1a2433ecb4f2136c7eeb637ceef53e24ebbda317b33bec0bea9c834",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_esc50_important.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "3fe014b9f74ad269a9648db74276bf89c51d2820e1fb43d1f69ba2ae7d875df9",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_esc50_superclass.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "68a10cdaff94592c5707fec6e25cbb9821129fbacda30236e41b78f265506911",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_urbansound8k_around.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "96dafffd36176eeb50e5edaa0714aef02b4440ee9af0b0babe8e7d1a4654ec68",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_urbansound8k_important.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "be7d3aa77e80ef2c2b92273833193ed7b1ccdb46f7a58d77973a7bdf3f65eeb6",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/qwen_init/qwen_urbansound8k_superclass.json",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "2597b489f948389acf41d03e5105af59e0880b55cb5888b2881161b1e94ea8e7",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_ablation_full.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "efba56a38f60987f99417b625a51c6d36071aa3d6727d8bfc551fb4c0be05f8f",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_ablation_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "8fdeb3b44714b5d07d073a872aadef9e0aa8b4a2170bd1ff2c5c9a193ec2c6ba",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_ablation_lf_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "51f3b86db14363495b4f916934a1bd97a8f1a35a76d1fa3e3b892a577b65a642",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_ablation_lf_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "5018fc5d16eb2f5d5811e010dedaec05b020a9ef4206e3ea5bd31dddcb891652",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_all.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "193c8e7583f63f69b1ed94afbb52f190a807e32586ad6e8d21cbadbc745692f4",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_all_filtered.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "efba56a38f60987f99417b625a51c6d36071aa3d6727d8bfc551fb4c0be05f8f",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_broad.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "f5cf960c101703722ecfc805813ede39033c023e8c5f0c549b2d6f710ecddc73",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_contrastive.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "b2a6c6247dfdcd77b04eb1ff33d5da6f1eda33f6263a9c5f248f0d10445b7e42",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_lf.txt",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "ff2b03ea0ff2f7a139a324bd34f24aa86495e78bdd97c440fac48fe3223c9c9b",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/concepts_metadata.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "f85dccab409beb5c355c95c60e7c858f4ff5137c1ffd170b7c4c6d7ef974eb0a",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/contrastive_groups.json",
+      "evidence": [
+        "scripts/concepts/generate_deepseek_concept_sets.py:summary model field defaults to deepseek-v4-flash",
+        "data/concept_sets/{cremad,esc50,urbansound8k}/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_GENERATION_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "7af781bc100e3590a7d62f1d499c1d983c13c3f2655f4b606630661d19d4da58",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k/generation_summary.json",
+      "evidence": [
+        "data/concept_sets/urbansound8k/generation_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "EXACT_MODEL_AND_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "550d37934b1e7e6af78d9aa7511b3b9fac2c149e000906404a88399c8db24640",
+      "unresolved_metadata": []
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k_deepseek_summary.json",
+      "evidence": [
+        "data/concept_sets/urbansound8k_deepseek_summary.json",
+        "scripts/concepts/generate_deepseek_concept_sets.py"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "EXACT_MODEL_AND_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "bbebffd03ca870a71adc8a55aa4679d161a3ce1956a63a62a6e0aef581e052bd",
+      "unresolved_metadata": []
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k_filtered_deepseek.txt",
+      "evidence": [
+        "data/concept_sets/urbansound8k_deepseek_summary.json"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "DERIVED_FROM_DEEPSEEK_SUMMARY",
+      "model": "deepseek-v4-flash",
+      "sha256": "8fdeb3b44714b5d07d073a872aadef9e0aa8b4a2170bd1ff2c5c9a193ec2c6ba",
+      "unresolved_metadata": [
+        "per-request API response IDs, timestamps, and raw prompts are not embedded in these artifacts"
+      ]
+    },
+    {
+      "artifact": "data/concept_sets/urbansound8k_filtered_qwen.txt",
+      "evidence": [
+        "historical introducing commits for the artifact",
+        "historical GPT_initial_concepts.ipynb sets model_id=Qwen/Qwen3.5-9B"
+      ],
+      "exact_model_recovered": true,
+      "metadata_status": "HISTORICALLY_RECOVERED_MODEL",
+      "model": "Qwen/Qwen3.5-9B",
+      "sha256": "e508d0390c25df8a52a36991eb5ab71332a2d973c6ed46e58148fd23781e4374",
+      "unresolved_metadata": [
+        "temperature, decoding settings, timestamps, and per-request prompts are not embedded in these artifacts"
+      ]
+    }
+  ],
+  "unknown_policy": "UNKNOWN is used whenever an exact generator detail cannot be recovered from repository artifacts or history."
+}
