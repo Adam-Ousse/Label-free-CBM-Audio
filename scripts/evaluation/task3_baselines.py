@@ -285,6 +285,14 @@ def _reference_stats(path: Path) -> dict[str, Any]:
 
 def _cache_names(args: dict[str, Any], dataset: str, split: str, concept_path: Path, cache_root: Path):
     spec = DATASET_SPECS[dataset]
+    # ``utils.get_audio_save_names`` keys concept text features by vocabulary
+    # basename.  The same vocabulary basename is used independently for each
+    # dataset (and random-word widths differ by dataset), so a shared cache
+    # root can silently reuse the wrong text embedding matrix.  Namespace all
+    # Task 3 caches by dataset while preserving the existing utility naming
+    # scheme within each namespace.
+    dataset_cache_root = Path(cache_root) / dataset
+    dataset_cache_root.mkdir(parents=True, exist_ok=True)
     return utils.get_audio_save_names(
         args.get("clap_model", DEFAULT_CLAP_MODEL),
         spec["ast_backbone"],
@@ -292,7 +300,7 @@ def _cache_names(args: dict[str, Any], dataset: str, split: str, concept_path: P
         split,
         str(concept_path),
         "avg",
-        str(cache_root),
+        str(dataset_cache_root),
     )
 
 
@@ -306,6 +314,7 @@ def _ensure_feature_cache(
     need_clap: bool,
 ) -> tuple[Path, Path, Path]:
     target, clap_audio, clap_text = _cache_names(args, dataset, split, concept_path, cache_root)
+    dataset_cache_root = Path(cache_root) / dataset
     if need_clap:
         utils.save_audio_activations(
             clap_model_name=args.get("clap_model", DEFAULT_CLAP_MODEL),
@@ -317,7 +326,7 @@ def _ensure_feature_cache(
             batch_size=int(args.get("feature_batch_size", 64)),
             device=args.get("device", "cuda"),
             pool_mode="avg",
-            save_dir=str(cache_root),
+            save_dir=str(dataset_cache_root),
         )
     elif not Path(target).exists():
         dataset_obj = data_utils.get_audio_dataset(dataset, split)

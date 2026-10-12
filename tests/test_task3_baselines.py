@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import torch
 
 from scripts.evaluation.task3_baselines import (
@@ -7,6 +9,7 @@ from scripts.evaluation.task3_baselines import (
     mean_nonzeros_per_class,
     merge_vocabularies,
     select_path_entry,
+    _cache_names,
 )
 
 
@@ -78,3 +81,13 @@ def test_vocab_merge_is_stable_and_clean_filter_is_applied(tmp_path):
 def test_mean_nonzeros_per_class_uses_expected_threshold():
     weights = torch.tensor([[1.0, 1e-6, 0.0], [0.0, 2.0, 3.0]])
     assert mean_nonzeros_per_class(weights) == 1.5
+
+
+def test_task3_feature_caches_are_dataset_namespaced(tmp_path):
+    args = {"clap_model": "laion/clap-htsat-unfused", "feature_layer": "layer4"}
+    concept = tmp_path / "broad_only_original_random_word.txt"
+    esc = _cache_names(args, "esc50", "fold1_train", concept, tmp_path / "cache")
+    urban = _cache_names(args, "urbansound8k", "fold10_train", concept, tmp_path / "cache")
+    assert Path(esc[0]).parent == tmp_path / "cache" / "esc50"
+    assert Path(urban[0]).parent == tmp_path / "cache" / "urbansound8k"
+    assert esc[2] != urban[2]
