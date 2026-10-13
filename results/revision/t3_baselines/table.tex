@@ -1,0 +1,123 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption{Task 3 held-out results. NEC rows report the actual mean nonzeros per class reached by validation-only path selection.}
+\label{tab:task3-baselines}
+\begin{tabular}{llllrrrr}
+\toprule
+Dataset & Method & Variant & Capacity & Accuracy & Macro-F1 & Mean NNZ/class & Bottleneck \\
+\midrule
+esc50 & clap\_zero\_shot &  & full & 0.8025 & 0.7806 & -- & -- \\
+esc50 & clap\_linear\_probe &  & full & 0.9575 & 0.9557 & -- & -- \\
+esc50 & random\_direction &  & full & 0.9550 & 0.9534 & 262.4000 & 671 \\
+esc50 & sparse\_ast\_probe &  & validation\_best & 0.9375 & 0.9351 & 270.5200 & -- \\
+esc50 & sparse\_ast\_probe &  & reference\_nnz & 0.0925 & 0.0384 & 3.1200 & -- \\
+esc50 & cbm\_no\_class\_lf & broad\_only\_clean & full & 0.9225 & 0.9196 & 76.9800 & 84 \\
+esc50 & cbm\_no\_class\_lf & broad\_only\_clean & nec25 & 0.2175 & 0.1215 & 3.9400 & 84 \\
+esc50 & cbm\_no\_class\_lf & broad\_only\_clean & nec10 & 0.2175 & 0.1215 & 3.9400 & 84 \\
+esc50 & cbm\_no\_class\_lf & broad\_only\_clean & nec5 & 0.2175 & 0.1215 & 3.9400 & 84 \\
+esc50 & cbm\_no\_class\_lf & broad\_only\_original & full & 0.9225 & 0.9217 & 81.0000 & 86 \\
+esc50 & cbm\_no\_class\_lf & broad\_only\_original & nec25 & 0.0400 & 0.0059 & 1.0000 & 86 \\
+esc50 & cbm\_no\_class\_lf & broad\_only\_original & nec10 & 0.0400 & 0.0059 & 1.0000 & 86 \\
+esc50 & cbm\_no\_class\_lf & broad\_only\_original & nec5 & 0.0400 & 0.0059 & 1.0000 & 86 \\
+esc50 & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & full & 0.9225 & 0.9197 & 205.9400 & 212 \\
+esc50 & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec25 & 0.2400 & 0.1592 & 6.5800 & 212 \\
+esc50 & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec10 & 0.2400 & 0.1592 & 6.5800 & 212 \\
+esc50 & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec5 & 0.2400 & 0.1592 & 6.5800 & 212 \\
+esc50 & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & full & 0.9250 & 0.9229 & 243.8400 & 253 \\
+esc50 & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec25 & 0.2300 & 0.1269 & 4.9600 & 253 \\
+esc50 & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec10 & 0.2300 & 0.1269 & 4.9600 & 253 \\
+esc50 & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec5 & 0.2300 & 0.1269 & 4.9600 & 253 \\
+esc50 & random\_word & broad\_only\_clean & full & 0.9375 & 0.9338 & 661.5200 & 671 \\
+esc50 & random\_word & broad\_only\_clean & nec25 & 0.0950 & 0.0421 & 3.8200 & 671 \\
+esc50 & random\_word & broad\_only\_clean & nec10 & 0.0950 & 0.0421 & 3.8200 & 671 \\
+esc50 & random\_word & broad\_only\_clean & nec5 & 0.0950 & 0.0421 & 3.8200 & 671 \\
+esc50 & random\_word & broad\_only\_original & full & 0.9375 & 0.9338 & 661.5200 & 671 \\
+esc50 & random\_word & broad\_only\_original & nec25 & 0.0950 & 0.0421 & 3.8200 & 671 \\
+esc50 & random\_word & broad\_only\_original & nec10 & 0.0950 & 0.0421 & 3.8200 & 671 \\
+esc50 & random\_word & broad\_only\_original & nec5 & 0.0950 & 0.0421 & 3.8200 & 671 \\
+esc50 & random\_word & broad\_plus\_contrastive\_clean & full & 0.9350 & 0.9320 & 239.9200 & 761 \\
+esc50 & random\_word & broad\_plus\_contrastive\_clean & nec25 & 0.1425 & 0.0884 & 4.2200 & 761 \\
+esc50 & random\_word & broad\_plus\_contrastive\_clean & nec10 & 0.1425 & 0.0884 & 4.2200 & 761 \\
+esc50 & random\_word & broad\_plus\_contrastive\_clean & nec5 & 0.1425 & 0.0884 & 4.2200 & 761 \\
+esc50 & random\_word & broad\_plus\_contrastive\_original & full & 0.9350 & 0.9320 & 239.9200 & 761 \\
+esc50 & random\_word & broad\_plus\_contrastive\_original & nec25 & 0.1425 & 0.0884 & 4.2200 & 761 \\
+esc50 & random\_word & broad\_plus\_contrastive\_original & nec10 & 0.1425 & 0.0884 & 4.2200 & 761 \\
+esc50 & random\_word & broad\_plus\_contrastive\_original & nec5 & 0.1425 & 0.0884 & 4.2200 & 761 \\
+urbansound8k & clap\_zero\_shot &  & full & 0.7587 & 0.7374 & -- & -- \\
+urbansound8k & clap\_linear\_probe &  & full & 0.8865 & 0.8936 & -- & -- \\
+urbansound8k & random\_direction &  & full & 0.8984 & 0.9095 & 92.9000 & 212 \\
+urbansound8k & sparse\_ast\_probe &  & validation\_best & 0.8984 & 0.9107 & 138.8000 & -- \\
+urbansound8k & sparse\_ast\_probe &  & reference\_nnz & 0.1147 & 0.0206 & 0.8000 & -- \\
+urbansound8k & cbm\_no\_class\_lf & broad\_only\_clean & full & 0.8710 & 0.8826 & 64.0000 & 86 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_only\_clean & nec25 & 0.8029 & 0.8086 & 23.0000 & 86 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_only\_clean & nec10 & 0.7228 & 0.5966 & 9.0000 & 86 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_only\_clean & nec5 & 0.1147 & 0.0206 & 0.8000 & 86 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_only\_original & full & 0.8710 & 0.8826 & 64.0000 & 86 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_only\_original & nec25 & 0.8029 & 0.8086 & 23.0000 & 86 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_only\_original & nec10 & 0.7228 & 0.5966 & 9.0000 & 86 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_only\_original & nec5 & 0.1147 & 0.0206 & 0.8000 & 86 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & full & 0.8901 & 0.9005 & 67.0000 & 141 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec25 & 0.8495 & 0.8507 & 24.0000 & 141 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec10 & 0.1147 & 0.0206 & 0.9000 & 141 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec5 & 0.1147 & 0.0206 & 0.9000 & 141 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & full & 0.8937 & 0.9058 & 140.0000 & 148 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec25 & 0.8542 & 0.8559 & 23.0000 & 148 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec10 & 0.1147 & 0.0206 & 1.0000 & 148 \\
+urbansound8k & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec5 & 0.1147 & 0.0206 & 1.0000 & 148 \\
+urbansound8k & random\_word & broad\_only\_clean & full & 0.8925 & 0.9040 & 85.0000 & 212 \\
+urbansound8k & random\_word & broad\_only\_clean & nec25 & 0.7885 & 0.6587 & 22.0000 & 212 \\
+urbansound8k & random\_word & broad\_only\_clean & nec10 & 0.1147 & 0.0206 & 0.8000 & 212 \\
+urbansound8k & random\_word & broad\_only\_clean & nec5 & 0.1147 & 0.0206 & 0.8000 & 212 \\
+urbansound8k & random\_word & broad\_only\_original & full & 0.8925 & 0.9040 & 85.0000 & 212 \\
+urbansound8k & random\_word & broad\_only\_original & nec25 & 0.7885 & 0.6587 & 22.0000 & 212 \\
+urbansound8k & random\_word & broad\_only\_original & nec10 & 0.1147 & 0.0206 & 0.8000 & 212 \\
+urbansound8k & random\_word & broad\_only\_original & nec5 & 0.1147 & 0.0206 & 0.8000 & 212 \\
+urbansound8k & random\_word & broad\_plus\_contrastive\_clean & full & 0.8949 & 0.9068 & 251.9000 & 255 \\
+urbansound8k & random\_word & broad\_plus\_contrastive\_clean & nec25 & 0.7861 & 0.6567 & 23.0000 & 255 \\
+urbansound8k & random\_word & broad\_plus\_contrastive\_clean & nec10 & 0.1147 & 0.0206 & 0.8000 & 255 \\
+urbansound8k & random\_word & broad\_plus\_contrastive\_clean & nec5 & 0.1147 & 0.0206 & 0.8000 & 255 \\
+urbansound8k & random\_word & broad\_plus\_contrastive\_original & full & 0.8949 & 0.9068 & 251.9000 & 255 \\
+urbansound8k & random\_word & broad\_plus\_contrastive\_original & nec25 & 0.7861 & 0.6567 & 23.0000 & 255 \\
+urbansound8k & random\_word & broad\_plus\_contrastive\_original & nec10 & 0.1147 & 0.0206 & 0.8000 & 255 \\
+urbansound8k & random\_word & broad\_plus\_contrastive\_original & nec5 & 0.1147 & 0.0206 & 0.8000 & 255 \\
+cremad & clap\_zero\_shot &  & full & 0.1739 & 0.0747 & -- & -- \\
+cremad & clap\_linear\_probe &  & full & 0.6884 & 0.4252 & -- & -- \\
+cremad & random\_direction &  & full & 0.6931 & 0.4382 & 44.8333 & 548 \\
+cremad & sparse\_ast\_probe &  & validation\_best & 0.7045 & 0.4883 & 80.8333 & -- \\
+cremad & sparse\_ast\_probe &  & reference\_nnz & 0.6474 & 0.2668 & 25.0000 & -- \\
+cremad & cbm\_no\_class\_lf & broad\_only\_clean & full & 0.6951 & 0.4506 & 8.0000 & 86 \\
+cremad & cbm\_no\_class\_lf & broad\_only\_clean & nec25 & 0.6971 & 0.5083 & 25.0000 & 86 \\
+cremad & cbm\_no\_class\_lf & broad\_only\_clean & nec10 & 0.6938 & 0.4904 & 10.0000 & 86 \\
+cremad & cbm\_no\_class\_lf & broad\_only\_clean & nec5 & 0.6655 & 0.2896 & 5.0000 & 86 \\
+cremad & cbm\_no\_class\_lf & broad\_only\_original & full & 0.6951 & 0.4506 & 8.0000 & 86 \\
+cremad & cbm\_no\_class\_lf & broad\_only\_original & nec25 & 0.6971 & 0.5083 & 25.0000 & 86 \\
+cremad & cbm\_no\_class\_lf & broad\_only\_original & nec10 & 0.6938 & 0.4904 & 10.0000 & 86 \\
+cremad & cbm\_no\_class\_lf & broad\_only\_original & nec5 & 0.6655 & 0.2896 & 5.0000 & 86 \\
+cremad & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & full & 0.6891 & 0.3839 & 8.0000 & 115 \\
+cremad & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec25 & 0.6944 & 0.5002 & 24.0000 & 115 \\
+cremad & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec10 & 0.6911 & 0.4824 & 10.0000 & 115 \\
+cremad & cbm\_no\_class\_lf & broad\_plus\_contrastive\_clean & nec5 & 0.6427 & 0.2329 & 5.0000 & 115 \\
+cremad & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & full & 0.6891 & 0.3839 & 8.0000 & 116 \\
+cremad & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec25 & 0.6944 & 0.5002 & 24.0000 & 116 \\
+cremad & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec10 & 0.6911 & 0.4824 & 10.0000 & 116 \\
+cremad & cbm\_no\_class\_lf & broad\_plus\_contrastive\_original & nec5 & 0.6427 & 0.2329 & 5.0000 & 116 \\
+cremad & random\_word & broad\_only\_clean & full & 0.7032 & 0.4806 & 32.0000 & 481 \\
+cremad & random\_word & broad\_only\_clean & nec25 & 0.6964 & 0.4246 & 24.0000 & 481 \\
+cremad & random\_word & broad\_only\_clean & nec10 & 0.6212 & 0.2157 & 5.0000 & 481 \\
+cremad & random\_word & broad\_only\_clean & nec5 & 0.6212 & 0.2157 & 5.0000 & 481 \\
+cremad & random\_word & broad\_only\_original & full & 0.7032 & 0.4806 & 32.0000 & 481 \\
+cremad & random\_word & broad\_only\_original & nec25 & 0.6964 & 0.4246 & 24.0000 & 481 \\
+cremad & random\_word & broad\_only\_original & nec10 & 0.6212 & 0.2157 & 5.0000 & 481 \\
+cremad & random\_word & broad\_only\_original & nec5 & 0.6212 & 0.2157 & 5.0000 & 481 \\
+cremad & random\_word & broad\_plus\_contrastive\_clean & full & 0.7032 & 0.4635 & 29.0000 & 548 \\
+cremad & random\_word & broad\_plus\_contrastive\_clean & nec25 & 0.6958 & 0.4184 & 25.0000 & 548 \\
+cremad & random\_word & broad\_plus\_contrastive\_clean & nec10 & 0.6226 & 0.2164 & 6.0000 & 548 \\
+cremad & random\_word & broad\_plus\_contrastive\_clean & nec5 & 0.5709 & 0.1637 & 5.0000 & 548 \\
+cremad & random\_word & broad\_plus\_contrastive\_original & full & 0.7032 & 0.4635 & 29.0000 & 548 \\
+cremad & random\_word & broad\_plus\_contrastive\_original & nec25 & 0.6958 & 0.4184 & 25.0000 & 548 \\
+cremad & random\_word & broad\_plus\_contrastive\_original & nec10 & 0.6226 & 0.2164 & 6.0000 & 548 \\
+cremad & random\_word & broad\_plus\_contrastive\_original & nec5 & 0.5709 & 0.1637 & 5.0000 & 548 \\
+\bottomrule
+\end{tabular}
+\end{table*}

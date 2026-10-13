@@ -783,7 +783,14 @@ def _plan(config: dict[str, Any]) -> list[str]:
     return rows
 
 
-def run_matrix(config: dict[str, Any], *, execute: bool, run_id: str | None = None) -> Path | None:
+def run_matrix(
+    config: dict[str, Any],
+    *,
+    execute: bool,
+    run_id: str | None = None,
+    resume: bool = False,
+    only_dataset: str | None = None,
+) -> Path | None:
     repo_root = Path(config["repo_root"])
     output_root = repo_root / config.get("output_root", "results/revision/t3_baselines")
     if not execute:
@@ -796,16 +803,23 @@ def run_matrix(config: dict[str, Any], *, execute: bool, run_id: str | None = No
     if run_id is None:
         run_id = "t3_{}".format(datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
     run_dir = output_root / run_id
-    if run_dir.exists():
+    if run_dir.exists() and not resume:
         raise FileExistsError("Refusing to overwrite existing Task 3 run: {}".format(run_dir))
-    run_dir.mkdir(parents=True)
-    _json_dump(run_dir / "config.json", config)
+    if resume:
+        if not run_dir.is_dir() or not (run_dir / "config.json").exists():
+            raise FileNotFoundError("Cannot resume missing or invalid Task 3 run: {}".format(run_dir))
+    else:
+        run_dir.mkdir(parents=True)
+        _json_dump(run_dir / "config.json", config)
     set_deterministic_seed(int(config.get("seed", 42)))
 
     reference_root = repo_root / config.get("reference_root", str(DEFAULT_REFERENCE_ROOT))
     all_results: list[dict[str, Any]] = []
     cache_root = run_dir / "cache"
-    datasets = config.get("datasets", list(DATASET_SPECS))
+    datasets = [only_dataset] if only_dataset else config.get("datasets", list(DATASET_SPECS))
+    unknown = sorted(set(datasets) - set(DATASET_SPECS))
+    if unknown:
+        raise ValueError("Unknown Task 3 dataset(s): {}".format(", ".join(unknown)))
     cbm_variants = config.get("cbm_variants", [])
     for dataset in datasets:
         spec = DATASET_SPECS[dataset]
@@ -881,13 +895,32 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--repo-root", type=Path, default=Path("."))
     parser.add_argument("--execute", action="store_true", help="Run the matrix; otherwise only print the plan")
     parser.add_argument("--run-id", default=None, help="Unique output directory name; existing runs are never overwritten")
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume an existing run directory; requires --run-id and never recreates its config",
+    )
+    parser.add_argument(
+        "--only-dataset",
+        choices=sorted(DATASET_SPECS),
+        default=None,
+        help="Run only this dataset (useful with --resume for an incomplete dataset)",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     config = _prepare_matrix_config(args.repo_root.resolve(), args.config.resolve())
-    run_matrix(config, execute=args.execute, run_id=args.run_id)
+    if args.resume and not args.run_id:
+        raise SystemExit("--resume requires --run-id")
+    run_matrix(
+        config,
+        execute=args.execute,
+        run_id=args.run_id,
+        resume=args.resume,
+        only_dataset=args.only_dataset,
+    )
 
 
 if __name__ == "__main__":
