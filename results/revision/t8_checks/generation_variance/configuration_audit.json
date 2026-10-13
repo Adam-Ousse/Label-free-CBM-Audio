@@ -1,0 +1,156 @@
+{
+  "model": "deepseek-v4-flash",
+  "temperature": 0.4,
+  "seed": "UNKNOWN",
+  "top_p": 0.9,
+  "response_format": {
+    "type": "json_object"
+  },
+  "thinking": {
+    "type": "disabled"
+  },
+  "retry_count": 4,
+  "base_url": "https://api.deepseek.com",
+  "broad": {
+    "num_trials": 1,
+    "num_concepts": 80,
+    "max_tokens": 960
+  },
+  "contrastive": {
+    "num_trials": 2,
+    "concepts_per_group": 8,
+    "max_tokens": 256,
+    "groups": [
+      [
+        "dog",
+        "cow",
+        "sheep",
+        "pig"
+      ],
+      [
+        "rooster",
+        "hen",
+        "crow",
+        "chirping_birds"
+      ],
+      [
+        "frog",
+        "crickets",
+        "insects"
+      ],
+      [
+        "cat",
+        "crying_baby"
+      ],
+      [
+        "rain",
+        "sea_waves",
+        "pouring_water",
+        "water_drops"
+      ],
+      [
+        "crackling_fire",
+        "fireworks"
+      ],
+      [
+        "wind",
+        "thunderstorm"
+      ],
+      [
+        "toilet_flush",
+        "washing_machine",
+        "pouring_water"
+      ],
+      [
+        "sneezing",
+        "coughing",
+        "breathing",
+        "snoring"
+      ],
+      [
+        "clapping",
+        "footsteps",
+        "door_wood_knock"
+      ],
+      [
+        "brushing_teeth",
+        "drinking_sipping"
+      ],
+      [
+        "mouse_click",
+        "keyboard_typing",
+        "clock_tick"
+      ],
+      [
+        "door_wood_creaks",
+        "glass_breaking"
+      ],
+      [
+        "can_opening",
+        "chainsaw",
+        "hand_saw"
+      ],
+      [
+        "helicopter",
+        "airplane",
+        "engine"
+      ],
+      [
+        "siren",
+        "car_horn",
+        "train"
+      ],
+      [
+        "church_bells",
+        "clock_alarm"
+      ]
+    ]
+  },
+  "group_discovery": {
+    "temperature": 0.3,
+    "num_trials": 1,
+    "max_tokens": 1600,
+    "exact_prompt": "Dataset: esc50.\nGroup the target classes below into acoustically confusable groups before concept\ngeneration. A group should contain 2-5 classes that could be hard to\ndistinguish from audio alone because they share audible structure. A class may\nbelong to multiple groups. Prefer compact, meaningful groups over all class pairs,\nand do not force unrelated classes together.\n\nTarget classes (copy these spellings exactly):\n- dog\n- rooster\n- pig\n- cow\n- frog\n- cat\n- hen\n- insects\n- sheep\n- crow\n- rain\n- sea_waves\n- crackling_fire\n- crickets\n- chirping_birds\n- water_drops\n- wind\n- pouring_water\n- toilet_flush\n- thunderstorm\n- crying_baby\n- sneezing\n- clapping\n- breathing\n- coughing\n- footsteps\n- laughing\n- brushing_teeth\n- snoring\n- drinking_sipping\n- door_wood_knock\n- mouse_click\n- keyboard_typing\n- door_wood_creaks\n- can_opening\n- washing_machine\n- vacuum_cleaner\n- clock_alarm\n- clock_tick\n- glass_breaking\n- helicopter\n- chainsaw\n- siren\n- car_horn\n- engine\n- train\n- church_bells\n- airplane\n- fireworks\n- hand_saw\n\nThis step only discovers confusion groups. Do not propose concepts or decide what\nis present in the recordings."
+  },
+  "prompts": {
+    "system": "You generate concise, directly audible concepts for an audio\nconcept bottleneck model. Return valid JSON only, using this exact shape:\n{\"concepts\": [\"concept one\", \"concept two\"]}\nDo not include explanations, Markdown, or reasoning.",
+    "broad_user_prompt": "Create a dataset-independent vocabulary of short, atomic auditory\nproperties for audio concept bottleneck models. Generate 80 distinct\nconcepts spanning all of these perceptual dimensions:\n\n- loudness and energy\n- pitch and pitch variation\n- spectral balance and bandwidth\n- tonality, harmonicity, and inharmonicity\n- timbre, texture, roughness, and sharpness\n- continuity, periodicity, repetition, and rhythm\n- attack, decay, modulation, impulsiveness, and temporal density\n- reverberation, spatial impression, and perceived distance\n- acoustic production mechanism described as an audible property\n\nUse one interpretable property per concept and preferably 1-3 words. Concepts such\nas \"high-pitched\", \"broadband\", \"rough\", \"metallic\", \"continuous\", \"sharp attack\",\nand \"reverberant\" illustrate the desired level of abstraction.\n\nDo not use any dataset or target class names. Do not name objects, sound sources,\nevents, actions, emotions, scenes, or visual information. Do not write sentences,\ndefinitions, explanations, or long descriptions. Propose potentially useful\ndimensions only; do not claim that any concept occurs in a dataset.",
+    "contrastive_system": "You generate concise, directly audible concepts for an audio\nconcept bottleneck model. Return valid JSON only, using this exact shape:\n{\"concepts\": [\"concept one\", \"concept two\"]}\nDo not include explanations, Markdown, or reasoning.",
+    "contrastive_user_template": "Dataset: {dataset}.\nThe following target classes are likely to be acoustically confusable:\n{class_list}\n\nGenerate {num_concepts} general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+    "contrastive_rendered_prompts": [
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- dog\n- cow\n- sheep\n- pig\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- rooster\n- hen\n- crow\n- chirping_birds\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- frog\n- crickets\n- insects\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- cat\n- crying_baby\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- rain\n- sea_waves\n- pouring_water\n- water_drops\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- crackling_fire\n- fireworks\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- wind\n- thunderstorm\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- toilet_flush\n- washing_machine\n- pouring_water\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- sneezing\n- coughing\n- breathing\n- snoring\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- clapping\n- footsteps\n- door_wood_knock\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- brushing_teeth\n- drinking_sipping\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- mouse_click\n- keyboard_typing\n- clock_tick\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- door_wood_creaks\n- glass_breaking\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- can_opening\n- chainsaw\n- hand_saw\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- helicopter\n- airplane\n- engine\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- siren\n- car_horn\n- train\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset.",
+      "Dataset: esc50.\nThe following target classes are likely to be acoustically confusable:\n- church_bells\n- clock_alarm\n\nGenerate 8 general audible attributes that would help distinguish\nmembers of this group. Do not generate class synonyms or descriptions tied to only\none named class. Instead, identify acoustic dimensions on which the sounds may\ndiffer: pitch, spectrum, bandwidth, timbre, temporal structure, periodicity,\nrepetition, attack/decay, modulation, energy, texture, spatial properties, or an\naudible production mechanism.\n\nEach concept must be directly audible, express one interpretable property, use\npreferably 1-4 words, and make sense independently of the class names. Do not use,\nquote, paraphrase, or embed any class name. Do not use object identities, event\nlabels, emotions, visual information, recording context, explanations, or claims\nthat a property is actually present in the dataset."
+    ]
+  },
+  "postprocessing": {
+    "generator_cleaning": "_clean_concepts: trim punctuation, case-insensitive dedupe, maximum six words",
+    "contrastive_filter": "remove concepts matching a literal class name via concept_mentions_class",
+    "downstream_clap_filter": {
+      "max_len": 30,
+      "class_sim_cutoff": 0.85,
+      "other_sim_cutoff": 0.9,
+      "device": "UNKNOWN (CLI default is auto; canonical run device is not recorded)"
+    }
+  },
+  "sources": [
+    "data/concept_sets/esc50/generation_summary.json",
+    "data/concept_sets/esc50/contrastive_groups.json",
+    "scripts/concepts/generate_deepseek_concept_sets.py",
+    "concept_generation_deepseek.py"
+  ]
+}

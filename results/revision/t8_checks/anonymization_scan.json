@@ -1,0 +1,35 @@
+{
+  "status": "NOT_READY_TARGET_MISSING",
+  "target": "/workspace/Label-free-CBM-Audio/release/anonymous_supplement",
+  "finding_count": 0,
+  "findings": [],
+  "identity_sources": {
+    "names": [
+      "Adam Gassem",
+      "Amine Maazizi",
+      "Jason Uwaeze",
+      "LilyWengLab",
+      "Tuomas",
+      "Tuomas Oikarinen",
+      "amine-maazizi"
+    ],
+    "emails": [
+      "107097010+LilyWengLab@users.noreply.github.com",
+      "147740409+amine-maazizi@users.noreply.github.com",
+      "33813139+tuomaso@users.noreply.github.com",
+      "34732790+Wazhee@users.noreply.github.com",
+      "adam.gassem@ensta-paris.fr",
+      "amine.maazizi@ensta-paris.fr",
+      "amine.maazizi@ensta.fr",
+      "codex@openai.com",
+      "toikarinen@ucsd.edu",
+      "tuomas@mit.edu"
+    ],
+    "usernames": [
+      "LilyWengLab",
+      "Wazhee",
+      "amine-maazizi",
+      "tuomaso"
+    ]
+  }
+}
