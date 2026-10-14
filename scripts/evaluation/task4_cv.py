@@ -337,7 +337,12 @@ def _variant_vocabularies(repo_root: Path, dataset: str, out_dir: Path) -> dict[
 
     result: dict[str, Path] = {}
     for name in ("lf", "lf_broad", "lf_contrastive", "full"):
-        source = repo_root / "data/concept_sets" / dataset / ("concepts_ablation_{}.txt".format(name))
+        if dataset == "cremad" and name == "full":
+            # The canonical CREMA-D full model is the separately generated,
+            # speech-targeted union distributed with the release bundle.
+            source = repo_root / "release/google_drive_bundle/concept_sets/cremad/full.txt"
+        else:
+            source = repo_root / "data/concept_sets" / dataset / ("concepts_ablation_{}.txt".format(name))
         target = out_dir / dataset / (name + ".txt")
         target.parent.mkdir(parents=True, exist_ok=True)
         if not target.exists():
@@ -389,17 +394,28 @@ def _save_selected_predictions(checkpoint_path: Path, test_features: torch.Tenso
     return labels_path, predictions_path
 
 
-def _run_fixed_seed_robustness(repo_root: Path, run_dir: Path, run3_dir: Path, *, device: str) -> list[dict[str, Any]]:
+def _run_fixed_seed_robustness(
+    repo_root: Path,
+    run_dir: Path,
+    run3_dir: Path,
+    *,
+    device: str,
+    datasets: Sequence[str] = ALL_DATASETS,
+    variants: Sequence[str] = CBM_VARIANTS,
+    seeds: Sequence[int] = SEEDS,
+) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     fixed_root = run_dir / "fixed_split"
     vocab_root = fixed_root / "vocabularies"
-    for dataset in ALL_DATASETS:
+    for dataset in datasets:
         vocab_paths = _variant_vocabularies(repo_root, dataset, vocab_root)
         # One text embedding per variant; the Task 3 audio/AST caches are reused read-only.
         text_cache = fixed_root / "clap_text" / dataset
         bundle = clap_core.load_clap_model(model_name=t3.DEFAULT_CLAP_MODEL, device=device)
         text_paths: dict[str, Path] = {}
-        for name, vocab_path in vocab_paths.items():
+        selected_variants = tuple(variants)
+        for name in selected_variants:
+            vocab_path = vocab_paths[name]
             path = text_cache / (name + ".pt")
             concepts = [line.strip() for line in vocab_path.read_text(encoding="utf-8").splitlines() if line.strip()]
             if not _valid_tensor(path, expected_rows=len(concepts)):
@@ -426,13 +442,14 @@ def _run_fixed_seed_robustness(repo_root: Path, run_dir: Path, run3_dir: Path, *
         labels_path, ast_predictions_path = _extract_ast_predictions(repo_root, checkpoint, dataset, spec["test"], None, ast_pred_dir, device=device, batch_size=32)
         labels = _load_tensor(labels_path).long()
         ast_predictions = _load_tensor(ast_predictions_path).long()
-        for variant in CBM_VARIANTS:
+        for variant in selected_variants:
             vocab_path = vocab_paths[variant]
             features, paths = _fixed_paths(run3_dir, dataset, variant, text_paths[variant])
             reference_variant = "full" if variant == "broad_plus_contrastive_clean" else variant
             reference = t3._reference_stats(repo_root / "release/google_drive_bundle/checkpoints" / dataset / reference_variant)
-            for seed in SEEDS:
+            for seed in seeds:
                 out = run_dir / "per_seed" / dataset / variant / ("seed{}".format(seed))
+                job_start = time.time()
                 full_json = out / "full.json"
                 pred_path = out / "predictions.pt"
                 if not (full_json.exists() and pred_path.exists()):
@@ -465,6 +482,19 @@ def _run_fixed_seed_robustness(repo_root: Path, run_dir: Path, run3_dir: Path, *
                 tests = paired_mcnemar(labels.tolist(), ast_predictions.tolist(), _load_tensor(pred_path).long().tolist())
                 rows.append(metrics)
                 _json_dump(out / "mcnemar.json", tests)
+                if not (out / "run_metadata.json").exists():
+                    _json_dump(out / "run_metadata.json", {
+                        "dataset": dataset,
+                        "variant": variant,
+                        "seed": seed,
+                        "device": device,
+                        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
+                        "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo_root, text=True).strip(),
+                        "ast_checkpoint": str(checkpoint),
+                        "vocabulary_path": str(vocab_path),
+                        "runtime_seconds": float(time.time() - job_start),
+                        "command": " ".join(sys.argv),
+                    })
     return rows
 
 
@@ -724,6 +754,11 @@ def run(args: argparse.Namespace) -> Path:
         "canonical_task3_run": str(repo_root / "results/revision/t3_baselines/t3_gpu_01_fix"),
         "validation_rule": "next cyclic official fold", "selection_split": "val",
         "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo_root, text=True).strip(),
+        "command": " ".join(sys.argv),
+        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
+        "requested_dataset": args.dataset,
+        "requested_variant": args.variant,
+        "requested_seed": args.seed,
     }
     if not config_path.exists():
         _json_dump(config_path, config)
@@ -731,9 +766,15 @@ def run(args: argparse.Namespace) -> Path:
         config = json.loads(config_path.read_text(encoding="utf-8"))
     urban_manifest_root = run_dir / "manifests" / "urbansound8k"
     ensure_urban_cv_manifests(repo_root, urban_manifest_root)
+    selected_datasets = (args.dataset,) if args.dataset else ALL_DATASETS
+    selected_variants = (args.variant,) if args.variant else CBM_VARIANTS
+    selected_seeds = (args.seed,) if args.seed is not None else SEEDS
+    if args.dataset == "cremad" and args.variant == "broad_plus_contrastive_clean":
+        print("WARNING: CREMA-D broad_plus_contrastive_clean is provenance-confounded; use full for the targeted principal model.", flush=True)
     if args.part in {"all", "seeds"}:
         seed_rows = _run_fixed_seed_robustness(
-            repo_root, run_dir, Path(config["canonical_task3_run"]), device=args.device
+            repo_root, run_dir, Path(config["canonical_task3_run"]), device=args.device,
+            datasets=selected_datasets, variants=selected_variants, seeds=selected_seeds,
         )
     else:
         seed_rows = _collect_rows(run_dir, "per_seed")
@@ -786,6 +827,9 @@ def main() -> None:
     parser.add_argument("--part", choices=("all", "seeds", "cv"), default="all")
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--urban-epochs", type=int, default=30)
+    parser.add_argument("--dataset", choices=ALL_DATASETS, help="Run only this fixed-split seed dataset")
+    parser.add_argument("--variant", choices=CBM_VARIANTS, help="Run only this fixed-split seed variant")
+    parser.add_argument("--seed", type=int, choices=SEEDS, help="Run only this fixed-split random seed")
     args = parser.parse_args()
     if not args.execute:
         print("Task 4 dry run. Planned fixed seeds: {}".format(SEEDS))
