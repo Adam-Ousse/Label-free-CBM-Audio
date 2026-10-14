@@ -126,6 +126,7 @@ def prepare(repo_root: Path, root: Path) -> None:
         shutil.copy2(source / "manifests" / (split + ".jsonl"), manifest_root / (split + ".jsonl"))
     for name in ("label_to_idx.json", "idx_to_label.json"):
         shutil.copy2(repo_root / "data/cremad" / name, manifest_root / name)
+        shutil.copy2(repo_root / "data/cremad" / name, root / name)
     verification = _verify_manifests(root)
     vocab = repo_root / VOCAB_SOURCE
     if not vocab.is_file():
