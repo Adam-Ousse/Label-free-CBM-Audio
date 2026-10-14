@@ -5,6 +5,7 @@ import os
 import torch
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
+from sklearn.metrics import classification_report, confusion_matrix, f1_score
 
 import data_utils
 from models.ast_classifier import build_ast_classifier
@@ -66,6 +67,8 @@ def main():
     classes = data_utils.get_dataset_classes("cremad")
     class_correct = [0 for _ in range(len(classes))]
     class_total = [0 for _ in range(len(classes))]
+    all_targets = []
+    all_preds = []
 
     total_loss = 0.0
     total_correct = 0
@@ -76,6 +79,8 @@ def main():
             logits = classifier.predict_logits(batch["audio"], sample_rates=batch["sr"]).detach().cpu()
             targets = batch["target"].long().cpu()
             preds = torch.argmax(logits, dim=1)
+            all_targets.extend(targets.tolist())
+            all_preds.extend(preds.tolist())
 
             loss = F.cross_entropy(logits, targets)
             bs = targets.shape[0]
@@ -126,6 +131,11 @@ def main():
         "loss": avg_loss,
         "accuracy": accuracy,
         "per_class": per_class,
+        "macro_f1": float(f1_score(all_targets, all_preds, average="macro", zero_division=0)),
+        "classification_report": classification_report(
+            all_targets, all_preds, target_names=classes, output_dict=True, zero_division=0
+        ),
+        "confusion_matrix": confusion_matrix(all_targets, all_preds).tolist(),
     }
 
     if args.output_json is not None:

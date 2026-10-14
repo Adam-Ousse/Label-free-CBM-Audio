@@ -30,6 +30,7 @@ def parse_args():
 
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--gradient_accumulation_steps", type=int, default=1)
     parser.add_argument("--lr", type=float, default=5e-5)
     parser.add_argument("--weight_decay", type=float, default=1e-4)
     parser.add_argument("--warmup_ratio", type=float, default=0.1)
@@ -282,7 +283,9 @@ def main():
             )
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
-    total_steps = args.epochs * max(1, len(train_loader))
+    if args.gradient_accumulation_steps < 1:
+        raise ValueError("gradient_accumulation_steps must be positive")
+    total_steps = args.epochs * max(1, (len(train_loader) + args.gradient_accumulation_steps - 1) // args.gradient_accumulation_steps)
     warmup_steps = int(round(float(total_steps) * float(args.warmup_ratio)))
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
@@ -306,6 +309,7 @@ def main():
                 "test_split": args.test_split,
                 "epochs": args.epochs,
                 "batch_size": args.batch_size,
+                "gradient_accumulation_steps": args.gradient_accumulation_steps,
                 "lr": args.lr,
                 "weight_decay": args.weight_decay,
                 "warmup_ratio": args.warmup_ratio,
@@ -326,24 +330,27 @@ def main():
 
     for epoch in range(1, args.epochs + 1):
         model.train()
+        optimizer.zero_grad()
         train_loss_sum = 0.0
         train_correct = 0
         train_count = 0
 
-        for batch in train_loader:
+        for batch_index, batch in enumerate(train_loader):
             inputs, labels = batch_to_model_inputs(batch, feature_extractor, device)
 
-            optimizer.zero_grad()
             outputs = model(**inputs)
             logits = outputs.logits
-            loss = F.cross_entropy(logits, labels, weight=train_loss_weights)
-            loss.backward()
-            optimizer.step()
-            scheduler.step()
+            raw_loss = F.cross_entropy(logits, labels, weight=train_loss_weights)
+            (raw_loss / float(args.gradient_accumulation_steps)).backward()
+            is_update = ((batch_index + 1) % args.gradient_accumulation_steps == 0) or (batch_index + 1 == len(train_loader))
+            if is_update:
+                optimizer.step()
+                scheduler.step()
+                optimizer.zero_grad()
 
             preds = torch.argmax(logits, dim=1)
             bs = labels.shape[0]
-            train_loss_sum += float(loss.detach().cpu()) * bs
+            train_loss_sum += float(raw_loss.detach().cpu()) * bs
             train_correct += int(torch.sum(preds == labels).detach().cpu())
             train_count += bs
 
@@ -402,6 +409,8 @@ def main():
         "test_loss": test_loss,
         "test_acc": test_acc,
         "class_weighted_loss": (not args.disable_class_weights),
+        "batch_size": args.batch_size,
+        "gradient_accumulation_steps": args.gradient_accumulation_steps,
     }
     with open(os.path.join(split_dir, "split_summary.json"), "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)

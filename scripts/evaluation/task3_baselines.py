@@ -656,8 +656,9 @@ def _run_concept_bottleneck(
     reference_nnz: float,
     *,
     random_word: bool = False,
+    labels: tuple[torch.Tensor, torch.Tensor, torch.Tensor] | None = None,
 ) -> list[dict[str, Any]]:
-    train_y, val_y, test_y = _load_labels(dataset)
+    train_y, val_y, test_y = labels if labels is not None else _load_labels(dataset)
     train_concepts = _load_clap_matrix(paths["train"][1], paths["train"][2])
     val_concepts = _load_clap_matrix(paths["val"][1], paths["val"][2])
     concepts = [line.strip() for line in vocab_path.read_text(encoding="utf-8").splitlines() if line.strip()]
