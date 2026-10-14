@@ -29,6 +29,12 @@ def parse_args():
     parser.add_argument("--split_seed", type=int, default=42)
 
     parser.add_argument("--epochs", type=int, default=30)
+    parser.add_argument(
+        "--early_stopping_patience",
+        type=int,
+        default=0,
+        help="Stop after this many consecutive non-improving validation epochs; 0 disables early stopping.",
+    )
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1)
     parser.add_argument("--lr", type=float, default=5e-5)
@@ -308,6 +314,7 @@ def main():
                 "val_split": args.val_split,
                 "test_split": args.test_split,
                 "epochs": args.epochs,
+                "early_stopping_patience": args.early_stopping_patience,
                 "batch_size": args.batch_size,
                 "gradient_accumulation_steps": args.gradient_accumulation_steps,
                 "lr": args.lr,
@@ -327,6 +334,7 @@ def main():
 
     best_val_acc = -1.0
     best_epoch = -1
+    epochs_without_improvement = 0
 
     for epoch in range(1, args.epochs + 1):
         model.train()
@@ -385,12 +393,22 @@ def main():
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             best_epoch = epoch
+            epochs_without_improvement = 0
             best_dir = os.path.join(split_dir, "best_model")
             os.makedirs(best_dir, exist_ok=True)
             model.save_pretrained(best_dir)
             feature_extractor.save_pretrained(best_dir)
             with open(os.path.join(best_dir, "best_metrics.json"), "w", encoding="utf-8") as f:
                 json.dump({"best_epoch": best_epoch, "best_val_acc": best_val_acc}, f, indent=2)
+        else:
+            epochs_without_improvement += 1
+            if args.early_stopping_patience > 0 and epochs_without_improvement >= args.early_stopping_patience:
+                print(
+                    "early stopping after {} epochs without validation improvement".format(
+                        epochs_without_improvement
+                    )
+                )
+                break
 
     best_model = ASTForAudioClassification.from_pretrained(os.path.join(split_dir, "best_model")).to(device)
     test_loss, test_acc = evaluate_epoch(best_model, test_loader, feature_extractor, device, loss_weights=None)
@@ -406,6 +424,7 @@ def main():
         "test_split": args.test_split,
         "best_epoch": best_epoch,
         "best_val_acc": best_val_acc,
+        "early_stopping_patience": args.early_stopping_patience,
         "test_loss": test_loss,
         "test_acc": test_acc,
         "class_weighted_loss": (not args.disable_class_weights),
