@@ -91,6 +91,7 @@ def deterministic_actor_assignment(
     rows: Sequence[Mapping[str, Any]],
     ratios: Mapping[str, float] | None = None,
     seed: int = 42,
+    actor_counts: Mapping[str, int] | None = None,
 ) -> tuple[dict[str, str], dict[str, int]]:
     """Assign each actor to one split using a seeded actor-level permutation.
 
@@ -98,12 +99,19 @@ def deterministic_actor_assignment(
     independently, so the resulting splits are speaker independent.
     """
 
-    ratios = ratios or {"train": 0.70, "val": 0.15, "test": 0.15}
     actor_rows: dict[str, int] = Counter(actor_id_from_row(row) for row in rows)
     actors = sorted(actor_rows)
     rng = random.Random(int(seed))
     rng.shuffle(actors)
-    quotas = _largest_remainder_counts(len(actors), ratios)
+    if actor_counts is not None:
+        if set(actor_counts) != set(SPLITS):
+            raise ValueError("actor_counts must contain train, val, and test")
+        quotas = {split: int(actor_counts[split]) for split in SPLITS}
+        if any(count < 0 for count in quotas.values()) or sum(quotas.values()) != len(actors):
+            raise ValueError("actor_counts must be non-negative and sum to the number of actors")
+    else:
+        ratios = ratios or {"train": 0.70, "val": 0.15, "test": 0.15}
+        quotas = _largest_remainder_counts(len(actors), ratios)
     assignment: dict[str, str] = {}
     offset = 0
     for split in SPLITS:
@@ -154,7 +162,12 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def audit_cremad(repo_root: Path, output_root: Path, seed: int = 42) -> dict[str, Any]:
+def audit_cremad(
+    repo_root: Path,
+    output_root: Path,
+    seed: int = 42,
+    actor_counts: Mapping[str, int] | None = None,
+) -> dict[str, Any]:
     manifest_root = repo_root / "data" / "cremad" / "manifests"
     rows_by_split = {split: read_jsonl(manifest_root / f"{split}.jsonl") for split in SPLITS}
     all_rows = read_jsonl(manifest_root / "all.jsonl")
@@ -163,7 +176,7 @@ def audit_cremad(repo_root: Path, output_root: Path, seed: int = 42) -> dict[str
         raise ValueError("data/cremad/manifests/all.jsonl contains duplicate IDs")
 
     overlaps = pairwise_intersections(rows_by_split)
-    assignment, actor_quotas = deterministic_actor_assignment(all_rows, seed=seed)
+    assignment, actor_quotas = deterministic_actor_assignment(all_rows, seed=seed, actor_counts=actor_counts)
     split_rows = build_speaker_independent_rows(all_rows, assignment)
     split_root = output_root / "manifests"
     for split in SPLITS:
@@ -176,8 +189,8 @@ def audit_cremad(repo_root: Path, output_root: Path, seed: int = 42) -> dict[str
         "protocol": {
             "name": "speaker_independent_actor_split",
             "task_specification_in_repository": False,
-            "ratio_basis": "70/15/15 actor-level proposal; task-specific ratio was not present in repository artifacts",
-            "ratios": {"train": 0.70, "val": 0.15, "test": 0.15},
+            "ratio_basis": "explicit actor quotas" if actor_counts is not None else "70/15/15 actor-level proposal",
+            "ratios": None if actor_counts is not None else {"train": 0.70, "val": 0.15, "test": 0.15},
             "seed": seed,
             "actor_quota": actor_quotas,
             "gender_balance": "NOT_APPLIED",
@@ -252,7 +265,7 @@ def audit_cremad(repo_root: Path, output_root: Path, seed: int = 42) -> dict[str
         "",
         "## Proposed split",
         "",
-        "The repository does not contain the external Task 7 specification. This audit therefore records a deterministic 70/15/15 actor-level proposal with seed 42; no training was run.",
+        "This audit records the deterministic Task 7 actor-level split with seed {}; no training was run.".format(seed),
         "",
         "| Split | Rows | Actors |",
         "|---|---:|---:|",
@@ -416,14 +429,28 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--repo-root", type=Path, default=Path("."))
     parser.add_argument("--task", choices=("7", "8", "all"), default="all")
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--train-actors", type=int, default=None)
+    parser.add_argument("--val-actors", type=int, default=None)
+    parser.add_argument("--test-actors", type=int, default=None)
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     repo_root = args.repo_root.resolve()
+    actor_counts = None
+    requested_counts = (args.train_actors, args.val_actors, args.test_actors)
+    if any(value is not None for value in requested_counts):
+        if any(value is None for value in requested_counts):
+            raise ValueError("--train-actors, --val-actors, and --test-actors must be supplied together")
+        actor_counts = {"train": args.train_actors, "val": args.val_actors, "test": args.test_actors}
     if args.task in {"7", "all"}:
-        audit_cremad(repo_root, repo_root / "results/revision/t7_cremad/split_audit", seed=args.seed)
+        audit_cremad(
+            repo_root,
+            repo_root / "results/revision/t7_cremad/split_audit",
+            seed=args.seed,
+            actor_counts=actor_counts,
+        )
     if args.task in {"8", "all"}:
         audit_metadata(repo_root, repo_root / "results/revision/t8_checks/metadata")
 

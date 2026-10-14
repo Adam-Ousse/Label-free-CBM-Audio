@@ -25,3 +25,14 @@ def test_deterministic_actor_assignment_is_disjoint_and_repeatable():
     assert quotas == second_quotas
     assert set(first) == {"1001", "1002", "1003", "1004", "1005"}
     assert len(set(first.values())) == 3
+
+
+def test_deterministic_actor_assignment_accepts_explicit_quotas():
+    rows = [{"id": f"{actor}_DFA_ANG_XX"} for actor in ("1001", "1002", "1003", "1004", "1005")]
+    assignment, quotas = deterministic_actor_assignment(
+        rows,
+        seed=42,
+        actor_counts={"train": 3, "val": 1, "test": 1},
+    )
+    assert quotas == {"train": 3, "val": 1, "test": 1}
+    assert {split: list(assignment.values()).count(split) for split in ("train", "val", "test")} == quotas

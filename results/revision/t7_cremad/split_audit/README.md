@@ -13,13 +13,13 @@ Every historical pair overlaps on all 91 actors; the proposed manifests are acto
 
 ## Proposed split
 
-The repository does not contain the external Task 7 specification. This audit therefore records a deterministic 70/15/15 actor-level proposal with seed 42; no training was run.
+This audit records the deterministic Task 7 actor-level split with seed 42; no training was run.
 
 | Split | Rows | Actors |
 |---|---:|---:|
 | train | 5229 | 64 |
-| val | 1148 | 14 |
-| test | 1065 | 13 |
+| val | 738 | 9 |
+| test | 1475 | 18 |
 
 Gender balancing: **UNKNOWN**. No gender/demographic metadata file is present in the repository artifacts, so gender balancing was not applied.
 

@@ -27,9 +27,9 @@
     "1025": "train",
     "1026": "val",
     "1027": "train",
-    "1028": "val",
+    "1028": "test",
     "1029": "test",
-    "1030": "val",
+    "1030": "test",
     "1031": "train",
     "1032": "test",
     "1033": "train",
@@ -64,7 +64,7 @@
     "1062": "train",
     "1063": "train",
     "1064": "train",
-    "1065": "val",
+    "1065": "test",
     "1066": "train",
     "1067": "train",
     "1068": "train",
@@ -88,9 +88,9 @@
     "1086": "val",
     "1087": "train",
     "1088": "val",
-    "1089": "val",
+    "1089": "test",
     "1090": "train",
-    "1091": "val"
+    "1091": "test"
   },
   "checks": {
     "gender_metadata_recovered": false,
@@ -121,18 +121,23 @@
         "1014",
         "1015",
         "1018",
+        "1028",
         "1029",
+        "1030",
         "1032",
         "1036",
         "1055",
+        "1065",
         "1070",
         "1076",
-        "1082"
+        "1082",
+        "1089",
+        "1091"
       ],
-      "actors": 13,
+      "actors": 18,
       "gender": "UNKNOWN",
       "path": "manifests/test.jsonl",
-      "rows": 1065,
+      "rows": 1475,
       "rows_by_actor": {
         "1004": 82,
         "1005": 82,
@@ -140,21 +145,26 @@
         "1014": 82,
         "1015": 82,
         "1018": 82,
+        "1028": 82,
         "1029": 82,
+        "1030": 82,
         "1032": 82,
         "1036": 82,
         "1055": 82,
+        "1065": 82,
         "1070": 82,
         "1076": 81,
-        "1082": 82
+        "1082": 82,
+        "1089": 82,
+        "1091": 82
       },
       "rows_by_label": {
-        "anger": 181,
-        "disgust": 111,
-        "fear": 131,
-        "happy": 60,
-        "neutral": 535,
-        "sad": 47
+        "anger": 236,
+        "disgust": 140,
+        "fear": 171,
+        "happy": 92,
+        "neutral": 746,
+        "sad": 90
       }
     },
     "train": {
@@ -307,64 +317,50 @@
       "actor_ids": [
         "1001",
         "1026",
-        "1028",
-        "1030",
         "1054",
         "1058",
-        "1065",
         "1072",
         "1078",
         "1083",
         "1086",
-        "1088",
-        "1089",
-        "1091"
+        "1088"
       ],
-      "actors": 14,
+      "actors": 9,
       "gender": "UNKNOWN",
       "path": "manifests/val.jsonl",
-      "rows": 1148,
+      "rows": 738,
       "rows_by_actor": {
         "1001": 82,
         "1026": 82,
-        "1028": 82,
-        "1030": 82,
         "1054": 82,
         "1058": 82,
-        "1065": 82,
         "1072": 82,
         "1078": 82,
         "1083": 82,
         "1086": 82,
-        "1088": 82,
-        "1089": 82,
-        "1091": 82
+        "1088": 82
       },
       "rows_by_label": {
-        "anger": 177,
-        "disgust": 93,
-        "fear": 139,
-        "happy": 74,
-        "neutral": 591,
-        "sad": 74
+        "anger": 122,
+        "disgust": 64,
+        "fear": 99,
+        "happy": 42,
+        "neutral": 380,
+        "sad": 31
       }
     }
   },
   "protocol": {
     "actor_quota": {
-      "test": 13,
+      "test": 18,
       "train": 64,
-      "val": 14
+      "val": 9
     },
     "gender_balance": "NOT_APPLIED",
     "gender_metadata": "UNKNOWN",
     "name": "speaker_independent_actor_split",
-    "ratio_basis": "70/15/15 actor-level proposal; task-specific ratio was not present in repository artifacts",
-    "ratios": {
-      "test": 0.15,
-      "train": 0.7,
-      "val": 0.15
-    },
+    "ratio_basis": "explicit actor quotas",
+    "ratios": null,
     "seed": 42,
     "task_specification_in_repository": false
   },

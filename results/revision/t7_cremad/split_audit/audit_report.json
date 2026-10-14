@@ -15,14 +15,14 @@
   ],
   "overlap_exists": true,
   "proposed_split_actor_counts": {
-    "test": 13,
+    "test": 18,
     "train": 64,
-    "val": 14
+    "val": 9
   },
   "proposed_split_sizes": {
-    "test": 1065,
+    "test": 1475,
     "train": 5229,
-    "val": 1148
+    "val": 738
   },
   "source": "data/cremad/manifests/{train,val,test,all}.jsonl",
   "source_overlap_counts": {
