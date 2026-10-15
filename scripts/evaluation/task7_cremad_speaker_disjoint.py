@@ -316,10 +316,10 @@ def write_summary(repo_root: Path, root: Path) -> None:
         writer.writerow({"model": "AST", "accuracy": ast["accuracy"], "macro_f1": ast["macro_f1"], "n_test": ast["num_samples"], "unique_test_speakers": verification["actor_counts"]["test"]})
         writer.writerow({"model": "alpha-CBM targeted full", "accuracy": details["accuracy"], "macro_f1": details["macro_f1"], "n_test": details["n_test"], "unique_test_speakers": details["unique_test_speakers"]})
     (root / "table.tex").write_text(
-        "\\begin{tabular}{lrrr}\\toprule\nModel & Accuracy & Macro-F1 & Test clips \\\\\n"
+        "\\begin{{tabular}}{{lrrr}}\\toprule\nModel & Accuracy & Macro-F1 & Test clips \\\\\n"
         "\\midrule\nAST & {:.2f}\\% & {:.2f}\\% & {} \\\\\n"
         "\\alpha-CBM targeted full & {:.2f}\\% & {:.2f}\\% & {} \\\\\n"
-        "\\bottomrule\\end{tabular}\n".format(
+        "\\bottomrule\\end{{tabular}}\n".format(
             ast["accuracy"] * 100, ast["macro_f1"] * 100, ast["num_samples"],
             details["accuracy"] * 100, details["macro_f1"] * 100, details["n_test"],
         ), encoding="utf-8",
