@@ -1,0 +1,73 @@
+{
+  "accuracy": 0.6440677966101694,
+  "actual_mean_nnz_per_class": 440.6666564941406,
+  "balanced_accuracy": 0.4738198683023551,
+  "concepts_activation_kept": 681,
+  "concepts_input": 701,
+  "concepts_output": 491,
+  "dataset": "cremad",
+  "fit_reused": true,
+  "lambda": 0.0001354780251858756,
+  "macro_f1": 0.4929651662049646,
+  "manifest_verification": {
+    "actor_counts": {
+      "test": 18,
+      "train": 64,
+      "val": 9
+    },
+    "actor_intersections": {
+      "train_test": [],
+      "train_val": [],
+      "val_test": []
+    },
+    "all_ids_unique": true,
+    "class_counts": {
+      "test": {
+        "anger": 236,
+        "disgust": 140,
+        "fear": 171,
+        "happy": 92,
+        "neutral": 746,
+        "sad": 90
+      },
+      "train": {
+        "anger": 795,
+        "disgust": 480,
+        "fear": 523,
+        "happy": 297,
+        "neutral": 2885,
+        "sad": 249
+      },
+      "val": {
+        "anger": 122,
+        "disgust": 64,
+        "fear": 99,
+        "happy": 42,
+        "neutral": 380,
+        "sad": 31
+      }
+    },
+    "clip_counts": {
+      "test": 1475,
+      "train": 5229,
+      "val": 738
+    },
+    "manifest_root": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/manifests",
+    "unique_actors": 91
+  },
+  "method": "cbm_no_class_lf",
+  "nec_reached": null,
+  "projection": {
+    "best_step": 100,
+    "best_val_loss": -0.5244268774986267
+  },
+  "random_seed": null,
+  "reference_mean_nnz_per_class": 39.5,
+  "reporting_runtime_seconds": 0.0004584789276123047,
+  "selected_path_index": 21,
+  "selection": "full",
+  "selection_split": "val",
+  "target_nec": null,
+  "variant": "full",
+  "weighted_f1": 0.6256220179586391
+}

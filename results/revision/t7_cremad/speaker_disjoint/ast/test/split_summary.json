@@ -1,0 +1,13 @@
+{
+  "train_split": "train",
+  "val_split": "val",
+  "test_split": "test",
+  "best_epoch": 7,
+  "best_val_acc": 0.6666666666666666,
+  "early_stopping_patience": 3,
+  "test_loss": 1.4622741721797798,
+  "test_acc": 0.6440677966101694,
+  "class_weighted_loss": true,
+  "batch_size": 8,
+  "gradient_accumulation_steps": 4
+}

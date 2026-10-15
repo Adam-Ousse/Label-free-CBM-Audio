@@ -1,0 +1,7 @@
+{
+  "copied_path": "results/revision/t7_cremad/speaker_disjoint/cbm/vocabulary/cremad_full.txt",
+  "nonempty_concepts": 701,
+  "provenance": "canonical targeted CREMA-D full vocabulary from the release bundle",
+  "sha256": "f03c8a6ff47d0b279b4d13fede8911c19a3ab8f37e482b2e0a10fc0e5bdda9a8",
+  "source": "release/google_drive_bundle/concept_sets/cremad/full.txt"
+}

@@ -1,0 +1,3 @@
+model,accuracy,macro_f1,n_test,unique_test_speakers
+AST,0.6440677966101694,0.4943826725832501,1475,18
+alpha-CBM targeted full,0.6440677966101694,0.4929651662049646,1475,18

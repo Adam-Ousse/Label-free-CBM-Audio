@@ -1,0 +1,25 @@
+{
+  "accuracy": 0.5816949152542373,
+  "actual_mean_nnz_per_class": 4.0,
+  "balanced_accuracy": 0.253970327623029,
+  "concepts_activation_kept": 681,
+  "concepts_input": 701,
+  "concepts_output": 491,
+  "dataset": "cremad",
+  "lambda": 0.19885462522506714,
+  "macro_f1": 0.21378427866236924,
+  "method": "cbm_no_class_lf",
+  "nec_reached": true,
+  "projection": {
+    "best_step": 100,
+    "best_val_loss": -0.5244268774986267
+  },
+  "random_seed": null,
+  "reference_mean_nnz_per_class": 39.5,
+  "selected_path_index": 2,
+  "selection": "nec5",
+  "selection_split": "val",
+  "target_nec": 5.0,
+  "variant": "full",
+  "weighted_f1": 0.45894304032830785
+}

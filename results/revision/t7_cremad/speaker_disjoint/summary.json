@@ -1,0 +1,401 @@
+{
+  "ast": {
+    "accuracy": 0.6440677966101694,
+    "classification_report": {
+      "accuracy": 0.6440677966101694,
+      "anger": {
+        "f1-score": 0.6900826446280992,
+        "precision": 0.6733870967741935,
+        "recall": 0.7076271186440678,
+        "support": 236.0
+      },
+      "disgust": {
+        "f1-score": 0.3591331269349845,
+        "precision": 0.31693989071038253,
+        "recall": 0.4142857142857143,
+        "support": 140.0
+      },
+      "fear": {
+        "f1-score": 0.45993031358885017,
+        "precision": 0.5689655172413793,
+        "recall": 0.38596491228070173,
+        "support": 171.0
+      },
+      "happy": {
+        "f1-score": 0.4605263157894737,
+        "precision": 0.5833333333333334,
+        "recall": 0.3804347826086957,
+        "support": 92.0
+      },
+      "macro avg": {
+        "f1-score": 0.4943826725832501,
+        "precision": 0.5680376923358424,
+        "recall": 0.47529863746842343,
+        "support": 1475.0
+      },
+      "neutral": {
+        "f1-score": 0.7685534591194969,
+        "precision": 0.7239336492890995,
+        "recall": 0.8190348525469169,
+        "support": 746.0
+      },
+      "sad": {
+        "f1-score": 0.22807017543859648,
+        "precision": 0.5416666666666666,
+        "recall": 0.14444444444444443,
+        "support": 90.0
+      },
+      "weighted avg": {
+        "f1-score": 0.6291673510997102,
+        "precision": 0.639359465778152,
+        "recall": 0.6440677966101694,
+        "support": 1475.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        167,
+        31,
+        5,
+        2,
+        31,
+        0
+      ],
+      [
+        27,
+        58,
+        5,
+        3,
+        47,
+        0
+      ],
+      [
+        11,
+        17,
+        66,
+        1,
+        70,
+        6
+      ],
+      [
+        9,
+        10,
+        12,
+        35,
+        26,
+        0
+      ],
+      [
+        32,
+        64,
+        17,
+        17,
+        611,
+        5
+      ],
+      [
+        2,
+        3,
+        11,
+        2,
+        59,
+        13
+      ]
+    ],
+    "loss": 1.4622741727935056,
+    "macro_f1": 0.4943826725832501,
+    "model": "results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "num_samples": 1475,
+    "per_class": [
+      {
+        "accuracy": 0.7076271186440678,
+        "class_idx": 0,
+        "class_name": "anger",
+        "correct": 167,
+        "total": 236
+      },
+      {
+        "accuracy": 0.4142857142857143,
+        "class_idx": 1,
+        "class_name": "disgust",
+        "correct": 58,
+        "total": 140
+      },
+      {
+        "accuracy": 0.38596491228070173,
+        "class_idx": 2,
+        "class_name": "fear",
+        "correct": 66,
+        "total": 171
+      },
+      {
+        "accuracy": 0.3804347826086957,
+        "class_idx": 3,
+        "class_name": "happy",
+        "correct": 35,
+        "total": 92
+      },
+      {
+        "accuracy": 0.8190348525469169,
+        "class_idx": 4,
+        "class_name": "neutral",
+        "correct": 611,
+        "total": 746
+      },
+      {
+        "accuracy": 0.14444444444444443,
+        "class_idx": 5,
+        "class_name": "sad",
+        "correct": 13,
+        "total": 90
+      }
+    ],
+    "split": "test"
+  },
+  "cbm_targeted_full": {
+    "accuracy": 0.6440677966101694,
+    "actual_mean_nnz_per_class": 440.6666564941406,
+    "balanced_accuracy": 0.4738198683023551,
+    "concepts_activation_kept": 681,
+    "concepts_input": 701,
+    "concepts_output": 491,
+    "dataset": "cremad",
+    "fit_reused": true,
+    "lambda": 0.0001354780251858756,
+    "macro_f1": 0.4929651662049646,
+    "manifest_verification": {
+      "actor_counts": {
+        "test": 18,
+        "train": 64,
+        "val": 9
+      },
+      "actor_intersections": {
+        "train_test": [],
+        "train_val": [],
+        "val_test": []
+      },
+      "all_ids_unique": true,
+      "class_counts": {
+        "test": {
+          "anger": 236,
+          "disgust": 140,
+          "fear": 171,
+          "happy": 92,
+          "neutral": 746,
+          "sad": 90
+        },
+        "train": {
+          "anger": 795,
+          "disgust": 480,
+          "fear": 523,
+          "happy": 297,
+          "neutral": 2885,
+          "sad": 249
+        },
+        "val": {
+          "anger": 122,
+          "disgust": 64,
+          "fear": 99,
+          "happy": 42,
+          "neutral": 380,
+          "sad": 31
+        }
+      },
+      "clip_counts": {
+        "test": 1475,
+        "train": 5229,
+        "val": 738
+      },
+      "manifest_root": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/manifests",
+      "unique_actors": 91
+    },
+    "method": "cbm_no_class_lf",
+    "nec_reached": null,
+    "projection": {
+      "best_step": 100,
+      "best_val_loss": -0.5244268774986267
+    },
+    "random_seed": null,
+    "reference_mean_nnz_per_class": 39.5,
+    "reporting_runtime_seconds": 0.0004584789276123047,
+    "selected_path_index": 21,
+    "selection": "full",
+    "selection_split": "val",
+    "target_nec": null,
+    "test_details": {
+      "accuracy": 0.6440677966101694,
+      "classification_report": {
+        "accuracy": 0.6440677966101694,
+        "anger": {
+          "f1-score": 0.689795918367347,
+          "precision": 0.6653543307086615,
+          "recall": 0.7161016949152542,
+          "support": 236.0
+        },
+        "disgust": {
+          "f1-score": 0.2962962962962963,
+          "precision": 0.34951456310679613,
+          "recall": 0.2571428571428571,
+          "support": 140.0
+        },
+        "fear": {
+          "f1-score": 0.4840764331210191,
+          "precision": 0.5314685314685315,
+          "recall": 0.4444444444444444,
+          "support": 171.0
+        },
+        "happy": {
+          "f1-score": 0.44047619047619047,
+          "precision": 0.4868421052631579,
+          "recall": 0.40217391304347827,
+          "support": 92.0
+        },
+        "macro avg": {
+          "f1-score": 0.4929651662049646,
+          "precision": 0.5386605001320556,
+          "recall": 0.4738198683023551,
+          "support": 1475.0
+        },
+        "neutral": {
+          "f1-score": 0.763681592039801,
+          "precision": 0.7122969837587007,
+          "recall": 0.8230563002680965,
+          "support": 746.0
+        },
+        "sad": {
+          "f1-score": 0.28346456692913385,
+          "precision": 0.4864864864864865,
+          "recall": 0.2,
+          "support": 90.0
+        },
+        "weighted avg": {
+          "f1-score": 0.6256220179586391,
+          "precision": 0.6215481946544402,
+          "recall": 0.6440677966101694,
+          "support": 1475.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          169,
+          21,
+          7,
+          2,
+          37,
+          0
+        ],
+        [
+          31,
+          36,
+          7,
+          5,
+          60,
+          1
+        ],
+        [
+          10,
+          7,
+          76,
+          3,
+          69,
+          6
+        ],
+        [
+          12,
+          2,
+          10,
+          37,
+          31,
+          0
+        ],
+        [
+          30,
+          36,
+          27,
+          27,
+          614,
+          12
+        ],
+        [
+          2,
+          1,
+          16,
+          2,
+          51,
+          18
+        ]
+      ],
+      "macro_f1": 0.4929651662049646,
+      "n_test": 1475,
+      "selection": {
+        "accuracy": 0.6440677966101694,
+        "actual_mean_nnz_per_class": 440.6666564941406,
+        "balanced_accuracy": 0.4738198683023551,
+        "concepts_activation_kept": 681,
+        "concepts_input": 701,
+        "concepts_output": 491,
+        "dataset": "cremad",
+        "lambda": 0.0001354780251858756,
+        "macro_f1": 0.4929651662049646,
+        "method": "cbm_no_class_lf",
+        "nec_reached": null,
+        "projection": {
+          "best_step": 100,
+          "best_val_loss": -0.5244268774986267
+        },
+        "random_seed": null,
+        "reference_mean_nnz_per_class": 39.5,
+        "selected_path_index": 21,
+        "selection": "full",
+        "selection_split": "val",
+        "target_nec": null,
+        "variant": "full",
+        "weighted_f1": 0.6256220179586391
+      },
+      "unique_test_speakers": 18
+    },
+    "variant": "full",
+    "weighted_f1": 0.6256220179586391
+  },
+  "environment": {
+    "git_commit": "ed427c6e6e2b9b3001a185d9478d478b6a054090",
+    "gpu": [
+      "NVIDIA GeForce RTX 3060, 12288 MiB",
+      "NVIDIA GeForce RTX 3060, 12288 MiB"
+    ],
+    "packages": {
+      "numpy": "2.5.3",
+      "sklearn": "1.5.2",
+      "torch": "2.14.0+cu130",
+      "transformers": "4.56.2"
+    },
+    "python": "3.12.14"
+  },
+  "historical_context": {
+    "note": "These protocols are not directly identical; speaker-disjoint evaluation is stricter and the difference is not attributed solely to leakage.",
+    "original_utterance_split_ast_accuracy": 0.7005,
+    "original_utterance_split_targeted_full_cbm_accuracy": 0.7025,
+    "original_utterance_split_targeted_full_cbm_macro_f1": 0.5158,
+    "task4_five_seed_targeted_full_accuracy_mean": 0.6877,
+    "task4_five_seed_targeted_full_accuracy_sd": 0.0061
+  },
+  "protocol": {
+    "actor_counts": {
+      "test": 18,
+      "train": 64,
+      "val": 9
+    },
+    "actor_intersections": {
+      "train_test": [],
+      "train_val": [],
+      "val_test": []
+    },
+    "clip_counts": {
+      "test": 1475,
+      "train": 5229,
+      "val": 738
+    },
+    "seed": 42,
+    "validation_only_selection": true
+  }
+}

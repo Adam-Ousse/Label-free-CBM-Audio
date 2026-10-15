@@ -1,0 +1,29 @@
+split setup
+train split: train samples: 5229
+val split: val samples: 738
+test split: test samples: 1475
+/venv/main/lib/python3.12/site-packages/transformers/audio_utils.py:525: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+reinitialized classifier head: 527 -> 6 classes
+using class-weighted training loss
+  class 0 (anger) count=795 weight=0.5813
+  class 1 (disgust) count=480 weight=0.9628
+  class 2 (fear) count=523 weight=0.8836
+  class 3 (happy) count=297 weight=1.5560
+  class 4 (neutral) count=2885 weight=0.1602
+  class 5 (sad) count=249 weight=1.8560
+epoch 1/30 - train_loss 1.4844 train_acc 0.4913 val_loss 1.3075 val_acc 0.4770
+epoch 2/30 - train_loss 1.2019 train_acc 0.5456 val_loss 1.3419 val_acc 0.4648
+epoch 3/30 - train_loss 1.0232 train_acc 0.5894 val_loss 1.3821 val_acc 0.4580
+epoch 4/30 - train_loss 0.7775 train_acc 0.6663 val_loss 1.1016 val_acc 0.5881
+epoch 5/30 - train_loss 0.5057 train_acc 0.7638 val_loss 1.1754 val_acc 0.5732
+epoch 6/30 - train_loss 0.2418 train_acc 0.8810 val_loss 1.2045 val_acc 0.6572
+epoch 7/30 - train_loss 0.1540 train_acc 0.9306 val_loss 1.4474 val_acc 0.6667
+epoch 8/30 - train_loss 0.0595 train_acc 0.9700 val_loss 1.6136 val_acc 0.6152
+epoch 9/30 - train_loss 0.0347 train_acc 0.9847 val_loss 1.6995 val_acc 0.6206
+epoch 10/30 - train_loss 0.0053 train_acc 0.9987 val_loss 1.8339 val_acc 0.6612
+early stopping after 3 epochs without validation improvement
+best epoch: 7
+best val acc: 0.6667
+test loss: 1.4623
+test acc: 0.6441
