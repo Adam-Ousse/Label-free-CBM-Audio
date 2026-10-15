@@ -1,0 +1,237 @@
+[
+  {
+    "emotion": "anger",
+    "outcome": "correct",
+    "audio_filename": "1082_IEO_ANG_HI.wav",
+    "actor_id": "1082",
+    "true_class": "anger",
+    "predicted_class": "anger",
+    "confidence": 0.9966230392456055,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      4,
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/anger_correct.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/anger_correct.png"
+  },
+  {
+    "emotion": "anger",
+    "outcome": "error",
+    "audio_filename": "1065_IEO_ANG_LO.wav",
+    "actor_id": "1065",
+    "true_class": "anger",
+    "predicted_class": "neutral",
+    "confidence": 0.9998407363891602,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      4,
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/anger_error.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/anger_error.png"
+  },
+  {
+    "emotion": "disgust",
+    "outcome": "correct",
+    "audio_filename": "1082_IEO_DIS_HI.wav",
+    "actor_id": "1082",
+    "true_class": "disgust",
+    "predicted_class": "disgust",
+    "confidence": 0.9851886034011841,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/disgust_correct.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/disgust_correct.png"
+  },
+  {
+    "emotion": "disgust",
+    "outcome": "error",
+    "audio_filename": "1076_MTI_ANG_XX.wav",
+    "actor_id": "1076",
+    "true_class": "disgust",
+    "predicted_class": "neutral",
+    "confidence": 0.9985741376876831,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/disgust_error.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/disgust_error.png"
+  },
+  {
+    "emotion": "fear",
+    "outcome": "correct",
+    "audio_filename": "1036_IEO_FEA_HI.wav",
+    "actor_id": "1036",
+    "true_class": "fear",
+    "predicted_class": "fear",
+    "confidence": 0.997688889503479,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      4,
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/fear_correct.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/fear_correct.png"
+  },
+  {
+    "emotion": "fear",
+    "outcome": "error",
+    "audio_filename": "1076_ITH_SAD_XX.wav",
+    "actor_id": "1076",
+    "true_class": "fear",
+    "predicted_class": "neutral",
+    "confidence": 0.9997947812080383,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/fear_error.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/fear_error.png"
+  },
+  {
+    "emotion": "happy",
+    "outcome": "correct",
+    "audio_filename": "1029_DFA_HAP_XX.wav",
+    "actor_id": "1029",
+    "true_class": "happy",
+    "predicted_class": "happy",
+    "confidence": 0.9933207035064697,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      4,
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/happy_correct.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/happy_correct.png"
+  },
+  {
+    "emotion": "happy",
+    "outcome": "error",
+    "audio_filename": "1065_MTI_HAP_XX.wav",
+    "actor_id": "1065",
+    "true_class": "happy",
+    "predicted_class": "neutral",
+    "confidence": 0.9993143081665039,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/happy_error.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/happy_error.png"
+  },
+  {
+    "emotion": "neutral",
+    "outcome": "correct",
+    "audio_filename": "1065_IEO_FEA_LO.wav",
+    "actor_id": "1065",
+    "true_class": "neutral",
+    "predicted_class": "neutral",
+    "confidence": 0.9999287128448486,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      4,
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/neutral_correct.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/neutral_correct.png"
+  },
+  {
+    "emotion": "neutral",
+    "outcome": "error",
+    "audio_filename": "1082_IEO_HAP_MD.wav",
+    "actor_id": "1082",
+    "true_class": "neutral",
+    "predicted_class": "happy",
+    "confidence": 0.9748216271400452,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/neutral_error.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/neutral_error.png"
+  },
+  {
+    "emotion": "sad",
+    "outcome": "correct",
+    "audio_filename": "1028_TAI_FEA_XX.wav",
+    "actor_id": "1028",
+    "true_class": "sad",
+    "predicted_class": "sad",
+    "confidence": 0.9656230807304382,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/sad_correct.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/sad_correct.png"
+  },
+  {
+    "emotion": "sad",
+    "outcome": "error",
+    "audio_filename": "1091_IEO_DIS_LO.wav",
+    "actor_id": "1091",
+    "true_class": "sad",
+    "predicted_class": "neutral",
+    "confidence": 0.9987181425094604,
+    "checkpoint_model": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "cbm_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masked_window_indices": [
+      6
+    ],
+    "figure_pdf": "results/revision/t7_cremad/speaker_disjoint/figures/sad_error.pdf",
+    "figure_png": "results/revision/t7_cremad/speaker_disjoint/figures/sad_error.png"
+  }
+]

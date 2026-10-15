@@ -1,0 +1,22 @@
+{
+  "cbm": {
+    "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/full.pt",
+    "checkpoint_sha256": "8863f7aabf216dcbe9c4676e3a8d453bcd7dea8e79419f049af3086b8ad77b6c",
+    "vocabulary": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/cbm/vocabulary/cremad_full.txt",
+    "vocabulary_sha256": "f03c8a6ff47d0b279b4d13fede8911c19a3ab8f37e482b2e0a10fc0e5bdda9a8",
+    "concepts_input": 701,
+    "concepts_output": 491
+  },
+  "inference": {
+    "checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/ast/test/best_model",
+    "checkpoint_sha256": "d9da2e7ff48e0f9c120ae5495d91c13c71fa552125482b835013ecc7c465c93b",
+    "window_sec": 1.0,
+    "hop_sec": 0.5,
+    "pooling": "masked mean over effective Task-1 content windows",
+    "masking_mode": "content_mask = padding_mask AND RMS_dBFS >= -50; all-masked rows retain highest-RMS window",
+    "silence_threshold_dbfs": -50.0,
+    "num_test_examples": 12,
+    "selection_source": "/workspace/Label-free-CBM-Audio/results/revision/t7_cremad/speaker_disjoint/figures/manifest.csv"
+  },
+  "concept_labels": "greedy one-to-one assignment to input CLAP concepts by validation-set cubed cosine similarity"
+}

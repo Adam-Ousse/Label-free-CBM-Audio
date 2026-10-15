@@ -21,3 +21,25 @@ Actor intersections are all empty; all 91 actors and all 7,442 clips are assigne
 Checkpoint selection and CBM projection/head selection used train/validation only; the speaker-disjoint test split was evaluated after selection.
 
 The exact commands, checkpoint/vocabulary provenance, environment, and caveats are recorded in `run_config.json`, `ast/`, `features/metadata.json`, and `cbm/`.
+
+## Revision status
+
+- Task 7.1 speaker-disjoint evaluation — **DONE**.
+- Task 7.2 temporal figures — **DONE** after inference-only scoring with the
+  speaker-disjoint targeted-full CBM. The 12-example manifest and PDF/PNG
+  figures are in `figures/`.
+
+For Task 7.2, the test set was scored with the fixed checkpoint in
+`ast/test/best_model` and the fixed head in `cbm/full.pt`. The Task-1 selected
+CREMA-D rule was applied: 1-second windows with 0.5-second hop were masked when
+they were padding-only or had RMS below -50 dBFS, with the highest-RMS fallback
+if all windows were masked; the CBM used mean pooling over the effective
+retained windows. For each true emotion, the selected correct example is the
+highest-confidence correct prediction, and the selected error is the
+highest-confidence prediction among examples whose true class is that emotion
+but whose predicted class differs. Ties are resolved by manifest order.
+
+The figure generator is `scripts/visualization/plot_task7_cremad_temporal.py`;
+`figures/manifest.csv` and `figures/manifest.json` record the audio, actor,
+classes, confidence, checkpoint, masking rule, and output paths. Gray shaded
+windows are Task-1 masked windows.

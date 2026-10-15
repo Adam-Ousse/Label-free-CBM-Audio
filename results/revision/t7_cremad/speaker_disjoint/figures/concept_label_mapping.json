@@ -1,0 +1,2462 @@
+{
+  "method": "greedy one-to-one assignment to input CLAP concepts by validation-set cubed cosine similarity",
+  "activation_cutoff": 0.25,
+  "activation_kept": 681,
+  "concept_labels": [
+    {
+      "direction": 0,
+      "concept": "a voice with monotonous loudness",
+      "similarity": 0.46674710512161255
+    },
+    {
+      "direction": 1,
+      "concept": "a voice with abrupt onset",
+      "similarity": 0.5253894925117493
+    },
+    {
+      "direction": 2,
+      "concept": "a voice with abrupt onsets",
+      "similarity": 0.48664170503616333
+    },
+    {
+      "direction": 3,
+      "concept": "a voice with abrupt onset with high attack",
+      "similarity": 0.5782694220542908
+    },
+    {
+      "direction": 4,
+      "concept": "a voice with onset abruptness",
+      "similarity": 0.5720381140708923
+    },
+    {
+      "direction": 5,
+      "concept": "a voice with abrupt onset offset",
+      "similarity": 0.5855244398117065
+    },
+    {
+      "direction": 6,
+      "concept": "a voice with pitch jumps",
+      "similarity": 0.5880886912345886
+    },
+    {
+      "direction": 7,
+      "concept": "a voice with abrupt voice offset",
+      "similarity": 0.67738938331604
+    },
+    {
+      "direction": 8,
+      "concept": "a voice with increasing loudness",
+      "similarity": 0.5086631774902344
+    },
+    {
+      "direction": 9,
+      "concept": "a voice with continuous low-level energy without bursts",
+      "similarity": 0.6929546594619751
+    },
+    {
+      "direction": 10,
+      "concept": "a voice with consistent vowel quality throughout",
+      "similarity": 0.6243654489517212
+    },
+    {
+      "direction": 11,
+      "concept": "a voice with flat pitch contour",
+      "similarity": 0.5850916504859924
+    },
+    {
+      "direction": 12,
+      "concept": "a voice with articulation crispness",
+      "similarity": 0.5195214748382568
+    },
+    {
+      "direction": 13,
+      "concept": "a voice with articulation precision",
+      "similarity": 0.4813966751098633
+    },
+    {
+      "direction": 14,
+      "concept": "a voice with voiced consonants",
+      "similarity": 0.5114208459854126
+    },
+    {
+      "direction": 15,
+      "concept": "a voice with muffled resonance",
+      "similarity": 0.6353713274002075
+    },
+    {
+      "direction": 16,
+      "concept": "a voice with audible inhale noise",
+      "similarity": 0.6799845099449158
+    },
+    {
+      "direction": 17,
+      "concept": "a voice with audible vocal tremor",
+      "similarity": 0.4967772960662842
+    },
+    {
+      "direction": 18,
+      "concept": "a voice with breathiness at onset",
+      "similarity": 0.6348552703857422
+    },
+    {
+      "direction": 19,
+      "concept": "a voice with backward resonance",
+      "similarity": 0.5298601388931274
+    },
+    {
+      "direction": 20,
+      "concept": "a voice with balanced loudness",
+      "similarity": 0.5405846834182739
+    },
+    {
+      "direction": 21,
+      "concept": "a voice with short phrase length",
+      "similarity": 0.5352530479431152
+    },
+    {
+      "direction": 22,
+      "concept": "a voice with breath intake silent",
+      "similarity": 0.8032904267311096
+    },
+    {
+      "direction": 23,
+      "concept": "a voice with flat stress pattern",
+      "similarity": 0.33226996660232544
+    },
+    {
+      "direction": 24,
+      "concept": "a voice with breathiness index",
+      "similarity": 0.7085341811180115
+    },
+    {
+      "direction": 25,
+      "concept": "a voice with trailing pitch at phrase ends",
+      "similarity": 0.4107856750488281
+    },
+    {
+      "direction": 26,
+      "concept": "a voice with no creakiness",
+      "similarity": 0.5647112131118774
+    },
+    {
+      "direction": 27,
+      "concept": "a voice with forward placement",
+      "similarity": 0.43220800161361694
+    },
+    {
+      "direction": 28,
+      "concept": "a voice with dark resonance",
+      "similarity": 0.3930651545524597
+    },
+    {
+      "direction": 29,
+      "concept": "a voice with breathiness noise ratio",
+      "similarity": 0.6053204536437988
+    },
+    {
+      "direction": 30,
+      "concept": "a voice with breath support",
+      "similarity": 0.5155042409896851
+    },
+    {
+      "direction": 31,
+      "concept": "a voice with forced breathy onsets",
+      "similarity": 0.3826829791069031
+    },
+    {
+      "direction": 32,
+      "concept": "a voice with hard glottal attacks",
+      "similarity": 0.3931104242801666
+    },
+    {
+      "direction": 33,
+      "concept": "a voice with dull resonance",
+      "similarity": 0.6614912748336792
+    },
+    {
+      "direction": 34,
+      "concept": "a voice with breathy onset",
+      "similarity": 0.5468786358833313
+    },
+    {
+      "direction": 35,
+      "concept": "a voice with soft onset with breathy attack",
+      "similarity": 0.4711166024208069
+    },
+    {
+      "direction": 36,
+      "concept": "a voice with accelerated tempo towards phrase ends",
+      "similarity": 0.3615100681781769
+    },
+    {
+      "direction": 37,
+      "concept": "a voice with bright timbre",
+      "similarity": 0.6019130349159241
+    },
+    {
+      "direction": 38,
+      "concept": "a voice with bright timbre with high harmonic content",
+      "similarity": 0.5135931968688965
+    },
+    {
+      "direction": 39,
+      "concept": "a voice with increased loudness on emphasized words",
+      "similarity": 0.5248768329620361
+    },
+    {
+      "direction": 40,
+      "concept": "a voice with unstressed content words",
+      "similarity": 0.6016318798065186
+    },
+    {
+      "direction": 41,
+      "concept": "a voice with mellow spectral balance",
+      "similarity": 0.5985965132713318
+    },
+    {
+      "direction": 42,
+      "concept": "a voice with chest resonance",
+      "similarity": 0.5825287103652954
+    },
+    {
+      "direction": 43,
+      "concept": "a voice with choked glottal pulses",
+      "similarity": 0.6119286417961121
+    },
+    {
+      "direction": 44,
+      "concept": "a voice with creaky phonation",
+      "similarity": 0.6929847002029419
+    },
+    {
+      "direction": 45,
+      "concept": "a voice with elongated syllables",
+      "similarity": 0.5152608752250671
+    },
+    {
+      "direction": 46,
+      "concept": "a voice with dull brightness",
+      "similarity": 0.6444146633148193
+    },
+    {
+      "direction": 47,
+      "concept": "a voice with frequent mid-utterance pauses",
+      "similarity": 0.7235502004623413
+    },
+    {
+      "direction": 48,
+      "concept": "a voice with trembling is absent or minimal",
+      "similarity": 0.7045082449913025
+    },
+    {
+      "direction": 49,
+      "concept": "a voice with unaccented syllables",
+      "similarity": 0.5992565155029297
+    },
+    {
+      "direction": 50,
+      "concept": "a voice with regular syllable duration without elongation",
+      "similarity": 0.5593111515045166
+    },
+    {
+      "direction": 51,
+      "concept": "a voice with weak vocal onset",
+      "similarity": 0.6225296258926392
+    },
+    {
+      "direction": 52,
+      "concept": "a voice with clipped syllables at word boundaries",
+      "similarity": 0.5281982421875
+    },
+    {
+      "direction": 53,
+      "concept": "a voice with clipped syllables with shortened vowel duration",
+      "similarity": 0.5151853561401367
+    },
+    {
+      "direction": 54,
+      "concept": "a voice with consistent syllable duration without shortening",
+      "similarity": 0.5996652245521545
+    },
+    {
+      "direction": 55,
+      "concept": "a voice with consistent timbre",
+      "similarity": 0.6318681240081787
+    },
+    {
+      "direction": 56,
+      "concept": "a voice with consistent voicing",
+      "similarity": 0.5569931268692017
+    },
+    {
+      "direction": 57,
+      "concept": "a voice with sustained syllable length",
+      "similarity": 0.5697528123855591
+    },
+    {
+      "direction": 58,
+      "concept": "a voice with high brightness",
+      "similarity": 0.5935567617416382
+    },
+    {
+      "direction": 59,
+      "concept": "a voice with sharp onset of syllables",
+      "similarity": 0.3149065375328064
+    },
+    {
+      "direction": 60,
+      "concept": "a voice with sustained offset",
+      "similarity": 0.5566800832748413
+    },
+    {
+      "direction": 61,
+      "concept": "a voice with soft syllable endings",
+      "similarity": 0.5678383111953735
+    },
+    {
+      "direction": 62,
+      "concept": "a voice with tight larynx",
+      "similarity": 0.512738823890686
+    },
+    {
+      "direction": 63,
+      "concept": "a voice with continuity is smooth with minimal breaks",
+      "similarity": 0.5110924243927002
+    },
+    {
+      "direction": 64,
+      "concept": "a voice with breathiness level",
+      "similarity": 0.7408565282821655
+    },
+    {
+      "direction": 65,
+      "concept": "a voice with even loudness",
+      "similarity": 0.5553085803985596
+    },
+    {
+      "direction": 66,
+      "concept": "a voice with phrase-final contour rises slightly",
+      "similarity": 0.6921433210372925
+    },
+    {
+      "direction": 67,
+      "concept": "a voice with continuous voicing without frequent breaks",
+      "similarity": 0.48057639598846436
+    },
+    {
+      "direction": 68,
+      "concept": "a voice with absence of trembling or vocal tremor",
+      "similarity": 0.557400107383728
+    },
+    {
+      "direction": 69,
+      "concept": "a voice with low volume",
+      "similarity": 0.685035765171051
+    },
+    {
+      "direction": 70,
+      "concept": "a voice with low spectral brightness",
+      "similarity": 0.6218736171722412
+    },
+    {
+      "direction": 71,
+      "concept": "a voice with clipped syllable endings",
+      "similarity": 0.4793400466442108
+    },
+    {
+      "direction": 72,
+      "concept": "a voice with discontinuous phonation",
+      "similarity": 0.540509819984436
+    },
+    {
+      "direction": 73,
+      "concept": "a voice with rapid pitch changes",
+      "similarity": 0.3958607614040375
+    },
+    {
+      "direction": 74,
+      "concept": "a voice with pitch level mean",
+      "similarity": 0.48442238569259644
+    },
+    {
+      "direction": 75,
+      "concept": "a voice with high pause density",
+      "similarity": 0.598274827003479
+    },
+    {
+      "direction": 76,
+      "concept": "a voice with moderate speech rate",
+      "similarity": 0.6940321326255798
+    },
+    {
+      "direction": 77,
+      "concept": "a voice with dark timbre",
+      "similarity": 0.601533830165863
+    },
+    {
+      "direction": 78,
+      "concept": "a voice with dark spectral balance",
+      "similarity": 0.594456672668457
+    },
+    {
+      "direction": 79,
+      "concept": "a voice with syllables are clipped and staccato",
+      "similarity": 0.49419105052948
+    },
+    {
+      "direction": 80,
+      "concept": "a voice with slow speech rate",
+      "similarity": 0.6814290881156921
+    },
+    {
+      "direction": 81,
+      "concept": "a voice with no audible trembling or quaver",
+      "similarity": 0.4230939745903015
+    },
+    {
+      "direction": 82,
+      "concept": "a voice with decreasing loudness",
+      "similarity": 0.49389874935150146
+    },
+    {
+      "direction": 83,
+      "concept": "a voice with smooth pitch movement",
+      "similarity": 0.6741139888763428
+    },
+    {
+      "direction": 84,
+      "concept": "a voice with reduced articulation energy",
+      "similarity": 0.5109061598777771
+    },
+    {
+      "direction": 85,
+      "concept": "a voice with flat phrase-final pitch contour",
+      "similarity": 0.6156586408615112
+    },
+    {
+      "direction": 86,
+      "concept": "a voice with relaxed voice",
+      "similarity": 0.6246070861816406
+    },
+    {
+      "direction": 87,
+      "concept": "a voice with accented syllables",
+      "similarity": 0.5498355031013489
+    },
+    {
+      "direction": 88,
+      "concept": "a voice with weak resonance",
+      "similarity": 0.6896195411682129
+    },
+    {
+      "direction": 89,
+      "concept": "a voice with downward pitch contour",
+      "similarity": 0.562466561794281
+    },
+    {
+      "direction": 90,
+      "concept": "a voice with dull spectral tilt",
+      "similarity": 0.667087733745575
+    },
+    {
+      "direction": 91,
+      "concept": "a voice with creaky onset",
+      "similarity": 0.5440040826797485
+    },
+    {
+      "direction": 92,
+      "concept": "a voice with low-frequency emphasis",
+      "similarity": 0.7092059850692749
+    },
+    {
+      "direction": 93,
+      "concept": "a voice with low resonance",
+      "similarity": 0.6905220150947571
+    },
+    {
+      "direction": 94,
+      "concept": "a voice with low spectral tilt",
+      "similarity": 0.6719352602958679
+    },
+    {
+      "direction": 95,
+      "concept": "a voice with hollow resonance",
+      "similarity": 0.6125178933143616
+    },
+    {
+      "direction": 96,
+      "concept": "a voice with clear vowel sounds",
+      "similarity": 0.47577229142189026
+    },
+    {
+      "direction": 97,
+      "concept": "a voice with energy modulation with sudden drops",
+      "similarity": 0.5167289972305298
+    },
+    {
+      "direction": 98,
+      "concept": "a voice with slurred speech",
+      "similarity": 0.4426439702510834
+    },
+    {
+      "direction": 99,
+      "concept": "a voice with abrupt offset",
+      "similarity": 0.6252966523170471
+    },
+    {
+      "direction": 100,
+      "concept": "a voice with tense articulation",
+      "similarity": 0.600868284702301
+    },
+    {
+      "direction": 101,
+      "concept": "a voice with soft onset of stressed syllables",
+      "similarity": 0.6141062378883362
+    },
+    {
+      "direction": 102,
+      "concept": "a voice with even syllable duration",
+      "similarity": 0.5710414052009583
+    },
+    {
+      "direction": 103,
+      "concept": "a voice with reduced articulation rate",
+      "similarity": 0.5938514471054077
+    },
+    {
+      "direction": 104,
+      "concept": "a voice with dull timbre",
+      "similarity": 0.7028065919876099
+    },
+    {
+      "direction": 105,
+      "concept": "a voice with falling pitch contour",
+      "similarity": 0.5681290030479431
+    },
+    {
+      "direction": 106,
+      "concept": "a voice with falling pitch contour at phrase endings",
+      "similarity": 0.5578805208206177
+    },
+    {
+      "direction": 107,
+      "concept": "a voice with falsetto quality",
+      "similarity": 0.6603677868843079
+    },
+    {
+      "direction": 108,
+      "concept": "a voice with head resonance",
+      "similarity": 0.3254143297672272
+    },
+    {
+      "direction": 109,
+      "concept": "a voice with fast onset with abrupt energy spike",
+      "similarity": 0.5266813635826111
+    },
+    {
+      "direction": 110,
+      "concept": "a voice with fast shallow breaths",
+      "similarity": 0.72309809923172
+    },
+    {
+      "direction": 111,
+      "concept": "a voice with clear articulation",
+      "similarity": 0.40218043327331543
+    },
+    {
+      "direction": 112,
+      "concept": "a voice with frequent short pauses between phrases",
+      "similarity": 0.6207736134529114
+    },
+    {
+      "direction": 113,
+      "concept": "a voice with pinched nasality",
+      "similarity": 0.6649473309516907
+    },
+    {
+      "direction": 114,
+      "concept": "a voice with muffled brightness",
+      "similarity": 0.6541262269020081
+    },
+    {
+      "direction": 115,
+      "concept": "a voice with resonance balance",
+      "similarity": 0.3914874196052551
+    },
+    {
+      "direction": 116,
+      "concept": "a voice with variable speech rate",
+      "similarity": 0.5033390522003174
+    },
+    {
+      "direction": 117,
+      "concept": "a voice with pauses at phrase boundaries",
+      "similarity": 0.6333227157592773
+    },
+    {
+      "direction": 118,
+      "concept": "a voice with creaky voice quality",
+      "similarity": 0.6419709324836731
+    },
+    {
+      "direction": 119,
+      "concept": "a voice with falling final pitch",
+      "similarity": 0.39698219299316406
+    },
+    {
+      "direction": 120,
+      "concept": "a voice with stable pitch",
+      "similarity": 0.6698551774024963
+    },
+    {
+      "direction": 121,
+      "concept": "a voice with flat spectral tilt",
+      "similarity": 0.5698044300079346
+    },
+    {
+      "direction": 122,
+      "concept": "a voice with flattened vowels",
+      "similarity": 0.5569960474967957
+    },
+    {
+      "direction": 123,
+      "concept": "a voice with irregular amplitude modulation across utterance",
+      "similarity": 0.4929322302341461
+    },
+    {
+      "direction": 124,
+      "concept": "a voice with fluttering pitch",
+      "similarity": 0.7275466918945312
+    },
+    {
+      "direction": 125,
+      "concept": "a voice with breathy phonation",
+      "similarity": 0.6101899147033691
+    },
+    {
+      "direction": 126,
+      "concept": "a voice with pause after key word",
+      "similarity": 0.5635005235671997
+    },
+    {
+      "direction": 127,
+      "concept": "a voice with abrupt pitch onsets",
+      "similarity": 0.4573360085487366
+    },
+    {
+      "direction": 128,
+      "concept": "a voice with pauses mid-phrase",
+      "similarity": 0.5559316277503967
+    },
+    {
+      "direction": 129,
+      "concept": "a voice with rising pitch contour at phrase ends",
+      "similarity": 0.4505269229412079
+    },
+    {
+      "direction": 130,
+      "concept": "a voice with long pauses between phrases",
+      "similarity": 0.5777454376220703
+    },
+    {
+      "direction": 131,
+      "concept": "a voice with smooth transitions between syllables",
+      "similarity": 0.6191806197166443
+    },
+    {
+      "direction": 132,
+      "concept": "a voice with short voiced segments",
+      "similarity": 0.5481183528900146
+    },
+    {
+      "direction": 133,
+      "concept": "a voice with gradual offset",
+      "similarity": 0.525829553604126
+    },
+    {
+      "direction": 134,
+      "concept": "a voice with slow decay",
+      "similarity": 0.41852471232414246
+    },
+    {
+      "direction": 135,
+      "concept": "a voice with gradual within-utterance change in pitch",
+      "similarity": 0.6346828937530518
+    },
+    {
+      "direction": 136,
+      "concept": "a voice with gradual within-utterance pitch descent",
+      "similarity": 0.4822448194026947
+    },
+    {
+      "direction": 137,
+      "concept": "a voice with gritty voice",
+      "similarity": 0.5189343094825745
+    },
+    {
+      "direction": 138,
+      "concept": "a voice with guttural growl",
+      "similarity": 0.6540766358375549
+    },
+    {
+      "direction": 139,
+      "concept": "a voice with tight throaty phonation",
+      "similarity": 0.6500969529151917
+    },
+    {
+      "direction": 140,
+      "concept": "a voice with high pause density with irregular gaps",
+      "similarity": 0.4330434203147888
+    },
+    {
+      "direction": 141,
+      "concept": "a voice with hard glottal attack",
+      "similarity": 0.4854339063167572
+    },
+    {
+      "direction": 142,
+      "concept": "a voice with heavy stress",
+      "similarity": 0.4685806632041931
+    },
+    {
+      "direction": 143,
+      "concept": "a voice with high average pitch",
+      "similarity": 0.6908693313598633
+    },
+    {
+      "direction": 144,
+      "concept": "a voice with high breathiness",
+      "similarity": 0.6891870498657227
+    },
+    {
+      "direction": 145,
+      "concept": "a voice with sharp onset",
+      "similarity": 0.3971465826034546
+    },
+    {
+      "direction": 146,
+      "concept": "a voice with minimal roughness",
+      "similarity": 0.682908296585083
+    },
+    {
+      "direction": 147,
+      "concept": "a voice with high loudness",
+      "similarity": 0.5848669409751892
+    },
+    {
+      "direction": 148,
+      "concept": "a voice with high mean loudness",
+      "similarity": 0.5368658304214478
+    },
+    {
+      "direction": 149,
+      "concept": "a voice with high mean pitch",
+      "similarity": 0.4799606204032898
+    },
+    {
+      "direction": 150,
+      "concept": "a voice with high overall loudness",
+      "similarity": 0.6065842509269714
+    },
+    {
+      "direction": 151,
+      "concept": "a voice with stressed words",
+      "similarity": 0.5158445835113525
+    },
+    {
+      "direction": 152,
+      "concept": "a voice with high pause density between phrases",
+      "similarity": 0.6226840019226074
+    },
+    {
+      "direction": 153,
+      "concept": "a voice with breathy onset with glottal fry",
+      "similarity": 0.48368459939956665
+    },
+    {
+      "direction": 154,
+      "concept": "a voice with high-frequency emphasis",
+      "similarity": 0.6452302932739258
+    },
+    {
+      "direction": 155,
+      "concept": "a voice with high pitch",
+      "similarity": 0.6210492849349976
+    },
+    {
+      "direction": 156,
+      "concept": "a voice with constant energy",
+      "similarity": 0.4817476272583008
+    },
+    {
+      "direction": 157,
+      "concept": "a voice with high roughness",
+      "similarity": 0.6571213006973267
+    },
+    {
+      "direction": 158,
+      "concept": "a voice with high spectral brightness",
+      "similarity": 0.5107470750808716
+    },
+    {
+      "direction": 159,
+      "concept": "a voice with pressed voice",
+      "similarity": 0.3765072524547577
+    },
+    {
+      "direction": 160,
+      "concept": "a voice with high within-utterance pitch change",
+      "similarity": 0.5246202945709229
+    },
+    {
+      "direction": 161,
+      "concept": "a voice with bright voice",
+      "similarity": 0.5533106923103333
+    },
+    {
+      "direction": 162,
+      "concept": "a voice with high-frequency energy",
+      "similarity": 0.4879738390445709
+    },
+    {
+      "direction": 163,
+      "concept": "a voice with constricted throat quality",
+      "similarity": 0.652851402759552
+    },
+    {
+      "direction": 164,
+      "concept": "a voice with low within-utterance modulation",
+      "similarity": 0.6739567518234253
+    },
+    {
+      "direction": 165,
+      "concept": "a voice with abrupt onset with high energy",
+      "similarity": 0.47842273116111755
+    },
+    {
+      "direction": 166,
+      "concept": "a voice with nasal resonance",
+      "similarity": 0.38476842641830444
+    },
+    {
+      "direction": 167,
+      "concept": "a voice with constant vocal effort",
+      "similarity": 0.5427864193916321
+    },
+    {
+      "direction": 168,
+      "concept": "a voice with sharp initial energy spike",
+      "similarity": 0.44356977939605713
+    },
+    {
+      "direction": 169,
+      "concept": "a voice with initial consonant unaspirated",
+      "similarity": 0.6443045139312744
+    },
+    {
+      "direction": 170,
+      "concept": "a voice with within-utterance pitch modulation",
+      "similarity": 0.4423041343688965
+    },
+    {
+      "direction": 171,
+      "concept": "a voice with legato articulation",
+      "similarity": 0.6672147512435913
+    },
+    {
+      "direction": 172,
+      "concept": "a voice with low pitch variability within stressed syllables",
+      "similarity": 0.529979944229126
+    },
+    {
+      "direction": 173,
+      "concept": "a voice with hoarse voice",
+      "similarity": 0.6242544651031494
+    },
+    {
+      "direction": 174,
+      "concept": "a voice with staccato articulation",
+      "similarity": 0.598305881023407
+    },
+    {
+      "direction": 175,
+      "concept": "a voice with irregular rhythm with sudden accelerations",
+      "similarity": 0.4532356858253479
+    },
+    {
+      "direction": 176,
+      "concept": "a voice with large energy variation between syllables",
+      "similarity": 0.585727870464325
+    },
+    {
+      "direction": 177,
+      "concept": "a voice with steady pitch",
+      "similarity": 0.6926461458206177
+    },
+    {
+      "direction": 178,
+      "concept": "a voice with low nasality",
+      "similarity": 0.7359688878059387
+    },
+    {
+      "direction": 179,
+      "concept": "a voice with weak stress pattern",
+      "similarity": 0.7141855955123901
+    },
+    {
+      "direction": 180,
+      "concept": "a voice with narrow pitch range with minimal modulation",
+      "similarity": 0.5745995044708252
+    },
+    {
+      "direction": 181,
+      "concept": "a voice with light final lowering of pitch",
+      "similarity": 0.6780040860176086
+    },
+    {
+      "direction": 182,
+      "concept": "a voice with level final pitch",
+      "similarity": 0.6032230854034424
+    },
+    {
+      "direction": 183,
+      "concept": "a voice with stable pitch within utterance",
+      "similarity": 0.7823557257652283
+    },
+    {
+      "direction": 184,
+      "concept": "a voice with vowel reduction",
+      "similarity": 0.5544027090072632
+    },
+    {
+      "direction": 185,
+      "concept": "a voice with stable pitch register throughout utterance",
+      "similarity": 0.6534568071365356
+    },
+    {
+      "direction": 186,
+      "concept": "a voice with light phonation",
+      "similarity": 0.6725024580955505
+    },
+    {
+      "direction": 187,
+      "concept": "a voice with even stress pattern",
+      "similarity": 0.63227379322052
+    },
+    {
+      "direction": 188,
+      "concept": "a voice with long silent pauses",
+      "similarity": 0.6906788349151611
+    },
+    {
+      "direction": 189,
+      "concept": "a voice with low energy variability",
+      "similarity": 0.6089882850646973
+    },
+    {
+      "direction": 190,
+      "concept": "a voice with speech rate",
+      "similarity": 0.7218573689460754
+    },
+    {
+      "direction": 191,
+      "concept": "a voice with clipped final consonants",
+      "similarity": 0.6624295711517334
+    },
+    {
+      "direction": 192,
+      "concept": "a voice with irregular amplitude tremors",
+      "similarity": 0.637767493724823
+    },
+    {
+      "direction": 193,
+      "concept": "a voice with long vowels",
+      "similarity": 0.5719500184059143
+    },
+    {
+      "direction": 194,
+      "concept": "a voice with loud voice",
+      "similarity": 0.46714967489242554
+    },
+    {
+      "direction": 195,
+      "concept": "a voice with minimal pitch accents",
+      "similarity": 0.6550999283790588
+    },
+    {
+      "direction": 196,
+      "concept": "a voice with minimal modulation",
+      "similarity": 0.6281309723854065
+    },
+    {
+      "direction": 197,
+      "concept": "a voice with arhythmic syllable timing",
+      "similarity": 0.6517907381057739
+    },
+    {
+      "direction": 198,
+      "concept": "a voice with low creakiness",
+      "similarity": 0.751893162727356
+    },
+    {
+      "direction": 199,
+      "concept": "a voice with low average pitch",
+      "similarity": 0.7785924673080444
+    },
+    {
+      "direction": 200,
+      "concept": "a voice with low energy modulation rate",
+      "similarity": 0.6533424854278564
+    },
+    {
+      "direction": 201,
+      "concept": "a voice with minimal creakiness",
+      "similarity": 0.7155935764312744
+    },
+    {
+      "direction": 202,
+      "concept": "a voice with low pause density between words",
+      "similarity": 0.7808079719543457
+    },
+    {
+      "direction": 203,
+      "concept": "a voice with low loudness",
+      "similarity": 0.6550953984260559
+    },
+    {
+      "direction": 204,
+      "concept": "a voice with light articulation",
+      "similarity": 0.6671248078346252
+    },
+    {
+      "direction": 205,
+      "concept": "a voice with low pause density with few interruptions",
+      "similarity": 0.6167356371879578
+    },
+    {
+      "direction": 206,
+      "concept": "a voice with low energy",
+      "similarity": 0.6566529273986816
+    },
+    {
+      "direction": 207,
+      "concept": "a voice with minimal within-utterance pitch change",
+      "similarity": 0.7390784621238708
+    },
+    {
+      "direction": 208,
+      "concept": "a voice with low syllable-to-syllable continuity",
+      "similarity": 0.7423802614212036
+    },
+    {
+      "direction": 209,
+      "concept": "a voice with low tension",
+      "similarity": 0.6564074158668518
+    },
+    {
+      "direction": 210,
+      "concept": "a voice with shaky pitch",
+      "similarity": 0.7341127991676331
+    },
+    {
+      "direction": 211,
+      "concept": "a voice with legato phrasing",
+      "similarity": 0.7218416333198547
+    },
+    {
+      "direction": 212,
+      "concept": "a voice with low continuity with many breaks",
+      "similarity": 0.5234993696212769
+    },
+    {
+      "direction": 213,
+      "concept": "a voice with low roughness",
+      "similarity": 0.7244436144828796
+    },
+    {
+      "direction": 214,
+      "concept": "a voice with creaky offsets",
+      "similarity": 0.7085066437721252
+    },
+    {
+      "direction": 215,
+      "concept": "a voice with low energy variation",
+      "similarity": 0.6032804250717163
+    },
+    {
+      "direction": 216,
+      "concept": "a voice with continuous smooth energy flow",
+      "similarity": 0.5465227961540222
+    },
+    {
+      "direction": 217,
+      "concept": "a voice with low pitch",
+      "similarity": 0.7450002431869507
+    },
+    {
+      "direction": 218,
+      "concept": "a voice with creaky low pitch",
+      "similarity": 0.7506451606750488
+    },
+    {
+      "direction": 219,
+      "concept": "a voice with low pitch level",
+      "similarity": 0.722521185874939
+    },
+    {
+      "direction": 220,
+      "concept": "a voice with reduced within-utterance loudness variation",
+      "similarity": 0.5174568891525269
+    },
+    {
+      "direction": 221,
+      "concept": "a voice with final consonant unreleased",
+      "similarity": 0.5560864806175232
+    },
+    {
+      "direction": 222,
+      "concept": "a voice with strong emphasis",
+      "similarity": 0.5452831983566284
+    },
+    {
+      "direction": 223,
+      "concept": "a voice with irregular energy modulation",
+      "similarity": 0.3929119408130646
+    },
+    {
+      "direction": 224,
+      "concept": "a voice with tense vocal folds",
+      "similarity": 0.5780019760131836
+    },
+    {
+      "direction": 225,
+      "concept": "a voice with minimal breathiness",
+      "similarity": 0.7215055227279663
+    },
+    {
+      "direction": 226,
+      "concept": "a voice with calm airflow",
+      "similarity": 0.6726034879684448
+    },
+    {
+      "direction": 227,
+      "concept": "a voice with decelerating tempo",
+      "similarity": 0.530951201915741
+    },
+    {
+      "direction": 228,
+      "concept": "a voice with low breathiness",
+      "similarity": 0.7244555354118347
+    },
+    {
+      "direction": 229,
+      "concept": "a voice with slurred articulation",
+      "similarity": 0.5611370801925659
+    },
+    {
+      "direction": 230,
+      "concept": "a voice with minimal pitch modulation",
+      "similarity": 0.6647642850875854
+    },
+    {
+      "direction": 231,
+      "concept": "a voice with no vocal fry",
+      "similarity": 0.40348267555236816
+    },
+    {
+      "direction": 232,
+      "concept": "a voice with unstressed words",
+      "similarity": 0.6163461804389954
+    },
+    {
+      "direction": 233,
+      "concept": "a voice with calm articulation",
+      "similarity": 0.6971524357795715
+    },
+    {
+      "direction": 234,
+      "concept": "a voice with within-utterance pitch drop",
+      "similarity": 0.4777226448059082
+    },
+    {
+      "direction": 235,
+      "concept": "a voice with clipped syllables",
+      "similarity": 0.5245314836502075
+    },
+    {
+      "direction": 236,
+      "concept": "a voice with soft onsets",
+      "similarity": 0.5318166613578796
+    },
+    {
+      "direction": 237,
+      "concept": "a voice with slight nasality",
+      "similarity": 0.597389817237854
+    },
+    {
+      "direction": 238,
+      "concept": "a voice with mumbled articulation",
+      "similarity": 0.6116515398025513
+    },
+    {
+      "direction": 239,
+      "concept": "a voice with moderate pitch modulation without wide swings",
+      "similarity": 0.4775266647338867
+    },
+    {
+      "direction": 240,
+      "concept": "a voice with flat pitch with little modulation",
+      "similarity": 0.5053986310958862
+    },
+    {
+      "direction": 241,
+      "concept": "a voice with discontinuous phrasing",
+      "similarity": 0.5230485796928406
+    },
+    {
+      "direction": 242,
+      "concept": "a voice with monophthong quality",
+      "similarity": 0.6728878021240234
+    },
+    {
+      "direction": 243,
+      "concept": "a voice with balanced phrasing",
+      "similarity": 0.619310200214386
+    },
+    {
+      "direction": 244,
+      "concept": "a voice with monotone delivery with minimal pitch change",
+      "similarity": 0.4792678952217102
+    },
+    {
+      "direction": 245,
+      "concept": "a voice with monotone delivery",
+      "similarity": 0.4765174984931946
+    },
+    {
+      "direction": 246,
+      "concept": "a voice with monotone pitch",
+      "similarity": 0.6354848742485046
+    },
+    {
+      "direction": 247,
+      "concept": "a voice with monotone voice",
+      "similarity": 0.6239027976989746
+    },
+    {
+      "direction": 248,
+      "concept": "a voice with frequent interruptions in continuous speech",
+      "similarity": 0.5307492017745972
+    },
+    {
+      "direction": 249,
+      "concept": "a voice with increased nasality",
+      "similarity": 0.5148464441299438
+    },
+    {
+      "direction": 250,
+      "concept": "a voice with reduced resonance",
+      "similarity": 0.5301947593688965
+    },
+    {
+      "direction": 251,
+      "concept": "a voice with weak articulation",
+      "similarity": 0.6737946271896362
+    },
+    {
+      "direction": 252,
+      "concept": "a voice with frequent pitch modulation",
+      "similarity": 0.3992813527584076
+    },
+    {
+      "direction": 253,
+      "concept": "a voice with breathy offsets",
+      "similarity": 0.6041905879974365
+    },
+    {
+      "direction": 254,
+      "concept": "a voice with lax articulation",
+      "similarity": 0.6662352085113525
+    },
+    {
+      "direction": 255,
+      "concept": "a voice with shaky sustained pitch",
+      "similarity": 0.7340080738067627
+    },
+    {
+      "direction": 256,
+      "concept": "a voice with minimal pitch modulation across utterance",
+      "similarity": 0.618432343006134
+    },
+    {
+      "direction": 257,
+      "concept": "a voice with gradual pitch descent within utterance",
+      "similarity": 0.5746294260025024
+    },
+    {
+      "direction": 258,
+      "concept": "a voice with irregular pitch modulation",
+      "similarity": 0.5680557489395142
+    },
+    {
+      "direction": 259,
+      "concept": "a voice with nasal quality",
+      "similarity": 0.4584423899650574
+    },
+    {
+      "direction": 260,
+      "concept": "a voice with moderate nasality",
+      "similarity": 0.6171411275863647
+    },
+    {
+      "direction": 261,
+      "concept": "a voice with speech rate variability",
+      "similarity": 0.5470650792121887
+    },
+    {
+      "direction": 262,
+      "concept": "a voice with minimal dynamic contrast",
+      "similarity": 0.6323267221450806
+    },
+    {
+      "direction": 263,
+      "concept": "a voice with descending pitch contour at phrase ends",
+      "similarity": 0.5592604279518127
+    },
+    {
+      "direction": 264,
+      "concept": "a voice with resonant voice",
+      "similarity": 0.42811664938926697
+    },
+    {
+      "direction": 265,
+      "concept": "a voice with narrow dynamic range",
+      "similarity": 0.5023431777954102
+    },
+    {
+      "direction": 266,
+      "concept": "a voice with non-rhythmic stress pattern",
+      "similarity": 0.6749845743179321
+    },
+    {
+      "direction": 267,
+      "concept": "a voice with normal speech rate",
+      "similarity": 0.6924129128456116
+    },
+    {
+      "direction": 268,
+      "concept": "a voice with abrupt voice onset",
+      "similarity": 0.564035177230835
+    },
+    {
+      "direction": 269,
+      "concept": "a voice with onset strength is high and immediate",
+      "similarity": 0.5590294003486633
+    },
+    {
+      "direction": 270,
+      "concept": "a voice with tense voice",
+      "similarity": 0.6627453565597534
+    },
+    {
+      "direction": 271,
+      "concept": "a voice with open throat",
+      "similarity": 0.5737599730491638
+    },
+    {
+      "direction": 272,
+      "concept": "a voice with low pitch variability",
+      "similarity": 0.6461427211761475
+    },
+    {
+      "direction": 273,
+      "concept": "a voice with over-articulated consonants",
+      "similarity": 0.5924359560012817
+    },
+    {
+      "direction": 274,
+      "concept": "a voice with breathiness at offset",
+      "similarity": 0.6898488998413086
+    },
+    {
+      "direction": 275,
+      "concept": "a voice with pause-filled speech",
+      "similarity": 0.48425889015197754
+    },
+    {
+      "direction": 276,
+      "concept": "a voice with pause frequency",
+      "similarity": 0.5721327066421509
+    },
+    {
+      "direction": 277,
+      "concept": "a voice with pause before key word",
+      "similarity": 0.5802658796310425
+    },
+    {
+      "direction": 278,
+      "concept": "a voice with low pitch at phrase starts",
+      "similarity": 0.6588327288627625
+    },
+    {
+      "direction": 279,
+      "concept": "a voice with vocal fry at phrase ends",
+      "similarity": 0.40371498465538025
+    },
+    {
+      "direction": 280,
+      "concept": "a voice with filled pauses",
+      "similarity": 0.49920281767845154
+    },
+    {
+      "direction": 281,
+      "concept": "a voice with phrase-final breathiness",
+      "similarity": 0.6216067671775818
+    },
+    {
+      "direction": 282,
+      "concept": "a voice with balanced resonance",
+      "similarity": 0.437641978263855
+    },
+    {
+      "direction": 283,
+      "concept": "a voice with phrase-final creakiness",
+      "similarity": 0.6326027512550354
+    },
+    {
+      "direction": 284,
+      "concept": "a voice with phrase-final falling pitch contour",
+      "similarity": 0.5677684545516968
+    },
+    {
+      "direction": 285,
+      "concept": "a voice with phrase-final lengthening",
+      "similarity": 0.5071482062339783
+    },
+    {
+      "direction": 286,
+      "concept": "a voice with phrase-final level pitch",
+      "similarity": 0.5089980959892273
+    },
+    {
+      "direction": 287,
+      "concept": "a voice with longer pause duration before final word",
+      "similarity": 0.4855251908302307
+    },
+    {
+      "direction": 288,
+      "concept": "a voice with high pitch variability within utterance",
+      "similarity": 0.39255812764167786
+    },
+    {
+      "direction": 289,
+      "concept": "a voice with pitch glide down",
+      "similarity": 0.5417683124542236
+    },
+    {
+      "direction": 290,
+      "concept": "a voice with pitch glides upward within syllables",
+      "similarity": 0.49678897857666016
+    },
+    {
+      "direction": 291,
+      "concept": "a voice with sudden pitch jumps",
+      "similarity": 0.753215491771698
+    },
+    {
+      "direction": 292,
+      "concept": "a voice with flat intonation",
+      "similarity": 0.6059338450431824
+    },
+    {
+      "direction": 293,
+      "concept": "a voice with open throat quality",
+      "similarity": 0.6675738096237183
+    },
+    {
+      "direction": 294,
+      "concept": "a voice with pitch steps",
+      "similarity": 0.5006979703903198
+    },
+    {
+      "direction": 295,
+      "concept": "a voice with continuous phonation",
+      "similarity": 0.482202410697937
+    },
+    {
+      "direction": 296,
+      "concept": "a voice with pressed phonation",
+      "similarity": 0.5225392580032349
+    },
+    {
+      "direction": 297,
+      "concept": "a voice with pressed harsh tone",
+      "similarity": 0.543767511844635
+    },
+    {
+      "direction": 298,
+      "concept": "a voice with quiet passages",
+      "similarity": 0.6649824380874634
+    },
+    {
+      "direction": 299,
+      "concept": "a voice with rapid amplitude modulation",
+      "similarity": 0.475568026304245
+    },
+    {
+      "direction": 300,
+      "concept": "a voice with rapid onset of high pitch",
+      "similarity": 0.5607336759567261
+    },
+    {
+      "direction": 301,
+      "concept": "a voice with rapid pitch jumps",
+      "similarity": 0.7741414904594421
+    },
+    {
+      "direction": 302,
+      "concept": "a voice with rapid pitch jumps within words",
+      "similarity": 0.6426868438720703
+    },
+    {
+      "direction": 303,
+      "concept": "a voice with rapid pitch modulation with wide swings",
+      "similarity": 0.4512785077095032
+    },
+    {
+      "direction": 304,
+      "concept": "a voice with rare phrase breaks",
+      "similarity": 0.48246970772743225
+    },
+    {
+      "direction": 305,
+      "concept": "a voice with breathiness",
+      "similarity": 0.7164218425750732
+    },
+    {
+      "direction": 306,
+      "concept": "a voice with creaky low end",
+      "similarity": 0.6939765214920044
+    },
+    {
+      "direction": 307,
+      "concept": "a voice with tense phonation",
+      "similarity": 0.6580408811569214
+    },
+    {
+      "direction": 308,
+      "concept": "a voice with reduced energy variation across utterance",
+      "similarity": 0.5043773651123047
+    },
+    {
+      "direction": 309,
+      "concept": "a voice with flattened pitch contour",
+      "similarity": 0.5285028219223022
+    },
+    {
+      "direction": 310,
+      "concept": "a voice with pitch level",
+      "similarity": 0.648368775844574
+    },
+    {
+      "direction": 311,
+      "concept": "a voice with narrow pitch range in mid-utterance",
+      "similarity": 0.6595796346664429
+    },
+    {
+      "direction": 312,
+      "concept": "a voice with reduced vowels",
+      "similarity": 0.6841339468955994
+    },
+    {
+      "direction": 313,
+      "concept": "a voice with within-utterance modulation rate",
+      "similarity": 0.40455418825149536
+    },
+    {
+      "direction": 314,
+      "concept": "a voice with narrow vocal tract",
+      "similarity": 0.6092509031295776
+    },
+    {
+      "direction": 315,
+      "concept": "a voice with full vowels",
+      "similarity": 0.5414433479309082
+    },
+    {
+      "direction": 316,
+      "concept": "a voice with vibrato",
+      "similarity": 0.5537577271461487
+    },
+    {
+      "direction": 317,
+      "concept": "a voice with relaxed tension",
+      "similarity": 0.6830463409423828
+    },
+    {
+      "direction": 318,
+      "concept": "a voice with relaxed vocal folds",
+      "similarity": 0.6617497205734253
+    },
+    {
+      "direction": 319,
+      "concept": "a voice with long phrase length",
+      "similarity": 0.5216330289840698
+    },
+    {
+      "direction": 320,
+      "concept": "a voice with vocal tension level",
+      "similarity": 0.6682448387145996
+    },
+    {
+      "direction": 321,
+      "concept": "a voice with relaxed vocal tract",
+      "similarity": 0.5192916393280029
+    },
+    {
+      "direction": 322,
+      "concept": "a voice with constricted resonance",
+      "similarity": 0.6597102880477905
+    },
+    {
+      "direction": 323,
+      "concept": "a voice with syllables are sustained rather than clipped",
+      "similarity": 0.5592841506004333
+    },
+    {
+      "direction": 324,
+      "concept": "a voice with interrupted phonation",
+      "similarity": 0.49771133065223694
+    },
+    {
+      "direction": 325,
+      "concept": "a voice with descending pitch contour",
+      "similarity": 0.5982399582862854
+    },
+    {
+      "direction": 326,
+      "concept": "a voice with rising-falling contour",
+      "similarity": 0.46529215574264526
+    },
+    {
+      "direction": 327,
+      "concept": "a voice with reduced pitch modulation range",
+      "similarity": 0.4690030813217163
+    },
+    {
+      "direction": 328,
+      "concept": "a voice with uneven syllable duration",
+      "similarity": 0.6637978553771973
+    },
+    {
+      "direction": 329,
+      "concept": "a voice with rough voice quality",
+      "similarity": 0.7001451253890991
+    },
+    {
+      "direction": 330,
+      "concept": "a voice with weak stress",
+      "similarity": 0.712260901927948
+    },
+    {
+      "direction": 331,
+      "concept": "a voice with shaky voice",
+      "similarity": 0.6810585856437683
+    },
+    {
+      "direction": 332,
+      "concept": "a voice with clipped short syllables",
+      "similarity": 0.6589749455451965
+    },
+    {
+      "direction": 333,
+      "concept": "a voice with creaky voice",
+      "similarity": 0.5753999948501587
+    },
+    {
+      "direction": 334,
+      "concept": "a voice with rough voice",
+      "similarity": 0.572820782661438
+    },
+    {
+      "direction": 335,
+      "concept": "a voice with tight articulation",
+      "similarity": 0.5314081907272339
+    },
+    {
+      "direction": 336,
+      "concept": "a voice with choppy phrasing",
+      "similarity": 0.623712420463562
+    },
+    {
+      "direction": 337,
+      "concept": "a voice with shallow breathing pauses",
+      "similarity": 0.728925347328186
+    },
+    {
+      "direction": 338,
+      "concept": "a voice with sudden loudness spikes",
+      "similarity": 0.4658881425857544
+    },
+    {
+      "direction": 339,
+      "concept": "a voice with sharp energy spikes on emphasized words",
+      "similarity": 0.5248345136642456
+    },
+    {
+      "direction": 340,
+      "concept": "a voice with short pauses",
+      "similarity": 0.6751195192337036
+    },
+    {
+      "direction": 341,
+      "concept": "a voice with frequent phrase breaks",
+      "similarity": 0.6163291335105896
+    },
+    {
+      "direction": 342,
+      "concept": "a voice with short silent pauses",
+      "similarity": 0.7481764554977417
+    },
+    {
+      "direction": 343,
+      "concept": "a voice with narrow pitch range within utterances",
+      "similarity": 0.5298675894737244
+    },
+    {
+      "direction": 344,
+      "concept": "a voice with short vowels",
+      "similarity": 0.6734793782234192
+    },
+    {
+      "direction": 345,
+      "concept": "a voice with shortened final syllables",
+      "similarity": 0.6228816509246826
+    },
+    {
+      "direction": 346,
+      "concept": "a voice with sustained flat vowels with little change",
+      "similarity": 0.633020281791687
+    },
+    {
+      "direction": 347,
+      "concept": "a voice with silent pauses",
+      "similarity": 0.728299081325531
+    },
+    {
+      "direction": 348,
+      "concept": "a voice with roughness irregularity",
+      "similarity": 0.7100328207015991
+    },
+    {
+      "direction": 349,
+      "concept": "a voice with slow articulation rate",
+      "similarity": 0.6571506857872009
+    },
+    {
+      "direction": 350,
+      "concept": "a voice with slow attack",
+      "similarity": 0.47732657194137573
+    },
+    {
+      "direction": 351,
+      "concept": "a voice with long pauses",
+      "similarity": 0.5644481182098389
+    },
+    {
+      "direction": 352,
+      "concept": "a voice with stable formant frequencies without shifts",
+      "similarity": 0.4848276972770691
+    },
+    {
+      "direction": 353,
+      "concept": "a voice with breathy voice quality",
+      "similarity": 0.6085324883460999
+    },
+    {
+      "direction": 354,
+      "concept": "a voice with vocal ease",
+      "similarity": 0.6197169423103333
+    },
+    {
+      "direction": 355,
+      "concept": "a voice with weak vocal energy",
+      "similarity": 0.6113194227218628
+    },
+    {
+      "direction": 356,
+      "concept": "a voice with rough vocal fry",
+      "similarity": 0.574867308139801
+    },
+    {
+      "direction": 357,
+      "concept": "a voice with smooth phonation",
+      "similarity": 0.6858624815940857
+    },
+    {
+      "direction": 358,
+      "concept": "a voice with level pitch contour",
+      "similarity": 0.6931434273719788
+    },
+    {
+      "direction": 359,
+      "concept": "a voice with slow tempo",
+      "similarity": 0.5934014320373535
+    },
+    {
+      "direction": 360,
+      "concept": "a voice with smooth voice",
+      "similarity": 0.6630802154541016
+    },
+    {
+      "direction": 361,
+      "concept": "a voice with smooth transitions between notes",
+      "similarity": 0.5642382502555847
+    },
+    {
+      "direction": 362,
+      "concept": "a voice with relaxed vocal cords",
+      "similarity": 0.5190747976303101
+    },
+    {
+      "direction": 363,
+      "concept": "a voice with staccato phrasing",
+      "similarity": 0.6265994906425476
+    },
+    {
+      "direction": 364,
+      "concept": "a voice with smooth transitions",
+      "similarity": 0.47861725091934204
+    },
+    {
+      "direction": 365,
+      "concept": "a voice with soft attack",
+      "similarity": 0.7003556489944458
+    },
+    {
+      "direction": 366,
+      "concept": "a voice with moderate brightness",
+      "similarity": 0.6236156225204468
+    },
+    {
+      "direction": 367,
+      "concept": "a voice with tense jaw articulation",
+      "similarity": 0.5783120393753052
+    },
+    {
+      "direction": 368,
+      "concept": "a voice with soft glottal attack",
+      "similarity": 0.5828906297683716
+    },
+    {
+      "direction": 369,
+      "concept": "a voice with shaky sustained notes",
+      "similarity": 0.7276521921157837
+    },
+    {
+      "direction": 370,
+      "concept": "a voice with dropping pitch at end of phrases",
+      "similarity": 0.4852416515350342
+    },
+    {
+      "direction": 371,
+      "concept": "a voice with soft brightness",
+      "similarity": 0.697223424911499
+    },
+    {
+      "direction": 372,
+      "concept": "a voice with light stress",
+      "similarity": 0.7046144008636475
+    },
+    {
+      "direction": 373,
+      "concept": "a voice with breathy voice",
+      "similarity": 0.5413063168525696
+    },
+    {
+      "direction": 374,
+      "concept": "a voice with relaxed phonation",
+      "similarity": 0.6541793346405029
+    },
+    {
+      "direction": 375,
+      "concept": "a voice with soft consonant attacks",
+      "similarity": 0.6820706725120544
+    },
+    {
+      "direction": 376,
+      "concept": "a voice with soft voice onset",
+      "similarity": 0.5744156241416931
+    },
+    {
+      "direction": 377,
+      "concept": "a voice with soft offset",
+      "similarity": 0.6391423344612122
+    },
+    {
+      "direction": 378,
+      "concept": "a voice with spectral centroid",
+      "similarity": 0.5689457058906555
+    },
+    {
+      "direction": 379,
+      "concept": "a voice with spectral centroid shift",
+      "similarity": 0.6560759544372559
+    },
+    {
+      "direction": 380,
+      "concept": "a voice with guttural throat sound",
+      "similarity": 0.6094149351119995
+    },
+    {
+      "direction": 381,
+      "concept": "a voice with soft onset",
+      "similarity": 0.5498833656311035
+    },
+    {
+      "direction": 382,
+      "concept": "a voice with dark spectral tilt",
+      "similarity": 0.5545046329498291
+    },
+    {
+      "direction": 383,
+      "concept": "a voice with pause-free speech",
+      "similarity": 0.5955683588981628
+    },
+    {
+      "direction": 384,
+      "concept": "a voice with even articulation",
+      "similarity": 0.5677244067192078
+    },
+    {
+      "direction": 385,
+      "concept": "a voice with flat resonance",
+      "similarity": 0.5598859786987305
+    },
+    {
+      "direction": 386,
+      "concept": "a voice with falling pitch at phrase endings",
+      "similarity": 0.47493746876716614
+    },
+    {
+      "direction": 387,
+      "concept": "a voice with no glottal fry or creakiness",
+      "similarity": 0.51966792345047
+    },
+    {
+      "direction": 388,
+      "concept": "a voice with soft glottal onset",
+      "similarity": 0.5159716606140137
+    },
+    {
+      "direction": 389,
+      "concept": "a voice with dark muffled timbre",
+      "similarity": 0.6379058361053467
+    },
+    {
+      "direction": 390,
+      "concept": "a voice with back placement",
+      "similarity": 0.5576090216636658
+    },
+    {
+      "direction": 391,
+      "concept": "a voice with fast speech rate",
+      "similarity": 0.5718033313751221
+    },
+    {
+      "direction": 392,
+      "concept": "a voice with final pitch level",
+      "similarity": 0.6243980526924133
+    },
+    {
+      "direction": 393,
+      "concept": "a voice with even syllabic stress",
+      "similarity": 0.5099649429321289
+    },
+    {
+      "direction": 394,
+      "concept": "a voice with stress accent strength",
+      "similarity": 0.5005062818527222
+    },
+    {
+      "direction": 395,
+      "concept": "a voice with onset strength is moderate and gradual",
+      "similarity": 0.45255279541015625
+    },
+    {
+      "direction": 396,
+      "concept": "a voice with voiceless onset",
+      "similarity": 0.43528079986572266
+    },
+    {
+      "direction": 397,
+      "concept": "a voice with fast bursts of speech",
+      "similarity": 0.4963863790035248
+    },
+    {
+      "direction": 398,
+      "concept": "a voice with abrupt onset with strong initial energy",
+      "similarity": 0.6268916130065918
+    },
+    {
+      "direction": 399,
+      "concept": "a voice with strong energy modulation between syllables",
+      "similarity": 0.5888962745666504
+    },
+    {
+      "direction": 400,
+      "concept": "a voice with strong pitch jumps between syllables",
+      "similarity": 0.4857192933559418
+    },
+    {
+      "direction": 401,
+      "concept": "a voice with strong vocal onset",
+      "similarity": 0.4536883234977722
+    },
+    {
+      "direction": 402,
+      "concept": "a voice with sudden loudness bursts",
+      "similarity": 0.4639224410057068
+    },
+    {
+      "direction": 403,
+      "concept": "a voice with sharp attacks",
+      "similarity": 0.537726879119873
+    },
+    {
+      "direction": 404,
+      "concept": "a voice with sudden onset with high initial energy",
+      "similarity": 0.5489690899848938
+    },
+    {
+      "direction": 405,
+      "concept": "a voice with abrupt pitch jumps",
+      "similarity": 0.666784405708313
+    },
+    {
+      "direction": 406,
+      "concept": "a voice with sustained flat pitch with occasional breaks",
+      "similarity": 0.4823615849018097
+    },
+    {
+      "direction": 407,
+      "concept": "a voice with sustained flat tones on key words",
+      "similarity": 0.5378459692001343
+    },
+    {
+      "direction": 408,
+      "concept": "a voice with sustained vowels with low intensity",
+      "similarity": 0.6404833197593689
+    },
+    {
+      "direction": 409,
+      "concept": "a voice with sustained high intensity on emphasized words",
+      "similarity": 0.4869331419467926
+    },
+    {
+      "direction": 410,
+      "concept": "a voice with monotone intonation",
+      "similarity": 0.5320543050765991
+    },
+    {
+      "direction": 411,
+      "concept": "a voice with sustained syllable duration without clipping",
+      "similarity": 0.46053367853164673
+    },
+    {
+      "direction": 412,
+      "concept": "a voice with rapid syllable succession",
+      "similarity": 0.409206748008728
+    },
+    {
+      "direction": 413,
+      "concept": "a voice with sustained syllables with tremolo effect",
+      "similarity": 0.5408296585083008
+    },
+    {
+      "direction": 414,
+      "concept": "a voice with sustained syllables without clipping",
+      "similarity": 0.5234716534614563
+    },
+    {
+      "direction": 415,
+      "concept": "a voice with sustained trembling on vowel nuclei",
+      "similarity": 0.5041388273239136
+    },
+    {
+      "direction": 416,
+      "concept": "a voice with sustained vowel duration on key words",
+      "similarity": 0.5519107580184937
+    },
+    {
+      "direction": 417,
+      "concept": "a voice with sustained vowels",
+      "similarity": 0.5470086336135864
+    },
+    {
+      "direction": 418,
+      "concept": "a voice with no glottal stops or creaky voice",
+      "similarity": 0.4947170615196228
+    },
+    {
+      "direction": 419,
+      "concept": "a voice with sustained vowels with tension",
+      "similarity": 0.5686884522438049
+    },
+    {
+      "direction": 420,
+      "concept": "a voice with syllabic stress on content words",
+      "similarity": 0.4957790672779083
+    },
+    {
+      "direction": 421,
+      "concept": "a voice with slow syllable succession",
+      "similarity": 0.5927937626838684
+    },
+    {
+      "direction": 422,
+      "concept": "a voice with syllabic stress on last syllable",
+      "similarity": 0.4689389765262604
+    },
+    {
+      "direction": 423,
+      "concept": "a voice with syllable lengthening",
+      "similarity": 0.5298895835876465
+    },
+    {
+      "direction": 424,
+      "concept": "a voice with breathy segments interrupting steady phonation",
+      "similarity": 0.6095350980758667
+    },
+    {
+      "direction": 425,
+      "concept": "a voice with weak syllabic stress",
+      "similarity": 0.6870798468589783
+    },
+    {
+      "direction": 426,
+      "concept": "a voice with syllables sustained fully without clipping",
+      "similarity": 0.5070933699607849
+    },
+    {
+      "direction": 427,
+      "concept": "a voice with stress pattern regularity",
+      "similarity": 0.6512091159820557
+    },
+    {
+      "direction": 428,
+      "concept": "a voice with tense laryngeal constriction",
+      "similarity": 0.4733690023422241
+    },
+    {
+      "direction": 429,
+      "concept": "a voice with stress regularity",
+      "similarity": 0.6730408072471619
+    },
+    {
+      "direction": 430,
+      "concept": "a voice with high vocal tension",
+      "similarity": 0.6710641384124756
+    },
+    {
+      "direction": 431,
+      "concept": "a voice with relaxed vocal tension",
+      "similarity": 0.6462709307670593
+    },
+    {
+      "direction": 432,
+      "concept": "a voice with tense vocal tension",
+      "similarity": 0.6437134742736816
+    },
+    {
+      "direction": 433,
+      "concept": "a voice with high pitch variability",
+      "similarity": 0.5301687717437744
+    },
+    {
+      "direction": 434,
+      "concept": "a voice with tense voice quality",
+      "similarity": 0.7011138200759888
+    },
+    {
+      "direction": 435,
+      "concept": "a voice with tension in vocal folds",
+      "similarity": 0.6782019138336182
+    },
+    {
+      "direction": 436,
+      "concept": "a voice with tension vocal fry",
+      "similarity": 0.4791625440120697
+    },
+    {
+      "direction": 437,
+      "concept": "a voice with thin voice",
+      "similarity": 0.6600637435913086
+    },
+    {
+      "direction": 438,
+      "concept": "a voice with fast articulation rate",
+      "similarity": 0.4260033667087555
+    },
+    {
+      "direction": 439,
+      "concept": "a voice with rhythmic syllable timing",
+      "similarity": 0.42260295152664185
+    },
+    {
+      "direction": 440,
+      "concept": "a voice with constricted throat",
+      "similarity": 0.538641095161438
+    },
+    {
+      "direction": 441,
+      "concept": "a voice with lax lip movements",
+      "similarity": 0.7328611016273499
+    },
+    {
+      "direction": 442,
+      "concept": "a voice with trembling voice quality",
+      "similarity": 0.4515387713909149
+    },
+    {
+      "direction": 443,
+      "concept": "a voice with low vocal tension",
+      "similarity": 0.7398946285247803
+    },
+    {
+      "direction": 444,
+      "concept": "a voice with under-articulated consonants",
+      "similarity": 0.7356740236282349
+    },
+    {
+      "direction": 445,
+      "concept": "a voice with reduced vowel sounds",
+      "similarity": 0.6964749097824097
+    },
+    {
+      "direction": 446,
+      "concept": "a voice with increased syllable rate",
+      "similarity": 0.6341024041175842
+    },
+    {
+      "direction": 447,
+      "concept": "a voice with uniform intensity",
+      "similarity": 0.5823389291763306
+    },
+    {
+      "direction": 448,
+      "concept": "a voice with moderate tempo",
+      "similarity": 0.5731586217880249
+    },
+    {
+      "direction": 449,
+      "concept": "a voice with soft volume",
+      "similarity": 0.700005829334259
+    },
+    {
+      "direction": 450,
+      "concept": "a voice with narrow pitch range",
+      "similarity": 0.6335538625717163
+    },
+    {
+      "direction": 451,
+      "concept": "a voice with mumbled speech",
+      "similarity": 0.5980132818222046
+    },
+    {
+      "direction": 452,
+      "concept": "a voice with unvoiced segments",
+      "similarity": 0.5601800680160522
+    },
+    {
+      "direction": 453,
+      "concept": "a voice with steady energy",
+      "similarity": 0.4620981216430664
+    },
+    {
+      "direction": 454,
+      "concept": "a voice with phrase-final shortening",
+      "similarity": 0.5169767737388611
+    },
+    {
+      "direction": 455,
+      "concept": "a voice with vocal effort high",
+      "similarity": 0.4904026687145233
+    },
+    {
+      "direction": 456,
+      "concept": "a voice with vocal effort low",
+      "similarity": 0.7541980743408203
+    },
+    {
+      "direction": 457,
+      "concept": "a voice with decreasing energy across utterance",
+      "similarity": 0.5031244158744812
+    },
+    {
+      "direction": 458,
+      "concept": "a voice with articulatory precision",
+      "similarity": 0.47291824221611023
+    },
+    {
+      "direction": 459,
+      "concept": "a voice with vocal shimmer",
+      "similarity": 0.6262444257736206
+    },
+    {
+      "direction": 460,
+      "concept": "a voice with aspirated consonants",
+      "similarity": 0.5577455759048462
+    },
+    {
+      "direction": 461,
+      "concept": "a voice with high pitch level",
+      "similarity": 0.6464022994041443
+    },
+    {
+      "direction": 462,
+      "concept": "a voice with vocal tension",
+      "similarity": 0.608128547668457
+    },
+    {
+      "direction": 463,
+      "concept": "a voice with natural nasality",
+      "similarity": 0.48087644577026367
+    },
+    {
+      "direction": 464,
+      "concept": "a voice with weak stress beats",
+      "similarity": 0.564239501953125
+    },
+    {
+      "direction": 465,
+      "concept": "a voice with voiceless consonants",
+      "similarity": 0.606504499912262
+    },
+    {
+      "direction": 466,
+      "concept": "a voice with reduced brightness",
+      "similarity": 0.596695065498352
+    },
+    {
+      "direction": 467,
+      "concept": "a voice with voicing periodicity",
+      "similarity": 0.4707311689853668
+    },
+    {
+      "direction": 468,
+      "concept": "a voice with voicing stability",
+      "similarity": 0.6175031065940857
+    },
+    {
+      "direction": 469,
+      "concept": "a voice with vowel clarity",
+      "similarity": 0.5903602838516235
+    },
+    {
+      "direction": 470,
+      "concept": "a voice with shortened vowel durations",
+      "similarity": 0.5813078880310059
+    },
+    {
+      "direction": 471,
+      "concept": "a voice with vowel denasalization",
+      "similarity": 0.6182745099067688
+    },
+    {
+      "direction": 472,
+      "concept": "a voice with vowel nasalization",
+      "similarity": 0.5328916311264038
+    },
+    {
+      "direction": 473,
+      "concept": "a voice with wavering intonation",
+      "similarity": 0.5376282334327698
+    },
+    {
+      "direction": 474,
+      "concept": "a voice with wavering pitch",
+      "similarity": 0.6297938227653503
+    },
+    {
+      "direction": 475,
+      "concept": "a voice with roughness",
+      "similarity": 0.6378715634346008
+    },
+    {
+      "direction": 476,
+      "concept": "a voice with weak attack at syllable onsets",
+      "similarity": 0.6346328258514404
+    },
+    {
+      "direction": 477,
+      "concept": "a voice with weak attack on syllable onsets",
+      "similarity": 0.6602325439453125
+    },
+    {
+      "direction": 478,
+      "concept": "a voice with weak emphasis",
+      "similarity": 0.7057206630706787
+    },
+    {
+      "direction": 479,
+      "concept": "a voice with clipped articulation",
+      "similarity": 0.6020068526268005
+    },
+    {
+      "direction": 480,
+      "concept": "a voice with moderate pitch level",
+      "similarity": 0.6789745092391968
+    },
+    {
+      "direction": 481,
+      "concept": "a voice with spectral tilt high",
+      "similarity": 0.398494154214859
+    },
+    {
+      "direction": 482,
+      "concept": "a voice with roughness degree",
+      "similarity": 0.6388108730316162
+    },
+    {
+      "direction": 483,
+      "concept": "a voice with vocal strain",
+      "similarity": 0.5266536474227905
+    },
+    {
+      "direction": 484,
+      "concept": "a voice with unaspirated consonants",
+      "similarity": 0.6950370073318481
+    },
+    {
+      "direction": 485,
+      "concept": "a voice with high density of short pauses",
+      "similarity": 0.6649652719497681
+    },
+    {
+      "direction": 486,
+      "concept": "a voice with modal voice",
+      "similarity": 0.49919527769088745
+    },
+    {
+      "direction": 487,
+      "concept": "a voice with within-utterance pitch drift downward",
+      "similarity": 0.5559708476066589
+    },
+    {
+      "direction": 488,
+      "concept": "a voice with drooping pitch contours",
+      "similarity": 0.5680878162384033
+    },
+    {
+      "direction": 489,
+      "concept": "a voice with within-utterance pitch drops",
+      "similarity": 0.6160985231399536
+    },
+    {
+      "direction": 490,
+      "concept": "a voice with flat energy contour",
+      "similarity": 0.5278463363647461
+    }
+  ]
+}
