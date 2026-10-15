@@ -234,15 +234,23 @@ def fit_cbm(repo_root: Path, root: Path, device: str) -> None:
     out = root / "cbm"
     out.mkdir(parents=True, exist_ok=True)
     start = time.time()
-    results = t3._run_concept_bottleneck(
-        args, "cremad", {"name": "full"}, vocab, features, paths, out,
-        reference["mean_nnz_per_class"], labels=labels,
-    )
+    existing_metrics = [out / (name + ".json") for name in ("full", "nec25", "nec10", "nec5")]
+    existing_heads = [out / (name + ".pt") for name in ("full", "nec25", "nec10", "nec5")]
+    if all(path.is_file() for path in (*existing_metrics, *existing_heads)):
+        results = [json.loads(path.read_text(encoding="utf-8")) for path in existing_metrics]
+    else:
+        results = t3._run_concept_bottleneck(
+            args, "cremad", {"name": "full"}, vocab, features, paths, out,
+            reference["mean_nnz_per_class"], labels=labels,
+        )
     selected = next(item for item in results if item["selection"] == "full")
     full_path = out / "full.pt"
-    t3._save_selected_predictions(full_path, features.test, labels[2], out)
     payload = json.loads((out / "full.json").read_text(encoding="utf-8"))
-    payload.update({"manifest_verification": verification, "runtime_seconds": time.time() - start})
+    payload.update({
+        "manifest_verification": verification,
+        "reporting_runtime_seconds": time.time() - start,
+        "fit_reused": all(path.is_file() for path in (*existing_metrics, *existing_heads)),
+    })
     _json_dump(out / "full.json", payload)
     selected_payload = torch.load(full_path, map_location="cpu", weights_only=True)
     def logits(x: torch.Tensor) -> torch.Tensor:
