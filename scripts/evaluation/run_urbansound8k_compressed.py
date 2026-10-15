@@ -80,7 +80,7 @@ def _train_ast(args: argparse.Namespace, repo_root: Path, run_dir: Path, fold: i
             sys.executable, "-m", "scripts.training.train_urbansound8k_ast",
             "--base_model_id", "MIT/ast-finetuned-audioset-10-10-0.4593",
             "--train_split", train_split, "--val_split", val_split, "--test_split", test_split,
-            "--manifest_root", str(run_dir / "manifests"), "--output_dir", str(output_dir),
+            "--manifest_root", str(run_dir), "--output_dir", str(output_dir),
             "--epochs", str(AST_EPOCHS), "--batch_size", str(args.ast_batch_size),
             "--gradient_accumulation_steps", str(args.gradient_accumulation_steps),
             "--lr", "5e-5", "--weight_decay", "1e-4", "--warmup_ratio", "0.1",
@@ -134,11 +134,11 @@ def _run_fold(args: argparse.Namespace, repo_root: Path, run_dir: Path, fold: in
     feature_dir = fold_dir / "features"
     ast_paths = t4._extract_ast_features(
         repo_root, Path(local_backbone), DATASET, (train_split, val_split, test_split),
-        run_dir / "manifests", feature_dir / "ast", device=args.device,
+        run_dir, feature_dir / "ast", device=args.device,
         batch_size=args.feature_batch_size,
     )
 
-    datasets = {split: _dataset(repo_root, split, run_dir / "manifests") for split in (train_split, val_split, test_split)}
+    datasets = {split: _dataset(repo_root, split, run_dir) for split in (train_split, val_split, test_split)}
     labels = tuple(
         torch.tensor([int(sample["label_idx"]) for sample in datasets[split].samples], dtype=torch.long)
         for split in (train_split, val_split, test_split)
@@ -154,7 +154,7 @@ def _run_fold(args: argparse.Namespace, repo_root: Path, run_dir: Path, fold: in
 
     clap_paths = t4._ensure_clap_features(
         repo_root, DATASET, (train_split, val_split, test_split), {VARIANT: vocab_path},
-        run_dir / "manifests", feature_dir / "clap", device=args.device,
+        run_dir, feature_dir / "clap", device=args.device,
         batch_size=args.feature_batch_size,
     )
     features = t3.SplitFeatures(
@@ -188,7 +188,7 @@ def _run_fold(args: argparse.Namespace, repo_root: Path, run_dir: Path, fold: in
         t4._save_selected_predictions(cbm_out / "full.pt", features.test, labels[2], cbm_out)
 
     ast_labels, ast_predictions = t4._extract_ast_predictions(
-        repo_root, checkpoint, DATASET, test_split, run_dir / "manifests", fold_dir / "ast_predictions",
+        repo_root, checkpoint, DATASET, test_split, run_dir, fold_dir / "ast_predictions",
         device=args.device, batch_size=args.feature_batch_size,
     )
     ast_y = _load_tensor(ast_labels).long().numpy()
