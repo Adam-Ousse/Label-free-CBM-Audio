@@ -27,6 +27,7 @@ def parse_args():
 
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--gradient_accumulation_steps", type=int, default=1)
     parser.add_argument("--lr", type=float, default=5e-5)
     parser.add_argument("--weight_decay", type=float, default=1e-4)
     parser.add_argument("--warmup_ratio", type=float, default=0.1)
@@ -231,7 +232,10 @@ def main():
     model = build_model(args.base_model_id, device, id2label, label2id)
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
-    total_steps = args.epochs * max(1, len(train_loader))
+    if args.gradient_accumulation_steps < 1:
+        raise ValueError("gradient_accumulation_steps must be >= 1")
+    updates_per_epoch = int(np.ceil(float(len(train_loader)) / float(args.gradient_accumulation_steps)))
+    total_steps = args.epochs * max(1, updates_per_epoch)
     warmup_steps = int(round(float(total_steps) * float(args.warmup_ratio)))
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
@@ -255,6 +259,7 @@ def main():
                 "test_split": args.test_split,
                 "epochs": args.epochs,
                 "batch_size": args.batch_size,
+                "gradient_accumulation_steps": args.gradient_accumulation_steps,
                 "lr": args.lr,
                 "weight_decay": args.weight_decay,
                 "warmup_ratio": args.warmup_ratio,
@@ -278,19 +283,22 @@ def main():
         train_correct = 0
         train_count = 0
 
-        for batch in train_loader:
+        optimizer.zero_grad()
+        for batch_index, batch in enumerate(train_loader):
             inputs, labels = batch_to_model_inputs(batch, feature_extractor, device)
 
-            optimizer.zero_grad()
             outputs = model(**inputs, labels=labels)
-            loss = outputs.loss
+            loss = outputs.loss / float(args.gradient_accumulation_steps)
             loss.backward()
-            optimizer.step()
-            scheduler.step()
+            is_last_batch = batch_index + 1 == len(train_loader)
+            if ((batch_index + 1) % args.gradient_accumulation_steps == 0) or is_last_batch:
+                optimizer.step()
+                scheduler.step()
+                optimizer.zero_grad()
 
             preds = torch.argmax(outputs.logits, dim=1)
             bs = labels.shape[0]
-            train_loss_sum += float(loss.detach().cpu()) * bs
+            train_loss_sum += float(outputs.loss.detach().cpu()) * bs
             train_correct += int(torch.sum(preds == labels).detach().cpu())
             train_count += bs
 
