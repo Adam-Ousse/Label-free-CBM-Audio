@@ -243,8 +243,8 @@ def main() -> None:
     group.add_argument("--folds", type=int, nargs="+", choices=range(1, N_FOLDS + 1))
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--num-workers", type=int, default=2)
-    parser.add_argument("--ast-batch-size", type=int, default=16)
-    parser.add_argument("--gradient-accumulation-steps", type=int, default=2)
+    parser.add_argument("--ast-batch-size", type=int, default=8)
+    parser.add_argument("--gradient-accumulation-steps", type=int, default=4)
     parser.add_argument("--feature-batch-size", type=int, default=16)
     args = parser.parse_args()
     if args.ast_batch_size * args.gradient_accumulation_steps != AST_EFFECTIVE_BATCH_SIZE:
