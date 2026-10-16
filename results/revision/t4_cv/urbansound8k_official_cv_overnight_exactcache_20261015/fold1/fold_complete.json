@@ -1,0 +1,60 @@
+{
+  "ast_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/t4_cv/urbansound8k_official_cv_overnight_exactcache_20261015/ast/urbansound8k/fold1/fold1/best_model",
+  "ast_summary": {
+    "best_epoch": 2,
+    "best_val_acc": 0.9177927927927928,
+    "test_acc": 0.8384879725085911,
+    "test_loss": 0.5248454488037242,
+    "test_split": "fold1_test",
+    "train_split": "fold1_train",
+    "val_split": "fold1_val"
+  },
+  "ast_test_metrics": {
+    "accuracy": 0.8384879725085911,
+    "macro_f1": 0.857950422127605
+  },
+  "cbm_output": "/workspace/Label-free-CBM-Audio/results/revision/t4_cv/urbansound8k_official_cv_overnight_exactcache_20261015/fold1/cbm_lf_broad",
+  "cbm_test_metrics": {
+    "accuracy": 0.8396334478808706,
+    "actual_mean_nnz_per_class": 123.0,
+    "balanced_accuracy": 0.8592222222222222,
+    "checkpoint_path": "/workspace/Label-free-CBM-Audio/results/revision/t4_cv/urbansound8k_official_cv_overnight_exactcache_20261015/fold1/cbm_lf_broad/full.pt",
+    "concepts_activation_kept": 224,
+    "concepts_input": 224,
+    "concepts_output": 215,
+    "dataset": "urbansound8k",
+    "fold": 1,
+    "lambda": 0.0014556226087734103,
+    "macro_f1": 0.8600507914386684,
+    "method": "cbm_no_class_lf",
+    "nec_reached": null,
+    "projection": {
+      "best_step": 150,
+      "best_val_loss": -0.6971319913864136
+    },
+    "random_seed": null,
+    "reference_mean_nnz_per_class": 29.600000381469727,
+    "selected_path_index": 14,
+    "selection": "full",
+    "selection_split": "val",
+    "target_nec": null,
+    "val_fold": 2,
+    "variant": "lf_broad",
+    "weighted_f1": 0.8392905733090699
+  },
+  "dataset": "urbansound8k",
+  "git_commit": "bb996ee0e16b58b1fd3eddd8484c1d504e103f4c",
+  "mcnemar": {
+    "ast_correct_cbm_wrong": 18,
+    "both_correct": 714,
+    "both_wrong": 122,
+    "cbm_correct_ast_wrong": 19,
+    "discordant": 37,
+    "exact_p_value": 1.0,
+    "n": 873
+  },
+  "runtime_seconds": 26747.376670360565,
+  "test_fold": 1,
+  "val_fold": 2,
+  "variant": "lf_broad"
+}

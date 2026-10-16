@@ -239,6 +239,7 @@ def _extract_ast_features(
     *,
     device: str,
     batch_size: int,
+    ast_input_cache: Path | None = None,
 ) -> dict[str, Path]:
     model, _ = data_utils.get_target_model(str(checkpoint), device)
     paths: dict[str, Path] = {}
@@ -248,7 +249,31 @@ def _extract_ast_features(
         if not _valid_tensor(path, expected_rows=len(ds)):
             if path.exists():
                 path.unlink()
-            utils.save_backbone_audio_features(model, ds, str(path), batch_size=batch_size, device=device)
+            if ast_input_cache is None:
+                utils.save_backbone_audio_features(model, ds, str(path), batch_size=batch_size, device=device)
+            else:
+                from scripts.training.ast_input_cache import CachedASTInputDataset, collate_cached_ast_batch
+
+                cached_ds = CachedASTInputDataset(ast_input_cache, ds.manifest_path)
+                loader = DataLoader(
+                    cached_ds,
+                    batch_size=batch_size,
+                    shuffle=False,
+                    num_workers=0,
+                    pin_memory=(device == "cuda"),
+                    collate_fn=collate_cached_ast_batch,
+                )
+                features = []
+                with torch.inference_mode():
+                    for batch in loader:
+                        values = batch["input_values"].to(device, non_blocking=(device == "cuda"))
+                        outputs = model.model(input_values=values)
+                        pooled = outputs.pooler_output
+                        if pooled is None:
+                            pooled = outputs.last_hidden_state[:, 0, :]
+                        features.append(pooled.float().cpu())
+                path.parent.mkdir(parents=True, exist_ok=True)
+                torch.save(torch.cat(features, dim=0), path)
         if not _valid_tensor(path, expected_rows=len(ds)):
             raise RuntimeError("Invalid AST feature cache: {}".format(path))
         paths[split] = path
@@ -268,6 +293,7 @@ def _extract_ast_predictions(
     *,
     device: str,
     batch_size: int,
+    ast_input_cache: Path | None = None,
 ) -> tuple[Path, Path]:
     ds = _dataset_for_split(repo_root, dataset, test_split, manifest_root)
     labels_path = out_dir / "labels.pt"
@@ -275,12 +301,22 @@ def _extract_ast_predictions(
     if _valid_tensor(labels_path, expected_rows=len(ds), ndim=1) and _valid_tensor(predictions_path, expected_rows=len(ds), ndim=1):
         return labels_path, predictions_path
     classifier = ASTAudioClassifier(str(checkpoint), device)
-    loader = DataLoader(ds, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=(device == "cuda"), collate_fn=data_utils.collate_audio_batch)
+    if ast_input_cache is None:
+        loader = DataLoader(ds, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=(device == "cuda"), collate_fn=data_utils.collate_audio_batch)
+    else:
+        from scripts.training.ast_input_cache import CachedASTInputDataset, collate_cached_ast_batch
+
+        cached_ds = CachedASTInputDataset(ast_input_cache, ds.manifest_path)
+        loader = DataLoader(cached_ds, batch_size=batch_size, shuffle=False, num_workers=0, pin_memory=(device == "cuda"), collate_fn=collate_cached_ast_batch)
     labels: list[torch.Tensor] = []
     predictions: list[torch.Tensor] = []
     with torch.no_grad():
         for batch in loader:
-            logits = classifier.predict_logits(batch["audio"], sample_rates=batch["sr"])
+            if ast_input_cache is None:
+                logits = classifier.predict_logits(batch["audio"], sample_rates=batch["sr"])
+            else:
+                inputs = {"input_values": batch["input_values"].to(device, non_blocking=(device == "cuda"))}
+                logits = classifier.model(**inputs).logits.float()
             labels.append(batch["target"].long().cpu())
             predictions.append(torch.argmax(logits, dim=1).long().cpu())
     out_dir.mkdir(parents=True, exist_ok=True)

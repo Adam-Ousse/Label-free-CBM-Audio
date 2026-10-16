@@ -1,0 +1,32 @@
+{
+  "ast_base_model": "MIT/ast-finetuned-audioset-10-10-0.4593",
+  "ast_batch_size": 16,
+  "ast_effective_batch_size": 32,
+  "ast_epochs": 30,
+  "ast_input_cache": "/workspace/Label-free-CBM-Audio/results/revision/overnight_production_20261015/cache/ast_inputs/urbansound8k_input_values.pt",
+  "command": "/workspace/Label-free-CBM-Audio/scripts/evaluation/run_urbansound8k_compressed.py --repo-root /workspace/Label-free-CBM-Audio --run-id urbansound8k_official_cv_overnight_exactcache_20261015 --device cuda --num-workers 2 --ast-batch-size 16 --gradient-accumulation-steps 2 --feature-batch-size 16 --ast-input-cache /workspace/Label-free-CBM-Audio/results/revision/overnight_production_20261015/cache/ast_inputs/urbansound8k_input_values.pt --fold 3",
+  "cuda_visible_devices": "0",
+  "dataset": "urbansound8k",
+  "feature_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "num_workers": 2,
+  "official_test_folds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "requested_folds": [
+    3
+  ],
+  "seed": 42,
+  "selection_split": "val",
+  "validation_rule": "next cyclic official fold",
+  "variant": "lf_broad"
+}

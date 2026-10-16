@@ -12,6 +12,7 @@ from torch.utils.data import DataLoader
 from transformers import ASTForAudioClassification, AutoFeatureExtractor, get_linear_schedule_with_warmup
 
 import data_utils
+from scripts.training.ast_input_cache import CachedASTInputDataset, collate_cached_ast_batch
 
 
 def parse_args():
@@ -39,6 +40,19 @@ def parse_args():
     parser.add_argument("--run_name", type=str, default="ast-esc50")
     parser.add_argument("--manifest_root", type=str, default="data/esc50")
     parser.add_argument("--no_prepare_manifests", action="store_true")
+    parser.add_argument("--ast-input-cache", type=str, default=None)
+    parser.add_argument(
+        "--resume_from",
+        type=str,
+        default=None,
+        help="Warm-start from a saved AST model checkpoint; optimizer state is not restored.",
+    )
+    parser.add_argument(
+        "--resume_epoch",
+        type=int,
+        default=0,
+        help="Last completed absolute epoch in --resume_from (training resumes at the next epoch).",
+    )
     return parser.parse_args()
 
 
@@ -128,38 +142,52 @@ def create_fold_loaders(args, test_fold, val_fold, device):
                 for row in rows:
                     f.write(json.dumps(row) + "\n")
 
-    train_ds = data_utils.get_audio_dataset("esc50", split="train", manifest_path=train_manifest)
-    val_ds = data_utils.get_audio_dataset("esc50", split="val", manifest_path=val_manifest)
-    test_ds = data_utils.get_audio_dataset("esc50", split="test", manifest_path=test_manifest)
+    if args.ast_input_cache:
+        dataset_factory = lambda manifest: CachedASTInputDataset(args.ast_input_cache, manifest)
+        collate_fn = collate_cached_ast_batch
+    else:
+        dataset_factory = lambda manifest: data_utils.get_audio_dataset("esc50", split="train", manifest_path=manifest)
+        collate_fn = data_utils.collate_audio_batch
+
+    train_ds = dataset_factory(train_manifest)
+    val_ds = dataset_factory(val_manifest)
+    test_ds = dataset_factory(test_manifest)
+
+    common = {
+        "num_workers": args.num_workers,
+        "pin_memory": (device == "cuda"),
+        "collate_fn": collate_fn,
+    }
+    if args.ast_input_cache and args.num_workers > 0:
+        common.update({"persistent_workers": True, "prefetch_factor": 2})
 
     train_loader = DataLoader(
         train_ds,
         batch_size=args.batch_size,
         shuffle=True,
-        num_workers=args.num_workers,
-        pin_memory=(device == "cuda"),
-        collate_fn=data_utils.collate_audio_batch,
+        **common,
     )
     val_loader = DataLoader(
         val_ds,
         batch_size=args.batch_size,
         shuffle=False,
-        num_workers=args.num_workers,
-        pin_memory=(device == "cuda"),
-        collate_fn=data_utils.collate_audio_batch,
+        **common,
     )
     test_loader = DataLoader(
         test_ds,
         batch_size=args.batch_size,
         shuffle=False,
-        num_workers=args.num_workers,
-        pin_memory=(device == "cuda"),
-        collate_fn=data_utils.collate_audio_batch,
+        **common,
     )
     return train_loader, val_loader, test_loader
 
 
 def batch_to_model_inputs(batch, feature_extractor, device):
+    if "input_values" in batch:
+        inputs = {"input_values": batch["input_values"].to(device, non_blocking=(device == "cuda"))}
+        labels = batch["target"].to(device, non_blocking=(device == "cuda"))
+        return inputs, labels
+
     audio = batch["audio"]
     if audio.dim() == 3 and audio.shape[1] == 1:
         audio = audio.squeeze(1)
@@ -181,8 +209,8 @@ def batch_to_model_inputs(batch, feature_extractor, device):
         return_tensors="pt",
         padding=True,
     )
-    inputs = {k: v.to(device) for k, v in inputs.items()}
-    labels = batch["target"].to(device)
+    inputs = {k: v.to(device, non_blocking=(device == "cuda")) for k, v in inputs.items()}
+    labels = batch["target"].to(device, non_blocking=(device == "cuda"))
     return inputs, labels
 
 
@@ -240,9 +268,19 @@ def train_single_fold(args, id2label, label2id, test_fold, val_fold, device):
     print("val samples:", len(val_loader.dataset))
     print("test samples:", len(test_loader.dataset))
 
-    feature_extractor = AutoFeatureExtractor.from_pretrained(args.base_model_id)
+    model_source = args.resume_from if args.resume_from is not None else args.base_model_id
+    if args.resume_from is not None:
+        if args.resume_epoch < 1 or args.resume_epoch >= args.epochs:
+            raise ValueError(
+                "--resume_epoch must be in [1, epochs-1], got {} for {} epochs".format(
+                    args.resume_epoch, args.epochs
+                )
+            )
+        if not os.path.isdir(args.resume_from):
+            raise FileNotFoundError("Resume checkpoint directory not found: {}".format(args.resume_from))
 
-    model = build_esc50_model(args.base_model_id, device, id2label, label2id)
+    feature_extractor = AutoFeatureExtractor.from_pretrained(model_source)
+    model = build_esc50_model(model_source, device, id2label, label2id)
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     total_steps = args.epochs * max(1, len(train_loader))
@@ -285,8 +323,35 @@ def train_single_fold(args, id2label, label2id, test_fold, val_fold, device):
 
     best_val_acc = -1.0
     best_epoch = -1
+    start_epoch = int(args.resume_epoch)
+    if args.resume_from is not None:
+        resume_metrics_path = os.path.join(args.resume_from, "best_metrics.json")
+        if not os.path.isfile(resume_metrics_path):
+            raise FileNotFoundError(
+                "Resume checkpoint is missing best_metrics.json: {}".format(resume_metrics_path)
+            )
+        with open(resume_metrics_path, "r", encoding="utf-8") as f:
+            resume_metrics = json.load(f)
+        best_epoch = int(resume_metrics["best_epoch"])
+        best_val_acc = float(resume_metrics["best_val_acc"])
+        if best_epoch != start_epoch:
+            raise ValueError(
+                "Resume epoch {} does not match checkpoint best_epoch {}".format(
+                    start_epoch, best_epoch
+                )
+            )
+        # The frozen checkpoint contains model weights but no optimizer or scheduler
+        # state. Advance the fresh scheduler to the absolute epoch boundary so the
+        # LR schedule remains aligned with the original 30-epoch protocol.
+        for _ in range(start_epoch * max(1, len(train_loader))):
+            scheduler.step()
+        print(
+            "warm-starting from {} at completed epoch {} (optimizer/scheduler state not restored)".format(
+                args.resume_from, start_epoch
+            )
+        )
 
-    for epoch in range(1, args.epochs + 1):
+    for epoch in range(start_epoch + 1, args.epochs + 1):
         model.train()
         train_loss_sum = 0.0
         train_correct = 0
@@ -361,6 +426,9 @@ def train_single_fold(args, id2label, label2id, test_fold, val_fold, device):
         "best_val_acc": best_val_acc,
         "test_loss": test_loss,
         "test_acc": test_acc,
+        "resume_from": args.resume_from,
+        "resume_epoch": start_epoch,
+        "optimizer_state_resumed": False if args.resume_from is not None else None,
     }
     with open(os.path.join(fold_dir, "fold_summary.json"), "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)

@@ -1,0 +1,59 @@
+{
+  "ast_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/esc50_compressed_gpu1_fold5_concurrent/ast/esc50/fold5/fold5/best_model",
+  "ast_summary": {
+    "best_epoch": 7,
+    "best_val_acc": 0.9225,
+    "test_acc": 0.885,
+    "test_fold": 5,
+    "test_loss": 0.35486398078035564,
+    "val_fold": 1
+  },
+  "cbm_output": "/workspace/Label-free-CBM-Audio/results/revision/esc50_compressed_gpu1_fold5_concurrent/fold5/cbm_lf_broad",
+  "dataset": "esc50",
+  "feature_paths": {
+    "fold5_test": "/workspace/Label-free-CBM-Audio/results/revision/esc50_compressed_gpu1_fold5_concurrent/fold5/features/ast/fold5_test.pt",
+    "fold5_train": "/workspace/Label-free-CBM-Audio/results/revision/esc50_compressed_gpu1_fold5_concurrent/fold5/features/ast/fold5_train.pt",
+    "fold5_val": "/workspace/Label-free-CBM-Audio/results/revision/esc50_compressed_gpu1_fold5_concurrent/fold5/features/ast/fold5_val.pt"
+  },
+  "mcnemar": {
+    "ast_correct_cbm_wrong": 10,
+    "both_correct": 344,
+    "both_wrong": 35,
+    "cbm_correct_ast_wrong": 11,
+    "discordant": 21,
+    "exact_p_value": 1.0,
+    "n": 400
+  },
+  "metrics": {
+    "accuracy": 0.8875,
+    "actual_mean_nnz_per_class": 149.6199951171875,
+    "balanced_accuracy": 0.8875,
+    "checkpoint_path": "/workspace/Label-free-CBM-Audio/results/revision/esc50_compressed_gpu1_fold5_concurrent/fold5/cbm_lf_broad/full.pt",
+    "concepts_activation_kept": 678,
+    "concepts_input": 683,
+    "concepts_output": 671,
+    "dataset": "esc50",
+    "fold": 5,
+    "lambda": 0.09348173439502716,
+    "macro_f1": 0.8821277767639997,
+    "method": "cbm_no_class_lf",
+    "nec_reached": null,
+    "projection": {
+      "best_step": 150,
+      "best_val_loss": -0.7081887722015381
+    },
+    "random_seed": null,
+    "reference_mean_nnz_per_class": 49.79999923706055,
+    "selected_path_index": 1,
+    "selection": "full",
+    "selection_split": "val",
+    "target_nec": null,
+    "val_fold": 1,
+    "variant": "lf_broad",
+    "weighted_f1": 0.8821277767639997
+  },
+  "runtime_seconds": 172.36115980148315,
+  "test_fold": 5,
+  "val_fold": 1,
+  "variant": "lf_broad"
+}

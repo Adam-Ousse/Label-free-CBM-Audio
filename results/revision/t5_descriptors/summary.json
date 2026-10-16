@@ -1,0 +1,33 @@
+{
+  "clip_cache_count": 2726,
+  "datasets": {
+    "cremad": 1489,
+    "esc50": 400,
+    "urbansound8k": 837
+  },
+  "descriptor_names": [
+    "rms_db",
+    "spectral_centroid_hz",
+    "spectral_bandwidth_hz",
+    "spectral_flatness",
+    "spectral_rolloff_hz",
+    "zcr",
+    "onset_mean",
+    "onset_peak",
+    "f0_median_hz",
+    "f0_range_hz",
+    "harmonic_ratio"
+  ],
+  "opensmile": {
+    "dataset": "cremad",
+    "feature_set": "eGeMAPSv02"
+  },
+  "source_manifests": {
+    "cremad": "data/cremad/manifests/test.jsonl",
+    "esc50": "data/esc50/manifests/test.jsonl",
+    "urbansound8k": "data/urbansound8k/manifests/fold10_test.jsonl"
+  },
+  "window_cache_count": 13970,
+  "window_hop_seconds": 0.5,
+  "window_seconds": 1.0
+}

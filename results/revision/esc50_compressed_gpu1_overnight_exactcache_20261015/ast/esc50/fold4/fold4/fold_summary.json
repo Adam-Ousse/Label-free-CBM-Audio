@@ -1,0 +1,11 @@
+{
+  "test_fold": 4,
+  "val_fold": 5,
+  "best_epoch": 20,
+  "best_val_acc": 0.9275,
+  "test_loss": 0.2355828577815555,
+  "test_acc": 0.9325,
+  "resume_from": null,
+  "resume_epoch": 0,
+  "optimizer_state_resumed": null
+}

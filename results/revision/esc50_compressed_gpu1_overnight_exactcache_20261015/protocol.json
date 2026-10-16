@@ -1,0 +1,25 @@
+{
+  "ast_input_cache": "/workspace/Label-free-CBM-Audio/results/revision/overnight_production_20261015/cache/ast_inputs/esc50_input_values.pt",
+  "command": "/workspace/Label-free-CBM-Audio/scripts/evaluation/run_esc50_compressed.py --repo-root /workspace/Label-free-CBM-Audio --run-id esc50_compressed_gpu1_overnight_exactcache_20261015 --fold 4 --device cuda --num-workers 1 --ast-batch-size 8 --feature-batch-size 4 --ast-input-cache /workspace/Label-free-CBM-Audio/results/revision/overnight_production_20261015/cache/ast_inputs/esc50_input_values.pt",
+  "cuda_visible_devices": "0",
+  "dataset": "esc50",
+  "fold1_reused": true,
+  "new_ast_folds": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "official_test_folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "seed": 42,
+  "selection_split": "val",
+  "urban_sound8k_started": false,
+  "validation_rule": "next cyclic official fold",
+  "variant": "lf_broad"
+}

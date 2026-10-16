@@ -88,6 +88,8 @@ def _train_ast(args: argparse.Namespace, repo_root: Path, run_dir: Path, fold: i
             "--device", args.device, "--run_name", "urbansound8k-compressed-ast",
             "--no_prepare_manifests",
         ]
+        if args.ast_input_cache is not None:
+            command.extend(["--ast-input-cache", str(args.ast_input_cache)])
         command_text = "CUDA_VISIBLE_DEVICES={} {}".format(
             os.environ.get("CUDA_VISIBLE_DEVICES", ""), " ".join(command)
         )
@@ -135,7 +137,7 @@ def _run_fold(args: argparse.Namespace, repo_root: Path, run_dir: Path, fold: in
     ast_paths = t4._extract_ast_features(
         repo_root, Path(local_backbone), DATASET, (train_split, val_split, test_split),
         run_dir, feature_dir / "ast", device=args.device,
-        batch_size=args.feature_batch_size,
+        batch_size=args.feature_batch_size, ast_input_cache=args.ast_input_cache,
     )
 
     datasets = {split: _dataset(repo_root, split, run_dir) for split in (train_split, val_split, test_split)}
@@ -189,7 +191,7 @@ def _run_fold(args: argparse.Namespace, repo_root: Path, run_dir: Path, fold: in
 
     ast_labels, ast_predictions = t4._extract_ast_predictions(
         repo_root, checkpoint, DATASET, test_split, run_dir, fold_dir / "ast_predictions",
-        device=args.device, batch_size=args.feature_batch_size,
+        device=args.device, batch_size=args.feature_batch_size, ast_input_cache=args.ast_input_cache,
     )
     ast_y = _load_tensor(ast_labels).long().numpy()
     ast_p = _load_tensor(ast_predictions).long().numpy()
@@ -238,6 +240,7 @@ def _run_fold(args: argparse.Namespace, repo_root: Path, run_dir: Path, fold: in
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=Path, default=Path("."))
+    parser.add_argument("--run-id", default="urbansound8k_official_cv")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--fold", type=int, choices=range(1, N_FOLDS + 1))
     group.add_argument("--folds", type=int, nargs="+", choices=range(1, N_FOLDS + 1))
@@ -246,11 +249,12 @@ def main() -> None:
     parser.add_argument("--ast-batch-size", type=int, default=8)
     parser.add_argument("--gradient-accumulation-steps", type=int, default=4)
     parser.add_argument("--feature-batch-size", type=int, default=16)
+    parser.add_argument("--ast-input-cache", type=Path, default=None)
     args = parser.parse_args()
     if args.ast_batch_size * args.gradient_accumulation_steps != AST_EFFECTIVE_BATCH_SIZE:
         parser.error("physical batch x accumulation must preserve effective batch size 32")
     repo_root = args.repo_root.resolve()
-    run_dir = repo_root / "results/revision/t4_cv/urbansound8k_official_cv"
+    run_dir = repo_root / "results/revision/t4_cv" / args.run_id
     run_dir.mkdir(parents=True, exist_ok=True)
     t4.ensure_urban_cv_manifests(repo_root, run_dir)
     folds = [args.fold] if args.fold is not None else args.folds
@@ -265,6 +269,7 @@ def main() -> None:
         "num_workers": args.num_workers, "feature_batch_size": args.feature_batch_size,
         "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
         "requested_folds": folds, "command": " ".join(sys.argv),
+        "ast_input_cache": str(args.ast_input_cache) if args.ast_input_cache else None,
     }
     _json_dump(run_dir / "protocol.json", protocol)
     for fold in folds:

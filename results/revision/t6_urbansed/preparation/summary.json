@@ -1,0 +1,37 @@
+{
+  "ambiguity_policy": "exclude any soundscape with missing, nonunique, or conflicting source clip provenance",
+  "counts": {
+    "before_filtering": 10000,
+    "excluded": 8000,
+    "excluded_reason_counts": {
+      "source_clip_in_reference_training_folds_1_8": 8000
+    },
+    "provenance_ambiguous_soundscapes": 0,
+    "retained": 2000,
+    "retained_by_split": {
+      "test": 2000,
+      "train": 0,
+      "validate": 0
+    }
+  },
+  "dataset": "URBAN-SED",
+  "event_window_files": {
+    "1.0s_hop_0.25s": "event_windows_1s_hop_0.25.jsonl",
+    "1.0s_hop_0.5s": "event_windows_1s_hop_0.5.jsonl"
+  },
+  "source_archive": {
+    "md5": "a2d24a2148ece7c021fcc079ee87c2dc",
+    "url": "https://zenodo.org/record/1324404/files/URBAN-SED_v2.0.0.tar.gz?download=1"
+  },
+  "urbansound8k_reference_training_folds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "version": "2.0.0"
+}

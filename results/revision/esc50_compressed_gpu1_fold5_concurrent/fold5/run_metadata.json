@@ -1,0 +1,26 @@
+{
+  "ast_batch_size": 8,
+  "ast_checkpoint": "/workspace/Label-free-CBM-Audio/results/revision/esc50_compressed_gpu1_fold5_concurrent/ast/esc50/fold5/fold5/best_model",
+  "ast_summary": {
+    "best_epoch": 7,
+    "best_val_acc": 0.9225,
+    "test_acc": 0.885,
+    "test_fold": 5,
+    "test_loss": 0.35486398078035564,
+    "val_fold": 1
+  },
+  "command": "scripts/evaluation/run_esc50_compressed.py --repo-root /workspace/Label-free-CBM-Audio --run-id esc50_compressed_gpu1_fold5_concurrent --fold 5 --device cuda --num-workers 1 --ast-batch-size 8 --feature-batch-size 4 --ast-input-cache results/revision/overnight_production_20261015/cache/ast_inputs/esc50_input_values.pt",
+  "cuda_visible_devices": "0",
+  "dataset": "esc50",
+  "device": "cuda",
+  "feature_batch_size": 4,
+  "num_workers": 1,
+  "runtime_seconds": 172.36097955703735,
+  "seed": 42,
+  "selection_split": "val",
+  "test_fold": 5,
+  "train_split": "fold5_train",
+  "val_fold": 1,
+  "variant": "lf_broad",
+  "vocabulary_path": "/workspace/Label-free-CBM-Audio/results/revision/esc50_compressed_gpu1_fold5_concurrent/vocabularies/esc50/lf_broad.txt"
+}

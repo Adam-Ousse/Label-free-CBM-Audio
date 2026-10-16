@@ -12,6 +12,7 @@ from torch.utils.data import DataLoader
 from transformers import ASTForAudioClassification, AutoFeatureExtractor, get_linear_schedule_with_warmup
 
 import data_utils
+from scripts.training.ast_input_cache import CachedASTInputDataset, collate_cached_ast_batch
 
 
 def parse_args():
@@ -40,6 +41,7 @@ def parse_args():
     parser.add_argument("--wandb_entity", type=str, default=None)
     parser.add_argument("--run_name", type=str, default="ast-urbansound8k")
     parser.add_argument("--no_prepare_manifests", action="store_true")
+    parser.add_argument("--ast-input-cache", type=str, default=None)
     return parser.parse_args()
 
 
@@ -104,38 +106,52 @@ def create_loaders(args, device):
     val_manifest = _manifest_path(args.manifest_root, args.val_split)
     test_manifest = _manifest_path(args.manifest_root, args.test_split)
 
-    train_ds = data_utils.get_audio_dataset("urbansound8k", split="train", manifest_path=train_manifest)
-    val_ds = data_utils.get_audio_dataset("urbansound8k", split="val", manifest_path=val_manifest)
-    test_ds = data_utils.get_audio_dataset("urbansound8k", split="test", manifest_path=test_manifest)
+    if args.ast_input_cache:
+        dataset_factory = lambda manifest: CachedASTInputDataset(args.ast_input_cache, manifest)
+        collate_fn = collate_cached_ast_batch
+    else:
+        dataset_factory = lambda manifest: data_utils.get_audio_dataset("urbansound8k", split="train", manifest_path=manifest)
+        collate_fn = data_utils.collate_audio_batch
+
+    train_ds = dataset_factory(train_manifest)
+    val_ds = dataset_factory(val_manifest)
+    test_ds = dataset_factory(test_manifest)
+
+    common = {
+        "num_workers": args.num_workers,
+        "pin_memory": (device == "cuda"),
+        "collate_fn": collate_fn,
+    }
+    if args.ast_input_cache and args.num_workers > 0:
+        common.update({"persistent_workers": True, "prefetch_factor": 2})
 
     train_loader = DataLoader(
         train_ds,
         batch_size=args.batch_size,
         shuffle=True,
-        num_workers=args.num_workers,
-        pin_memory=(device == "cuda"),
-        collate_fn=data_utils.collate_audio_batch,
+        **common,
     )
     val_loader = DataLoader(
         val_ds,
         batch_size=args.batch_size,
         shuffle=False,
-        num_workers=args.num_workers,
-        pin_memory=(device == "cuda"),
-        collate_fn=data_utils.collate_audio_batch,
+        **common,
     )
     test_loader = DataLoader(
         test_ds,
         batch_size=args.batch_size,
         shuffle=False,
-        num_workers=args.num_workers,
-        pin_memory=(device == "cuda"),
-        collate_fn=data_utils.collate_audio_batch,
+        **common,
     )
     return train_loader, val_loader, test_loader
 
 
 def batch_to_model_inputs(batch, feature_extractor, device):
+    if "input_values" in batch:
+        inputs = {"input_values": batch["input_values"].to(device, non_blocking=(device == "cuda"))}
+        labels = batch["target"].to(device, non_blocking=(device == "cuda"))
+        return inputs, labels
+
     audio = batch["audio"]
     if audio.dim() == 3 and audio.shape[1] == 1:
         audio = audio.squeeze(1)
@@ -157,8 +173,8 @@ def batch_to_model_inputs(batch, feature_extractor, device):
         return_tensors="pt",
         padding=True,
     )
-    inputs = {k: v.to(device) for k, v in inputs.items()}
-    labels = batch["target"].to(device)
+    inputs = {k: v.to(device, non_blocking=(device == "cuda")) for k, v in inputs.items()}
+    labels = batch["target"].to(device, non_blocking=(device == "cuda"))
     return inputs, labels
 
 
