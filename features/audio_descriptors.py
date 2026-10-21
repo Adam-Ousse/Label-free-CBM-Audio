@@ -48,7 +48,16 @@ def _mono_float32(audio: np.ndarray) -> np.ndarray:
         raise ValueError("audio must be a one- or two-dimensional array")
     if array.ndim == 2:
         # Accept either (channels, samples) or (samples, channels).
-        axis = 1 if array.shape[0] <= array.shape[1] else 0
+        # SoundFile returns (samples, channels), while a few callers provide
+        # (channels, samples).  Infer the channel axis from the usual small
+        # channel count; the previous comparison reversed this decision for
+        # ordinary stereo files and collapsed them to two samples.
+        if array.shape[0] <= 8 < array.shape[1]:
+            axis = 0
+        elif array.shape[1] <= 8 < array.shape[0]:
+            axis = 1
+        else:
+            axis = 0 if array.shape[0] <= array.shape[1] else 1
         array = np.mean(array, axis=axis)
     if array.ndim != 1:
         raise ValueError("audio must be a one- or two-dimensional array")
