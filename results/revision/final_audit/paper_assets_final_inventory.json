@@ -1,0 +1,570 @@
+{
+  "faithfulness_audit": {
+    "available_evaluator_checkpoint_paths": "scripts/evaluation/prepare_concept_faithfulness_inputs.py points to older August checkpoints outside the frozen revision release",
+    "canonical_final_result_present": false,
+    "interpretation": "Describe the existing result as decision-level controllability/faithfulness, not strong semantic concept-faithfulness; no reevaluation was run.",
+    "status": "provenance_only"
+  },
+  "figure_count_physical": 43,
+  "figures": [
+    {
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "path_stem": "paper_assets_final/figures/task5_controlled_edit_associations",
+      "section": "main",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "path_stem": "paper_assets_final/figures/task5_controlled_edit_heatmap",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "path_stem": "paper_assets_final/figures/task5_cremad_matched_vs_null",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "path_stem": "paper_assets_final/figures/task5_esc50_matched_vs_null",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "path_stem": "paper_assets_final/figures/task5_urbansound8k_matched_vs_null",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "path_stem": "paper_assets_final/figures/task6_concept_response_heatmap",
+      "section": "main",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    },
+    {
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "path_stem": "paper_assets_final/figures/task6_qualitative_examples",
+      "section": "appendix",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    },
+    {
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "path_stem": "paper_assets_final/figures/task6_quantitative_comparison",
+      "section": "main",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    }
+  ],
+  "files": [
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/anger_correct.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/anger_correct.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/anger_error.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/anger_error.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/disgust_correct.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/disgust_correct.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/disgust_error.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/disgust_error.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/fear_correct.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/fear_correct.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/fear_error.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/fear_error.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/happy_correct.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/happy_correct.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/happy_error.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/happy_error.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/neutral_correct.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/neutral_correct.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/neutral_error.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/neutral_error.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/sad_correct.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/sad_correct.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/sad_error.pdf",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/cremad_speaker_disjoint/sad_error.png",
+      "purpose": "existing valid class-wise qualitative example; PDF and PNG retained",
+      "section": "appendix",
+      "source_experiment": "CREMA-D speaker-disjoint qualitative panels",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/older_esc50_lf_broad_temporal.png",
+      "purpose": "existing valid paper asset retained",
+      "section": "appendix",
+      "source_experiment": "older valid ESC-50 temporal example",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "appendix_figures/older_esc50_prediction_example.png",
+      "purpose": "existing valid paper asset retained",
+      "section": "appendix",
+      "source_experiment": "older valid ESC-50 prediction example",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_controlled_edit_heatmap.pdf",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_controlled_edit_heatmap.png",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_cremad_matched_vs_null.pdf",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_cremad_matched_vs_null.png",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_esc50_matched_vs_null.pdf",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_esc50_matched_vs_null.png",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_urbansound8k_matched_vs_null.pdf",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_urbansound8k_matched_vs_null.png",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task6_qualitative_examples.pdf",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task6_qualitative_examples.png",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "appendix",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "main_figures/architecture_overview.png",
+      "purpose": "existing valid paper asset retained",
+      "section": "main",
+      "source_experiment": "architecture / model overview",
+      "status": "legacy_valid"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_controlled_edit_associations.pdf",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "main",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task5_controlled_edit_associations.png",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "main",
+      "source_experiment": "Task 5 controlled descriptor and intervention validation",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task6_concept_response_heatmap.pdf",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "main",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task6_concept_response_heatmap.png",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "main",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task6_quantitative_comparison.pdf",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "main",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    },
+    {
+      "category": "figure",
+      "path": "paper_assets_final/figures/task6_quantitative_comparison.png",
+      "purpose": "clean manuscript export from frozen machine-readable results",
+      "section": "main",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "replacement"
+    },
+    {
+      "category": "table",
+      "path": "tables/principal_seed_summary.csv",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "five-seed robustness",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/principal_seed_summary.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "five-seed robustness",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/t3_controls_table.csv",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "random-word/random-direction/CLAP controls",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/t3_controls_table.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "random-word/random-direction/CLAP controls",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/task5_controlled_edit_table.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "Task 5 semantic descriptor and controlled-intervention validation",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/task5_descriptor_associations.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "Task 5 semantic descriptor and controlled-intervention validation",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/task5_supplementary_table.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "Task 5 semantic descriptor and controlled-intervention validation",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/task6_macro_metrics.csv",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/task6_per_class_metrics.csv",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/task6_supplementary_per_class.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "appendix",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/cremad_speaker_disjoint_table.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "main",
+      "source_experiment": "CREMA-D speaker-disjoint evaluation",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/esc50_official_cv_summary.csv",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "main",
+      "source_experiment": "official ESC-50 5-fold CV",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/task5_main_table.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "main",
+      "source_experiment": "Task 5 semantic descriptor and controlled-intervention validation",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/task6_main_quantitative.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "main",
+      "source_experiment": "Task 6 URBAN-SED temporal localization",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/urbansound8k_official_cv_summary.csv",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "main",
+      "source_experiment": "official UrbanSound8K 10-fold CV",
+      "status": "new_revision"
+    },
+    {
+      "category": "table",
+      "path": "tables/urbansound8k_official_cv_summary.tex",
+      "purpose": "canonical LaTeX/CSV table for manuscript writing",
+      "section": "main",
+      "source_experiment": "official UrbanSound8K 10-fold CV",
+      "status": "new_revision"
+    }
+  ],
+  "generated_from": "frozen canonical audit and existing machine-readable results",
+  "plotter": "scripts/visualization/export_final_paper_assets.py",
+  "scientific_results_modified": false,
+  "table_count_files": 16,
+  "title": "Final manuscript-facing figure and table inventory"
+}

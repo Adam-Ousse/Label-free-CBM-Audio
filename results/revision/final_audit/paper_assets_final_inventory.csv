@@ -1,0 +1,60 @@
+category,path,section,status,source_experiment,purpose
+figure,appendix_figures/cremad_speaker_disjoint/anger_correct.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/anger_correct.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/anger_error.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/anger_error.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/disgust_correct.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/disgust_correct.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/disgust_error.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/disgust_error.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/fear_correct.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/fear_correct.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/fear_error.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/fear_error.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/happy_correct.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/happy_correct.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/happy_error.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/happy_error.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/neutral_correct.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/neutral_correct.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/neutral_error.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/neutral_error.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/sad_correct.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/sad_correct.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/sad_error.pdf,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/cremad_speaker_disjoint/sad_error.png,appendix,legacy_valid,CREMA-D speaker-disjoint qualitative panels,existing valid class-wise qualitative example; PDF and PNG retained
+figure,appendix_figures/older_esc50_lf_broad_temporal.png,appendix,legacy_valid,older valid ESC-50 temporal example,existing valid paper asset retained
+figure,appendix_figures/older_esc50_prediction_example.png,appendix,legacy_valid,older valid ESC-50 prediction example,existing valid paper asset retained
+figure,paper_assets_final/figures/task5_controlled_edit_heatmap.pdf,appendix,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task5_controlled_edit_heatmap.png,appendix,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task5_cremad_matched_vs_null.pdf,appendix,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task5_cremad_matched_vs_null.png,appendix,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task5_esc50_matched_vs_null.pdf,appendix,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task5_esc50_matched_vs_null.png,appendix,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task5_urbansound8k_matched_vs_null.pdf,appendix,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task5_urbansound8k_matched_vs_null.png,appendix,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task6_qualitative_examples.pdf,appendix,replacement,Task 6 URBAN-SED temporal localization,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task6_qualitative_examples.png,appendix,replacement,Task 6 URBAN-SED temporal localization,clean manuscript export from frozen machine-readable results
+figure,main_figures/architecture_overview.png,main,legacy_valid,architecture / model overview,existing valid paper asset retained
+figure,paper_assets_final/figures/task5_controlled_edit_associations.pdf,main,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task5_controlled_edit_associations.png,main,replacement,Task 5 controlled descriptor and intervention validation,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task6_concept_response_heatmap.pdf,main,replacement,Task 6 URBAN-SED temporal localization,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task6_concept_response_heatmap.png,main,replacement,Task 6 URBAN-SED temporal localization,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task6_quantitative_comparison.pdf,main,replacement,Task 6 URBAN-SED temporal localization,clean manuscript export from frozen machine-readable results
+figure,paper_assets_final/figures/task6_quantitative_comparison.png,main,replacement,Task 6 URBAN-SED temporal localization,clean manuscript export from frozen machine-readable results
+table,tables/principal_seed_summary.csv,appendix,new_revision,five-seed robustness,canonical LaTeX/CSV table for manuscript writing
+table,tables/principal_seed_summary.tex,appendix,new_revision,five-seed robustness,canonical LaTeX/CSV table for manuscript writing
+table,tables/t3_controls_table.csv,appendix,new_revision,random-word/random-direction/CLAP controls,canonical LaTeX/CSV table for manuscript writing
+table,tables/t3_controls_table.tex,appendix,new_revision,random-word/random-direction/CLAP controls,canonical LaTeX/CSV table for manuscript writing
+table,tables/task5_controlled_edit_table.tex,appendix,new_revision,Task 5 semantic descriptor and controlled-intervention validation,canonical LaTeX/CSV table for manuscript writing
+table,tables/task5_descriptor_associations.tex,appendix,new_revision,Task 5 semantic descriptor and controlled-intervention validation,canonical LaTeX/CSV table for manuscript writing
+table,tables/task5_supplementary_table.tex,appendix,new_revision,Task 5 semantic descriptor and controlled-intervention validation,canonical LaTeX/CSV table for manuscript writing
+table,tables/task6_macro_metrics.csv,appendix,new_revision,Task 6 URBAN-SED temporal localization,canonical LaTeX/CSV table for manuscript writing
+table,tables/task6_per_class_metrics.csv,appendix,new_revision,Task 6 URBAN-SED temporal localization,canonical LaTeX/CSV table for manuscript writing
+table,tables/task6_supplementary_per_class.tex,appendix,new_revision,Task 6 URBAN-SED temporal localization,canonical LaTeX/CSV table for manuscript writing
+table,tables/cremad_speaker_disjoint_table.tex,main,new_revision,CREMA-D speaker-disjoint evaluation,canonical LaTeX/CSV table for manuscript writing
+table,tables/esc50_official_cv_summary.csv,main,new_revision,official ESC-50 5-fold CV,canonical LaTeX/CSV table for manuscript writing
+table,tables/task5_main_table.tex,main,new_revision,Task 5 semantic descriptor and controlled-intervention validation,canonical LaTeX/CSV table for manuscript writing
+table,tables/task6_main_quantitative.tex,main,new_revision,Task 6 URBAN-SED temporal localization,canonical LaTeX/CSV table for manuscript writing
+table,tables/urbansound8k_official_cv_summary.csv,main,new_revision,official UrbanSound8K 10-fold CV,canonical LaTeX/CSV table for manuscript writing
+table,tables/urbansound8k_official_cv_summary.tex,main,new_revision,official UrbanSound8K 10-fold CV,canonical LaTeX/CSV table for manuscript writing
